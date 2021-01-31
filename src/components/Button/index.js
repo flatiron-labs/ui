@@ -19,7 +19,7 @@ const StyledButton = styled.button`
 
   ${props =>
     props.primary && `
-      color: yellow;
+      color: white;
       background-color: #1ea7fd;
     `
   }
