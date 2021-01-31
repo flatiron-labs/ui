@@ -16,8 +16,8 @@
     "test": "",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "yarn build-storybook && chromatic --storybook-build-dir ./storybook-static --project-token 44343b05718a",
-    "chromatic-old": "npx chromatic storybook:build -o storybook-static --project-token 44343b05718a"
+    "chromatic-old": "yarn build-storybook && chromatic --storybook-build-dir ./storybook-static --project-token foo",
+    "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
   },
   "eslintConfig": {
     "extends": [
