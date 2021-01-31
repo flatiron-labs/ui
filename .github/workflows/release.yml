@@ -11,7 +11,7 @@ on:
 
 jobs:
   npm-publish:
-    name: npm-publish
+    name: Release Package to NPM
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
