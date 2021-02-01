@@ -11,12 +11,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn clean && cross-env BABEL_ENV=production babel src -d dist --copy-files --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*test.js\" --ignore \"**/*stories.js\"",
-    "clean": "rm -rf dist",
+    "build": "yarn build:pre && yarn build:compile && yarn build:post",
+    "build:compile": "cross-env BABEL_ENV=production babel src -d dist --copy-files --no-copy-ignored --extensions .js,.jsx,.ts,.tsx,.mdx --ignore **/*.test.tsx,**/*.stories.tsx,**/*.mdx",
+    "build:pre": "rm -rf dist",
+    "build:post": "rm -rf dist/assets",
     "test": "",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic-old": "yarn build-storybook && chromatic --storybook-build-dir ./storybook-static --project-token foo",
     "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
   },
   "eslintConfig": {
@@ -64,6 +65,7 @@
     "@testing-library/user-event": "^12.1.10",
     "auto": "^10.13.2",
     "babel-plugin-macros": "^3.0.1",
+    "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-react-app": "^10.0.0",
     "chromatic": "^5.6.1",
     "cross-env": "^7.0.3",

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export type size = 'sm'|'md'|'lg'| undefined;
+export type size = 'sm' | 'md' | 'lg' | undefined;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: size,
