@@ -16,6 +16,10 @@
   }
 ```
 
-## TODO
-.editorconfig
-prettier
+### Available Components
+
+[TODO]
+
+### Want to Contribute?
+
+If you want to contribute through code or documentation, the [Contributing guide](docs/contribution-guide.md) is the best place to start. If you have questions, feel free to ask.
