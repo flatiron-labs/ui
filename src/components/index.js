@@ -1,3 +1,2 @@
-export * from './Button'
-export * from './Header'
-export * from './Page'
+export * from './Button/button'
+export * from './FullScreenModal/fullScreenModal'
