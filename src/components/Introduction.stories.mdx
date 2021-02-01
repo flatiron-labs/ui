@@ -1,117 +1,239 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import header from '../assets/flatiron-designsystem.png';
+import title from '../assets/header.png';
 
 <Meta title="Introduction" />
 
 <style>{`
-  .subheading {
-    --mediumdark: '#999999';
+  .title {
+    font-family: 'Fira Code';
     font-weight: 900;
-    font-size: 13px;
+    font-size: 24px;
     color: #999;
-    letter-spacing: 6px;
     line-height: 24px;
     text-transform: uppercase;
     margin-bottom: 12px;
     margin-top: 40px;
+    color: black;
   }
-
-  .link-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 10px;
-  }
-
-  @media (min-width: 620px) {
-    .link-list {
-      row-gap: 20px;
-      column-gap: 20px;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media all and (-ms-high-contrast:none) {
-  .link-list {
-      display: -ms-grid;
-      -ms-grid-columns: 1fr 1fr;
-      -ms-grid-rows: 1fr 1fr;
-    }
-  }
-
-  .link-item {
-    display: block;
-    padding: 20px 30px 20px 15px;
-    border: 1px solid #00000010;
-    border-radius: 5px;
-    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
-    color: #333333;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .link-item:hover {
-    border-color: #1EA7FD50;
-    transform: translate3d(0, -3px, 0);
-    box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
-  }
-
-  .link-item:active {
-    border-color: #1EA7FD;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .link-item strong {
-    font-weight: 700;
-    display: block;
-    margin-bottom: 2px;
-  }
-  
-  .link-item img {
-    height: 40px;
-    width: 40px;
-    margin-right: 15px;
-    flex: none;
-  }
-
-  .link-item span {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .tip {
-    display: inline-block;
-    border-radius: 1em;
-    font-size: 11px;
-    line-height: 12px;
-    font-weight: 700;
-    background: #E7FDD8;
-    color: #66BF3C;
-    padding: 4px 12px;
-    margin-right: 10px;
-    vertical-align: top;
-  }
-
-  .tip-wrapper {
-    font-size: 13px;
-    line-height: 20px;
+  .heading {
+    font-family: 'Fira Code';
+    font-weight: 900;
+    font-size: 19px;
+    color: #999;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
     margin-top: 40px;
-    margin-bottom: 40px;
+    color: black;
   }
-
-  .tip-wrapper code {
-    font-size: 12px;
-    display: inline-block;
+    .subheading {
+    font-family: 'Fira Code';
+    font-weight: 900;
+    font-size: 16px;
+    color: #999;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+    color: black;
   }
-
-  
 `}</style>
 
-# Welcome to The Flatiron School Design System
+<img src={title} />
 
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
+The Flatiron School Design systems allows the company to manage design at scale.
+A design system is a collection of reusable components, guided by clear standards, that can be assembled together to build any number of applications.
 
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `src/stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
+The implementation of this design system will allow for a consistent look and feel across any application within Flatiron School.
+
+<div className="title">Component Library Process Guide</div>
+<div className="heading">Process</div>
+<p>The purpose of this document is to provide guidelines on how to develop components for Flatiron school.</p>
+
+<div className="heading">Process Overview</div>
+<div className="subheading">Assumptions</div>
+<p>This process overview covers defining requirements, writing code, and deploying software and assumes that all design work for a particular iteration of a component has already been completed and is in the design system. It does not attempt to define the design process.
+
+This process also assumes that all components will be built in an iterative fashion and will be under constant development.
+</p>
+
+<div className="heading">Working Definitions</div>
+<p>In order to facilitate a shared language around how work is completed, it’s helpful to have definitions for the gating phases of the process. At a high level, the critical stages of the process are: </p>
+<ul>
+  <li>Team Review</li>
+  <li>Design Ready</li>
+  <li>Ready for Development</li>
+  <li>Development Complete</li>
+  <li>Deployment Complete</li>
+  <li>Socialize New Components</li>
+</ul>
+<div className="subheading">Team Review</div>
+<ul>
+  <li>Small brain trust, intentional submissions and decision road map. </li>
+  <li>Allows stakeholders ie. engineering, product, management to review components before decisions are made.</li>
+</ul>
+
+<div className="subheading">Design Ready</div>
+
+<p>A component is design ready when the component’s iteration has been built out visually. This means the following criteria has been met: </p>
+<ul>
+  <li>Success states defined</li>
+  <ul>
+    <li>Error states defined</li>
+    <li>Loading state defined</li>
+    <li>Viewport states defined</li>
+  </ul>
+  <li>Any special accessibility requirements defined</li>
+</ul>
+
+<p>This criteria is defined by the design team and reviewed by the engineering team before development can begin. </p>
+
+<div className="subheading">Ready for Development</div>
+<p>The team can develop a component when the designs are ready and a ticket or tickets have been created to complete the work. For a ticket to be ready for development, it must meet the following criteria:</p>
+<ul>
+  <li>Design assets are attached or linked in ticket</li>
+  <li>User story is defined</li>
+  <li>Success behavior is captured (if applicable)</li>
+  <li>Error behavior is captured (if applicable)</li>
+  <li>Loading behavior is captured (if applicable)</li>
+  <li>Any other applicable component state are captured</li>
+  <li>Any accessibility requirements are captured</li>
+</ul>
+
+<div className="subheading">Development Complete</div>
+<p>A component iteration is considered complete when the following is true: </p>
+<ul>
+  <li>Code is complete</li>
+  <li>Storybook component implementation is complete</li>
+  <li>Applicable documentation is written</li>
+  <li>Tests (including accessibility tests) are written</li>
+</ul>
+
+<div className="subheading">Deployment Complete</div>
+<p>A component library deployment is considered complete when the following is true:  a new version of the component library is published and available for use. </p>
+
+<div className="subheading">Socialize New Version</div>
+<p>It’s important to communicate that a new version of the component library has been deployed. Socializing a new version means the following: </p>
+<ul>
+  <li>All applicable consumers are notified through some means.</li>
+  <li>Links to the newly deployed version of the component library are included.</li>
+  <li>Links to the updated documentation of the component library are included.</li>
+</ul>
+
+<div className="heading">Addressing Defects</div>
+<p>It can be difficult to know if a defect exists in a component after it’s been published. Often, bugs in the parent application are mistaken for defects in the components and vice versa. In addition, because of the iterative nature of a component library, a lack of certain behavior in a component may be seen as a defect.
+
+To address this issue, any defect tickets assigned to the team responsible for the component library must include the following:</p>
+
+<p>At least one of these:</p>
+<ul>
+  <li>Explicit steps to navigate to the area of application where the component has been implements.</li>
+  <li>A video of the behavior of the component in question.</li>
+  <li>A screenshot of the behavior of the component in question (may not always been sufficient).</li>
+</ul>
+
+<p>And all of these:</p>
+<ul>
+  <li>Explicit steps to reproduce</li>
+  <li>Any relevant console information</li>
+  <li>Any relevant prop data</li>
+  <li>Any extra content that would be helpful</li>
+  <li>Version of the component library being used</li>
+  <li>Expected behavior</li>
+  <li>Actual behavior</li>
+</ul>
+
+<div className="heading">Open Source Contract</div>
+<p>The component library is a shared resource at Flatiron School. Many teams and engineers will use it and all can contribute to it. This can include new components, updating existing components, and fixing bugs. It’s an open source project within the company.</p>
+
+<div className="subheading">Contribution Guidelines</div>
+<p>As with any open source project there are guidelines that must be adhered to for a contribution to be accepted into the codebase. These include but are not limited to:</p>
+<ul>
+  <li>Coding styles and standards</li>
+  <ul>
+    <li>Naming conventions</li>
+    <li>Code format</li>
+  </ul>
+  <li>Testing</li>
+  <li>Style definitions and their application</li>
+  <li>Accessibility standards</li>
+</ul>
+
+<div className="subheading">Coordination</div>
+<p>In order to maintain good coordination and planning between teams the component library will have a member of product. As a contributor to the component library, you must work with the product team prior to doing any development. Contact the product in the following circumstances:</p>
+<ul>
+  <li>You don’t see a component you need in the component library and want to create it</li>
+  <li>You don’t see the behavior in a component that you need and you want to add it</li>
+  <li>You have an idea for a new component that would be useful in your application</li>
+  <li>There’s a bug in an existing component and you want to fix it</li>
+  <li>There’s an issue with the styles in a component and you want to fix it</li>
+</ul>
+
+<div className="subheading">Governance / Code Review</div>
+<p>The team responsible for the component library will decide what is accepted into the codebase. All feedback and guidance from that team needs to be fulfilled before any contribution will be accepted.</p>
+
+<div className="heading">Working Agreement with Design</div>
+
+<div>Design System</div>
+<p>A design system is a visual implementation of design concepts that promote a specific look and feel to the user. A design system does define components and their specifications but it does not implement them for use in applications. Does not necessarily require code to be written.</p>
+
+<div>Component Library</div>
+<p>The purpose of a component library is to encapsulate a design system and dramatically increase developer velocity. It is a technical implementation of a design system and requires code to be written. It provides developers usable componentry based on the guidelines set forth in the design system. This means that all components defined in the design system will exist in the component library, in addition to any other useful componentry, types, or utilities that will help aid application development.</p>
+
+<div className="subheading">Roles & Responsibilities</div>
+
+<div>Design</div>
+<p>The design team owns the look, feel, specifications, and documentation of the design system. This includes but is not limited to:</p>
+<ul>
+  <li>Typography</li>
+  <li>Icons</li>
+  <li>Color palette</li>
+  <li>Component definitions</li>
+  <ul>
+    <li>Use cases the component fulfills</li>
+    <li>How the component might change at different view ports</li>
+    <li>Validation states of a component</li>
+    <li>Error states of a component</li>
+    <li>Loading states of a component</li>
+    <li>‘No data’ states of a component</li>
+  </ul>
+  <li>Documentation of design system</li>
+  <ul>
+    <li>When to use a component</li>
+    <li>Why to use a component</li>
+    <li>Behavior of each component</li>
+    <li>Versioning of design system documentation</li>
+  </ul>
+  <li>Communication of new versions when available</li>
+</ul>
+
+<div>Engineering</div>
+<p>The engineering team owns the implementation, technical design, testing, deployment, and documentation of the component library. This includes but is not limited to:</p>
+<ul>
+  <li>Programming language(s)</li>
+  <li>Libraries</li>
+  <li>Component accessibility compliance</li>
+  <li>Testing suites</li>
+  <li>Test coverage</li>
+  <li>Deployment strategy</li>
+  <li>Documentation</li>
+  <ul>
+    <li>Code documentation</li>
+    <li>Implementation documentation</li>
+  </ul>
+  <li>Communication of new versions when available</li>
+</ul>
+
+<div className="subheading">Assets</div>
+<p>Design assets will be delivered to the team via Figma. Design assets must call out, include, or link to the following in order to consider a design iteration ready:</p>
+<ul>
+  <li>Colors used</li>
+  <li>Typography used</li>
+  <li>Icons used</li>
+  <li>Call out other components used in design</li>
+</ul>
+
+<div className="subheading">Collaboration</div>
+<p>Designs sometimes have technical implications which should be considered before finalizing a new design. It’s good practice to review new designs with the engineering team when the design team feels a new design is gaining traction. This can be done in an async fashion with the technical lead in charge of the component library in most cases. Either team can call a meeting if they feel it’s worthwhile to meet to discuss in real-time.</p>
+
+

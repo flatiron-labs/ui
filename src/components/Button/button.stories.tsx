@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonProps } from './button';
+import { Button, ButtonProps } from './Button';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 

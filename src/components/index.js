@@ -1,2 +1,2 @@
-export * from './Button/button'
-export * from './FullScreenModal/fullScreenModal'
+export * from './Button/Button'
+export * from './FullScreenModal/FullScreenModal'
