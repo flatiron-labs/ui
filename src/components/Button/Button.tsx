@@ -60,6 +60,6 @@ const StyledButton = styled.button<StyleProps>`
     `}
 `;
 
-export const Button = ({ children, ...props }: Props): StyledComponent => {
+export const Button = ({ children, ...props }: Props) => {
   return <StyledButton {...props}>{children}</StyledButton>;
 };
