@@ -1,19 +1,28 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+
 import { Button } from './Button'
+import { Props } from './Button.types'
 
-test('renders a primary button', () => {
-  const testId = 'button-primary'
-  render(<Button primary data-testid={testId}>foo</Button>)
+describe('Button', () => {
+  let testId = 'test-component'
 
-  expect(screen.getByTestId(testId))
-  expect(screen.getByText('foo')).toBeInTheDocument()
-})
+  const renderComponent = ({ ...props }: Props = {}) => {
+    render(<Button data-testid={testId} {...props} />)
+  }
 
-test('renders a secondary button', () => {
-  const testId = 'button-secondary'
-  render(<Button data-testid={testId}>bar</Button>)
+  it('should render a primary button', () => {
+    renderComponent({ primary: true })
+    screen.getByTestId(testId)
+  })
 
-  screen.getByTestId(testId)
-  expect(screen.getByText('bar')).toBeInTheDocument()
+  it('should render a secondary button', () => {
+    renderComponent()
+    screen.getByTestId(testId)
+  })
+
+  it('should render children', () => {
+    renderComponent({ children: 'bar' })
+    expect(screen.getByText('bar')).toBeInTheDocument()
+  })
 })

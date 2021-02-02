@@ -1,16 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export type size = 'sm' | 'md' | 'lg' | undefined;
+import { Props, StyleProps } from './Button.types'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: size
-  primary?: boolean
-  onClick?(): any
-  "data-testid"?: string
-}
-
-const StyledButton = styled.button<{ primary?: boolean, size?: size}>`
+const StyledButton = styled.button<StyleProps>`
     font-family: 'Fira Code';
     background-color: black;
     border-radius: 0;
@@ -67,6 +60,6 @@ const StyledButton = styled.button<{ primary?: boolean, size?: size}>`
   }
 `
 
-export const Button: React.FC<ButtonProps> = ({ children, ...props}) => {
+export const Button = ({ children, ...props}: Props) => {
   return <StyledButton {...props} >{children}</StyledButton>
 }
