@@ -9,11 +9,11 @@
 ### Usage
 
 ```jsx
-  import { Button } from '@flatiron-school/ui'
+import { Button } from "@flatiron-school/ui";
 
-  export default () => {
-    return <Button primary>Foo</Button>
-  }
+export default () => {
+  return <Button primary>Foo</Button>;
+};
 ```
 
 ### Available Components

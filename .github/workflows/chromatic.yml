@@ -1,6 +1,6 @@
 # Sends to Chromatic on changes to Pull Requests
 
-name: 'Chromatic'
+name: "Chromatic"
 
 on: push
 
@@ -26,5 +26,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: './storybook-static'
+          storybookBuildDir: "./storybook-static"
           exitOnceUploaded: true
