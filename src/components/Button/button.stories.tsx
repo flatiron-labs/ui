@@ -9,7 +9,7 @@ export default {
   component: Button,
   argTypes: {
     size: {
-      defaultValue: "sm",
+      defaultValue: 'sm',
       description: 'Adjust size  sm | md | lg',
       control: {
         type: 'select',
@@ -17,13 +17,20 @@ export default {
           'sm',
           'md', 
           'lg'
-        ],
-      },
+        ]
+      }
     },
-  },
+    primary: {
+      defaultValue: false,
+      description: 'Adjust button type',
+      control: {
+        type: 'boolean'
+      }
+    }
+  }
 } as Meta
 
-const Template: Story <React.FC<Props>> = (args) => <Button {...args} >Button</Button>
+const Template: Story = (args: Props) => <Button {...args}>Button</Button>
 
 export const Primary = Template.bind({});
 Primary.args = {
