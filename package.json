@@ -12,13 +12,17 @@
   ],
   "scripts": {
     "build": "yarn build:pre && yarn build:compile && yarn build:post",
-    "build:compile": "cross-env BABEL_ENV=production babel src -d dist --copy-files --no-copy-ignored --extensions .js,.jsx,.ts,.tsx,.mdx --ignore **/*.test.tsx,**/*.stories.tsx,**/*.mdx",
+    "build:compile": "cross-env NODE_ENV=production BABEL_ENV=production babel src -d dist --copy-files --no-copy-ignored --extensions .js,.jsx,.ts,.tsx,.mdx --ignore **/*.test.tsx,**/*.stories.tsx,**/*.mdx",
     "build:pre": "rm -rf dist",
     "build:post": "rm -rf dist/assets",
-    "test": "",
+    "fmt:eslint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
+    "fmt:prettier": "yarn prettier --write .",
+    "fmt:prettier:check": "prettier --check .",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
+    "storybook:build": "build-storybook",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +40,13 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "injectGlobals": true,
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect",
+      "<rootDir>/src/setupTests.js"
     ]
   },
   "dependencies": {
@@ -63,20 +74,40 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
     "auto": "^10.13.2",
+    "babel-plugin-jsx-remove-data-test-id": "^2.1.3",
     "babel-plugin-macros": "^3.0.1",
     "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-react-app": "^10.0.0",
     "chromatic": "^5.6.1",
     "cross-env": "^7.0.3",
-    "prettier": "^2.2.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "ts-jest": "^26.5.0",
     "web-vitals": "^0.2.4"
   },
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "yarn fmt:eslint",
+    "*.{js,jsx,ts,tsx,json,css,md}": "yarn fmt:prettier"
   }
 }
