@@ -15,11 +15,13 @@
     "build:compile": "cross-env NODE_ENV=production BABEL_ENV=production babel src -d dist --copy-files --no-copy-ignored --extensions .js,.jsx,.ts,.tsx,.mdx --ignore **/*.test.tsx,**/*.stories.tsx,**/*.mdx",
     "build:pre": "rm -rf dist",
     "build:post": "rm -rf dist/assets",
+    "fmt:prettier": "yarn prettier --write .",
+    "fmt:prettier:check": "prettier --check .",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "test:coverage": "jest --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -81,7 +83,7 @@
     "babel-preset-react-app": "^10.0.0",
     "chromatic": "^5.6.1",
     "cross-env": "^7.0.3",
-    "prettier": "^2.2.1",
+    "prettier": "2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
