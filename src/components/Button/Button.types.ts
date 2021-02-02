@@ -8,5 +8,5 @@ export interface StyleProps {
 export interface Props extends StyleProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   "data-testid"?: string
   children?: React.ReactNode
-  onClick?(): any
+  onClick?(): React.MouseEventHandler<HTMLButtonElement>
 }
