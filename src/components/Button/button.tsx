@@ -4,9 +4,10 @@ import styled from 'styled-components'
 export type size = 'sm' | 'md' | 'lg' | undefined;
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: size,
-  primary?: boolean,
+  size?: size
+  primary?: boolean
   onClick?(): any
+  "data-testid"?: string
 }
 
 const StyledButton = styled.button<{ primary?: boolean, size?: size}>`

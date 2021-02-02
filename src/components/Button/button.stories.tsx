@@ -13,7 +13,7 @@ export default {
       control: {
         type: 'select',
         options: [
-          'sm', 
+          'sm',
           'md', 
           'lg'
         ],

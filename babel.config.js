@@ -1,11 +1,15 @@
-module.exports = function (api) {
-  api.cache(true)
+module.exports = function(api) {
+  api.cache(true);
   
-  const presets = [ "@babel/preset-typescript", "@babel/preset-env", "@babel/preset-react" ]
-  const plugins = [ "macros", "babel-plugin-styled-components" ]
-
   return {
-    presets,
-    plugins
-  }
-}
+    presets: ["@babel/preset-typescript", "@babel/preset-env", "@babel/preset-react"],
+    env: {
+      production: {
+        plugins: ["macros", "styled-components", "jsx-remove-data-test-id"]
+      },
+      development: {
+        plugins: ["macros", "styled-components"]
+      }
+    }
+  };
+};
