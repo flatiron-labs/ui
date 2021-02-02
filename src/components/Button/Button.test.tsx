@@ -22,7 +22,7 @@ describe("Button", () => {
   });
 
   it("should render children", () => {
-    renderComponent({ children: "bar" });
-    expect(screen.getByText("bar")).toBeInTheDocument();
+    renderComponent({ children: <p>foo</p> });
+    expect(screen.getByTestId(testId)).toHaveTextContent("foo");
   });
 });
