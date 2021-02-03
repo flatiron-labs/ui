@@ -11,7 +11,7 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: v1-dependencies--{{ checksum "yarn.lock" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run:
           name: Install Dependencies
