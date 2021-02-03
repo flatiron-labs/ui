@@ -10,10 +10,6 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          name: Update Yarn
-          command: "npm install --global yarn"
-
       - restore_cache:
           key: v1-dependencies--{{ checksum "yarn.lock" }}
 
