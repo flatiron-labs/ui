@@ -11,37 +11,37 @@ jobs:
       - checkout
 
       - run:
-        name: Update Yarn
-        command: "npm install --global yarn"
+          name: Update Yarn
+          command: "npm install --global yarn"
 
       - restore_cache:
-        key: v1-dependencies--{{ checksum "yarn.lock" }}
+          key: v1-dependencies--{{ checksum "yarn.lock" }}
 
       - run:
-        name: Install Dependencies
-        command: yarn install --frozen-lockfile
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
 
       - save_cache:
-        key: v1-dependencies-{{ checksum "yarn.lock" }}
-        paths:
-          - ./node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
 
       - run:
-        name: Check Formatting
-        command: yarn fmt:eslint
+          name: Check Formatting
+          command: yarn fmt:eslint
 
       - run:
-        name: Lint Code
-        command: yarn fmt:prettier:check
+          name: Lint Code
+          command: yarn fmt:prettier:check
 
       - run:
-        name: Run Tests
-        command: yarn test
+          name: Run Tests
+          command: yarn test
 
       - run:
-        name: Build Storybook
-        command: yarn storybook:build
+          name: Build Storybook
+          command: yarn storybook:build
       
       - run:
-        name: Push to Chromatic
-        command: yarn chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-once-uploaded --storybook-build-dir ./storybook-static
+          name: Push to Chromatic
+          command: yarn chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-once-uploaded --storybook-build-dir ./storybook-static
