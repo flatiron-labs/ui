@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Build Storybook
           command: yarn storybook:build
-      
+
       - run:
           name: Push to Chromatic
           command: yarn chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-once-uploaded --storybook-build-dir ./storybook-static
