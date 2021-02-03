@@ -15,7 +15,7 @@
     "build:compile": "cross-env NODE_ENV=production BABEL_ENV=production babel src -d dist --copy-files --no-copy-ignored --extensions .js,.jsx,.ts,.tsx,.mdx --ignore **/*.test.tsx,**/*.stories.tsx,**/*.mdx",
     "build:pre": "rm -rf dist",
     "build:post": "rm -rf dist/assets",
-    "fmt:eslint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
+    "fmt:eslint": "yarn eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0",
     "fmt:prettier": "yarn prettier --write .",
     "fmt:prettier:check": "prettier --check .",
     "storybook": "start-storybook -p 6006",

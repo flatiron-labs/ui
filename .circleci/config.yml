@@ -23,11 +23,11 @@ jobs:
             - ./node_modules
 
       - run:
-          name: Check Formatting
+          name: Lint Code
           command: yarn fmt:eslint
 
       - run:
-          name: Lint Code
+          name: Check Formatting
           command: yarn fmt:prettier:check
 
       - run:
