@@ -1,5 +1,7 @@
-/.*.js
-babel.config.js
 coverage
 dist
+build
 storybook-static
+
+!.*/
+.storybook/main.js

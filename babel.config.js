@@ -1,8 +1,8 @@
-module.exports = function (api) {
-  api.cache(true)
+// module.exports = function (api) {
+//   api.cache(true)
 
-  return {
-    presets: ['@babel/preset-typescript', '@babel/preset-env', '@babel/preset-react'],
-    plugins: ['styled-components', 'macros']
-  }
-}
+//   return {
+//     presets: ['@babel/preset-typescript', '@babel/preset-env', '@babel/preset-react'],
+//     plugins: ['styled-components', 'macros']
+//   }
+// }
