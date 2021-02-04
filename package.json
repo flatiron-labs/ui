@@ -12,10 +12,7 @@
     "build"
   ],
   "scripts": {
-    "build": "yarn build:pre && yarn build:compile && yarn build:post",
-    "build:compile": "cross-env NODE_ENV=production BABEL_ENV=production babel src -d dist --copy-files --no-copy-ignored --extensions .js,.jsx,.ts,.tsx,.mdx --ignore **/*.test.tsx,**/*.stories.tsx,**/*.mdx",
-    "build:pre": "rm -rf dist",
-    "build:post": "rm -rf dist/assets",
+    "build": "rm -rf build/*; rollup -c",
     "fmt:eslint": "yarn eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0",
     "fmt:prettier": "yarn prettier --write .",
     "fmt:prettier:check": "yarn prettier --check .",
@@ -44,17 +41,21 @@
     ]
   },
   "jest": {
-    "injectGlobals": true,
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect",
-      "<rootDir>/src/setupTests.js"
-    ],
     "roots": [
       "<rootDir>/src"
     ],
+    "injectGlobals": true,
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "testMatch": [
-      "**/__tests__/**/*.+(ts|tsx|js)",
-      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+      "**/*.test.(ts|tsx)"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect",
+      "<rootDir>/jest.setup.ts"
     ],
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
@@ -66,13 +67,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
     "@babel/core": "^7.12.13",
-    "@babel/node": "^7.12.13",
-    "@babel/plugin-transform-runtime": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.13",
     "@etchteam/storybook-addon-status": "^2.1.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
@@ -95,12 +90,8 @@
     "@typescript-eslint/parser": "^4.14.2",
     "auto": "^10.13.4",
     "babel-loader": "^8.2.2",
-    "babel-plugin-jsx-remove-data-test-id": "^2.1.3",
-    "babel-plugin-macros": "^3.0.1",
-    "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-react-app": "^10.0.0",
     "chromatic": "^5.6.1",
-    "cross-env": "^7.0.3",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "husky": ">=4",
@@ -108,7 +99,6 @@
     "prettier": "2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.2",
     "rollup": "^2.38.4",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",

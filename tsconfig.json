@@ -17,9 +17,9 @@
     "bin",
     "build",
     "docs",
+    "jest.setup.ts",
     "src/**/*.stories.tsx",
     "src/**/*.test.tsx",
-    "src/docs",
-    "src/setupTests.js"
+    "src/docs"
   ]
 }
