@@ -15,7 +15,8 @@ We require that all commits to this repo are GPG signed. Please reference our [G
 ```shell
 git clone https://github.com/flatiron-labs/design-system.git
 cd design-system
-scripts/init
+bin/install-nvm [Optional, but highly recommended]
+bin/setup
 yarn storybook
 ```
 

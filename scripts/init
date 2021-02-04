@@ -1,4 +1,0 @@
-#!/bin/bash
-
-yarn install
-npx mrm lint-staged

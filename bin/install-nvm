@@ -1,0 +1,109 @@
+#!/bin/sh
+
+#########
+# SETUP #
+#########
+
+. helpers
+
+################
+# DEPENDENCIES #
+################
+
+echo
+
+header 'Checking Dependencies'
+
+action 'Homebrew'
+
+if test ! $(which brew)
+then
+  failure "Please install Homebrew. See: https://brew.sh/"
+  exit 1
+else
+  success 'Installed'
+fi
+
+action 'Command Line Developer Tools'
+
+if test ! $(xcode-select -p)
+then
+  failure "Please manually install the Command Line Developer Tools with: 'xcode-select --install' and run this script again."
+  exit 1
+else
+  success 'Installed'
+fi
+
+######################
+# CHECK IF INSTALLED #
+######################
+
+header "Node Version Manager"
+
+action "Check If Installed"
+if [ -z "$NVM_DIR" ]
+then
+  success "Installed"
+  header "Continue Along, Nothing To See Here"
+  exit 0
+else
+  ok "Not Installed"
+fi
+
+# #####################
+# # CORE INSTALLATION #
+# #####################
+
+action "Installing NVM"
+
+result=$( brew install nvm 2>&1)
+[ -d ~/.nvm ] || mkdir ~/.nvm
+
+if [ $? -eq 0 ]
+then
+  failure 'Could Not Install'
+  echo $result
+  exit 1
+fi
+
+success 'Installed'
+
+
+#################
+# CONFIGURATION #
+#################
+
+header 'Shell Configuration'
+
+read -p "  $reset_all$bold- What is your shell? (zsh has been default since macOS 10.15 Catalina) [zsh|bash, default: zsh] : $green" desired_shell
+
+if [ "bash" = "$desired_shell" ]
+then
+  printf "$reset_all$bold  - Please add the following to ~/.bash_profile$reset_all \n\n"
+  cat ./bin/templates/nvm.zsh
+  printf "\n\n"
+  cat ./bin/templates/cdnvm.bash
+else
+  printf "$reset_all$bold  - Please add the following to ~/.zshrc$reset_all \n\n"
+  cat ./bin/templates/nvm.zsh
+  printf "\n\n"
+  cat ./bin/templates/cdnvm.zsh
+fi
+
+printf "\n\n\n"
+
+#######
+# FIN #
+#######
+
+header 'SUCCESS!'
+
+echo "Once the above configuration is added to your shell configuration please run the following command to reload your active terminal asn you're good to go:"
+echo
+
+if [ "bash" = "$desired_shell" ]
+then
+  echo ". ~/.bash_profile"
+else
+  echo ". ~/.zshrc"
+fi

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Check if nvm is installed
+if [ ! -z "$NVM_DIR" ]
+then
+  # Use .nvmrc Node version
+  . $(brew --prefix nvm)/nvm.sh
+  nvm use
+fi
+
+# Install yarn dependencies
+yarn install
+
+# Install Husky for lint-staged
+# npx mrm lint-staged

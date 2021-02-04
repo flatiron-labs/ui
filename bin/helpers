@@ -1,0 +1,32 @@
+#!/bin/sh
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+reset_weight=$(tput sgr0)
+
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+reset_color=$(tput setaf 9)
+
+reset_all="$reset_color$reset_weight"
+
+header () {
+  printf "$reset_all$bold$1$reset_all\n"
+}
+
+action () {
+  printf "$reset_all  - $bold$1$reset_all"
+}
+
+success () {
+  printf "$reset_all$bold$green [$1]$reset_all\n"
+}
+
+failure () {
+  printf "$reset_all$bold$red [$1]$reset_all\n"
+}
+
+ok () {
+  printf "$reset_all$bold$blue [$1]$reset_all\n"
+}
