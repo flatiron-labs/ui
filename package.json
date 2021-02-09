@@ -92,6 +92,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@etchteam/storybook-addon-status": "^2.1.0",
+    "@react-hook/window-size": "^3.0.7",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
     "@storybook/addon-a11y": "^6.1.17",
@@ -123,6 +124,7 @@
     "prettier": "2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^6.15.1",
     "react-scripts": "^4.0.2",
     "rollup": "^2.38.4",
     "rollup-plugin-peer-deps-external": "^2.2.4",
