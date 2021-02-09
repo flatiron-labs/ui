@@ -45,7 +45,7 @@ const StyledA = styled.a<{ active?: boolean }>`
 
 export const SideNavItem = ({ children, ...props }: Props): JSX.Element => {
   return (
-    <div>
+    <div {...props}>
       <StyledDiv active={props.active}>
         <StyledA active={props.active}>{children}</StyledA>
       </StyledDiv>

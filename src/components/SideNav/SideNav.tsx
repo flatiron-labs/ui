@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useWindowWidth, DebouncedWindowSizeOptions } from '@react-hook/window-size'
-import { ReactComponent as Hamburger } from '../../assets/Icons/hamburger.svg'
+import { useWindowWidth } from '@react-hook/window-size'
+import { HamburgerIcon } from '../../assets/Icons/index'
 import { black, greyDarkest } from '../../assets/Styles/colors'
 import { Props } from './SideNav.types'
 
@@ -33,19 +33,14 @@ const StyledDiv = styled.div<{ mobileOpen?: boolean; mobile?: boolean }>`
 `}
 }`
 
-const StyledHamburger = styled(Hamburger)`
+const StyledHamburgerIcon = styled(HamburgerIcon)`
   padding-left: 9px;
 }
 `
 
-export const SideNav = ({ children }: Props): JSX.Element => {
+export const SideNav = ({ children, ...props }: Props): JSX.Element => {
   const [mobileOpen, setMobileOpen] = useState(false)
-
-  const windowWidthOptions: DebouncedWindowSizeOptions = {
-    wait: 0,
-    leading: false
-  }
-  const windowWidth = useWindowWidth(windowWidthOptions)
+  const windowWidth = useWindowWidth()
   const mobile = windowWidth < 600
 
   const openSideNav = () => {
@@ -53,9 +48,9 @@ export const SideNav = ({ children }: Props): JSX.Element => {
   }
 
   return (
-    <StyledDiv mobile={mobile} mobileOpen={mobileOpen}>
-      {(!mobile || (mobileOpen && mobile)) && <>{children}</>}
-      {mobile && !mobileOpen && <StyledHamburger onClick={openSideNav} />}
+    <StyledDiv {...props} mobile={mobile} mobileOpen={mobileOpen}>
+      {(!mobile || (mobileOpen && mobile)) && <> {children} </>}
+      {mobile && !mobileOpen && <StyledHamburgerIcon onClick={openSideNav} />}
     </StyledDiv>
   )
 }

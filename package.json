@@ -70,7 +70,8 @@
       "<rootDir>/jest.setup.ts"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      ".+\\.(png|jpg|gif|svg)$": "jest-transform-stub"
     }
   },
   "lint-staged": {
@@ -120,6 +121,7 @@
     "eslint-config-prettier": "^7.2.0",
     "husky": ">=4",
     "jest": "^26.6.3",
+    "jest-transform-stub": "^2.0.0",
     "lint-staged": ">=10",
     "prettier": "2.2.1",
     "react": "^17.0.1",
