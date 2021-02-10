@@ -171,7 +171,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn eslint .",
-    "*.{js,jsx,ts,tsx,json,css,md,mdx,yml,yaml}": "yarn prettier --check ."
+    "*.{js,jsx,ts,tsx,json,css,md,mdx,yml,yaml}": "yarn prettier --write ."
   },
   "prettier": {
     "printWidth": 120,
@@ -228,6 +228,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
+    "sb": "^6.1.17",
     "styled-components": "^5.2.1",
     "ts-jest": "^26.5.0",
     "typescript": "^4.1.3",

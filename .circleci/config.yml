@@ -2,11 +2,38 @@
 
 version: 2.1
 
+# -------------------------
+#         DEFAULTS
+# -------------------------
+
+workspace_root: &workspace_root ~/repo
+
+defaults: &defaults
+  working_directory: *workspace_root
+  docker:
+    - image: cimg/node:15.8.0
+
+cache_key: &cache_key v1-dependencies-{{ checksum "yarn.lock" }}
+
+attach_workspace: &attach_workspace
+  attach_workspace:
+    at: *workspace_root
+
+# -------------------------
+#        WORKFLOWS
+# -------------------------
+workflows:
+  build_and_test:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+
 jobs:
-  build:
-    working_directory: ~/repo
-    docker:
-      - image: cimg/node:15.8.0
+  test:
+    <<: *defaults
+
     steps:
       - checkout
 
@@ -34,13 +61,32 @@ jobs:
           name: Run Tests
           command: yarn test
 
+  build:
+    <<: *defaults
+
+    docker:
+      - image: cimg/node:15.8.0-browsers
+
+    steps:
+      - *attach_workspace
+
+      # - run:
+      #     name: Install Headless Chrome dependencies
+      #     command: |
+      #       sudo apt-get install -yq \
+      #       gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
+      #       libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 \
+      #       libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 \
+      #       libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates \
+      #       fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+
       - run:
           name: Build Storybook
           command: yarn storybook:build
 
       - run:
           name: Build Storybook Composition Cache
-          command: npx sb extract
+          command: yarn sb extract
 
       - run:
           name: Push to Chromatic
