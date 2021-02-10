@@ -1,10 +1,9 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-
-import { SideNav } from './SideNav'
-import { SideNavItem } from './SideNavItem/SideNavItem'
-import { Props } from './SideNav.types'
 import useWindowWidth from '@react-hook/window-size'
+import SideNav from './SideNav'
+import SideNavItem from './SideNavItem/SideNavItem'
+import Props from './SideNav.types'
 
 describe('SideNav', () => {
   const testId = 'test-component'

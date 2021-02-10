@@ -1,7 +1,7 @@
 import React from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
+import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import { Spinner } from './Spinner'
+import Spinner from './Spinner'
 
 export default {
   title: 'Notifcations/Spinner',
@@ -11,16 +11,15 @@ export default {
 const StyledContainer = styled.div`
     display: flex;  
     justify-content: center;
+    background-color: black;
     height: 80px;
   }
 `
 
-const Template: Story = () => {
-  return (
-    <StyledContainer>
-      <Spinner />
-    </StyledContainer>
-  )
-}
+const Template: Story = () => (
+  <StyledContainer>
+    <Spinner />
+  </StyledContainer>
+)
 
 export const Default = Template.bind({})

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import colors from '@styles/colors'
-import { Props } from './SideNavItem.types'
+import colors from 'styles/colors'
+import Props from './SideNavItem.types'
 
 const StyledDiv = styled.div<{ active?: boolean }>`
   ${props =>
@@ -43,12 +43,15 @@ const StyledA = styled.a<{ active?: boolean }>`
 }
 `
 
-export const SideNavItem = ({ children, ...props }: Props): JSX.Element => {
+const SideNavItem = ({ children, ...props }: Props): JSX.Element => {
+  const { active, 'data-testid': dataTestId } = props
   return (
-    <div {...props}>
-      <StyledDiv active={props.active}>
-        <StyledA active={props.active}>{children}</StyledA>
+    <div data-testid={dataTestId}>
+      <StyledDiv active={active}>
+        <StyledA active={active}>{children}</StyledA>
       </StyledDiv>
     </div>
   )
 }
+
+export default SideNavItem

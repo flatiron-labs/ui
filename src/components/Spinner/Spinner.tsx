@@ -1,7 +1,10 @@
 import React from 'react'
 import { Props } from './Spinner.types'
-import { spinner } from './spinner.gif'
+import spinner from './spinner.gif'
 
-export const Spinner = ({ ...props }: Props): JSX.Element => {
-  return <img src={spinner} alt="spinner" {...props} />
+const Spinner = ({ ...props }: Props): JSX.Element => {
+  const { 'data-testid': dataTestid } = props
+  return <img src={spinner} alt="spinner" data-testid={dataTestid} />
 }
+
+export default Spinner

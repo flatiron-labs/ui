@@ -1,5 +1,7 @@
 import { SVGProps } from 'react'
 
-export interface Props extends SVGProps<SVGSVGElement> {
+interface Props extends SVGProps<SVGSVGElement> {
   color?: string
 }
+
+export default Props

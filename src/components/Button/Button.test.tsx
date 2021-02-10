@@ -8,7 +8,8 @@ describe('Button', () => {
   const testId = 'test-component'
 
   const renderComponent = ({ ...props }: Props = {}) => {
-    render(<Button data-testid={testId} {...props} />)
+    const { primary } = props
+    render(<Button data-testid={testId} primary={primary} />)
   }
 
   it('should render a primary button', () => {

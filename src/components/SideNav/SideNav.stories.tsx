@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Story, Meta } from '@storybook/react/types-6-0'
-import { SideNav } from './SideNav'
-import { SideNavItem } from './SideNavItem/SideNavItem'
-import { SideNavProps } from './SideNav.types'
+import { Story, Meta } from '@storybook/react'
+import SideNav from './SideNav'
+import SideNavItem from './SideNavItem/SideNavItem'
+import SideNavProps from './SideNav.types'
 
 export default {
   title: 'Navigation/SideNav',
