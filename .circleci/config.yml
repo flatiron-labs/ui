@@ -15,10 +15,6 @@ defaults: &defaults
 
 cache_key: &cache_key v1-dependencies-{{ checksum "yarn.lock" }}
 
-attach_workspace: &attach_workspace
-  attach_workspace:
-    at: *workspace_root
-
 # -------------------------
 #        WORKFLOWS
 # -------------------------
@@ -38,14 +34,14 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: *cache_key
 
       - run:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
 
       - save_cache:
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: *cache_key
           paths:
             - ./node_modules
 
@@ -68,7 +64,7 @@ jobs:
       - image: cimg/node:15.8.0-browsers
 
     steps:
-      - *attach_workspace
+      - checkout
 
       # - run:
       #     name: Install Headless Chrome dependencies
@@ -79,6 +75,9 @@ jobs:
       #       libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 \
       #       libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates \
       #       fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget
+
+      - restore_cache:
+          key: *cache_key
 
       - run:
           name: Build Storybook
