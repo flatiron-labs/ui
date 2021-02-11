@@ -7,7 +7,7 @@ import { Props } from './Button.types'
 describe('Button', () => {
   const testId = 'test-component'
 
-  const renderComponent = ({ children, primary, ...props }: Props = {}) => {
+  const renderComponent = ({ children, primary }: Props = {}) => {
     render(
       <Button data-testid={testId} primary={primary}>
         {children}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Props from './icon.types'
 
-const HamburgerIcon = ({ color, ...props }: Props): JSX.Element => {
+const HamburgerIcon = ({ color }: Props): JSX.Element => {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="2" y="3" width="20" height="3" rx="1" fill={color ?? 'white'} />
