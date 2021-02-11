@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
-import colors from 'styles/colors'
+import colors from '~/styles/colors'
 import HamburgerIcon from '../Icons/Hamburger'
 import Props from './SideNav.types'
 
