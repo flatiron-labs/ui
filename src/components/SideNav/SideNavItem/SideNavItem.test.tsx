@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import SideNavItem from './SideNavItem'
-import Props from './SideNavItem.types'
+import { Props } from './SideNavItem.types'
 
 describe('SideNavItem', () => {
   const testId = 'test-component'

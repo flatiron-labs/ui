@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import font from '~/styles/typography'
 import { Props, StyleProps } from './Button.types'
 
 const StyledButton = styled.button<StyleProps>`
-  font-family: 'Fira Code';
+  font-family: ${font.firaCode};
   background-color: black;
   border-radius: 0;
   text-align: center;

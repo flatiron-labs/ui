@@ -4,9 +4,7 @@ interface SideNavItemProps {
   handleClose?(): void
 }
 
-interface Props extends SideNavItemProps {
+export interface Props extends SideNavItemProps {
   'data-testid'?: string
   children?: React.ReactNode
 }
-
-export default Props

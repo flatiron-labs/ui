@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '~/styles/colors'
-import Props from './SideNavItem.types'
+import { Props } from './SideNavItem.types'
 
 const StyledDiv = styled.div<{ active?: boolean }>`
   ${props =>
