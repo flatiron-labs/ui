@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import imgSpinner from './spinner.webp'
 
 import { Props, StyleProps } from './Button.types'
 
@@ -63,7 +62,6 @@ const StyledButton = styled.button<StyleProps>`
 
 const Button = ({ children, ...props }: Props): JSX.Element => (
   <StyledButton {...props}>
-    <img src={imgSpinner} alt="Loading..." />
     {children}
   </StyledButton>
 )
