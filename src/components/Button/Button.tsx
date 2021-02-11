@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import { Props, StyleProps } from './Button.types'
 
 const StyledButton = styled.button<StyleProps>`
@@ -60,10 +59,6 @@ const StyledButton = styled.button<StyleProps>`
     `}
 `
 
-const Button = ({ children, ...props }: Props): JSX.Element => (
-  <StyledButton {...props}>
-    {children}
-  </StyledButton>
-)
+const Button = ({ children, ...props }: Props): JSX.Element => <StyledButton {...props}>{children}</StyledButton>
 
 export default Button
