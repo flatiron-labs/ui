@@ -1,4 +1,4 @@
-interface SideNavItemProps {
+export interface SideNavItemProps {
   active?: boolean
   closed?: boolean
   handleClose?(): void
