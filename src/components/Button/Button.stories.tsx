@@ -1,7 +1,7 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Story, Meta } from '@storybook/react'
-import Button from './Button'
+import Button from '~/components/Button/Button'
 import { Props } from './Button.types'
 
 export default {

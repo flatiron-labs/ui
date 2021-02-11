@@ -54,6 +54,7 @@
     },
     "plugins": [
       "@typescript-eslint",
+      "import",
       "jsx-a11y",
       "react"
     ],
@@ -118,6 +119,17 @@
     "overrides": [
       {
         "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "parserOptions": {
+          "project": [
+            "tsconfig.json"
+          ]
+        }
+      },
+      {
+        "files": [
           "**/*.json"
         ],
         "rules": {
@@ -145,32 +157,9 @@
           "paths": [
             "src"
           ]
-        }
+        },
+        "typescript": {}
       }
-    }
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "injectGlobals": true,
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    },
-    "testMatch": [
-      "**/*.test.(ts|tsx)"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
     }
   },
   "lint-staged": {
@@ -214,12 +203,15 @@
     "@typescript-eslint/parser": "^4.14.2",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-root-import": "^6.6.0",
     "babel-preset-react-app": "^10.0.0",
     "chromatic": "^5.6.1",
     "eslint": "^7.19.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.2.0",
     "eslint-import-resolver-babel-module": "^5.2.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
     "husky": "^5.0.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
