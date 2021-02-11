@@ -71,7 +71,12 @@
       "prettier/@typescript-eslint"
     ],
     "rules": {
-      "import/export": 0,
+      "import/export": [
+        0,
+        {
+          "file": "index.ts"
+        }
+      ],
       "react/jsx-filename-extension": [
         1,
         {

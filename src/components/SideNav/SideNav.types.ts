@@ -8,7 +8,7 @@ export interface StyledProps {
   mobileOpen: boolean
 }
 
-export interface Props extends SideNavProps {
+export interface Props extends SideNavProps, StyledProps {
   'data-testid'?: string
   children?: React.ReactNode
 }

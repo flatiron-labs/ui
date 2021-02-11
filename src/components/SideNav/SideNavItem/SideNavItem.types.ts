@@ -4,7 +4,11 @@ export interface SideNavItemProps {
   handleClose?(): void
 }
 
-export interface Props extends SideNavItemProps {
+export interface StyledProps {
+  active?: boolean
+}
+
+export interface Props extends SideNavItemProps, StyledProps {
   'data-testid'?: string
   children?: React.ReactNode
 }

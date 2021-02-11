@@ -7,7 +7,7 @@ import { Props } from './SideNavItem.types'
 describe('SideNavItem', () => {
   const testId = 'test-component'
 
-  const renderComponent = ({ ...props }: Props = {}) => {
+  const renderComponent = (props: Props = {}) => {
     render(<SideNavItem data-testid={testId} {...props} />)
   }
 

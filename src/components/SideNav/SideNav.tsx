@@ -4,9 +4,9 @@ import { useWindowWidth } from '@react-hook/window-size'
 import colors from '~/styles/colors'
 import font from '~/styles/typography'
 import HamburgerIcon from '../Icons/Hamburger'
-import { Props, StyledProps } from './SideNav.types'
+import { Props } from './SideNav.types'
 
-const StyledNav = styled.nav<StyledProps>`
+const StyledNav = styled.nav<Props>`
   background-color: ${colors.black};  
   border: 4px;
   border-color: ${colors.greyDarkest};

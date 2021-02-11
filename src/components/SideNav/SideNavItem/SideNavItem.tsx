@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import colors from '~/styles/colors'
 import { Props } from './SideNavItem.types'
 
-const StyledDiv = styled.div<{ active?: boolean }>`
+const StyledDiv = styled.div<Props>`
   ${props =>
     props.active &&
     `
