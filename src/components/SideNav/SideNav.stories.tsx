@@ -16,7 +16,7 @@ const Template: Story<Props> = () => {
     setClose(true)
   }
   return (
-    <SideNav closed={closed} handleClose={handleClose}>
+    <SideNav closed={closed} handleClose={handleClose} isMobile={false} mobileOpen={false}>
       <SideNavItem>Home</SideNavItem>
       <SideNavItem active>Profile</SideNavItem>
       <SideNavItem>Settings</SideNavItem>
