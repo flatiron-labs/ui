@@ -10,7 +10,8 @@
   "module": "build/index.es.js",
   "source": "src/index.ts",
   "scripts": {
-    "build": "rm -rf build/*; rollup -c",
+    "build": "rm -rf build/* && rollup -c",
+    "watch": "rm -rf build/* &&  rollup -c -w",
     "lint:eslint": "eslint --max-warnings 0",
     "lint:prettier": "prettier --write",
     "lint:prettier:check": "prettier --check",
