@@ -1,1 +1,1 @@
-export * as Button from './components'
+export * from './components'

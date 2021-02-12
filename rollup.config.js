@@ -6,23 +6,23 @@ import typescript from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
 import analyze from 'rollup-plugin-analyzer'
 
-import packageJson from './package.json'
+import pkg from './package.json'
 
 export default {
   input: 'src/index.ts',
   output: [
     {
-      file: packageJson.main,
+      file: pkg.main,
       format: 'cjs',
       sourcemap: true
     },
     {
-      file: packageJson.module,
+      file: pkg.module,
       format: 'esm',
       sourcemap: true
     }
   ],
-  external: ['styled-components'],
+  external: Object.keys(pkg.peerDependencies || {}),
   plugins: [
     image(),
     peerDepsExternal(),
