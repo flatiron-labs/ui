@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import SideNav from './SideNav'
-import SideNavItem from './SideNavItem/SideNavItem'
-import { Props } from './SideNav.types'
+import { SideNav, SideNavProps, SideNavItem } from '.'
 
 export default {
   title: 'Navigation/SideNav',
@@ -16,7 +14,7 @@ const Container = styled.div`
   height: 1000px;
 `
 
-const Template: Story<Props> = () => {
+const Template: Story<SideNavProps> = () => {
   const [isOpen, setOpen] = useState(false)
 
   const handleClose = () => {

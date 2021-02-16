@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './Icon.types'
 
-const Hamburger = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Hamburger = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -15,5 +15,3 @@ const Hamburger = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => 
     <rect x="2" y="13" width="20" height="3" rx="1" fill={color ?? 'white'} />
   </svg>
 )
-
-export default Hamburger

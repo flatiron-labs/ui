@@ -1,32 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
-import colors from '~/styles/colors'
-import font from '~/styles/typography'
-import { Props } from './SideNav.types'
-import { Hamburger } from '../Icons'
+import { Color, Font } from '~/styles'
+import { Icon } from '~/components/Icon'
 
-const StyledNav = styled.nav<Props>`
-  background-color: ${colors.black};
+export interface StyledSideNavProps {
+  isOpen: boolean
+}
+
+export interface SideNavProps extends StyledSideNavProps {
+  'data-testid'?: string
+  children?: React.ReactNode
+  handleClose?(): void
+}
+
+const StyledNav = styled.nav<StyledSideNavProps>`
+  background-color: ${Color.black};
   border: 4px;
-  border-color: ${colors.greyDarkest};
+  border-color: ${Color.greyDarkest};
   border-style: none solid none none;
-  font-family: ${font.firaCode};
-  display: flex;
-  flex-direction: column;
-  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
-  height: 100vh;
-  position: absolute;
-  padding-top: 50px;
-  top: 0;
+  font-family: ${Font.firaCode};
+  height: 100%;
   left: 0;
   transition: transform 0.3s ease-in-out;
 }`
 
 const StyledBurgerContainer = styled.nav`
-  background-color: ${colors.black};
+  background-color: ${Color.black};
   border: 4px;
-  border-color: ${colors.greyDarkest};
+  border-color: ${Color.greyDarkest};
   border-style: none solid none none;
   display: flex;
   justify-content: center;
@@ -39,7 +41,7 @@ const StyledBurgerContainer = styled.nav`
   width: 60px;
 }`
 
-const StyledBurger = styled(Hamburger)<Props>`
+const StyledBurger = styled(Icon.Hamburger)<SideNavProps>`
   color: white;
   width: 2rem;
   height: 2rem;
@@ -47,7 +49,7 @@ const StyledBurger = styled(Hamburger)<Props>`
   transition: transform 0.3s ease-in-out;
 `
 
-const SideNav = ({ children, ...props }: Props): JSX.Element => {
+export const SideNav = ({ children, ...props }: SideNavProps): JSX.Element => {
   const [isOpen, setOpen] = useState(true)
   const windowWidth = useWindowWidth()
 
@@ -77,5 +79,3 @@ const SideNav = ({ children, ...props }: Props): JSX.Element => {
     </>
   )
 }
-
-export default SideNav

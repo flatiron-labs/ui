@@ -1,7 +1,8 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import Spinner from './Spinner'
+
+import { Spinner } from '.'
 
 export default {
   title: 'Notifcations/Spinner',
@@ -9,7 +10,7 @@ export default {
 } as Meta
 
 const StyledContainer = styled.div`
-    display: flex;  
+    display: flex;
     justify-content: center;
     background-color: black;
     height: 80px;

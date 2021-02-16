@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './Icon.types'
 
-const Home = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Home = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     strokeWidth="20"
     height="22"
@@ -28,5 +28,3 @@ const Home = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     />
   </svg>
 )
-
-export default Home

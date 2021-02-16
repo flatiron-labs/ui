@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "declarationDir": "build",
     "sourceMap": true,
-    "target": "ES2017",
+    "target": "es2015",
     "lib": ["es6", "dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -11,6 +10,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "noEmitHelpers": false,
+    "importHelpers": false,
     "module": "ESNEXT",
     "moduleResolution": "node",
     "resolveJsonModule": true,

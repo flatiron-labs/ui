@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './Icon.types'
 
-const Code = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Code = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -20,5 +20,3 @@ const Code = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     <path d="M8 6L2 12L8 18" stroke={color ?? 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
-
-export default Code

@@ -1,4 +1,4 @@
-export default {
+export const Color = {
   black: 'rgba(3, 4, 22, 1)',
   grey: 'rgba(214, 226, 231, 1)',
   greyDark: 'rgba(127, 138, 142, 1)',
@@ -13,4 +13,9 @@ export default {
   purple: 'rgba(205, 162, 255, 1)',
   green: 'rgba(0, 239, 124, 1)',
   white: 'rgba(255, 255, 255, 1)'
+}
+
+export const Font = {
+  firaCode: 'Fira Code',
+  gotcha: 'Gotcha'
 }

@@ -1,23 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
-import colors from '~/styles/colors'
-import { Props } from './SideNavItem.types'
+import { Color } from '~/styles'
 
-const StyledDiv = styled.div<Props>`
+export interface StyledSideNavItemProps {
+  active?: boolean
+}
+
+export interface SideNavItemProps extends StyledSideNavItemProps {
+  'data-testid'?: string
+  children?: React.ReactNode
+  active?: boolean
+  closed?: boolean
+  handleClose?(): void
+}
+
+const StyledDiv = styled.div<StyledSideNavItemProps>`
   ${props =>
     props.active &&
-    `
+    `xxx
     border: 4px;
-    border-color: ${colors.greyDarkest};
+    border-color: ${Color.greyDarkest};
     border-style: solid none solid solid;
-    box-shadow: 6px 0px 0px -3px ${colors.black};
+    box-shadow: 6px 0px 0px -3px ${Color.black};
     margin-left: 15px;
   `}
 `
 
-const StyledA = styled.a<Props>`
-  color: ${colors.greyLight};
-  display: flex;    
+const StyledA = styled.a<StyledSideNavItemProps>`
+  color: ${Color.greyLight};
+  display: flex;
   font-family: 'Fira Code';
   font-size: 20px;
   justify-content: center;
@@ -30,7 +41,7 @@ const StyledA = styled.a<Props>`
   ${props =>
     props.active &&
     `
-    color: ${colors.turq};
+    color: ${Color.turq};
     padding-right: 23px;
     padding-left: 20px;
   `}
@@ -38,13 +49,13 @@ const StyledA = styled.a<Props>`
     !props.active &&
     `
     &:hover {
-      color: ${colors.white};
+      color: ${Color.white};
     }
   `}
 }
 `
 
-const SideNavItem = ({ children, ...props }: Props): JSX.Element => {
+export const SideNavItem = ({ children, ...props }: SideNavItemProps): JSX.Element => {
   const { active, 'data-testid': dataTestId } = props
   return (
     <div data-testid={dataTestId}>
@@ -54,5 +65,3 @@ const SideNavItem = ({ children, ...props }: Props): JSX.Element => {
     </div>
   )
 }
-
-export default SideNavItem
