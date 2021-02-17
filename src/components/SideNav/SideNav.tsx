@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
-import { Menu } from '@styled-icons/material'
 import colors from '~/styles/colors'
 import font from '~/styles/typography'
 import { Props } from './SideNav.types'
+import { Hamburger } from '../Icons'
 
 const StyledNav = styled.nav<Props>`
   background-color: ${colors.black};
@@ -28,35 +28,23 @@ const StyledBurgerContainer = styled.nav`
   border: 4px;
   border-color: ${colors.greyDarkest};
   border-style: none solid none none;
-  font-family: ${font.firaCode};
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   height: 100vh;
   position: absolute;
+  padding-top: 10px;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
   width: 60px;
 }`
 
-const StyledBurger = styled(Menu)<Props>`
-  position: absolute;
+const StyledBurger = styled(Hamburger)<Props>`
   color: white;
-  top: 3%;
-  left: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   width: 2rem;
   height: 2rem;
-  border: none;
   cursor: pointer;
-  padding: 0;
   transition: transform 0.3s ease-in-out;
-  z-index: 10;
-  &:hover {
-    cursor: pointer;
-  }
 `
 
 const SideNav = ({ children, ...props }: Props): JSX.Element => {

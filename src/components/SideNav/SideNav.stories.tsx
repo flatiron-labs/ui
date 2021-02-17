@@ -12,7 +12,7 @@ export default {
 
 const Container = styled.div`
   display: flex;
-  width: 1000px;
+  width: 100%;
   height: 1000px;
 `
 
