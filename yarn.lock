@@ -1819,10 +1819,17 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.12.13":
+  version "7.12.13"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.13.tgz#0a21452352b02542db0ffb928ac2d3ca7cb6d66d"
+  integrity sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2878,15 +2885,15 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/cli@6.1.17":
-  version "6.1.17"
-  resolved "https://registry.npmjs.org/@storybook/cli/-/cli-6.1.17.tgz"
-  integrity sha512-g7isNtvUH45rQNCnuGAHtGC+sn8q3m1oc3gZfd+WOY/HTEwgyFFO8pJiohsViJBcsDY9pycU2rSwgAVZRUWGVQ==
+"@storybook/cli@6.1.18":
+  version "6.1.18"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.1.18.tgz#923b86dd19d0bb1b8f4fc61ef36b34e0e9fc9997"
+  integrity sha512-a94M31svu00zJMaNzOJRyIxwSwed9/VhTCiba+uJL25sGagD3+zKwdUABIsOiVWtGCVxHEp9/lWyNKuKVQMMJQ==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/preset-env" "^7.12.1"
-    "@storybook/codemod" "6.1.17"
-    "@storybook/node-logger" "6.1.17"
+    "@storybook/codemod" "6.1.18"
+    "@storybook/node-logger" "6.1.18"
     "@storybook/semver" "^7.3.2"
     chalk "^4.0.0"
     commander "^5.0.0"
@@ -2946,14 +2953,14 @@
     core-js "^3.0.1"
     global "^4.3.2"
 
-"@storybook/codemod@6.1.17":
-  version "6.1.17"
-  resolved "https://registry.npmjs.org/@storybook/codemod/-/codemod-6.1.17.tgz"
-  integrity sha512-dBMyPnLiv2GHYWJIIHMJy+mxS7CM/Hx5z34Yeu9+1eMEM/08zwI1kAWpJuooscSD8gkAp3sqrwGAD/2e2VOmnQ==
+"@storybook/codemod@6.1.18":
+  version "6.1.18"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.1.18.tgz#70c428eab0100609361e0502a222dfd333e2ca67"
+  integrity sha512-yroPFczVZJmPJNWvRbLTQ+hmoc7yZpeLupBSJfMKfmNiofycCUQ7gjTl4cjd5jjlzfasq7ZkvQmQKEocduyS4A==
   dependencies:
     "@mdx-js/mdx" "^1.6.19"
     "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.1.17"
+    "@storybook/node-logger" "6.1.18"
     core-js "^3.0.1"
     cross-spawn "^7.0.0"
     globby "^11.0.0"
@@ -3143,17 +3150,6 @@
   integrity sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==
   dependencies:
     lodash "^4.17.15"
-
-"@storybook/node-logger@6.1.17":
-  version "6.1.17"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.1.17.tgz"
-  integrity sha512-Z0xQ4kzvf7GnwFG9UY1HJO2UR66t8IBnC5GxvWrJ/kwXE+DRF3mm/MT41Zz/d9zAY5Vo4mhE5zRwlYSAtrxQIQ==
-  dependencies:
-    "@types/npmlog" "^4.1.2"
-    chalk "^4.0.0"
-    core-js "^3.0.1"
-    npmlog "^4.1.2"
-    pretty-hrtime "^1.0.3"
 
 "@storybook/node-logger@6.1.18", "@storybook/node-logger@^6.1.18":
   version "6.1.18"
@@ -3513,10 +3509,10 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^7.28.1"
 
-"@testing-library/user-event@^12.6.3":
-  version "12.6.3"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.6.3.tgz"
-  integrity sha512-PCmbUKofE4SXA7l8jphZAbvv5H3c4ix34xPZ/GNe99fASX//msJRgiMbHIBP+GwRfgVG9c7zmkODSPu2X2vNRw==
+"@testing-library/user-event@^12.7.1":
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.7.1.tgz#e1ce931c04a1c65faf28618442d56ba8da887f2c"
+  integrity sha512-COfCkYgcxc+P9+pEAIGlmBuIDjO91Chf9GOBHI8AhIiMyaoOrKVPQny1uf0HIAYNoHKL5slhkqOPP2ZyNaVQGw==
   dependencies:
     "@babel/runtime" "^7.12.5"
 
@@ -5909,14 +5905,14 @@ chownr@^2.0.0:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-2.0.0.tgz"
   integrity sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
 
-chromatic@^5.6.1:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-5.6.1.tgz"
-  integrity sha512-CfLoTbh9iToNYoR+IVDL2ta+wqsHt7vCVMqwXOd4KpszBEuwkwZMuY6/6wfBob10Wv30hkGPdif7uTNm+FcFiQ==
+chromatic@^5.6.3:
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-5.6.3.tgz#5b1ef3a9ff60b617f9ee1397921951e6e2f08a8c"
+  integrity sha512-GjTWCxXD8bbOAIH8rPxIB0O96temNLis2fyCFHNwaSX762xx7mdZr8R6aEkBVjYVP5gY/l6tszPpMeCav6bNiQ==
   dependencies:
     "@actions/core" "^1.2.4"
     "@actions/github" "^4.0.0"
-    "@babel/runtime" "^7.12.1"
+    "@babel/runtime" "^7.12.13"
     "@chromaui/localtunnel" "^2.0.2"
     async-retry "^1.3.1"
     chalk "^4.0.0"
@@ -5927,7 +5923,7 @@ chromatic@^5.6.1:
     esm "^3.2.25"
     execa "^5.0.0"
     fake-tag "^2.0.0"
-    fs-extra "^9.0.0"
+    fs-extra "^9.1.0"
     jsonfile "^6.0.1"
     junit-report-builder "2.1.0"
     listr "0.14.3"
@@ -8619,7 +8615,7 @@ fs-extra@^7.0.0:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^9.0.0, fs-extra@^9.0.1:
+fs-extra@^9.0.0, fs-extra@^9.0.1, fs-extra@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.1.0.tgz"
   integrity sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==
@@ -15022,12 +15018,12 @@ saxes@^5.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-sb@^6.1.17:
-  version "6.1.17"
-  resolved "https://registry.npmjs.org/sb/-/sb-6.1.17.tgz"
-  integrity sha512-uly34gXolvjJPC71C+t8RUWTzN/aGB5MMs7l9rnInU7EHK8W78YFn98AWh/gCyGr5oIEvo+oJ4ppCRrmfVP1vw==
+sb@^6.1.18:
+  version "6.1.18"
+  resolved "https://registry.yarnpkg.com/sb/-/sb-6.1.18.tgz#9e68bc398a5230991f04263ab50ef5f0ef4632a0"
+  integrity sha512-7DvkIvfLIzbvhz31mhxyx5Aum7JVWF+6J9HkCFTiDHmw6/q0bHvdU96s7zqrluxsHk2xojH32qRhveinnj5a/A==
   dependencies:
-    "@storybook/cli" "6.1.17"
+    "@storybook/cli" "6.1.18"
 
 scheduler@^0.19.1:
   version "0.19.1"
