@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from './Icon.types'
+import { IconProps } from './Icon3.types'
 
 export const Home = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg

@@ -12,7 +12,7 @@ import { Settings } from './Settings'
 import { Time } from './Time'
 import { User } from './User'
 
-export type { IconProps } from './Icon.types'
+export type { IconProps } from './Icon3.types'
 
 export const Icon = {
   Code,
