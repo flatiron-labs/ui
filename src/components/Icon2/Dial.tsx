@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from './icons.types'
+import { IconProps } from './Icon.types'
 
 export const Dial = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg

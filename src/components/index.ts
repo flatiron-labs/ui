@@ -1,4 +1,4 @@
 export * from './Button'
-export * from './Icons'
+export * from './Icon'
 export * from './SideNav'
 export * from './Spinner'

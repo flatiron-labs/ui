@@ -2,7 +2,7 @@ import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { Icon } from '.'
 
-describe('Icons', () => {
+describe('Icon', () => {
   afterEach(cleanup)
 
   // code icon

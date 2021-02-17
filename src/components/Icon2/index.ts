@@ -28,4 +28,4 @@ export const Icon = {
   User
 }
 
-export type { IconProps } from './icons.types'
+export type { IconProps } from './Icon.types'

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Icon, IconProps } from '.'
 
 export default {
-  title: 'Icons/Icons',
+  title: 'Icons/Icon',
   argTypes: {
     color: { control: 'color' }
   }
