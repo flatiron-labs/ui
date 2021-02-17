@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './icons.types'
 
-const Map = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Map = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -21,5 +21,3 @@ const Map = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     <path d="M16 6V22" stroke={color ?? 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
-
-export default Map

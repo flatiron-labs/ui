@@ -1,8 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import { Code, Dial, Exit, Hamburger, Home, Location, Lock, Mail, Map, Settings, Time, User } from './index'
-import { Props } from './icon.types'
+import { Icon } from '..'
 
 export default {
   title: 'Icons/Icons',
@@ -20,20 +19,20 @@ const Container = styled.div`
   }
 `
 
-const Template: Story = (args: Props) => (
+const Template: Story = (args: Icon.Props) => (
   <Container>
-    <Code {...args} />
-    <Dial {...args} />
-    <Exit {...args} />
-    <Hamburger {...args} />
-    <Home {...args} />
-    <Location {...args} />
-    <Lock {...args} />
-    <Map {...args} />
-    <Mail {...args} />
-    <Settings {...args} />
-    <Time {...args} />
-    <User {...args} />
+    <Icon.Code {...args} />
+    <Icon.Dial {...args} />
+    <Icon.Exit {...args} />
+    <Icon.Hamburger {...args} />
+    <Icon.Home {...args} />
+    <Icon.Location {...args} />
+    <Icon.Lock {...args} />
+    <Icon.Map {...args} />
+    <Icon.Mail {...args} />
+    <Icon.Settings {...args} />
+    <Icon.Time {...args} />
+    <Icon.User {...args} />
   </Container>
 )
 

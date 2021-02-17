@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './icons.types'
 
-const Dial = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Dial = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -42,5 +42,3 @@ const Dial = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     <circle cx="19.5" cy="14.5" r="2.5" fill={color ?? 'white'} />
   </svg>
 )
-
-export default Dial

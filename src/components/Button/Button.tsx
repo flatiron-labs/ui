@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import font from '~/styles/typography'
 
-export type Size = 'sm' | 'md' | 'lg' | undefined
+export type ButtonSize = 'sm' | 'md' | 'lg' | undefined
 
 export interface StyledButtonProps {
   primary?: boolean
-  size?: Size
+  size?: ButtonSize
 }
 
 export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -72,6 +72,6 @@ const StyledButton = styled.button<StyledButtonProps>`
     `}
 `
 
-const Button = ({ children, ...props }: ButtonProps): JSX.Element => <StyledButton {...props}>{children}</StyledButton>
-
-export default Button
+export const Button = ({ children, ...props }: ButtonProps): JSX.Element => (
+  <StyledButton {...props}>{children}</StyledButton>
+)

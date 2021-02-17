@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './icons.types'
 
-const Mail = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Mail = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -24,5 +24,3 @@ const Mail = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     />
   </svg>
 )
-
-export default Mail

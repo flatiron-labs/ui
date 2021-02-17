@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
-import SideNav from './SideNav'
-import SideNavItem from './SideNavItem/SideNavItem'
-import { Props } from './SideNav.types'
+import { SideNav, SideNavProps, SideNavItem } from '..'
 
 export default {
   title: 'Navigation/SideNav',
   component: SideNav
 } as Meta
 
-const Template: Story<Props> = () => {
+const Template: Story<SideNavProps> = () => {
   const [closed, setClose] = useState(false)
 
   const handleClose = () => {

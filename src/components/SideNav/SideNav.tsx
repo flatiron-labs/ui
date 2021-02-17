@@ -3,11 +3,22 @@ import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
 import colors from '~/styles/colors'
 import font from '~/styles/typography'
-import HamburgerIcon from '../Icons/Hamburger'
-import { Props } from './SideNav.types'
+import { Icon } from '..'
 
-const StyledNav = styled.nav<Props>`
-  background-color: ${colors.black};  
+export interface StyledSideNavProps {
+  isMobile: boolean
+  mobileOpen: boolean
+}
+
+export interface SideNavProps extends StyledSideNavProps {
+  'data-testid'?: string
+  children?: React.ReactNode
+  closed?: boolean
+  handleClose?(): void
+}
+
+const StyledNav = styled.nav<StyledSideNavProps>`
+  background-color: ${colors.black};
   border: 4px;
   border-color: ${colors.greyDarkest};
   border-style: none solid none none;
@@ -34,12 +45,12 @@ const StyledNav = styled.nav<Props>`
 `}
 }`
 
-const StyledHamburgerIcon = styled(HamburgerIcon)`
+const StyledHamburgerIcon = styled(Icon.Hamburger)`
   padding-left: 9px;
 }
 `
 
-const SideNav = ({ children, ...props }: Props): JSX.Element => {
+export const SideNav = ({ children, ...props }: SideNavProps): JSX.Element => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const windowWidth = useWindowWidth()
   const isMobile = windowWidth < 600
@@ -55,5 +66,3 @@ const SideNav = ({ children, ...props }: Props): JSX.Element => {
     </StyledNav>
   )
 }
-
-export default SideNav

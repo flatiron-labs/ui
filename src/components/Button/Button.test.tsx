@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 
-import Button, { ButtonProps } from './Button'
+import { Button, ButtonProps } from '..'
 
 describe('Button', () => {
   const testId = 'test-component'
