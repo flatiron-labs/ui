@@ -2,13 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
 import { Icon, IconProps } from '.'
-
-export default {
-  title: 'Icons/Icon',
-  argTypes: {
-    color: { control: 'color' }
-  }
-} as Meta
+import { Color } from '~/styles'
 
 const Container = styled.div`
   display: flex;
@@ -18,6 +12,12 @@ const Container = styled.div`
     margin: 30px;
   }
 `
+export default {
+  title: 'Icons/Icon',
+  argTypes: {
+    color: { control: 'color' }
+  }
+} as Meta
 
 const Template: Story = (args: IconProps) => (
   <Container>
@@ -38,5 +38,5 @@ const Template: Story = (args: IconProps) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  color: 'black'
+  color: Color.white
 }

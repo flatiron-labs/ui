@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Font } from '~/styles'
+import { Layout } from '.'
+
+<Meta title="Global/Layout" component={Layout} />
+
+<style>{`
+  .title {
+    font-family: '${Font.firaCode};
+    font-weight: 900;
+    font-size: 24px;
+    color: #999;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+    color: black;
+  }
+  .heading {
+    font-family: ${Font.firaCode};
+    font-weight: 900;
+    font-size: 19px;
+    color: #999;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+    color: black;
+  }
+`}</style>
+
+<div className="title">Layout Component</div>
+<div className="heading">
+  The Layout Component is used to wrap and layout all the children components within the page.
+</div>
+<p>The Layout component defines global styles that will be applied to the page for a consistent UI. </p>
+<p>The Layout component wraps your components. It creates a new `div` DOM element. </p>
+
+```jsx
+import { Layout } from '@flatironschool/ui'
+
+const App = () => (
+  <Layout>
+    <p>Children</p>
+  </Layout>
+)
+```

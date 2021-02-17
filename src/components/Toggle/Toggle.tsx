@@ -75,8 +75,9 @@ const StyledLabel = styled.div`
   }
 `
 
-export const Toggle = ({ ...props }: ToggleProps): JSX.Element => {
+export const Toggle = (props: ToggleProps): JSX.Element => {
   const { label, 'data-testid': dataTestId } = props
+
   return (
     <StyledDiv data-testid={dataTestId}>
       <div>
