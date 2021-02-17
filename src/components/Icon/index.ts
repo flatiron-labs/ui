@@ -12,6 +12,8 @@ import { Settings } from './Settings'
 import { Time } from './Time'
 import { User } from './User'
 
+export type { IconProps } from './Icon.types'
+
 export const Icon = {
   Code,
   Dial,
@@ -27,5 +29,3 @@ export const Icon = {
   Time,
   User
 }
-
-export type { IconProps } from './Icon.types'
