@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Toggle, { ToggleProps } from './Toggle'
+import { Toggle, ToggleProps } from '.'
 
 describe('Toggle', () => {
   const testId = 'test-component'
