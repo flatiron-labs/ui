@@ -10,6 +10,8 @@ export default {
 const Template: Story = (args: ToggleProps) => <Toggle {...args} />
 
 export const Default = Template.bind({})
-Default.args = {
+
+export const Label = Template.bind({})
+Label.args = {
   label: 'Try student home feature'
 }
