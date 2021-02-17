@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout should append the global styles 1`] = `
+<style
+  data-styled="active"
+  data-styled-version="5.2.1"
+>
+  body{background-color:rgba(3,4,22,1);font-family:Fira Code;color:rgba(255,255,255,1);}
+</style>
+`;

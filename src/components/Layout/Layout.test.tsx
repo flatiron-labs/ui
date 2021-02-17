@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { Layout } from '.'
 
 describe('Layout', () => {
@@ -12,7 +12,13 @@ describe('Layout', () => {
       </Layout>
     )
 
-  xit('should append the global styles')
+  it('should append the global styles', async () => {
+    renderComponent()
+
+    await waitFor(() => {
+      expect(document.querySelector('style[data-styled="active"]')).toMatchSnapshot()
+    })
+  })
 
   it('should render children', () => {
     renderComponent()
