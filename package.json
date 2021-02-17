@@ -6,12 +6,13 @@
   "repository": "https://github.com/flatiron-labs/design-system.git",
   "author": "Tom Milewski <tmilewski@gmail.com>",
   "license": "MIT",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
+  "main": "build/lib/index.js",
+  "module": "build/es/index.js",
   "source": "src/index.ts",
+  "types": "./es/index.d.ts",
   "scripts": {
     "build": "rm -rf build/* && rollup -c",
-    "watch": "rm -rf build/* &&  rollup -c -w",
+    "watch": "rollup -c -w",
     "lint:eslint": "eslint --max-warnings 0",
     "lint:prettier": "prettier --write",
     "lint:prettier:check": "prettier --check",
@@ -85,6 +86,7 @@
           ]
         }
       ],
+      "import/prefer-default-export": "off",
       "import/extensions": "off",
       "import/no-extraneous-dependencies": [
         "error",
@@ -230,7 +232,7 @@
     "react-scripts": "^4.0.2",
     "rollup": "^2.38.5",
     "rollup-plugin-analyzer": "^4.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "sb": "^6.1.17",

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './Icon.types'
 
-const Settings = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Settings = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -28,5 +28,3 @@ const Settings = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     />
   </svg>
 )
-
-export default Settings

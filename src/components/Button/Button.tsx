@@ -1,10 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import font from '~/styles/typography'
-import { Props, StyleProps } from './Button.types'
+import { Font } from '~/styles'
 
-const StyledButton = styled.button<StyleProps>`
-  font-family: ${font.firaCode};
+export type ButtonSize = 'sm' | 'md' | 'lg' | undefined
+
+export interface StyledButtonProps {
+  primary?: boolean
+  size?: ButtonSize
+}
+
+export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+  'data-testid'?: string
+  children?: React.ReactNode
+  onClick?(): React.MouseEventHandler<HTMLButtonElement>
+}
+
+const StyledButton = styled.button<StyledButtonProps>`
+  font-family: ${Font.firaCode};
   background-color: black;
   border-radius: 0;
   text-align: center;
@@ -60,6 +72,6 @@ const StyledButton = styled.button<StyleProps>`
     `}
 `
 
-const Button = ({ children, ...props }: Props): JSX.Element => <StyledButton {...props}>{children}</StyledButton>
-
-export default Button
+export const Button = ({ children, ...props }: ButtonProps): JSX.Element => (
+  <StyledButton {...props}>{children}</StyledButton>
+)

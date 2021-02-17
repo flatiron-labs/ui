@@ -1,7 +1,7 @@
 import React from 'react'
-import { Props } from './icon.types'
+import { IconProps } from './Icon.types'
 
-const Time = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
+export const Time = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
   <svg
     width="24"
     height="24"
@@ -33,5 +33,3 @@ const Time = ({ color, 'data-testid': dataTestId }: Props): JSX.Element => (
     />
   </svg>
 )
-
-export default Time

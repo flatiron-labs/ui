@@ -5,7 +5,7 @@ const { compilerOptions } = require('./tsconfig')
 let moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/src' })
 moduleNameMapper['\\.(css|less|scss|sass)$'] = 'identity-obj-proxy'
 moduleNameMapper['\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$'] =
-  '<rootDir>/src/mocks/fileMock.ts'
+  '<rootDir>/mocks/fileMock.js'
 
 module.exports = {
   roots: ['<rootDir>/src'],

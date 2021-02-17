@@ -1,13 +1,12 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 
-import Button from './Button'
-import { Props } from './Button.types'
+import { Button, ButtonProps } from '.'
 
 describe('Button', () => {
   const testId = 'test-component'
 
-  const renderComponent = ({ children, primary }: Props = {}) => {
+  const renderComponent = ({ children, primary }: ButtonProps = {}) => {
     render(
       <Button data-testid={testId} primary={primary}>
         {children}

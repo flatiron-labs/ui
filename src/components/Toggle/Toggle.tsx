@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import colors from '~/styles/colors'
-import fonts from '~/styles/typography'
+import { Color, Font } from '~/styles'
 
 export interface ToggleProps {
   'data-testid'?: string
@@ -14,12 +13,12 @@ const StyledDiv = styled.div`
   flex-direction: row;
   align-items: flex-end;
   font-size: 15px;
-  font-family: ${fonts.firaCode};
+  font-family: ${Font.firaCode};
   }
 `
 
 const CheckBoxLabel = styled.label`
-  border-color: ${colors.black};
+  border-color: ${Color.black};
   border-radius: 17px;
   border-style: solid;
   border-width: 2px;
@@ -28,8 +27,8 @@ const CheckBoxLabel = styled.label`
   height: 23px;
   width: 42px;
   &::after {
-    background: ${colors.black};
-    border-color: ${colors.black};
+    background: ${Color.black};
+    border-color: ${Color.black};
     border-radius: 50%;
     border-style: solid;
     border-width: 3px;
@@ -49,13 +48,13 @@ const CheckBox = styled.input`
   width: 40px;
   z-index: 1;
   &:checked + ${CheckBoxLabel} {
-    border-color: ${colors.turq};
-    background: ${colors.black};
+    border-color: ${Color.turq};
+    background: ${Color.black};
     border-style: solid;
     border-width: 2px;
     &::after {
-      background: ${colors.white};
-      border-color: ${colors.white};
+      background: ${Color.white};
+      border-color: ${Color.white};
       border-radius: 50%;
       border-style: solid;
       border-width: 3px;
@@ -71,7 +70,7 @@ const CheckBox = styled.input`
 `
 
 const StyledLabel = styled.div`
-  border-color: ${colors.black};
+  border-color: ${Color.black};
   padding: 4px;
   }
 `
