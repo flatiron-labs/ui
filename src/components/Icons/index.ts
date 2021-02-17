@@ -1,16 +1,31 @@
-export * from './Code'
-export * from './Dial'
-export * from './Exit'
-export * from './Hamburger'
-export * from './Home'
-export * from './Github'
-export * from './Location'
-export * from './Lock'
-export * from './Mail'
-export * from './Map'
-export * from './Settings'
-export * from './Time'
-export * from './User'
+import { Code } from './Code'
+import { Dial } from './Dial'
+import { Exit } from './Exit'
+import { Hamburger } from './Hamburger'
+import { Home } from './Home'
+import { Github } from './Github'
+import { Location } from './Location'
+import { Lock } from './Lock'
+import { Mail } from './Mail'
+import { Map } from './Map'
+import { Settings } from './Settings'
+import { Time } from './Time'
+import { User } from './User'
 
-// Allow for Icon.Props
-export type { IconProps as Props } from './icons.types'
+export const Icon = {
+  Code,
+  Dial,
+  Exit,
+  Hamburger,
+  Home,
+  Github,
+  Location,
+  Lock,
+  Mail,
+  Map,
+  Settings,
+  Time,
+  User
+}
+
+export type { IconProps } from './icons.types'

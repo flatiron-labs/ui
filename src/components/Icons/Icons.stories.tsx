@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import { Icon } from '..'
+import { Icon, IconProps } from '.'
 
 export default {
   title: 'Icons/Icons',
@@ -19,7 +19,7 @@ const Container = styled.div`
   }
 `
 
-const Template: Story = (args: Icon.Props) => (
+const Template: Story = (args: IconProps) => (
   <Container>
     <Icon.Code {...args} />
     <Icon.Dial {...args} />

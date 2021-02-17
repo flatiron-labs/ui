@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
 
-import { Spinner } from '..'
+import { Spinner } from '.'
 
 export default {
   title: 'Notifcations/Spinner',

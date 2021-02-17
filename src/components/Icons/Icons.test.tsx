@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, cleanup } from '@testing-library/react'
-import { Icon } from '..'
+import { Icon } from '.'
 
 describe('Icons', () => {
   afterEach(cleanup)
