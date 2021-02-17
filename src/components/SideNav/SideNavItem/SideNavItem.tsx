@@ -15,7 +15,7 @@ const StyledDiv = styled.div<Props>`
   `}
 `
 
-const StyledA = styled.a<{ active?: boolean }>`
+const StyledA = styled.a<Props>`
   color: ${colors.greyLight};
   display: flex;    
   font-family: 'Fira Code';
@@ -23,6 +23,7 @@ const StyledA = styled.a<{ active?: boolean }>`
   justify-content: center;
   padding: 5px;
   padding-left: 15px;
+  transition: color 0.3s linear;
   &:hover {
     cursor: pointer;
   }

@@ -1,58 +1,92 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
+import { Menu } from '@styled-icons/material'
 import colors from '~/styles/colors'
 import font from '~/styles/typography'
-import HamburgerIcon from '../Icons/Hamburger'
 import { Props } from './SideNav.types'
 
 const StyledNav = styled.nav<Props>`
-  background-color: ${colors.black};  
+  background-color: ${colors.black};
   border: 4px;
   border-color: ${colors.greyDarkest};
   border-style: none solid none none;
   font-family: ${font.firaCode};
-  height: 100%;
-  left: 0;
-  padding-top: ${props => (props.isMobile ? '10px' : '60px')};
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
+  height: 100vh;
+  position: absolute;
+  padding-top: 50px;
   top: 0;
-  width: 195px;
-  ${props =>
-    props.mobileOpen &&
-    `
-    @media (max-width: 600px) {
-        width: 100%;
-    }
-  `}
-  ${props =>
-    !props.mobileOpen &&
-    `
-  @media (max-width: 600px) {
-      width: 40px;
-  }
-`}
+  left: 0;
+  transition: transform 0.3s ease-in-out;
 }`
 
-const StyledHamburgerIcon = styled(HamburgerIcon)`
-  padding-left: 9px;
-}
+const StyledBurgerContainer = styled.nav`
+  background-color: ${colors.black};
+  border: 4px;
+  border-color: ${colors.greyDarkest};
+  border-style: none solid none none;
+  font-family: ${font.firaCode};
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  width: 60px;
+}`
+
+const StyledBurger = styled(Menu)<Props>`
+  position: absolute;
+  color: white;
+  top: 3%;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const SideNav = ({ children, ...props }: Props): JSX.Element => {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [isOpen, setOpen] = useState(true)
   const windowWidth = useWindowWidth()
-  const isMobile = windowWidth < 600
+
+  useEffect(() => {
+    if (windowWidth < 600 === true) {
+      setOpen(false)
+    }
+    if (windowWidth < 600 === false) {
+      setOpen(true)
+    }
+  }, [windowWidth, isOpen])
 
   const openSideNav = () => {
-    setMobileOpen(true)
+    setOpen(isOpen ?? false)
   }
 
   return (
-    <StyledNav {...props} isMobile={isMobile} mobileOpen={mobileOpen}>
-      {(!isMobile || (mobileOpen && isMobile)) && <>{children}</>}
-      {isMobile && !mobileOpen && <StyledHamburgerIcon onClick={openSideNav} />}
-    </StyledNav>
+    <>
+      {!isOpen && (
+        <StyledBurgerContainer>
+          <StyledBurger onClick={openSideNav} isOpen={isOpen} />
+        </StyledBurgerContainer>
+      )}
+      <StyledNav {...props} isOpen={isOpen}>
+        {isOpen && <>{children}</>}
+      </StyledNav>
+    </>
   )
 }
 

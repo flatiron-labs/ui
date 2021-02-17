@@ -1,11 +1,9 @@
 export interface SideNavProps {
-  closed?: boolean
   handleClose?(): void
 }
 
 export interface StyledProps {
-  isMobile: boolean
-  mobileOpen: boolean
+  isOpen: boolean
 }
 
 export interface Props extends SideNavProps, StyledProps {

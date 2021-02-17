@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
+import styled from 'styled-components'
 import SideNav from './SideNav'
 import SideNavItem from './SideNavItem/SideNavItem'
 import { Props } from './SideNav.types'
@@ -9,18 +10,26 @@ export default {
   component: SideNav
 } as Meta
 
+const Container = styled.div`
+  display: flex;
+  width: 1000px;
+  height: 1000px;
+`
+
 const Template: Story<Props> = () => {
-  const [closed, setClose] = useState(false)
+  const [isOpen, setOpen] = useState(false)
 
   const handleClose = () => {
-    setClose(true)
+    setOpen(true)
   }
   return (
-    <SideNav closed={closed} handleClose={handleClose} isMobile={false} mobileOpen={false}>
-      <SideNavItem>Home</SideNavItem>
-      <SideNavItem active>Profile</SideNavItem>
-      <SideNavItem>Settings</SideNavItem>
-    </SideNav>
+    <Container>
+      <SideNav handleClose={handleClose} isOpen={isOpen}>
+        <SideNavItem>Home</SideNavItem>
+        <SideNavItem active>Profile</SideNavItem>
+        <SideNavItem>Settings</SideNavItem>
+      </SideNav>
+    </Container>
   )
 }
 

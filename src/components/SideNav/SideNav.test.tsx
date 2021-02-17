@@ -9,7 +9,7 @@ describe('SideNav', () => {
 
   const renderComponent = () => {
     render(
-      <SideNav data-testid={testId} isMobile={false} mobileOpen={false}>
+      <SideNav data-testid={testId} isOpen>
         <SideNavItem>Home</SideNavItem>
       </SideNav>
     )
