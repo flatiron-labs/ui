@@ -80,7 +80,7 @@ export const Toggle = ({ ...props }: ToggleProps): JSX.Element => {
   return (
     <StyledDiv data-testid={dataTestId}>
       <div>
-        <CheckBox id="checkbox" type="checkbox" />
+        <CheckBox id="checkbox" type="checkbox" aria-label="checkbox" />
         <CheckBoxLabel htmlFor="checkbox" />
       </div>
       {label && <StyledLabel>{label}</StyledLabel>}
