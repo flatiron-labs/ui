@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useWindowWidth } from '@react-hook/window-size'
-import colors from '~/styles/colors'
-import font from '~/styles/typography'
+import { Color, Font } from '~/styles'
 import { Icon } from '..'
 
 export interface StyledSideNavProps {
@@ -18,11 +17,11 @@ export interface SideNavProps extends StyledSideNavProps {
 }
 
 const StyledNav = styled.nav<StyledSideNavProps>`
-  background-color: ${colors.black};
+  background-color: ${Color.black};
   border: 4px;
-  border-color: ${colors.greyDarkest};
+  border-color: ${Color.greyDarkest};
   border-style: none solid none none;
-  font-family: ${font.firaCode};
+  font-family: ${Font.firaCode};
   height: 100%;
   left: 0;
   padding-top: ${props => (props.isMobile ? '10px' : '60px')};

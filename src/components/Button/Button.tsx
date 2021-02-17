@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import font from '~/styles/typography'
+import { Font } from '~/styles'
 
 export type ButtonSize = 'sm' | 'md' | 'lg' | undefined
 
@@ -16,7 +16,7 @@ export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttribut
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
-  font-family: ${font.firaCode};
+  font-family: ${Font.firaCode};
   background-color: black;
   border-radius: 0;
   text-align: center;
