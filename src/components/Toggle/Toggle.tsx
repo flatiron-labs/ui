@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Color, Font } from '~/styles'
+import uuid from '~/utils/uuid'
 
 export interface ToggleProps {
   'data-testid'?: string
@@ -75,14 +76,16 @@ const StyledLabel = styled.div`
   }
 `
 
+// TODO: Update so label is clickable
 export const Toggle = (props: ToggleProps): JSX.Element => {
   const { label, 'data-testid': dataTestId } = props
+  const id = uuid()
 
   return (
     <StyledDiv data-testid={dataTestId}>
       <div>
-        <CheckBox id="checkbox" type="checkbox" aria-label="checkbox" />
-        <CheckBoxLabel htmlFor="checkbox" />
+        <CheckBox id={id} type="checkbox" aria-label={label} />
+        <CheckBoxLabel htmlFor={id} />
       </div>
       {label && <StyledLabel>{label}</StyledLabel>}
     </StyledDiv>
