@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
 `
 
 const CheckBoxLabel = styled.label`
-  border-color: ${Color.black};
+  border-color: ${Color.white};
   border-radius: 17px;
   border-style: solid;
   border-width: 2px;
@@ -27,10 +27,10 @@ const CheckBoxLabel = styled.label`
   height: 23px;
   width: 42px;
   &::after {
-    background: ${Color.black};
-    border-color: ${Color.black};
+    background: ${Color.white};
+    border-color: ${Color.white};
     border-radius: 50%;
-    border-style: solid;
+    border-style: solid;white
     border-width: 3px;
     content: '';
     display: block;
