@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import { Toggle, ToggleProps } from '.'
 
 export default {
-  title: 'Navigation/Toggle',
+  title: 'Inputs/Toggle',
   component: Toggle
 } as Meta
 

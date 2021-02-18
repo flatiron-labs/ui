@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Spinner, SpinnerProps } from '.'
 
 export default {
-  title: 'Notifcations/Spinner',
+  title: 'Global/Spinner',
   component: Spinner
 } as Meta
 
