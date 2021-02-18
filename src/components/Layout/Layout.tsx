@@ -33,7 +33,9 @@ export const Layout = ({ children }: LayoutProps): JSX.Element => (
     <GlobalStyle />
     <ThemeProvider theme={theme}>
       <StylesProvider injectFirst>
-        <Container>{children}</Container>
+        <Container disableGutters maxWidth="lg">
+          {children}
+        </Container>
       </StylesProvider>
     </ThemeProvider>
   </>

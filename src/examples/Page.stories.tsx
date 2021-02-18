@@ -69,11 +69,16 @@ const StyledFooterLink = styled.a<StyledLinkProps>`
   color: ${Color.black};
   font-size: 16px;
   text-decoration: none;
+  light-height: 19.2px;
+  font-weight: bold;
 
   &:hover {
     color: ${Color.turq};
-    background-color: ${Color.greyDarkest};
   }
+`
+
+const StyledSocialLink = styled.a<StyledLinkProps>`
+  padding: 3px;
 `
 
 const Template: Story = () => {
@@ -112,17 +117,35 @@ const Template: Story = () => {
         </Grid>
       </Grid>
 
-      <StyledFooter container component="footer">
-        <Grid container component="nav" direction="row" justify="space-between" alignItems="center">
-          <StyledFooterLink href="#">Accessibility</StyledFooterLink>
-          <StyledFooterLink href="#">Terms &amp; Conditions</StyledFooterLink>
-          <StyledFooterLink href="#">Code of Conduct</StyledFooterLink>
-          <StyledFooterLink href="#">Privacy Policy</StyledFooterLink>
+      <StyledFooter container component="footer" alignItems="center" justify="center" spacing={1}>
+        <Grid item xs={7}>
+          <Grid container component="nav" direction="row" justify="space-between" alignItems="center">
+            <StyledFooterLink href="#">Accessibility</StyledFooterLink>
+            <StyledFooterLink href="#">Terms &amp; Conditions</StyledFooterLink>
+            <StyledFooterLink href="#">Code of Conduct</StyledFooterLink>
+            <StyledFooterLink href="#">Privacy Policy</StyledFooterLink>
+          </Grid>
         </Grid>
 
-        {/* <Grid container component="ul" direction="row">
-
-        </Grid> */}
+        <Grid item xs={3}>
+          <Grid container component="ul" direction="row" alignItems="center">
+            <StyledSocialLink href="#">
+              <Icon.Github color={Color.black} />
+            </StyledSocialLink>
+            <StyledSocialLink href="#">
+              <Icon.Github color={Color.black} />
+            </StyledSocialLink>
+            <StyledSocialLink href="#">
+              <Icon.Github color={Color.black} />
+            </StyledSocialLink>
+            <StyledSocialLink href="#">
+              <Icon.Github color={Color.black} />
+            </StyledSocialLink>
+            <StyledSocialLink href="#">
+              <Icon.Github color={Color.black} />
+            </StyledSocialLink>
+          </Grid>
+        </Grid>
       </StyledFooter>
     </Grid>
   )
