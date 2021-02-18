@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 import { Color, Font } from '~/styles'
 
 export interface LayoutProps {
-  'data-testid'?: string
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -18,6 +17,6 @@ const GlobalStyle = createGlobalStyle`
 export const Layout = ({ children }: LayoutProps): JSX.Element => (
   <>
     <GlobalStyle />
-    <div>{children}</div>
+    {children}
   </>
 )
