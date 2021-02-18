@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
 
-import { Spinner } from '.'
+import { Spinner, SpinnerProps } from '.'
 
 export default {
   title: 'Notifcations/Spinner',
@@ -10,17 +10,21 @@ export default {
 } as Meta
 
 const StyledContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    height: 80px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `
 
-const Template: Story = () => (
+const Template: Story = (args: SpinnerProps) => (
   <StyledContainer>
-    <Spinner />
+    <Spinner {...args} />
   </StyledContainer>
 )
 
-export const Default = Template.bind({})
+export const Basic = Template.bind({})
+
+export const Resized = Template.bind({})
+Resized.args = {
+  size: 30
+}
