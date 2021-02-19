@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { GridSize } from '@material-ui/core'
-import { useTheme } from '@material-ui/core/styles'
 import { Grid, Avatar, Icon, Hidden } from '~/components'
 import { Color, Media } from '~/styles'
 
 interface StyledLinkProps {
   active?: boolean
+  expanded?: boolean
 }
 
 const StyledButton = styled.button`
@@ -20,11 +20,7 @@ const StyledButton = styled.button`
 const StyledSidebar = styled(Grid)`
   border-right: 1px ${Color.greyDarkest} solid;
   padding: 62px 0 0 0;
-  transition: ${({ theme }) =>
-    theme.transitions.create('all', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })};
+  transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
 `
 
 const StyledLink = styled.a<StyledLinkProps>`
@@ -48,6 +44,17 @@ const StyledLink = styled.a<StyledLinkProps>`
     background: linear-gradient(to right, ${Color.black}, ${Color.greyDarkest} 12%);
   }
 
+  ${props =>
+    props.expanded &&
+    `
+    padding: 14px 0 15px 15%;
+    justify-content: start;
+
+    svg {
+      margin-right: 10px;
+    }
+  `}
+
   ${Media.md} {
     padding: 14px 0 15px 15%;
     justify-content: start;
@@ -63,6 +70,7 @@ const StyledAvatar = styled(Avatar)`
 `
 
 export interface SidebarProps {
+  expanded?: boolean
   onExpand(): void
   lg?: boolean | GridSize
   md?: boolean | GridSize
@@ -70,35 +78,31 @@ export interface SidebarProps {
   xs?: boolean | GridSize
 }
 
-export const Sidebar = ({ onExpand, ...props }: SidebarProps): JSX.Element => {
-  const theme = useTheme()
+export const Sidebar = ({ expanded, onExpand, ...props }: SidebarProps): JSX.Element => (
+  <StyledSidebar container direction="column" {...props}>
+    <Hidden smDown>
+      <StyledAvatar>JS</StyledAvatar>
+    </Hidden>
 
-  return (
-    <StyledSidebar container direction="column" theme={theme} {...props}>
-      <Hidden smDown>
-        <StyledAvatar>JS</StyledAvatar>
-      </Hidden>
+    <Hidden mdUp>
+      <StyledButton type="button" onClick={onExpand} aria-label="Open navigation">
+        <Icon.Hamburger />
+      </StyledButton>
+    </Hidden>
 
-      <Hidden mdUp>
-        <StyledButton type="button" onClick={onExpand} aria-label="Open navigation">
-          <Icon.Hamburger />
-        </StyledButton>
-      </Hidden>
-
-      <Grid container component="nav" direction="column" aria-label="Primary">
-        <StyledLink href="#" title="Home" active>
-          <Icon.Home color={Color.white} />
-          <Hidden smDown>Home</Hidden>
-        </StyledLink>
-        <StyledLink href="#" title="Profile">
-          <Icon.User color={Color.white} />
-          <Hidden smDown> Profile</Hidden>
-        </StyledLink>
-        <StyledLink href="#" title="Settings">
-          <Icon.Settings color={Color.white} />
-          <Hidden smDown>Settings</Hidden>
-        </StyledLink>
-      </Grid>
-    </StyledSidebar>
-  )
-}
+    <Grid container component="nav" direction="column" aria-label="Primary">
+      <StyledLink href="#" title="Home" expanded={expanded} active>
+        <Icon.Home color={Color.white} />
+        {expanded ? <>Home</> : <Hidden smDown>Home</Hidden>}
+      </StyledLink>
+      <StyledLink href="#" expanded={expanded} title="Profile">
+        <Icon.User color={Color.white} />
+        {expanded ? <>Profile</> : <Hidden smDown> Profile</Hidden>}
+      </StyledLink>
+      <StyledLink href="#" expanded={expanded} title="Settings">
+        <Icon.Settings color={Color.white} />
+        {expanded ? <>Settings</> : <Hidden smDown>Settings</Hidden>}
+      </StyledLink>
+    </Grid>
+  </StyledSidebar>
+)

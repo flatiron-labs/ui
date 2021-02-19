@@ -1,4 +1,3 @@
-// https://material-ui.com/guides/minimizing-bundle-size/
 import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 
