@@ -5,7 +5,7 @@ import { Grid, Icon, Toggle, Hidden, Avatar } from '~/components'
 import { Color, Media } from '~/styles'
 
 export default {
-  title: 'Examples/Page'
+  title: 'Composites/Page'
 } as Meta
 
 // https://material-ui.com/components/grid/
@@ -60,16 +60,13 @@ const StyledLink = styled.a<StyledLinkProps>`
 
 const StyledFooter = styled(Grid)`
   background-color: ${Color.yellow};
-  max-height: 100px;
   color: ${Color.black};
   width: 100%;
-` as typeof Grid
+  max-height: 12rem;
 
-const StyledFooterNav = styled(Grid)`
-  background-color: ${Color.yellow};
-  max-height: 100px;
-  color: ${Color.black};
-  width: 100%;
+  ${Media.sm} {
+    max-height: 100px;
+  }
 ` as typeof Grid
 
 const StyledFooterLink = styled.a<StyledLinkProps>`
@@ -132,6 +129,7 @@ const Template: Story = () => {
 
         {/* PAGE-SPECIFIC CONTENT */}
         <Grid container style={{ padding: '62px 40px 0' }}>
+          {/* HEADER */}
           <Grid item xs={12}>
             <Grid container direction="row" justify="space-between">
               <Grid item>
@@ -143,11 +141,16 @@ const Template: Story = () => {
               </Grid>
             </Grid>
           </Grid>
+
+          {/* CONTENT */}
+          <Grid item xs={12}>
+            <p>test</p>
+          </Grid>
         </Grid>
       </Grid>
 
       {/* FOOTER */}
-      <StyledFooter container component="footer" alignItems="center" justify="center" spacing={1}>
+      <StyledFooter container component="footer" alignItems="center" justify="center">
         <Grid item xs={7}>
           <Grid container component="nav" direction="row" justify="space-between" alignItems="center">
             <StyledFooterLink href="https://portal.flatironschool.com/tos">Accessibility</StyledFooterLink>
