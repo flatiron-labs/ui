@@ -15,7 +15,6 @@ const StyledDiv = styled.div`
   align-items: flex-end;
   font-size: 14px;
   font-family: ${Font.firaCode};
-  line-h
 `
 
 const CheckBoxLabel = styled.label`
