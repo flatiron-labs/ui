@@ -1,5 +1,5 @@
 import React from 'react'
-import { Layout } from '~/components'
+import { Container } from '~/components'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -16,9 +16,9 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <Layout>
+    <Container>
       <Story />
-    </Layout>
+    </Container>
   )
 ]
 

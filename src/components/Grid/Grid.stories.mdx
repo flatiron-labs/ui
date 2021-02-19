@@ -1,0 +1,51 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { Grid } from '.'
+
+<Meta title="Layout/Grid" component={Grid} />
+
+# Grid Component
+
+## The Grid component adapts to screen size and orientation, ensuring consistency across layouts.
+
+The Grid component is re-exported from MaterialUI. More details may be found on their [documentation](https://material-ui.com/components/grid/).
+
+The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs and is based on a 12-column grid layout.
+
+### Basic
+
+```jsx
+import { Grid } from '@flatironschool/ui'
+
+export YourComponent = (): JSX.Element => (
+  <Grid container alignItems="center" justify="center" spacing={2}>
+    <Grid item xs={4} sm={3}>
+      Left Side
+    </Grid>
+
+    <Grid item xs={5} sm={9}>
+      Right Side
+    </Grid>
+  </Grid>
+)
+```
+
+## Custom Styling of Grid Components
+
+This ensures that only the expected props are passed to `Grid`.
+
+```jsx
+import { Grid } from '@flatironschool/ui'
+
+const StyledFooter = styled(({ background, foreground, ...rest }) => <Grid container component="footer" alignItems="center" justify="center" {...rest} />)`
+  background-color: ${background};
+  color: ${foreground};
+  max-height: 100px;
+`
+
+export YourComponent = (): JSX.Element => (
+  <StyledFooter xs={12}>
+    <p>Left side</p>
+    <p>Right side</p>
+  </StyledFooter>
+)
+```

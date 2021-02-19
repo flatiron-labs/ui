@@ -1,15 +1,15 @@
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
-import { Layout } from '.'
+import { Container } from '.'
 
-describe('Layout', () => {
+describe('Container', () => {
   const text = 'Content'
 
   const renderComponent = () =>
     render(
-      <Layout>
+      <Container>
         <p>Content</p>
-      </Layout>
+      </Container>
     )
 
   it('should append the global styles', async () => {

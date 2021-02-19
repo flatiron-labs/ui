@@ -1,18 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Grid, Icon, Hidden } from '~/components'
+import { Grid, Hidden, Icon } from '~/components'
 import { Color, Media } from '~/styles'
 
 interface StyledLinkProps {
   active?: boolean
 }
 
-const StyledFooter = styled(Grid)`
+const StyledFooter = styled(rest => (
+  <Grid container component="footer" alignItems="center" justify="center" {...rest} />
+))`
   background-color: ${Color.yellow};
   color: ${Color.black};
   width: 100%;
   max-height: 100px;
-` as typeof Grid
+`
 
 const StyledFooterLink = styled.a<StyledLinkProps>`
   color: ${Color.black};
@@ -30,11 +32,11 @@ const StyledFooterLink = styled.a<StyledLinkProps>`
   }
 `
 
-const StyledSocialList = styled(Grid)`
+const StyledSocialList = styled(rest => <Grid container direction="row" alignItems="center" {...rest} />)`
   list-style-type: none;
   padding: 0;
   margin: 0;
-` as typeof Grid
+`
 
 const StyledSocialLink = styled.li<StyledLinkProps>`
   padding: 3px;
@@ -42,7 +44,7 @@ const StyledSocialLink = styled.li<StyledLinkProps>`
 `
 
 export const Footer = (): JSX.Element => (
-  <StyledFooter container component="footer" alignItems="center" justify="center">
+  <StyledFooter>
     <Grid item xs={10} sm={10} md={7}>
       <Grid container component="nav" direction="row" justify="space-between" alignItems="center" aria-label="Footer">
         <StyledFooterLink href="https://portal.flatironschool.com/tos">Accessibility</StyledFooterLink>
@@ -54,7 +56,7 @@ export const Footer = (): JSX.Element => (
 
     <Hidden smDown>
       <Grid item xs={3}>
-        <StyledSocialList container component="ul" direction="row" alignItems="center">
+        <StyledSocialList>
           <StyledSocialLink>
             <a href="#" title="Facebook">
               <Icon.Github color={Color.black} />

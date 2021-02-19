@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout should append the global styles 1`] = `
+exports[`Container should append the global styles 1`] = `
 <style
   data-styled="active"
   data-styled-version="5.2.1"

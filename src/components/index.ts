@@ -1,15 +1,15 @@
-import Grid from '@material-ui/core/Grid'
 import Hidden from '@material-ui/core/Hidden'
 
-export { Grid, Hidden }
+export { Hidden }
 
 export * from './Avatar'
 export * from './Button'
+export * from './Container'
 export * from './Footer'
+export * from './Grid'
 export * from './Header'
 export * from './Heading'
 export * from './Icon'
-export * from './Layout'
 export * from './Sidebar'
 export * from './SideNav'
 export * from './Spinner'

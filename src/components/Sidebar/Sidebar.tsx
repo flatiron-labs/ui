@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GridSize } from '@material-ui/core'
-import { Grid, Avatar, Icon, Hidden } from '~/components'
+import { Grid, Avatar, Icon, Hidden, GridSize } from '~/components'
 import { Color, Media } from '~/styles'
 
 interface StyledLinkProps {
