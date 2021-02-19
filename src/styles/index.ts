@@ -27,3 +27,10 @@ export const Breakpoint = {
   lg: 1440,
   xl: 1920
 }
+
+export const Media = {
+  xs: `@media only screen and (min-width: ${Breakpoint.xs + 1}px)`,
+  sm: `@media only screen and (min-width: ${Breakpoint.sm + 1}px)`,
+  md: `@media only screen and (min-width: ${Breakpoint.md + 1}px)`,
+  lg: `@media only screen and (min-width: ${Breakpoint.lg + 1}px)`
+}

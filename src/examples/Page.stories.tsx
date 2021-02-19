@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Story, Meta } from '@storybook/react'
-import { Grid, Icon, Toggle } from '~/components'
-import { Color } from '~/styles'
+import { Grid, Icon, Toggle, Hidden } from '~/components'
+import { Color, Media } from '~/styles'
 
 export default {
   title: 'Examples/Page'
@@ -20,6 +20,7 @@ const StyledButton = styled.button`
 
 const StyledSidebar = styled(Grid)`
   border-right: 1px ${Color.greyDarkest} solid;
+  padding: 62px 0 0 0;
 `
 
 interface StyledLinkProps {
@@ -31,7 +32,8 @@ const StyledLink = styled.a<StyledLinkProps>`
   display: flex;
   font-size: 19px;
   text-decoration: none;
-  padding: 14px 0 15px 15%;
+  padding: 14px 0 15px;
+  justify-content: center;
   align-items: center;
 
   ${props =>
@@ -46,8 +48,13 @@ const StyledLink = styled.a<StyledLinkProps>`
     background: linear-gradient(to right, ${Color.black}, ${Color.greyDarkest} 12%);
   }
 
-  svg {
-    margin-right: 10px;
+  ${Media.md} {
+    padding: 14px 0 15px 15%;
+    justify-content: start;
+
+    svg {
+      margin-right: 10px;
+    }
   }
 `
 
@@ -83,47 +90,64 @@ const StyledSocialLink = styled.a<StyledLinkProps>`
 
 const Template: Story = () => {
   const [sidebarExpanded, setSidebarExpanded] = useState(false)
-  const handleClick = event => {
+  const handleClick = () => {
     setSidebarExpanded(!sidebarExpanded)
   }
 
   return (
     <Grid container style={{ minHeight: '100vh' }}>
+      {/* MAIN CONTENT */}
       <Grid container wrap="nowrap">
-        <StyledSidebar container direction="column" xs={2}>
-          <StyledButton type="button" onClick={handleClick}>
-            <Icon.Hamburger />
-          </StyledButton>
+        {/* SIDEBAR */}
+        <StyledSidebar container direction="column" xs={1} md={2}>
+          <Hidden mdUp>
+            <StyledButton type="button" onClick={handleClick}>
+              <Icon.Hamburger />
+            </StyledButton>
+          </Hidden>
 
           <Grid container component="nav" direction="column">
             <StyledLink href="#" active>
               <Icon.Home color={Color.white} />
-              Home
+              <Hidden smDown>Home</Hidden>
             </StyledLink>
             <StyledLink href="#">
               <Icon.User color={Color.white} />
-              Profile
+              <Hidden smDown> Profile</Hidden>
             </StyledLink>
             <StyledLink href="#">
               <Icon.Settings color={Color.white} />
-              Settings
+              <Hidden smDown>Settings</Hidden>
             </StyledLink>
           </Grid>
         </StyledSidebar>
 
-        <Grid container xs={10}>
-          <Toggle label="Side 1" />
-          <Toggle label="Side 2" />
+        {/* PAGE-SPECIFIC CONTENT */}
+        <Grid container style={{ padding: '62px 40px 0' }}>
+          <Grid item xs={12}>
+            <Grid container direction="row" justify="space-between" style={{ background: 'green' }}>
+              <Grid item>
+                <p>Header</p>
+              </Grid>
+
+              <Grid item>
+                <Toggle label="new student home experience" />
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
 
+      {/* FOOTER */}
       <StyledFooter container component="footer" alignItems="center" justify="center" spacing={1}>
         <Grid item xs={7}>
           <Grid container component="nav" direction="row" justify="space-between" alignItems="center">
-            <StyledFooterLink href="#">Accessibility</StyledFooterLink>
-            <StyledFooterLink href="#">Terms &amp; Conditions</StyledFooterLink>
-            <StyledFooterLink href="#">Code of Conduct</StyledFooterLink>
-            <StyledFooterLink href="#">Privacy Policy</StyledFooterLink>
+            <StyledFooterLink href="https://portal.flatironschool.com/tos">Accessibility</StyledFooterLink>
+            <StyledFooterLink href="https://flatironschool.com/accessibility">Terms &amp; Conditions</StyledFooterLink>
+            <StyledFooterLink href="https://portal.flatironschool.com/code-of-conduct">
+              Code of Conduct
+            </StyledFooterLink>
+            <StyledFooterLink href="https://portal.flatironschool.com/privacy">Privacy Policy</StyledFooterLink>
           </Grid>
         </Grid>
 

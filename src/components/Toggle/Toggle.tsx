@@ -13,9 +13,9 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  font-size: 15px;
+  font-size: 14px;
   font-family: ${Font.firaCode};
-  }
+  line-h
 `
 
 const CheckBoxLabel = styled.label`
@@ -27,6 +27,7 @@ const CheckBoxLabel = styled.label`
   display: flex;
   height: 23px;
   width: 42px;
+
   &::after {
     background: ${Color.white};
     border-color: ${Color.white};
@@ -43,16 +44,17 @@ const CheckBoxLabel = styled.label`
 `
 
 const CheckBox = styled.input`
-  border-radius: 15px;
-  height: 25px;
+  height: 0px;
   opacity: 0;
   width: 40px;
   z-index: 1;
+
   &:checked + ${CheckBoxLabel} {
     border-color: ${Color.turq};
     background: ${Color.black};
     border-style: solid;
     border-width: 2px;
+
     &::after {
       background: ${Color.white};
       border-color: ${Color.white};
@@ -72,11 +74,10 @@ const CheckBox = styled.input`
 
 const StyledLabel = styled.div`
   border-color: ${Color.black};
-  padding: 4px;
-  }
+  padding: 4px 4px 4px 8px;
 `
 
-// TODO: Update so label is clickable
+// TODO: Update so there's not two labels
 export const Toggle = (props: ToggleProps): JSX.Element => {
   const { label, 'data-testid': dataTestId } = props
   const id = uuid()
