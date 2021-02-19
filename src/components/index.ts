@@ -6,8 +6,11 @@ export { Grid, Hidden }
 
 export * from './Avatar'
 export * from './Button'
+export * from './Footer'
+export * from './Header'
 export * from './Icon'
 export * from './Layout'
+export * from './Sidebar'
 export * from './SideNav'
 export * from './Spinner'
 export * from './Toggle'
