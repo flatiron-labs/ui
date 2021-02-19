@@ -4,6 +4,7 @@ import Hidden from '@material-ui/core/Hidden'
 
 export { Grid, Hidden }
 
+export * from './Avatar'
 export * from './Button'
 export * from './Icon'
 export * from './Layout'

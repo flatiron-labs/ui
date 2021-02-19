@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Story, Meta } from '@storybook/react'
-import { Grid, Icon, Toggle, Hidden } from '~/components'
+import { Grid, Icon, Toggle, Hidden, Avatar } from '~/components'
 import { Color, Media } from '~/styles'
 
 export default {
@@ -88,6 +88,10 @@ const StyledSocialLink = styled.a<StyledLinkProps>`
   padding: 3px;
 `
 
+const StyledAvatar = styled(Avatar)`
+  margin: 0 auto 40px;
+`
+
 const Template: Story = () => {
   const [sidebarExpanded, setSidebarExpanded] = useState(false)
   const handleClick = () => {
@@ -100,6 +104,10 @@ const Template: Story = () => {
       <Grid container wrap="nowrap">
         {/* SIDEBAR */}
         <StyledSidebar container direction="column" xs={1} md={2}>
+          <Hidden smDown>
+            <StyledAvatar>JS</StyledAvatar>
+          </Hidden>
+
           <Hidden mdUp>
             <StyledButton type="button" onClick={handleClick}>
               <Icon.Hamburger />
@@ -125,7 +133,7 @@ const Template: Story = () => {
         {/* PAGE-SPECIFIC CONTENT */}
         <Grid container style={{ padding: '62px 40px 0' }}>
           <Grid item xs={12}>
-            <Grid container direction="row" justify="space-between" style={{ background: 'green' }}>
+            <Grid container direction="row" justify="space-between">
               <Grid item>
                 <p>Header</p>
               </Grid>
