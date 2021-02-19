@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { GridSize } from '@material-ui/core'
+import { useTheme } from '@material-ui/core/styles'
 import { Grid, Avatar, Icon, Hidden } from '~/components'
 import { Color, Media } from '~/styles'
 
@@ -18,6 +20,11 @@ const StyledButton = styled.button`
 const StyledSidebar = styled(Grid)`
   border-right: 1px ${Color.greyDarkest} solid;
   padding: 62px 0 0 0;
+  transition: ${({ theme }) =>
+    theme.transitions.create('all', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    })};
 `
 
 const StyledLink = styled.a<StyledLinkProps>`
@@ -55,20 +62,25 @@ const StyledAvatar = styled(Avatar)`
   margin: 0 auto 40px;
 `
 
-export const Sidebar = (): JSX.Element => {
-  const [sidebarExpanded, setSidebarExpanded] = useState(false)
-  const handleClick = () => {
-    setSidebarExpanded(!sidebarExpanded)
-  }
+export interface SidebarProps {
+  onExpand(): void
+  lg?: boolean | GridSize
+  md?: boolean | GridSize
+  sm?: boolean | GridSize
+  xs?: boolean | GridSize
+}
+
+export const Sidebar = ({ onExpand, ...props }: SidebarProps): JSX.Element => {
+  const theme = useTheme()
 
   return (
-    <StyledSidebar container direction="column" xs={1} md={2}>
+    <StyledSidebar container direction="column" theme={theme} {...props}>
       <Hidden smDown>
         <StyledAvatar>JS</StyledAvatar>
       </Hidden>
 
       <Hidden mdUp>
-        <StyledButton type="button" onClick={handleClick} aria-label="Open navigation">
+        <StyledButton type="button" onClick={onExpand} aria-label="Open navigation">
           <Icon.Hamburger />
         </StyledButton>
       </Hidden>
