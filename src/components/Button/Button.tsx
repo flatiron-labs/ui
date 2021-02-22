@@ -10,7 +10,6 @@ export interface StyledButtonProps {
 }
 
 export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
-  'data-testid'?: string
   children?: React.ReactNode
   onClick?(): React.MouseEventHandler<HTMLButtonElement>
 }
