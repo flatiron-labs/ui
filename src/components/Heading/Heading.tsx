@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Font } from '~/styles'
+import { Color, Font } from '~/styles'
 
 export interface StyledHeadingProps {
+  color?: string
   h1?: boolean
   h2?: boolean
   h3?: boolean
@@ -15,6 +16,7 @@ export interface HeadingProps extends StyledHeadingProps {
 }
 
 const StyledHeading = styled.header<StyledHeadingProps>`
+  color: ${props => (props.color ? props.color : Color.white)};
   font-family: ${Font.firaCode}, monospace;
   font-size: 1.65rem;
   font-weight: ${props => (props.bold ? 'bold' : 'normal')};

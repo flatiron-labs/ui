@@ -7,14 +7,6 @@ export default {
   title: 'Inputs/Button',
   component: Button,
   argTypes: {
-    size: {
-      defaultValue: 'sm',
-      description: 'Adjust size  sm | md | lg',
-      control: {
-        type: 'select',
-        options: ['sm', 'md', 'lg']
-      }
-    },
     primary: {
       defaultValue: false,
       description: 'Adjust button type',

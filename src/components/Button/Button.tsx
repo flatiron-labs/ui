@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Color } from '~/styles'
 
-export type ButtonSize = 'sm' | 'md' | 'lg' | undefined
-
 export interface StyledButtonProps {
   primary?: boolean
-  size?: ButtonSize
+  sm?: boolean
+  md?: boolean
+  lg?: boolean
+  width?: string
 }
 
 export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -18,7 +19,10 @@ const StyledButton = styled.button<StyledButtonProps>`
   border-radius: 0;
   text-align: center;
   font-weight: bold;
-
+  background-color: transparent;
+  font-size: 12px;
+  padding: 10px 30px;
+  width: ${props => (props.width ? props.width : undefined)};
   ${props =>
     props.primary &&
     `
@@ -29,7 +33,6 @@ const StyledButton = styled.button<StyledButtonProps>`
         outline: 0;
       }
     `}
-
   ${props =>
     !props.primary &&
     `
@@ -43,27 +46,24 @@ const StyledButton = styled.button<StyledButtonProps>`
         outline: 0;
       }
     `}
-
-  ${props =>
-    (props.size === 'sm' || !props.size) &&
+    ${props =>
+    props.sm &&
     `
       font-size: 12px;
       padding: 10px 30px;
     `}
-
-  ${props =>
-    props.size === 'md' &&
+    ${props =>
+    props.md &&
     `
       font-size: 14px;
       padding: 11px 40px;
     `}
-
-  ${props =>
-    props.size === 'lg' &&
+    ${props =>
+    props.lg &&
     `
       font-size: 16px;
       padding: 12px 50px;
-    `}
+    `};
 `
 
 export const Button = ({ children, ...props }: ButtonProps): JSX.Element => (
