@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, Font } from '~/styles'
+import { Font } from '~/styles'
 
 export interface StyledHeadingProps {
   color?: string
