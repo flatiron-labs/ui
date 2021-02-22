@@ -16,7 +16,7 @@ export interface HeadingProps extends StyledHeadingProps {
 }
 
 const StyledHeading = styled.header<StyledHeadingProps>`
-  color: ${props => (props.color ? props.color : Color.white)};
+  color: ${props => props.color ?? props.color};
   font-family: ${Font.firaCode}, monospace;
   font-size: 1.65rem;
   font-weight: ${props => (props.bold ? 'bold' : 'normal')};

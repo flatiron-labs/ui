@@ -22,7 +22,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   background-color: transparent;
   font-size: 12px;
   padding: 10px 30px;
-  width: ${props => (props.width ? props.width : undefined)};
+  width: ${props => props.width};
   ${props =>
     props.primary &&
     `
@@ -45,12 +45,6 @@ const StyledButton = styled.button<StyledButtonProps>`
         color: ${Color.black};
         outline: 0;
       }
-    `}
-    ${props =>
-    props.sm &&
-    `
-      font-size: 12px;
-      padding: 10px 30px;
     `}
     ${props =>
     props.md &&
