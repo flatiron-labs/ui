@@ -4,7 +4,7 @@ import { render, screen } from '~/test/utils'
 
 import { MediaCard, MediaCardProps } from '.'
 
-const src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU'
+const imgSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU'
 
 describe('Button', () => {
   const renderComponent = ({ src, children }: MediaCardProps) => {
@@ -16,7 +16,7 @@ describe('Button', () => {
   }
 
   it('should render children', () => {
-    renderComponent({ children: <p>foo</p>, src: src })
+    renderComponent({ children: <p>foo</p>, src: imgSrc })
     screen.getByText(/foo/i)
   })
 })
