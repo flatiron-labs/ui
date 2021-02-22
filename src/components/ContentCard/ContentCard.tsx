@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Color } from '~/styles'
 import { Grid } from '../Grid'
+import { Heading } from '../Heading'
 
 export interface ContentCardProps {
   label: string
@@ -10,27 +11,27 @@ export interface ContentCardProps {
 
 const StyledGrid = styled(Grid)`
   border: 2px solid ${Color.turqDark};
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   margin: 10px;
   padding: 10px;
 `
 
-const StyledLabel = styled.div`
+const StyledHeading = styled(Heading)`
   color: ${Color.turq};
-  font-size: 18px;
+  margin: 5px;
   padding: 2px;
 `
-const StyledValue = styled.div`
+const StyledValue = styled.p`
   color: ${Color.white};
   font-size: 18px;
+  margin: 5px;
   padding: 2px;
 `
 
 export const ContentCard = ({ label, value }: ContentCardProps): JSX.Element => (
-  <StyledGrid item sm={12} lg={4}>
-    <StyledLabel>{label}</StyledLabel>
+  <StyledGrid item sm={10} md={6}>
+    <StyledHeading h4 bold>
+      {label}
+    </StyledHeading>
     <StyledValue>{value}</StyledValue>
   </StyledGrid>
 )

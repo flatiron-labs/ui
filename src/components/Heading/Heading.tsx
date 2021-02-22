@@ -6,6 +6,7 @@ export interface StyledHeadingProps {
   h1?: boolean
   h2?: boolean
   h3?: boolean
+  h4?: boolean
   bold?: boolean
 }
 
@@ -31,6 +32,12 @@ const StyledHeading = styled.header<StyledHeadingProps>`
     props.h3 &&
     ` 
     font-size: 1.65rem;
+  `};
+
+  ${props =>
+    props.h4 &&
+    ` 
+    font-size: 1.2rem;
   `};
 `
 
