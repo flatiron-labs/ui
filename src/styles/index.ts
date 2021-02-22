@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components'
+import { normalize } from 'styled-normalize'
+
 export const Color = {
   black: 'rgba(3, 4, 22, 1)',
   grey: 'rgba(214, 226, 231, 1)',
@@ -34,3 +37,13 @@ export const Media = {
   md: `@media only screen and (min-width: ${Breakpoint.md + 1}px)`,
   lg: `@media only screen and (min-width: ${Breakpoint.lg + 1}px)`
 }
+
+export const GlobalStyle = createGlobalStyle`
+  ${normalize}
+
+  body {
+    background-color: ${Color.black};
+    font-family: ${Font.firaCode};
+    color: ${Color.white};
+  }
+`
