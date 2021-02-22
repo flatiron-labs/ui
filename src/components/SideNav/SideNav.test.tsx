@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
 import * as useWindowWidth from '@react-hook/window-size'
+import { render, screen } from '~/test/utils'
 import { SideNav, SideNavItem } from '.'
 
 describe('SideNav', () => {

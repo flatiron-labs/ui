@@ -177,8 +177,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "yarn eslint .",
-    "*.{js,jsx,ts,tsx,json,css,md,mdx,yml,yaml}": "yarn prettier --write ."
+    "*.{js,jsx,ts,tsx}": "yarn eslint",
+    "*.{js,jsx,ts,tsx,json,css,md,mdx,yml,yaml}": "yarn prettier --write"
   },
   "prettier": {
     "printWidth": 120,

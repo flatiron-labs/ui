@@ -3,24 +3,21 @@ import styled from 'styled-components'
 import { Grid, Hidden, Icon } from '~/components'
 import { Color, Media } from '~/styles'
 
-interface StyledLinkProps {
-  active?: boolean
-}
-
-const StyledFooter = styled(rest => (
-  <Grid container component="footer" alignItems="center" justify="center" {...rest} />
-))`
+const StyledFooter = styled(rest => <Grid container component="footer" {...rest} />)`
   background-color: ${Color.yellow};
   color: ${Color.black};
   width: 100%;
   max-height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
 `
 
-const StyledFooterLink = styled.a<StyledLinkProps>`
+const FooterLink = styled.a`
   color: ${Color.black};
   font-size: 14px;
+  padding: 7px 0;
   text-decoration: none;
-  light-height: 19.2px;
   font-weight: bold;
 
   &:hover {
@@ -32,57 +29,61 @@ const StyledFooterLink = styled.a<StyledLinkProps>`
   }
 `
 
-const StyledSocialList = styled(rest => <Grid container direction="row" alignItems="center" {...rest} />)`
+const SocialLinks = styled.ul`
+  display: flex;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  align-items: center;
+  direction: row;
+  justify-content: flex-end;
 `
 
-const StyledSocialLink = styled.li<StyledLinkProps>`
+const SocialLink = styled.li`
   padding: 3px;
   cursor: pointer;
 `
 
 export const Footer = (): JSX.Element => (
   <StyledFooter>
-    <Grid item xs={10} sm={10} md={7}>
+    <Grid item xs={10} sm={10} md={8}>
       <Grid container component="nav" direction="row" justify="space-between" alignItems="center" aria-label="Footer">
-        <StyledFooterLink href="https://portal.flatironschool.com/tos">Accessibility</StyledFooterLink>
-        <StyledFooterLink href="https://flatironschool.com/accessibility">Terms &amp; Conditions</StyledFooterLink>
-        <StyledFooterLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</StyledFooterLink>
-        <StyledFooterLink href="https://portal.flatironschool.com/privacy">Privacy Policy</StyledFooterLink>
+        <FooterLink href="https://portal.flatironschool.com/tos">Accessibility</FooterLink>
+        <FooterLink href="https://flatironschool.com/accessibility">Terms &amp; Conditions</FooterLink>
+        <FooterLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</FooterLink>
+        <FooterLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterLink>
       </Grid>
     </Grid>
 
     <Hidden smDown>
-      <Grid item xs={3}>
-        <StyledSocialList>
-          <StyledSocialLink>
+      <Grid item xs={2}>
+        <SocialLinks aria-label="Social links">
+          <SocialLink>
             <a href="#" title="Facebook">
               <Icon.Github color={Color.black} />
             </a>
-          </StyledSocialLink>
-          <StyledSocialLink>
+          </SocialLink>
+          <SocialLink>
             <a href="#" title="Twitter">
               <Icon.Github color={Color.black} />
             </a>
-          </StyledSocialLink>
-          <StyledSocialLink>
+          </SocialLink>
+          <SocialLink>
             <a href="#" title="Instagram">
               <Icon.Github color={Color.black} />
             </a>
-          </StyledSocialLink>
-          <StyledSocialLink>
+          </SocialLink>
+          <SocialLink>
             <a href="#" title="Github">
               <Icon.Github color={Color.black} />
             </a>
-          </StyledSocialLink>
-          <StyledSocialLink>
+          </SocialLink>
+          <SocialLink>
             <a href="#" title="YouTube">
               <Icon.Github color={Color.black} />
             </a>
-          </StyledSocialLink>
-        </StyledSocialList>
+          </SocialLink>
+        </SocialLinks>
       </Grid>
     </Hidden>
   </StyledFooter>
