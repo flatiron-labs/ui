@@ -8,10 +8,10 @@ export interface ContentCardProps {
 }
 
 const StyledDiv = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
   border: 2px solid ${Color.greyDarkest};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 10px;
   width: auto;
   ${Media.sm} {
