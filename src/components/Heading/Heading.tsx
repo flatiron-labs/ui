@@ -11,7 +11,6 @@ export interface StyledHeadingProps {
 
 export interface HeadingProps extends StyledHeadingProps {
   children?: React.ReactNode
-  'data-testid'?: string
 }
 
 const StyledHeading = styled.header<StyledHeadingProps>`
