@@ -8,7 +8,7 @@ export interface PageProps {
   style?: React.CSSProperties
 }
 
-export interface ContentProps extends DefaultBreakpoints {
+export interface ContentProps {
   children?: React.ReactNode
   lg?: boolean | GridSize
   md?: boolean | GridSize
