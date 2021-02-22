@@ -258,6 +258,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@react-hook/window-size": "^3.0.7",
+    "storybook-addon-jsx": "^7.3.6",
     "styled-normalize": "^8.0.7",
     "uuid": "^8.3.2"
   }

@@ -25,7 +25,8 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/preset-create-react-app'
+    '@storybook/preset-create-react-app',
+    'storybook-addon-jsx'
   ],
   webpackFinal: async config => {
     config.resolve.alias['~'] = resolve('../src/')

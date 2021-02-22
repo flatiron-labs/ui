@@ -3,7 +3,15 @@ import { Layout } from '~/components'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
-  layout: 'fullscreen'
+  layout: 'fullscreen',
+  docs: {
+    page: null
+  },
+  previewTabs: {
+    'storybook/docs/panel': {
+      hidden: true
+    }
+  }
 }
 
 export const decorators = [
@@ -13,3 +21,8 @@ export const decorators = [
     </Layout>
   )
 ]
+
+const { addDecorator } = require('@storybook/react')
+const { jsxDecorator } = require('storybook-addon-jsx')
+
+addDecorator(jsxDecorator)

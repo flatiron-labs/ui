@@ -6,7 +6,7 @@ export { Grid, Hidden }
 export * from './Avatar'
 export * from './Button'
 export * from './Footer'
-export * from './Header'
+export * from './Heading'
 export * from './Icon'
 export * from './Layout'
 export * from './Sidebar'
