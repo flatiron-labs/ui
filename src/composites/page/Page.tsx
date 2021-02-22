@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GridSize } from '@material-ui/core'
 import styled from 'styled-components'
-import { Grid, Header, Footer, Sidebar } from '../..'
+import { Grid, Header, Footer, Sidebar } from '~/index' // Intentionally using the root index.ts
 
 export interface PageProps {
   children: JSX.Element
