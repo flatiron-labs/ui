@@ -7,7 +7,7 @@ const StyledFooter = styled(rest => <Grid container component="footer" {...rest}
   background-color: ${Color.yellow};
   color: ${Color.black};
   width: 100%;
-  max-height: 100px;
+  height: 100px;
   justify-content: center;
   align-items: center;
   padding: 0 40px;

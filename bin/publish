@@ -1,4 +1,5 @@
 #!/bin/sh
 
 yarn login
+yarn build
 yarn publish --access public "${@:1}"

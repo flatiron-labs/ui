@@ -4,7 +4,7 @@
 
 ### Install
 
-`yarn add @flatiron-school/ui`
+`yarn add @flatiron-school/ui @material-ui/core`
 
 ### Usage
 
