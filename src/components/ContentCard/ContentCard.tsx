@@ -1,22 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, Media } from '~/styles'
+import { Color } from '~/styles'
+import { Grid } from '../Grid'
 
 export interface ContentCardProps {
   label: string
   value: string
 }
 
-const StyledDiv = styled.div`
-  border: 2px solid ${Color.greyDarkest};
+const StyledGrid = styled(Grid)`
+  border: 2px solid ${Color.turqDark};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: 10px;
   padding: 10px;
-  width: auto;
-  ${Media.sm} {
-    width: 400px;
-  }
 `
 
 const StyledLabel = styled.div`
@@ -30,13 +28,9 @@ const StyledValue = styled.div`
   padding: 2px;
 `
 
-export const ContentCard = ({ ...props }: ContentCardProps): JSX.Element => {
-  const { label, value } = props
-
-  return (
-    <StyledDiv>
-      <StyledLabel>{label}</StyledLabel>
-      <StyledValue>{value}</StyledValue>
-    </StyledDiv>
-  )
-}
+export const ContentCard = ({ label, value }: ContentCardProps): JSX.Element => (
+  <StyledGrid item sm={12} lg={4}>
+    <StyledLabel>{label}</StyledLabel>
+    <StyledValue>{value}</StyledValue>
+  </StyledGrid>
+)

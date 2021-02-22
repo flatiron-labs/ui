@@ -11,6 +11,6 @@ const Template: Story = (args: ContentCardProps) => <ContentCard {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  label: 'Full Name:',
+  label: 'Full Name',
   value: 'Johnathan Smith'
 }
