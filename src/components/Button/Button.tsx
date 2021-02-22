@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, Font } from '~/styles'
+import { Color } from '~/styles'
 
 export type ButtonSize = 'sm' | 'md' | 'lg' | undefined
 
