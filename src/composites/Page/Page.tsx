@@ -17,7 +17,7 @@ export interface ContentProps {
 }
 
 const StyledContent = styled(Grid)<ContentProps>`
-  padding: 62px 40px 0;
+  padding: 62px 62px 0;
   transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
 `
 

@@ -9,29 +9,30 @@ export interface ContentCardProps {
   value: string
 }
 
-const StyledGrid = styled(Grid)`
+const StyledDiv = styled.div`
   border: 2px solid ${Color.turqDark};
-  margin: 10px;
-  padding: 10px;
 `
 
 const StyledHeading = styled(Heading)`
   color: ${Color.turq};
-  margin: 5px;
-  padding: 2px;
+  padding-top: 10px;
+  padding-left: 10px;
 `
 const StyledValue = styled.p`
   color: ${Color.white};
   font-size: 18px;
   margin: 5px;
-  padding: 2px;
+  padding-bottom: 10px;
+  padding-left: 5px;
 `
 
 export const ContentCard = ({ label, value }: ContentCardProps): JSX.Element => (
-  <StyledGrid item sm={10} md={6}>
-    <StyledHeading h4 bold>
-      {label}
-    </StyledHeading>
-    <StyledValue>{value}</StyledValue>
-  </StyledGrid>
+  <Grid item xs={12} md={6}>
+    <StyledDiv>
+      <StyledHeading h4 bold>
+        {label}
+      </StyledHeading>
+      <StyledValue>{value}</StyledValue>
+    </StyledDiv>
+  </Grid>
 )
