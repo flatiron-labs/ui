@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Grid, Heading } from '~/components'
+import { Grid } from '~/components/Grid'
+import { Heading } from '~/components/Heading'
 
 export interface SectionProps {
   title: string
