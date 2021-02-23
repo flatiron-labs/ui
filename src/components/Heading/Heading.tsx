@@ -20,27 +20,32 @@ const StyledHeading = styled.header<StyledHeadingProps>`
   font-family: ${Font.firaCode}, monospace;
   font-size: 1.65rem;
   font-weight: ${props => (props.bold ? 'bold' : 'normal')};
+
   ${props =>
     props.h1 &&
-    ` 
+    `
     font-size: 5.45rem;
   `}
+
   ${props =>
     props.h2 &&
-    ` 
+    `
     font-size: 3.3rem;
   `}
-    ${props =>
+
+  ${props =>
     props.h3 &&
-    ` 
+    `
     font-size: 1.65rem;
-  `};
+    padding-bottom: 30px;
+  `}
 
   ${props =>
     props.h4 &&
-    ` 
+    `
     font-size: 1.2rem;
-  `};
+    padding-bottom: 20px;
+  `}
 `
 
 export const Heading = ({ children, ...props }: HeadingProps): JSX.Element => (

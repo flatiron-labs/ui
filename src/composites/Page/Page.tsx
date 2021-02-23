@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Grid, Header, Footer, Sidebar } from '~/index' // Intentionally using the root index.ts
 
 export interface PageProps {
-  children: JSX.Element
+  children: JSX.Element[]
   style?: React.CSSProperties
 }
 
