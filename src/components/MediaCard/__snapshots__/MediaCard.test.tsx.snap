@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MediaCard should render children 1`] = `
+exports[`MediaCard should render a custom image element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-dlfnbm fPGyft MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
+      <img
+        alt=""
+        role="presentation"
+        src="https://placekeanu.com/318/159/g"
+      />
       <div
-        class="sc-dlfnbm cYiIWC"
+        class="MuiGrid-root sc-hKgILt hdPDBS MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
       >
-        <img
-          class="sc-hKgILt cfbwde"
-          role="presentation"
-          src="https://placekeanu.com/318/159/g"
-        />
         <div
-          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
+          class="MuiGrid-root MuiGrid-item"
         >
           <header
             class="sc-gsTCUz joVLmT"
@@ -26,13 +26,49 @@ exports[`MediaCard should render children 1`] = `
           <p>
             this is information about gradleaders
           </p>
-          <button
-            class="sc-bdfBwQ idpIFJ"
-            width="100%"
-          >
-            View Gradleaders
-          </button>
         </div>
+        <button
+          class="sc-bdfBwQ jRwVeu"
+        >
+          View Gradleaders
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MediaCard should render children 1`] = `
+<body>
+  <div>
+    <div
+      class="MuiGrid-root sc-dlfnbm fPGyft MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <img
+        alt=""
+        src="https://placekeanu.com/318/159/g"
+      />
+      <div
+        class="MuiGrid-root sc-hKgILt hdPDBS MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+      >
+        <div
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <header
+            class="sc-gsTCUz joVLmT"
+            color="rgba(0, 239, 225, 1)"
+          >
+            Canvas
+          </header>
+          <p>
+            this is information about gradleaders
+          </p>
+        </div>
+        <button
+          class="sc-bdfBwQ jRwVeu"
+        >
+          View Gradleaders
+        </button>
       </div>
     </div>
   </div>

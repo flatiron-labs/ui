@@ -78,30 +78,32 @@ export interface SidebarProps {
 }
 
 export const Sidebar = ({ expanded, onExpand, ...props }: SidebarProps): JSX.Element => (
-  <StyledSidebar container direction="column" {...props}>
-    <Hidden smDown>
-      <StyledAvatar>JS</StyledAvatar>
-    </Hidden>
+  <StyledSidebar item {...props}>
+    <Grid container direction="column">
+      <Hidden smDown>
+        <StyledAvatar>JS</StyledAvatar>
+      </Hidden>
 
-    <Hidden mdUp>
-      <StyledButton type="button" onClick={onExpand} aria-label="Open navigation">
-        <Icon.Hamburger />
-      </StyledButton>
-    </Hidden>
+      <Hidden mdUp>
+        <StyledButton type="button" onClick={onExpand} aria-label="Open navigation">
+          <Icon.Hamburger />
+        </StyledButton>
+      </Hidden>
 
-    <Grid container component="nav" direction="column" aria-label="Primary">
-      <StyledLink href="#" title="Home" expanded={expanded} active>
-        <Icon.Home color={Color.white} />
-        {expanded ? <>Home</> : <Hidden smDown>Home</Hidden>}
-      </StyledLink>
-      <StyledLink href="#" expanded={expanded} title="Profile">
-        <Icon.User color={Color.white} />
-        {expanded ? <>Profile</> : <Hidden smDown> Profile</Hidden>}
-      </StyledLink>
-      <StyledLink href="#" expanded={expanded} title="Settings">
-        <Icon.Settings color={Color.white} />
-        {expanded ? <>Settings</> : <Hidden smDown>Settings</Hidden>}
-      </StyledLink>
+      <Grid container component="nav" direction="column" aria-label="Primary">
+        <StyledLink href="#" title="Home" expanded={expanded} active>
+          <Icon.Home color={Color.white} />
+          {expanded ? <>Home</> : <Hidden smDown>Home</Hidden>}
+        </StyledLink>
+        <StyledLink href="#" expanded={expanded} title="Profile">
+          <Icon.User color={Color.white} />
+          {expanded ? <>Profile</> : <Hidden smDown> Profile</Hidden>}
+        </StyledLink>
+        <StyledLink href="#" expanded={expanded} title="Settings">
+          <Icon.Settings color={Color.white} />
+          {expanded ? <>Settings</> : <Hidden smDown>Settings</Hidden>}
+        </StyledLink>
+      </Grid>
     </Grid>
   </StyledSidebar>
 )

@@ -7,7 +7,7 @@ export interface StyledButtonProps {
   sm?: boolean
   md?: boolean
   lg?: boolean
-  width?: string
+  style?: React.CSSProperties
 }
 
 export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -22,7 +22,8 @@ const StyledButton = styled.button<StyledButtonProps>`
   background-color: transparent;
   font-size: 12px;
   padding: 10px 30px;
-  width: ${props => props.width};
+  cursor: pointer;
+
   ${props =>
     props.primary &&
     `
@@ -33,6 +34,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         outline: 0;
       }
     `}
+
   ${props =>
     !props.primary &&
     `
@@ -46,13 +48,15 @@ const StyledButton = styled.button<StyledButtonProps>`
         outline: 0;
       }
     `}
-    ${props =>
+
+  ${props =>
     props.md &&
     `
       font-size: 14px;
       padding: 11px 40px;
     `}
-    ${props =>
+
+  ${props =>
     props.lg &&
     `
       font-size: 16px;

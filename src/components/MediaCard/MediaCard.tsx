@@ -6,43 +6,55 @@ import { Grid } from '~/components/Grid'
 import { Heading } from '~/components/Heading'
 
 export interface MediaCardProps {
-  image: string
+  image: string | JSX.Element
   title: string
   description: string
   buttonText: string
   onClick: (e: React.MouseEvent) => void
 }
 
-const StyledDiv = styled.div`
-  align-items: center;
+const Container = styled(props => (
+  <Grid
+    item
+    container
+    xs={12}
+    sm={6}
+    md={4}
+    alignItems="stretch"
+    alignContent="flex-start"
+    direction="column"
+    {...props}
+  />
+))`
+  img {
+    max-height: 140px;
+    width: 100%;
+  }
+`
+
+const Content = styled(props => (
+  <Grid item container direction="column" alignContent="space-between" justify="space-between" {...props} />
+))`
+  flex-grow: 1;
+  padding: 1.5rem;
   background-color: ${Color.greyDarkest};
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  padding-bottom: 15px;
 `
 
-const StyledImg = styled.img`
-  height: 140px;
-  padding-bottom: 10px;
-  width: 100%;
-`
+export const MediaCard = ({ title, image, description, buttonText, onClick }: MediaCardProps): JSX.Element => (
+  <Container>
+    {React.isValidElement(image) ? image : <img src={image as string} alt="" />}
 
-export const MediaCard = ({ image, title, description, buttonText, onClick }: MediaCardProps): JSX.Element => (
-  <Grid item xs={12} sm={6} md={4}>
-    <StyledDiv>
-      <StyledImg src={image} role="presentation" />
-      <Grid item xs={10}>
+    <Content>
+      <Grid item>
         <Heading bold h4 color={Color.turq}>
           {title}
         </Heading>
-
         <p>{description}</p>
-
-        <Button width="100%" md onClick={onClick}>
-          {buttonText}
-        </Button>
       </Grid>
-    </StyledDiv>
-  </Grid>
+
+      <Button md onClick={onClick}>
+        {buttonText}
+      </Button>
+    </Content>
+  </Container>
 )
