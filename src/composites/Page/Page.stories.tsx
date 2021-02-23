@@ -25,21 +25,21 @@ const Template: Story = () => (
           image={src}
           title="Gradleaders"
           description="this is information about gradleaders"
-          buttonText="View Gradleaders"
+          cta="View Gradleaders"
           onClick={() => null}
         />
         <MediaCard
           image={src}
           title="Gradleaders"
           description="this is information about gradleaders"
-          buttonText="View Gradleaders"
+          cta="View Gradleaders"
           onClick={() => null}
         />
         <MediaCard
           image={src}
           title="Gradleaders"
           description="this is information about gradleaders"
-          buttonText="View Gradleaders"
+          cta="View Gradleaders"
           onClick={() => null}
         />
       </Grid>

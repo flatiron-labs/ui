@@ -9,8 +9,8 @@ export interface MediaCardProps {
   image: string | JSX.Element
   title: string
   description: string
-  buttonText: string
-  onClick: (e: React.MouseEvent) => void
+  cta: string | JSX.Element
+  onClick?: (e: React.MouseEvent) => void
 }
 
 const Container = styled(props => (
@@ -40,7 +40,7 @@ const Content = styled(props => (
   background-color: ${Color.greyDarkest};
 `
 
-export const MediaCard = ({ title, image, description, buttonText, onClick }: MediaCardProps): JSX.Element => (
+export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
   <Container>
     {React.isValidElement(image) ? image : <img src={image as string} alt="" />}
 
@@ -52,9 +52,13 @@ export const MediaCard = ({ title, image, description, buttonText, onClick }: Me
         <p>{description}</p>
       </Grid>
 
-      <Button md onClick={onClick}>
-        {buttonText}
-      </Button>
+      {React.isValidElement(cta) ? (
+        cta
+      ) : (
+        <Button md onClick={onClick}>
+          {cta as string}
+        </Button>
+      )}
     </Content>
   </Container>
 )

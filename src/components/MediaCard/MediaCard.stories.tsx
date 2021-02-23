@@ -8,9 +8,9 @@ export default {
   component: MediaCard
 } as Meta
 
-const Template: Story = ({ title, image, description, buttonText, onClick }: MediaCardProps) => (
+const Template: Story = (args: MediaCardProps) => (
   <Grid container spacing={3}>
-    <MediaCard image={image} title={title} description={description} buttonText={buttonText} onClick={onClick} />
+    <MediaCard {...args} />
   </Grid>
 )
 
@@ -20,21 +20,21 @@ const TemplateMulti: Story = () => (
       image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU"
       title="Gradleaders"
       description="sagittis eu volutpat odio facilisis mauris sit"
-      buttonText="View Gradleaders"
+      cta="View Gradleaders"
       onClick={() => null}
     />
     <MediaCard
       image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU"
       title="Gradleaders"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      buttonText="View Gradleaders"
+      cta="View Gradleaders"
       onClick={() => null}
     />
     <MediaCard
       image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU"
       title="Gradleaders"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra pharetra massa massa ultricies mi."
-      buttonText="View Gradleaders"
+      cta="View Gradleaders"
       onClick={() => null}
     />
   </Grid>
@@ -46,17 +46,30 @@ Default.args = {
   title: 'Gradleaders',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  buttonText: 'Visit Gradleaders',
+  cta: 'Visit Gradleaders',
   onClick: () => null
 }
 
 export const CustomImageElement = Template.bind({})
 CustomImageElement.args = {
-  image: <img src="https://www.placecage.com/318/159" alt="Nicholas Cage" style={{ outline: '1px solid red' }} />,
+  image: <img src="https://www.placecage.com/318/159" alt="Nicholas Cage" />,
   title: 'Nicholas Cage',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  buttonText: 'Visit'
+  cta: 'Visit'
+}
+
+export const CustomCTAElement = Template.bind({})
+CustomCTAElement.args = {
+  image: 'https://www.fillmurray.com/g/318/159',
+  title: 'Bill Murray',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  cta: (
+    <a href="https://google.com" title="Search Google" style={{ color: 'yellow' }}>
+      Google
+    </a>
+  )
 }
 
 export const Multiple = TemplateMulti.bind({})
