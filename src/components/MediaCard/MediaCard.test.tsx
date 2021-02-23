@@ -8,14 +8,16 @@ describe('MediaCard', () => {
     render(
       <MediaCard
         image="https://placekeanu.com/318/159/g"
+        title="Canvas"
         description="this is information about gradleaders"
         buttonText="View Gradleaders"
         onClick={() => null}
       />
     )
 
+    screen.getByText(/Canvas/)
     screen.getByRole('presentation')
-    screen.getByText(/this is information about gradleaders/i)
+    screen.getByText(/this is information about gradleaders/)
     screen.getByText(/View Gradleaders/)
 
     expect(document.querySelector('body')).toMatchSnapshot()

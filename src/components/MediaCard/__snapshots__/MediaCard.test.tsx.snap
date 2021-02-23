@@ -7,7 +7,7 @@ exports[`MediaCard should render children 1`] = `
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <div
-        class="sc-dlfnbm fsRxX"
+        class="sc-dlfnbm cYiIWC"
       >
         <img
           class="sc-hKgILt cfbwde"
@@ -21,7 +21,7 @@ exports[`MediaCard should render children 1`] = `
             class="sc-gsTCUz joVLmT"
             color="rgba(0, 239, 225, 1)"
           >
-            Gradleaders
+            Canvas
           </header>
           <p>
             this is information about gradleaders

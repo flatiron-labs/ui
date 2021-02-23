@@ -7,6 +7,7 @@ import { Heading } from '~/components/Heading'
 
 export interface MediaCardProps {
   image: string
+  title: string
   description: string
   buttonText: string
   onClick: (e: React.MouseEvent) => void
@@ -27,13 +28,13 @@ const StyledImg = styled.img`
   width: 100%;
 `
 
-export const MediaCard = ({ image, description, buttonText, onClick }: MediaCardProps): JSX.Element => (
+export const MediaCard = ({ image, title, description, buttonText, onClick }: MediaCardProps): JSX.Element => (
   <Grid item xs={12} sm={6} md={4}>
     <StyledDiv>
       <StyledImg src={image} role="presentation" />
       <Grid item xs={10}>
         <Heading bold h4 color={Color.turq}>
-          Gradleaders
+          {title}
         </Heading>
 
         <p>{description}</p>

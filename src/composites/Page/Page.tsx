@@ -17,8 +17,10 @@ export interface ContentProps {
 }
 
 const StyledContent = styled(Grid)<ContentProps>`
-  padding: 62px;
-  transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  && {
+    padding: 62px;
+    transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  }
 `
 
 const Content = ({ children, ...props }: ContentProps): JSX.Element => (
