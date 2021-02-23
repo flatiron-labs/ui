@@ -1,22 +1,23 @@
 import React from 'react'
-import { Grid } from '~/index'
 import { render, screen } from '~/test/utils'
 
-import { MediaCard, MediaCardProps } from '.'
+import { MediaCard } from '.'
 
-const imgSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU'
-
-describe('Button', () => {
-  const renderComponent = ({ src, children }: MediaCardProps) => {
-    render(
-      <Grid container spacing={3}>
-        <MediaCard src={src}>{children}</MediaCard>
-      </Grid>
-    )
-  }
-
+describe('MediaCard', () => {
   it('should render children', () => {
-    renderComponent({ children: <p>foo</p>, src: imgSrc })
-    screen.getByText(/foo/i)
+    render(
+      <MediaCard
+        image="https://placekeanu.com/318/159/g"
+        description="this is information about gradleaders"
+        buttonText="View Gradleaders"
+        onClick={() => null}
+      />
+    )
+
+    screen.getByRole('presentation')
+    screen.getByText(/this is information about gradleaders/i)
+    screen.getByText(/View Gradleaders/)
+
+    expect(document.querySelector('body')).toMatchSnapshot()
   })
 })

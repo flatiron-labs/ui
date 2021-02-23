@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Color } from '~/styles'
-import { Grid } from '../Grid'
+import { Button } from '~/components/Button'
+import { Grid } from '~/components/Grid'
+import { Heading } from '~/components/Heading'
 
 export interface MediaCardProps {
-  src: string
-  children?: React.ReactNode
+  image: string
+  description: string
+  buttonText: string
+  onClick: (e: React.MouseEvent) => void
 }
 
 const StyledDiv = styled.div`
@@ -23,12 +27,20 @@ const StyledImg = styled.img`
   width: 100%;
 `
 
-export const MediaCard = ({ src, children }: MediaCardProps): JSX.Element => (
+export const MediaCard = ({ image, description, buttonText, onClick }: MediaCardProps): JSX.Element => (
   <Grid item xs={12} sm={6} md={4}>
     <StyledDiv>
-      <StyledImg src={src} alt="media card image" />
+      <StyledImg src={image} role="presentation" />
       <Grid item xs={10}>
-        {children}
+        <Heading bold h4 color={Color.turq}>
+          Gradleaders
+        </Heading>
+
+        <p>{description}</p>
+
+        <Button width="100%" md onClick={onClick}>
+          {buttonText}
+        </Button>
       </Grid>
     </StyledDiv>
   </Grid>

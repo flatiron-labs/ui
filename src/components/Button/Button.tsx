@@ -12,7 +12,7 @@ export interface StyledButtonProps {
 
 export interface ButtonProps extends StyledButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode
-  onClick?(): React.MouseEventHandler<HTMLButtonElement>
+  onClick?: (e: React.MouseEvent) => void
 }
 
 const StyledButton = styled.button<StyledButtonProps>`

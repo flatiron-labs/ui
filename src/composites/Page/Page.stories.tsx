@@ -1,9 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { Button, ContentCard, Grid, Heading, Section } from '~/components'
-import { MediaCard } from '~/components/MediaCard'
-import { Color } from '~/styles'
+import { ContentCard, Grid, Section, MediaCard } from '~/components'
 
 export default {
   title: 'Composites/Page'
@@ -16,42 +14,31 @@ const Template: Story = () => (
     <Section title="Personal Information">
       <Grid container spacing={3}>
         <ContentCard label="Full Name" value="John Smith" />
-        <ContentCard label="Full Name" value="John Smith" />
-        <ContentCard label="Full Name" value="John Smith" />
+        <ContentCard label="Course" value="Software Engineering" />
+        <ContentCard label="Cohort" value="Fall 2021" />
       </Grid>
     </Section>
 
     <Section title="Links">
       <Grid container spacing={3}>
-        <MediaCard src={src}>
-          <Heading bold h4 color={Color.turq}>
-            Gradleaders
-          </Heading>
-          <p>this is information about gradleaders</p>
-          <Button width="100%" md>
-            View Gradleaders
-          </Button>
-        </MediaCard>
-
-        <MediaCard src={src}>
-          <Heading bold h4 color={Color.turq}>
-            Gradleaders
-          </Heading>
-          <p>this is information about gradleaders</p>
-          <Button width="100%" md>
-            View Pathright
-          </Button>
-        </MediaCard>
-
-        <MediaCard src={src}>
-          <Heading bold h4 color={Color.turq}>
-            Gradleaders
-          </Heading>
-          <p>this is information about gradleaders</p>
-          <Button width="100%" md>
-            View Gradleaders
-          </Button>
-        </MediaCard>
+        <MediaCard
+          image={src}
+          description="this is information about gradleaders"
+          buttonText="View Gradleaders"
+          onClick={() => null}
+        />
+        <MediaCard
+          image={src}
+          description="this is information about gradleaders"
+          buttonText="View Gradleaders"
+          onClick={() => null}
+        />
+        <MediaCard
+          image={src}
+          description="this is information about gradleaders"
+          buttonText="View Gradleaders"
+          onClick={() => null}
+        />
       </Grid>
     </Section>
   </Page>

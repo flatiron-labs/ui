@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaCard should render children 1`] = `
+<body>
+  <div>
+    <div
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+    >
+      <div
+        class="sc-dlfnbm fsRxX"
+      >
+        <img
+          class="sc-hKgILt cfbwde"
+          role="presentation"
+          src="https://placekeanu.com/318/159/g"
+        />
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-10"
+        >
+          <header
+            class="sc-gsTCUz joVLmT"
+            color="rgba(0, 239, 225, 1)"
+          >
+            Gradleaders
+          </header>
+          <p>
+            this is information about gradleaders
+          </p>
+          <button
+            class="sc-bdfBwQ idpIFJ"
+            width="100%"
+          >
+            View Gradleaders
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
