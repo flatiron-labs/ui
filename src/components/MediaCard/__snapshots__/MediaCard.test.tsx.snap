@@ -17,7 +17,7 @@ exports[`MediaCard should render a custom cta element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <header
-            class="sc-gsTCUz joVLmT"
+            class="sc-gsTCUz dtTgtJ"
             color="rgba(0, 239, 225, 1)"
           >
             Canvas
@@ -56,7 +56,7 @@ exports[`MediaCard should render a custom image element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <header
-            class="sc-gsTCUz joVLmT"
+            class="sc-gsTCUz dtTgtJ"
             color="rgba(0, 239, 225, 1)"
           >
             Canvas
@@ -93,7 +93,7 @@ exports[`MediaCard should render children 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <header
-            class="sc-gsTCUz joVLmT"
+            class="sc-gsTCUz dtTgtJ"
             color="rgba(0, 239, 225, 1)"
           >
             Canvas

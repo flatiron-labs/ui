@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Grid } from '~/components/Grid'
 import { Heading } from '~/components/Heading'
 
 export interface SectionProps {
@@ -9,13 +8,18 @@ export interface SectionProps {
   style?: React.CSSProperties
 }
 
-const StyledSection = styled(rest => <Grid container direction="column" component="section" {...rest} />)`
-  padding-top: 60px;
+const StyledSection = styled.section`
+  padding-top: 4em;
+`
+
+const StyledContent = styled.div`
+  margin-top: 1em;
 `
 
 export const Section = ({ title, children, ...props }: SectionProps): JSX.Element => (
   <StyledSection {...props}>
     <Heading h4>{title}</Heading>
-    {children}
+
+    <StyledContent>{children}</StyledContent>
   </StyledSection>
 )

@@ -37,14 +37,12 @@ const StyledHeading = styled.header<StyledHeadingProps>`
     props.h3 &&
     `
     font-size: 1.65rem;
-    padding-bottom: 30px;
   `}
 
   ${props =>
     props.h4 &&
     `
     font-size: 1.2rem;
-    padding-bottom: 20px;
   `}
 `
 
