@@ -16,10 +16,9 @@ const StyledButton = styled.button`
   cursor: pointer;
 `
 
-const StyledSidebar = styled(Grid)`
+const StyledSidebar = styled(props => <Grid item {...props} />)`
   border-right: 1px ${Color.greyDarkest} solid;
   padding: 62px 0 0 0;
-  transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
 `
 
 const StyledLink = styled.a<StyledLinkProps>`
@@ -68,7 +67,7 @@ const StyledAvatar = styled(Avatar)`
   margin: 0 auto 40px;
 `
 
-export interface SidebarProps {
+export interface SidebarProps extends StyledLinkProps {
   expanded?: boolean
   onExpand(): void
   lg?: boolean | GridSize
@@ -77,8 +76,8 @@ export interface SidebarProps {
   xs?: boolean | GridSize
 }
 
-export const Sidebar = ({ expanded, onExpand, ...props }: SidebarProps): JSX.Element => (
-  <StyledSidebar item {...props}>
+export const Sidebar = ({ active, expanded, onExpand, ...props }: SidebarProps): JSX.Element => (
+  <StyledSidebar>
     <Grid container direction="column">
       <Hidden smDown>
         <StyledAvatar>JS</StyledAvatar>
