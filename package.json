@@ -71,7 +71,8 @@
       "plugin:import/warnings",
       "plugin:import/typescript",
       "prettier",
-      "prettier/@typescript-eslint"
+      "prettier/@typescript-eslint",
+      "prettier/react"
     ],
     "rules": {
       "import/export": [
@@ -102,13 +103,7 @@
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
       "jsx-a11y/anchor-is-valid": "off",
-      "react/jsx-props-no-spreading": [
-        "error",
-        {
-          "custom": "ignore",
-          "explicitSpread": "ignore"
-        }
-      ],
+      "react/jsx-props-no-spreading": "off",
       "react/no-unescaped-entities": "off",
       "import/no-cycle": [
         0,
