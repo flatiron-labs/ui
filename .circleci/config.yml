@@ -12,8 +12,8 @@ defaults: &defaults
   working_directory: *workspace_root
   docker:
     - image: cimg/node:15.8.0
-
-cache_key: &cache_key v1-dependencies-{{ checksum "yarn.lock" }}
+resource_class: xlarge
+cache_key: &cache_key v2-dependencies-{{ checksum "yarn.lock" }}
 
 # -------------------------
 #        WORKFLOWS
