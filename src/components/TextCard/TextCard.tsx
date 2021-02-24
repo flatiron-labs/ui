@@ -26,8 +26,8 @@ const StyledValue = styled.p`
   padding-left: 5px;
 `
 
-export const TextCard = ({ label, value }: TextCardProps): JSX.Element => (
-  <StyledGrid>
+export const TextCard = ({ label, value, ...props }: TextCardProps): JSX.Element => (
+  <StyledGrid {...props}>
     <StyledHeading h4 bold>
       {label}
     </StyledHeading>

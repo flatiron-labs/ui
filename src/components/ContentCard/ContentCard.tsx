@@ -39,7 +39,6 @@ const StyledGridItem = styled(props => <Grid xs={12} sm={4} item {...props} />)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: ${props => (props.end ? 'flex-end' : 'flex-start')};
   padding-bottom: 5px;
   padding-top: 15px;
 `
@@ -56,21 +55,21 @@ export const ContentCard = ({
   <Container>
     <StyledGrid>
       {legend && <StyledLegend>{legend}</StyledLegend>}
-      <StyledGridItem>
+      <StyledGridItem alignItems="flex-start">
         <Heading bold h4>
           {title}
         </Heading>
         <p>{description}</p>
       </StyledGridItem>
       {(secondaryTitle || secondaryDescription) && (
-        <StyledGridItem>
+        <StyledGridItem alignItems="flex-start">
           <Heading bold h4>
             {secondaryTitle}
           </Heading>
           <p>{secondaryDescription}</p>
         </StyledGridItem>
       )}
-      <StyledGridItem end="true">
+      <StyledGridItem alignItems="flex-end">
         {React.isValidElement(cta) ? (
           cta
         ) : (
