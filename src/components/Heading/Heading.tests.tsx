@@ -1,11 +1,11 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 
-import { Heading, HeadingProps } from '.'
+import { H1 } from '.'
 
 describe('Heading', () => {
-  const renderComponent = (props: HeadingProps = {}) => {
-    render(<Heading {...props}>Header</Heading>)
+  const renderComponent = () => {
+    render(<H1>Header</H1>)
   }
 
   it('should render a header', () => {

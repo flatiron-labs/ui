@@ -1,51 +1,29 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Font } from '~/styles'
 
-export interface StyledHeadingProps {
-  color?: string
-  h1?: boolean
-  h2?: boolean
-  h3?: boolean
-  h4?: boolean
-  bold?: boolean
+const base = {
+  header: `
+    font-family: ${Font.firaCode}, monospace;
+    font-weight: bold;
+  `
 }
-
-export interface HeadingProps extends StyledHeadingProps {
-  children?: React.ReactNode
-}
-
-const StyledHeading = styled.header<StyledHeadingProps>`
-  color: ${props => props.color ?? props.color};
-  font-family: ${Font.firaCode}, monospace;
-  font-size: 1.65rem;
-  font-weight: ${props => (props.bold ? 'bold' : 'normal')};
-
-  ${props =>
-    props.h1 &&
-    `
-    font-size: 5.45rem;
-  `}
-
-  ${props =>
-    props.h2 &&
-    `
-    font-size: 3.3rem;
-  `}
-
-  ${props =>
-    props.h3 &&
-    `
-    font-size: 1.65rem;
-  `}
-
-  ${props =>
-    props.h4 &&
-    `
-    font-size: 1.2rem;
-  `}
+const H1 = styled.h1`
+  ${base.header}
+  font-size: 5.45rem;
 `
-
-export const Heading = ({ children, ...props }: HeadingProps): JSX.Element => (
-  <StyledHeading {...props}>{children}</StyledHeading>
-)
+const H2 = styled.h2`
+  ${base.header}
+  font-size: 3.3rem;
+`
+const H3 = styled.h3`
+  ${base.header}
+  font-size: 1.65rem;
+`
+const H4 = styled.h4`
+  ${base.header}
+  font-size: 1.2rem;
+`
+const P = styled.p`
+  ...
+`
+export { P, H1, H2, H3, H4 }

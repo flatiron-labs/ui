@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
-import { Heading } from '~/components/Heading'
+import { H4 } from '~/components/Heading'
 import { Color } from '~/styles'
 
 export interface ContentCardProps {
@@ -56,16 +56,12 @@ export const ContentCard = ({
     <StyledGrid>
       {legend && <StyledLegend>{legend}</StyledLegend>}
       <StyledGridItem alignItems="flex-start">
-        <Heading bold h4>
-          {title}
-        </Heading>
+        <H4>{title}</H4>
         <p>{description}</p>
       </StyledGridItem>
       {(secondaryTitle || secondaryDescription) && (
         <StyledGridItem alignItems="flex-start">
-          <Heading bold h4>
-            {secondaryTitle}
-          </Heading>
+          <H4>{secondaryTitle}</H4>
           <p>{secondaryDescription}</p>
         </StyledGridItem>
       )}

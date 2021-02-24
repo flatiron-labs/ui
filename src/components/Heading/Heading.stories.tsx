@@ -1,25 +1,23 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Heading, HeadingProps } from '.'
+import { H1, H2, H3, H4 } from '.'
 
 export default {
   title: 'Typography/Heading',
-  component: Heading
+  component: H1
 } as Meta
 
-const Template: Story = (args: HeadingProps) => <Heading {...args}>Header</Heading>
+const Template1: Story = () => <H1>Header</H1>
+const Template2: Story = () => <H2>Header</H2>
+const Template3: Story = () => <H3>Header</H3>
+const Template4: Story = () => <H4>Header</H4>
 
-export const Heading1 = Template.bind({})
-Heading1.args = {
-  h1: true
-}
+export const Default = Template1.bind({})
 
-export const Heading2 = Template.bind({})
-Heading2.args = {
-  h2: true
-}
+export const Heading1 = Template1.bind({})
 
-export const Heading3 = Template.bind({})
-Heading3.args = {
-  h3: true
-}
+export const Heading2 = Template2.bind({})
+
+export const Heading3 = Template3.bind({})
+
+export const Heading4 = Template4.bind({})

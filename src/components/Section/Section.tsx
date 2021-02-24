@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading } from '~/components/Heading'
+import { H4 } from '~/components/Heading'
 
 export interface SectionProps {
   title: string
@@ -18,7 +18,7 @@ const StyledContent = styled.div`
 
 export const Section = ({ title, children, ...props }: SectionProps): JSX.Element => (
   <StyledSection {...props}>
-    <Heading h4>{title}</Heading>
+    <H4>{title}</H4>
 
     <StyledContent>{children}</StyledContent>
   </StyledSection>
