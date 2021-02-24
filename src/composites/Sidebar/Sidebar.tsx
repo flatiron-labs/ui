@@ -76,7 +76,7 @@ export interface SidebarProps extends StyledLinkProps {
   xs?: boolean | GridSize
 }
 
-export const Sidebar = ({ active, expanded, onExpand, ...props }: SidebarProps): JSX.Element => (
+export const Sidebar = ({ expanded, onExpand }: SidebarProps): JSX.Element => (
   <StyledSidebar>
     <Grid container direction="column">
       <Hidden smDown>
