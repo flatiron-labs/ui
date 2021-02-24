@@ -52,8 +52,8 @@ const Template: Story = () => (
           description="title_of_resume.pdf"
           cta="Upload"
           legend="Completed: 1/1/1992"
-          middleTitle="Assigned"
-          middleDescription="1/2/2233"
+          secondaryTitle="Assigned"
+          secondaryDescription="1/2/2233"
           onClick={() => null}
         />
         <ContentCard
@@ -61,8 +61,8 @@ const Template: Story = () => (
           description="title_of_resume.pdf"
           cta="Upload"
           legend="Completed: 1/1/1992"
-          middleTitle="Assigned"
-          middleDescription="1/2/2233"
+          secondaryTitle="Assigned"
+          secondaryDescription="1/2/2233"
           onClick={() => null}
         />
         <ContentCard
@@ -70,8 +70,8 @@ const Template: Story = () => (
           description="title_of_resume.pdf"
           cta="Upload"
           legend="Completed: 1/1/1992"
-          middleTitle="Assigned"
-          middleDescription="1/2/2233"
+          secondaryTitle="Assigned"
+          secondaryDescription="1/2/2233"
           onClick={() => null}
         />
       </Grid>

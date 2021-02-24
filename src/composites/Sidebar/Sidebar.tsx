@@ -16,7 +16,7 @@ const StyledButton = styled.button`
   cursor: pointer;
 `
 
-const StyledSidebar = styled(props => <Grid item {...props} />)`
+const StyledSidebar = styled(Grid)`
   border-right: 1px ${Color.greyDarkest} solid;
   padding: 62px 0 0 0;
 `
@@ -76,8 +76,8 @@ export interface SidebarProps extends StyledLinkProps {
   xs?: boolean | GridSize
 }
 
-export const Sidebar = ({ expanded, onExpand }: SidebarProps): JSX.Element => (
-  <StyledSidebar>
+export const Sidebar = ({ expanded, onExpand, ...props }: SidebarProps): JSX.Element => (
+  <StyledSidebar item {...props}>
     <Grid container direction="column">
       <Hidden smDown>
         <StyledAvatar>JS</StyledAvatar>

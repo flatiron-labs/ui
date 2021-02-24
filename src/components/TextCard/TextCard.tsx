@@ -9,7 +9,7 @@ export interface TextCardProps {
   value: string
 }
 
-const StyledDiv = styled.div`
+const StyledGrid = styled(props => <Grid container item xs={12} md={6} direction="column" {...props} />)`
   border: 2px solid ${Color.turqDark};
 `
 
@@ -27,12 +27,10 @@ const StyledValue = styled.p`
 `
 
 export const TextCard = ({ label, value }: TextCardProps): JSX.Element => (
-  <Grid item xs={12} md={6}>
-    <StyledDiv>
-      <StyledHeading h4 bold>
-        {label}
-      </StyledHeading>
-      <StyledValue>{value}</StyledValue>
-    </StyledDiv>
-  </Grid>
+  <StyledGrid>
+    <StyledHeading h4 bold>
+      {label}
+    </StyledHeading>
+    <StyledValue>{value}</StyledValue>
+  </StyledGrid>
 )
