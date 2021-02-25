@@ -27,8 +27,9 @@ const Container = styled(props => (
   />
 ))`
   img {
-    max-height: 140px;
     width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
   }
 `
 
@@ -42,7 +43,7 @@ const Content = styled(props => (
 
 export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
   <Container>
-    {React.isValidElement(image) ? image : <img src={image as string} alt="" />}
+    {React.isValidElement(image) ? image : <img src={image as string} width={386} height={193} alt="" />}
 
     <Content>
       <Grid item>
