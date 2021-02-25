@@ -42,10 +42,12 @@ describe('ContentCard', () => {
     renderComponent({ cta: 'Upload', description: 'title_of_resume.pdf', title: 'Resume' })
     screen.getByText('Completed: 1.1.1996')
   })
+
   it('should render secondaryTitle', () => {
     renderComponent({ cta: 'Upload', description: 'title_of_resume.pdf', title: 'Resume' })
     screen.getByText('Assigned')
   })
+
   it('should render secondaryDescription', () => {
     renderComponent({ cta: 'Upload', description: 'title_of_resume.pdf', title: 'Resume' })
     screen.getByText('1.2.1996')
