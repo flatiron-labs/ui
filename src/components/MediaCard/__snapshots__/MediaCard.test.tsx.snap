@@ -4,7 +4,7 @@ exports[`MediaCard should render a custom cta element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-dlfnbm xlpov MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <img
         alt=""
@@ -19,12 +19,14 @@ exports[`MediaCard should render a custom cta element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg dYEHmR"
+            class="sc-eCssSg jALYxd"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
-          <p>
+          <p
+            class="sc-jSgupP fnyTMs"
+          >
             this is information about gradleaders
           </p>
         </div>
@@ -44,7 +46,7 @@ exports[`MediaCard should render a custom image element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-dlfnbm xlpov MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <img
         alt=""
@@ -58,12 +60,14 @@ exports[`MediaCard should render a custom image element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg dYEHmR"
+            class="sc-eCssSg jALYxd"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
-          <p>
+          <p
+            class="sc-jSgupP fnyTMs"
+          >
             this is information about gradleaders
           </p>
         </div>
@@ -82,7 +86,7 @@ exports[`MediaCard should render children 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-dlfnbm xlpov MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <img
         alt=""
@@ -97,12 +101,14 @@ exports[`MediaCard should render children 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg dYEHmR"
+            class="sc-eCssSg jALYxd"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
-          <p>
+          <p
+            class="sc-jSgupP fnyTMs"
+          >
             this is information about gradleaders
           </p>
         </div>
