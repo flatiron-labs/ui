@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Color } from '~/styles'
 import { Grid } from '../Grid'
-import { H4 } from '../Heading'
+import { H4 } from '../Typography'
 
 export interface TextCardProps {
   label: string

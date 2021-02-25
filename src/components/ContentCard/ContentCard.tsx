@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
-import { H4 } from '~/components/Heading'
+import { H4, P } from '~/components/Typography'
 import { Color } from '~/styles'
 
 export interface ContentCardProps {
@@ -28,8 +28,8 @@ const StyledGrid = styled(props => <Grid container item xs={12} {...props} />)`
 
 const StyledLegend = styled.p`
   position: absolute;
-  margin-top: -15px;
-  margin-left: 8px;
+  margin-top: -13px;
+  margin-left: 12px;
   background-color: ${Color.black};
   padding-left: 8px;
   padding-right: 8px;
@@ -39,8 +39,7 @@ const StyledGridItem = styled(props => <Grid xs={12} sm={4} item {...props} />)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 5px;
-  padding-top: 15px;
+  padding: 10px;
 `
 
 export const ContentCard = ({
@@ -55,14 +54,14 @@ export const ContentCard = ({
   <Container>
     <StyledGrid>
       {legend && <StyledLegend>{legend}</StyledLegend>}
-      <StyledGridItem alignItems="flex-start">
+      <StyledGridItem>
         <H4>{title}</H4>
-        <p>{description}</p>
+        <P>{description}</P>
       </StyledGridItem>
       {(secondaryTitle || secondaryDescription) && (
-        <StyledGridItem alignItems="flex-start">
+        <StyledGridItem>
           <H4>{secondaryTitle}</H4>
-          <p>{secondaryDescription}</p>
+          <P>{secondaryDescription}</P>
         </StyledGridItem>
       )}
       <StyledGridItem alignItems="flex-end">

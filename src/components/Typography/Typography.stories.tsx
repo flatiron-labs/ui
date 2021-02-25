@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import { H1, H2, H3, H4 } from '.'
 
 export default {
-  title: 'Typography/Heading',
+  title: 'Typography',
   component: H1
 } as Meta
 

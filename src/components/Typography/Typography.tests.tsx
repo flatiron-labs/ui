@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 
 import { H1 } from '.'
 
-describe('Heading', () => {
+describe('Typography', () => {
   const renderComponent = () => {
     render(<H1>Header</H1>)
   }
