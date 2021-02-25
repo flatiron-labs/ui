@@ -4,11 +4,13 @@ exports[`MediaCard should render a custom cta element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-dlfnbm fPGyft MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-dlfnbm xlpov MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <img
         alt=""
+        height="193"
         src="https://placekeanu.com/318/159/g"
+        width="386"
       />
       <div
         class="MuiGrid-root sc-hKgILt hdPDBS MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
@@ -42,7 +44,7 @@ exports[`MediaCard should render a custom image element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-dlfnbm fPGyft MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-dlfnbm xlpov MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <img
         alt=""
@@ -80,11 +82,13 @@ exports[`MediaCard should render children 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-dlfnbm fPGyft MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-dlfnbm xlpov MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
     >
       <img
         alt=""
+        height="193"
         src="https://placekeanu.com/318/159/g"
+        width="386"
       />
       <div
         class="MuiGrid-root sc-hKgILt hdPDBS MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"

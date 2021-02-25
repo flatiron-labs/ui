@@ -35,7 +35,7 @@ const StyledLegend = styled.p`
   padding-right: 8px;
 `
 
-const StyledGridItem = styled(props => <Grid xs={12} sm={4} item {...props} />)`
+const StyledGridItem = styled(props => <Grid container item xs={12} sm={4} {...props} />)`
   display: flex;
   flex-direction: column;
   justify-content: center;
