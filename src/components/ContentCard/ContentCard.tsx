@@ -23,7 +23,7 @@ const Container = styled(props => <Grid container alignItems="center" justify="c
 `
 const StyledGrid = styled(props => <Grid container item xs={12} {...props} />)`
   border: 2px solid ${Color.yellow};
-  padding: 5px;
+  padding: 5px 20px;
 `
 
 const StyledLegend = styled.p`
