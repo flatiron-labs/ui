@@ -9,16 +9,16 @@ export interface TextCardProps {
   value: string
 }
 
-const StyledGrid = styled(props => <Grid container item xs={12} md={6} direction="column" {...props} />)`
+const Content = styled.div`
   border: 2px solid ${Color.turqDark};
 `
 
-const StyledHeading = styled(H4)`
+const Heading = styled(H4)`
   color: ${Color.turq};
   padding-top: 10px;
   padding-left: 10px;
 `
-const StyledValue = styled.p`
+const Value = styled.p`
   color: ${Color.white};
   font-size: 18px;
   margin: 5px;
@@ -27,8 +27,10 @@ const StyledValue = styled.p`
 `
 
 export const TextCard = ({ label, value, ...props }: TextCardProps): JSX.Element => (
-  <StyledGrid {...props}>
-    <StyledHeading>{label}</StyledHeading>
-    <StyledValue>{value}</StyledValue>
-  </StyledGrid>
+  <Grid item xs={12} md={6} direction="column" {...props}>
+    <Content>
+      <Heading>{label}</Heading>
+      <Value>{value}</Value>
+    </Content>
+  </Grid>
 )

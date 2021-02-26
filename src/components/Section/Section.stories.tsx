@@ -1,13 +1,13 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { TextCard, Grid, Section } from '~/components'
+import { TextCard, Grid, Section, P } from '~/components'
 
 export default {
   title: 'Layout/Section'
 } as Meta
 
-const Template: Story = () => (
-  <Section title="Personal Information">
+const Template: Story = args => (
+  <Section {...args}>
     <Grid container spacing={3}>
       <TextCard label="Full Name" value="John Smith" />
       <TextCard label="Full Name" value="John Smith" />
@@ -16,4 +16,24 @@ const Template: Story = () => (
   </Section>
 )
 
+const TemplateDynamic: Story = args => (
+  <Section {...args}>
+    <Grid container spacing={3}>
+      <P>{JSON.stringify(args.data)}</P>
+    </Grid>
+  </Section>
+)
+
 export const Default = Template.bind({})
+
+export const WithTitle = Template.bind({})
+WithTitle.args = { title: 'Personal Information' }
+
+export const DynamicSectionLoading = TemplateDynamic.bind({})
+DynamicSectionLoading.args = { title: 'Personal Information', dynamic: true }
+
+export const DynamicSectionError = TemplateDynamic.bind({})
+DynamicSectionError.args = { title: 'Personal Information', dynamic: true, error: 'foo' }
+
+export const DynamicSectionLoaded = TemplateDynamic.bind({})
+DynamicSectionLoaded.args = { title: 'Personal Information', dynamic: true, data: { foo: 'bar' } }
