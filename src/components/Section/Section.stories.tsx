@@ -29,11 +29,11 @@ export const Default = Template.bind({})
 export const WithTitle = Template.bind({})
 WithTitle.args = { title: 'Personal Information' }
 
-export const DynamicSectionLoading = TemplateDynamic.bind({})
+export const DynamicSectionLoading = Template.bind({})
 DynamicSectionLoading.args = { title: 'Personal Information', dynamic: true }
 
-export const DynamicSectionError = TemplateDynamic.bind({})
+export const DynamicSectionError = Template.bind({})
 DynamicSectionError.args = { title: 'Personal Information', dynamic: true, error: 'foo' }
 
 export const DynamicSectionLoaded = TemplateDynamic.bind({})
-DynamicSectionLoaded.args = { title: 'Personal Information', dynamic: true, data: { foo: 'bar' } }
+DynamicSectionLoaded.args = { title: 'Personal Information', dynamic: true, data: { test: 'data', foo: 'bar' } }

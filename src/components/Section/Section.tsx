@@ -57,6 +57,8 @@ export const Section = ({
       )}
 
       {dynamic && data && children}
+
+      {!dynamic && children}
     </Content>
   </StyledSection>
 )

@@ -27,7 +27,7 @@ const Value = styled.p`
 `
 
 export const TextCard = ({ label, value, ...props }: TextCardProps): JSX.Element => (
-  <Grid item xs={12} md={6} direction="column" {...props}>
+  <Grid item xs={12} md={6} {...props}>
     <Content>
       <Heading>{label}</Heading>
       <Value>{value}</Value>
