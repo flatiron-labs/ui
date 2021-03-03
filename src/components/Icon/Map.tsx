@@ -1,23 +1,9 @@
 import React from 'react'
-import { IconProps } from './Icon.types'
+import { IconComponent } from './Icon'
 
-export const Map = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    data-testid={dataTestId}
-  >
-    <path
-      d="M1 6V22L8 18L16 22L23 18V2L16 6L8 2L1 6Z"
-      stroke={color ?? 'white'}
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path d="M8 2V18" stroke={color ?? 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M16 6V22" stroke={color ?? 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+export const Map: IconComponent = ({ color = 'currentColor', ...props }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" {...props}>
+    <defs />
+    <path stroke={color} strokeWidth="2" d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16" />
   </svg>
 )

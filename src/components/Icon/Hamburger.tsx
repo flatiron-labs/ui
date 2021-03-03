@@ -1,17 +1,11 @@
 import React from 'react'
-import { IconProps } from './Icon.types'
+import { IconComponent } from './Icon'
 
-export const Hamburger = ({ color, 'data-testid': dataTestId }: IconProps): JSX.Element => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    data-testid={dataTestId}
-  >
-    <rect x="2" y="3" width="20" height="3" rx="1" fill={color ?? 'white'} />
-    <rect x="2" y="8" width="20" height="3" rx="1" fill={color ?? 'white'} />
-    <rect x="2" y="13" width="20" height="3" rx="1" fill={color ?? 'white'} />
+export const Hamburger: IconComponent = ({ color = 'currentColor', ...props }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" {...props}>
+    <defs />
+    <rect width="20" height="3" x="2" y="3" fill={color} rx="1" />
+    <rect width="20" height="3" x="2" y="8" fill={color} rx="1" />
+    <rect width="20" height="3" x="2" y="13" fill={color} rx="1" />
   </svg>
 )
