@@ -48,30 +48,30 @@ const Template: Story = () => (
     <Section title="Documents">
       <Grid container>
         <ContentCard
-          title="Resume"
-          description="title_of_resume.pdf"
+          type="Resume"
+          title="title_of_resume.pdf"
+          cta="View"
+          secondaryTitle="Assigned"
+          secondaryDescription="1/2/2233"
+          tertiaryTitle="Completed"
+          tertiaryDescription="1/2/2233"
+          onClick={() => null}
+        />
+        <ContentCard
+          type="Resume"
           cta="Upload"
-          legend="Completed: 1/1/1992"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
           onClick={() => null}
         />
         <ContentCard
-          title="Resume"
-          description="title_of_resume.pdf"
-          cta="Upload"
-          legend="Completed: 1/1/1992"
+          type="Resume"
+          title="title_of_resume.pdf"
+          cta="View"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
-          onClick={() => null}
-        />
-        <ContentCard
-          title="Resume"
-          description="title_of_resume.pdf"
-          cta="Upload"
-          legend="Completed: 1/1/1992"
-          secondaryTitle="Assigned"
-          secondaryDescription="1/2/2233"
+          tertiaryTitle="Completed"
+          tertiaryDescription="1/2/2233"
           onClick={() => null}
         />
       </Grid>

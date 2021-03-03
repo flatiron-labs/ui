@@ -16,12 +16,12 @@ const Template: Story = (args: ContentCardProps) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  title: 'Resume',
-  description: 'title_of_resume.pdf',
+  type: 'Resume',
   cta: 'Upload',
-  legend: 'Completed: 1/1/1992',
   secondaryTitle: 'Assigned',
-  secondaryDescription: '1/2/2233',
+  secondaryDescription: '1/2/2022',
+  tertiaryTitle: 'Completed',
+  tertiaryDescription: '1/3/2023',
   onClick: () => null
 }
 
@@ -34,7 +34,6 @@ CtsWithJsx.args = {
       LINK
     </a>
   ),
-  legend: 'Completed: 1/1/1992',
   secondaryTitle: 'Assigned',
   secondaryDescription: '1/2/2233',
   onClick: () => null
