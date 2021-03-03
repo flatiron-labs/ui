@@ -5,7 +5,7 @@ export { Hidden }
 export * from './Avatar'
 export * from './Button'
 export * from './Container'
-export * from './ContentCard'
+export * from './FileCard'
 export * from './TextCard'
 export * from './Grid'
 export * from './Typography'

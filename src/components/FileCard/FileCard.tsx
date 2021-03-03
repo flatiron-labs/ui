@@ -5,14 +5,15 @@ import { Grid } from '~/components/Grid'
 import { H4, P } from '~/components/Typography'
 import { Color } from '~/styles'
 
-export interface ContentCardProps {
+export interface FileCardProps {
   children?: React.ReactNode
   cta: string | JSX.Element
-  description: string
-  title: string
-  legend?: string
+  title?: string
+  type?: string
   secondaryTitle?: string
   secondaryDescription?: string
+  tertiaryTitle?: string
+  tertiaryDescription?: string
   onClick?: (e: React.MouseEvent) => void
 }
 
@@ -22,46 +23,52 @@ const Container = styled(props => <Grid container alignItems="center" justify="c
   position: relative;
 `
 const StyledGrid = styled(props => <Grid container item xs={12} {...props} />)`
-  border: 2px solid ${Color.yellow};
+  border: 2px solid ${Color.greyDarkest};
   padding: 5px 20px;
 `
 
 const StyledLegend = styled.p`
   position: absolute;
   margin-top: -13px;
-  margin-left: 12px;
+  margin-left: 4px;
+  color: ${Color.yellow};
   background-color: ${Color.black};
   padding-left: 8px;
   padding-right: 8px;
+  font-weight: bold;
 `
 
-const StyledGridItem = styled(props => <Grid container item xs={12} sm={4} {...props} />)`
+const StyledGridItem = styled(props => <Grid container item sm={12} md={props.tertiaryTitle ? 2 : 4} {...props} />)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 10px;
 `
 
-export const ContentCard = ({
+export const FileCard = ({
   cta,
-  description,
   title,
+  type,
   secondaryTitle,
   secondaryDescription,
-  legend,
+  tertiaryTitle,
+  tertiaryDescription,
   onClick
-}: ContentCardProps): JSX.Element => (
+}: FileCardProps): JSX.Element => (
   <Container>
     <StyledGrid>
-      {legend && <StyledLegend>{legend}</StyledLegend>}
-      <StyledGridItem>
-        <H4>{title}</H4>
-        <P>{description}</P>
-      </StyledGridItem>
+      {type && <StyledLegend>{type}</StyledLegend>}
+      <StyledGridItem>{title ? <H4>{title}</H4> : <H4>No Upload</H4>}</StyledGridItem>
       {(secondaryTitle || secondaryDescription) && (
-        <StyledGridItem>
-          <H4>{secondaryTitle}</H4>
+        <StyledGridItem tertiaryTitle={tertiaryTitle}>
+          <P>{secondaryTitle}</P>
           <P>{secondaryDescription}</P>
+        </StyledGridItem>
+      )}
+      {(tertiaryTitle || tertiaryDescription) && (
+        <StyledGridItem tertiaryTitle={tertiaryTitle}>
+          <P>{tertiaryTitle}</P>
+          <P>{tertiaryDescription}</P>
         </StyledGridItem>
       )}
       <StyledGridItem alignItems="flex-end">

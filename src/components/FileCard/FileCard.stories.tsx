@@ -1,32 +1,32 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { ContentCard, ContentCardProps } from '.'
+import { FileCard, FileCardProps } from '.'
 import { Color } from '~/styles'
 
 export default {
-  title: 'Content/ContentCard',
-  component: ContentCard
+  title: 'Content/FileCard',
+  component: FileCard
 } as Meta
 
-const Template: Story = (args: ContentCardProps) => (
+const Template: Story = (args: FileCardProps) => (
   <div style={{ paddingTop: '40px' }}>
-    <ContentCard {...args} />
+    <FileCard {...args} />
   </div>
 )
 
 export const Default = Template.bind({})
 Default.args = {
-  title: 'Resume',
-  description: 'title_of_resume.pdf',
+  type: 'Resume',
   cta: 'Upload',
-  legend: 'Completed: 1/1/1992',
   secondaryTitle: 'Assigned',
-  secondaryDescription: '1/2/2233',
+  secondaryDescription: '1/2/2022',
+  tertiaryTitle: 'Completed',
+  tertiaryDescription: '1/3/2023',
   onClick: () => null
 }
 
-export const CtsWithJsx = Template.bind({})
-CtsWithJsx.args = {
+export const CtaWithJsx = Template.bind({})
+CtaWithJsx.args = {
   title: 'Resume',
   description: 'title_of_resume.pdf',
   cta: (
@@ -34,7 +34,6 @@ CtsWithJsx.args = {
       LINK
     </a>
   ),
-  legend: 'Completed: 1/1/1992',
   secondaryTitle: 'Assigned',
   secondaryDescription: '1/2/2233',
   onClick: () => null
