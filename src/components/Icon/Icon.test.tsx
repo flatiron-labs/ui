@@ -77,6 +77,18 @@ describe('Icon', () => {
     })
   })
 
+  describe('Loading', () => {
+    it('displays icon', () => {
+      render(<Icon.Loading color="red" />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+
+    it('displays icon with no args', () => {
+      render(<Icon.Loading />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+  })
+
   describe('Location', () => {
     it('displays Location Icon', () => {
       render(<Icon.Location color="red" />)

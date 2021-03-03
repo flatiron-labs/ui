@@ -16,8 +16,9 @@ import { Twitter } from './Twitter'
 import { Youtube } from './Youtube'
 import { Facebook } from './Facebook'
 import { Instagram } from './Instagram'
+import { IconComponent } from './Icon'
 
-export const Icon = {
+export const Icon: Record<string, IconComponent> = {
   Code,
   Dial,
   Exit,
