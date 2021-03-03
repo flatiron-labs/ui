@@ -1,7 +1,7 @@
 import React, { SVGProps } from 'react'
 
 export type IcoProps = {
-  color: string
+  color?: string
   children?: never
 } & SVGProps<SVGSVGElement>
 
