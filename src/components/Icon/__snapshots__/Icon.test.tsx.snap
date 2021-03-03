@@ -606,7 +606,9 @@ exports[`Icon Home displays Home Icon 1`] = `
 <svg
   fill="none"
   height="24"
+  preserveAspectRatio="xMidYMid"
   role="presentation"
+  viewBox="0 0 20 22"
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -628,7 +630,9 @@ exports[`Icon Home displays Home Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
+  preserveAspectRatio="xMidYMid"
   role="presentation"
+  viewBox="0 0 20 22"
   width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
