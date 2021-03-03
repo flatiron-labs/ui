@@ -5,11 +5,13 @@ import { Grid } from '~/components/Grid'
 import { Icon } from '~/index'
 import { Color } from '~/styles'
 
+type BackgroundType = 'turq' | 'red' | 'yellow' | 'purple'
+
 export interface OverlayCardProps {
   children?: React.ReactNode
   title?: string
   cta?: string | JSX.Element
-  backgroundStyle: string
+  background: BackgroundType
   onClick?: (e: React.MouseEvent) => void
 }
 
@@ -20,7 +22,7 @@ const Container = styled(props => (
 `
 
 const StyledGrid = styled(props => <Grid container item xs={12} {...props} />)`
-  border: 2px solid ${props => Color[props.backgroundStyle]};
+  border: 2px solid ${props => Color[props.background]};
   display: flex;
   justify-content: center;
 `
@@ -35,50 +37,42 @@ const StyledText = styled.div`
 `
 
 const StyledButton = styled(Button)<OverlayCardProps>`
-  border: 2px solid ${props => Color[props.backgroundStyle]};
+  border: 2px solid ${props => Color[props.background]};
   margin-top: 10px;
   width: 100%;
   &:focus,
   &:hover {
     border-color: ${Color.black};
-    background-color: ${props => Color[props.backgroundStyle]};
+    background-color: ${props => Color[props.background]};
     color: ${Color.black};
     outline: 0;
   }
 `
 
-export const OverlayCard = ({ cta, title, backgroundStyle, onClick }: OverlayCardProps): JSX.Element => (
-  <Container>
-    <StyledGrid backgroundStyle={backgroundStyle}>
-      {backgroundStyle === 'red' && (
-        <Icon.PinkOverlay style={{ paddingTop: '20px' }}>
-          <StyledText>{title}</StyledText>
-        </Icon.PinkOverlay>
-      )}
-      {backgroundStyle === 'turq' && (
-        <Icon.BlueOverlay style={{ paddingTop: '20px' }}>
-          <StyledText>{title}</StyledText>
-        </Icon.BlueOverlay>
-      )}
-      {backgroundStyle === 'purple' && (
-        <Icon.PurpleOverlay style={{ paddingTop: '20px' }}>
-          <StyledText>{title}</StyledText>
-        </Icon.PurpleOverlay>
-      )}
-      {backgroundStyle === 'yellow' && (
-        <Icon.YellowOverlay style={{ paddingTop: '20px' }}>
-          <StyledText>{title}</StyledText>
-        </Icon.YellowOverlay>
-      )}
-    </StyledGrid>
-    <Grid item xs={12}>
-      {React.isValidElement(cta) ? (
-        cta
-      ) : (
-        <StyledButton onClick={onClick} backgroundStyle={backgroundStyle}>
-          {cta as string}
-        </StyledButton>
-      )}{' '}
-    </Grid>
-  </Container>
-)
+export const OverlayCard = ({ cta, title, background, onClick }: OverlayCardProps): JSX.Element => {
+  const componentMap = {
+    turq: Icon.BlueOverlay,
+    red: Icon.PinkOverlay,
+    yellow: Icon.YellowOverlay,
+    purple: Icon.PurpleOverlay
+  }
+  const Overlay = componentMap[background]
+
+  return (
+    <Container>
+      <StyledGrid background={background}>
+        <Overlay style={{ paddingTop: '20px' }} />
+        <StyledText>{title}</StyledText>
+      </StyledGrid>
+      <Grid item xs={12}>
+        {React.isValidElement(cta) ? (
+          cta
+        ) : (
+          <StyledButton onClick={onClick} background={background}>
+            {cta as string}
+          </StyledButton>
+        )}
+      </Grid>
+    </Container>
+  )
+}

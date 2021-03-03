@@ -17,7 +17,7 @@ export const Pink = Template.bind({})
 Pink.args = {
   title: 'Try free courses',
   cta: 'View Canvas',
-  backgroundStyle: 'red',
+  background: 'red',
   onClick: () => null
 }
 
@@ -25,7 +25,7 @@ export const Purple = Template.bind({})
 Purple.args = {
   title: 'Try free courses',
   cta: 'View Pathwright',
-  backgroundStyle: 'purple',
+  background: 'purple',
   onClick: () => null
 }
 
@@ -33,7 +33,7 @@ export const Yellow = Template.bind({})
 Yellow.args = {
   title: 'Try free courses',
   cta: 'View Pathwright',
-  backgroundStyle: 'yellow',
+  background: 'yellow',
   onClick: () => null
 }
 
@@ -41,6 +41,6 @@ export const Blue = Template.bind({})
 Blue.args = {
   title: 'Try free courses',
   cta: 'View Canvas',
-  backgroundStyle: 'turq',
+  background: 'turq',
   onClick: () => null
 }
