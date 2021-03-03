@@ -5,7 +5,7 @@ import { Grid } from '~/components/Grid'
 import { H4, P } from '~/components/Typography'
 import { Color } from '~/styles'
 
-export interface ContentCardProps {
+export interface FileCardProps {
   children?: React.ReactNode
   cta: string | JSX.Element
   title?: string
@@ -45,7 +45,7 @@ const StyledGridItem = styled(props => <Grid container item sm={12} md={props.te
   padding: 10px;
 `
 
-export const ContentCard = ({
+export const FileCard = ({
   cta,
   title,
   type,
@@ -54,7 +54,7 @@ export const ContentCard = ({
   tertiaryTitle,
   tertiaryDescription,
   onClick
-}: ContentCardProps): JSX.Element => (
+}: FileCardProps): JSX.Element => (
   <Container>
     <StyledGrid>
       {type && <StyledLegend>{type}</StyledLegend>}

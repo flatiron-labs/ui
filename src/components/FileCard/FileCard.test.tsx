@@ -2,13 +2,11 @@ import React from 'react'
 import { Button } from '~/index'
 import { render, screen } from '~/test/utils'
 
-import { ContentCard, ContentCardProps } from '.'
+import { FileCard, FileCardProps } from '.'
 
-describe('ContentCard', () => {
-  const renderComponent = ({ cta, title, type }: ContentCardProps) => {
-    render(
-      <ContentCard title={title} type={type} secondaryTitle="Assigned" cta={cta} secondaryDescription="1.2.1996" />
-    )
+describe('FileCard', () => {
+  const renderComponent = ({ cta, title, type }: FileCardProps) => {
+    render(<FileCard title={title} type={type} secondaryTitle="Assigned" cta={cta} secondaryDescription="1.2.1996" />)
   }
 
   it('should render type/legend', () => {
