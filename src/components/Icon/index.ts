@@ -11,6 +11,10 @@ import { Map } from './Map'
 import { Settings } from './Settings'
 import { Time } from './Time'
 import { User } from './User'
+import { Twitter } from './Twitter'
+import { Youtube } from './Youtube'
+import { Facebook } from './Facebook'
+import { Instagram } from './Instagram'
 
 export const Icon = {
   Code,
@@ -25,5 +29,9 @@ export const Icon = {
   Map,
   Settings,
   Time,
-  User
+  User,
+  Twitter,
+  Youtube,
+  Facebook,
+  Instagram
 }

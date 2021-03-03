@@ -1,31 +1,19 @@
 import React from 'react'
 import { IconComponent } from './Icon'
 
-export const Home: IconComponent = ({ color }) => (
+export const Home: IconComponent = ({ color = 'currentColor', ...props }) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid"
+    viewBox="0 0 20 22"
     width="24"
     height="24"
-    viewBox="0 0 20 22"
-    preserveAspectRatio="xMidYMid"
     fill="none"
     role="presentation"
-    xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
-    <path
-      d="M1 8L10 1L19 8V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8Z"
-      stroke={color ?? 'white'}
-      strokeOpacity="0.94"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M7 21V11H13V21"
-      stroke={color ?? 'white'}
-      strokeOpacity="0.94"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
+    <defs />
+    <path stroke={color} strokeWidth="2" d="M1 8l9-7 9 7v11a2 2 0 01-2 2H3a2 2 0 01-2-2V8z" />
+    <path stroke={color} strokeWidth="2" d="M7 21V11h6v10" />
   </svg>
 )

@@ -7,10 +7,10 @@ import { Color } from '~/styles'
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   > * {
-    margin: 30px;
+    padding-bottom: 10px;
   }
 `
 export default {
@@ -34,6 +34,11 @@ const Template: Story = (args: IcoProps) => (
     <Icon.Settings {...args} />
     <Icon.Time {...args} />
     <Icon.User {...args} />
+    <Icon.Facebook {...args} />
+    <Icon.Twitter {...args} />
+    <Icon.Github {...args} />
+    <Icon.Instagram {...args} />
+    <Icon.Youtube {...args} />
   </Container>
 )
 
