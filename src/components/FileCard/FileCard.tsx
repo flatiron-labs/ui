@@ -12,7 +12,7 @@ export interface FileCardProps {
   type?: string
   secondaryTitle?: string
   secondaryDescription?: string
-  tertiaryTitle?: string
+  tertiarytitle?: string
   tertiaryDescription?: string
   onClick?: (e: React.MouseEvent) => void
 }
@@ -38,7 +38,7 @@ const StyledLegend = styled.p`
   font-weight: bold;
 `
 
-const StyledGridItem = styled(props => <Grid container item sm={12} md={props.tertiaryTitle ? 2 : 4} {...props} />)`
+const StyledGridItem = styled(props => <Grid container item sm={12} md={props.tertiarytitle ? 2 : 4} {...props} />)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@ export const FileCard = ({
   type,
   secondaryTitle,
   secondaryDescription,
-  tertiaryTitle,
+  tertiarytitle,
   tertiaryDescription,
   onClick
 }: FileCardProps): JSX.Element => (
@@ -60,14 +60,14 @@ export const FileCard = ({
       {type && <StyledLegend>{type}</StyledLegend>}
       <StyledGridItem>{title ? <H4>{title}</H4> : <H4>No Upload</H4>}</StyledGridItem>
       {(secondaryTitle || secondaryDescription) && (
-        <StyledGridItem tertiaryTitle={tertiaryTitle}>
+        <StyledGridItem tertiarytitle={tertiarytitle}>
           <P>{secondaryTitle}</P>
           <P>{secondaryDescription}</P>
         </StyledGridItem>
       )}
-      {(tertiaryTitle || tertiaryDescription) && (
-        <StyledGridItem tertiaryTitle={tertiaryTitle}>
-          <P>{tertiaryTitle}</P>
+      {(tertiarytitle || tertiaryDescription) && (
+        <StyledGridItem tertiarytitle={tertiarytitle}>
+          <P>{tertiarytitle}</P>
           <P>{tertiaryDescription}</P>
         </StyledGridItem>
       )}

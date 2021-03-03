@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { TextCard, Grid, Section, MediaCard, FileCard } from '~/components'
+import { Grid, Section, MediaCard, FileCard, MainHeader } from '~/components'
 
 export default {
   title: 'Composites/Page'
@@ -11,12 +11,8 @@ const src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8--
 
 const Template: Story = () => (
   <Page style={{ minHeight: '100vh' }}>
-    <Section title="Personal Information">
-      <Grid container spacing={3}>
-        <TextCard label="Full Name" value="John Smith" />
-        <TextCard label="Course" value="Software Engineering" />
-        <TextCard label="Cohort" value="Fall 2021" />
-      </Grid>
+    <Section>
+      <MainHeader date="Fall 2020" subheader="Software Engineering" header="Welcome Back John Smith!" />
     </Section>
 
     <Section title="Links">
@@ -53,7 +49,7 @@ const Template: Story = () => (
           cta="View"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
-          tertiaryTitle="Completed"
+          tertiarytitle="Completed"
           tertiaryDescription="1/2/2233"
           onClick={() => null}
         />
@@ -70,7 +66,7 @@ const Template: Story = () => (
           cta="View"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
-          tertiaryTitle="Completed"
+          tertiarytitle="Completed"
           tertiaryDescription="1/2/2233"
           onClick={() => null}
         />
