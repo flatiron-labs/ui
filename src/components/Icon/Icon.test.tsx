@@ -1,215 +1,163 @@
 import React from 'react'
-import { render, cleanup } from '~/test/utils'
+import { render, screen } from '~/test/utils'
 import { Icon } from '.'
 
+const role = 'presentation'
+
 describe('Icon', () => {
-  afterEach(cleanup)
+  describe('Code', () => {
+    it('displays Code Icon', () => {
+      render(<Icon.Code color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
 
-  // code icon
-  it('displays Code Icon', () => {
-    const { container } = render(<Icon.Code color="white" />)
-    expect(container).toBeInTheDocument()
+    it('displays Code Icon with no args', () => {
+      render(<Icon.Code />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Code Icon with no args', () => {
-    const { container } = render(<Icon.Code />)
-    expect(container).toBeInTheDocument()
+  describe('Dial', () => {
+    it('displays Dial Icon', () => {
+      render(<Icon.Dial color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Dial Icon with no args', () => {
+      render(<Icon.Dial />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Code Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Code data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
+  describe('Exit', () => {
+    it('displays Exit Icon', () => {
+      render(<Icon.Exit color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Exit Icon with no args', () => {
+      render(<Icon.Exit />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  // Dial icon
-  it('displays Dial Icon', () => {
-    const { container } = render(<Icon.Dial color="white" />)
-    expect(container).toBeInTheDocument()
+  describe('Github', () => {
+    it('displays Github Icon', () => {
+      render(<Icon.Github color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Github Icon with no args', () => {
+      render(<Icon.Github />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Dial Icon with no args', () => {
-    const { container } = render(<Icon.Dial />)
-    expect(container).toBeInTheDocument()
+  describe('Hamburger', () => {
+    it('displays Hamburger Icon', () => {
+      render(<Icon.Hamburger color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Hamburger Icon with no args', () => {
+      render(<Icon.Hamburger />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Dial Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Dial data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
+  describe('Home', () => {
+    it('displays Home Icon', () => {
+      render(<Icon.Home color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Home Icon with no args', () => {
+      render(<Icon.Home />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  // Exit icon
-  it('displays Exit Icon', () => {
-    const { container } = render(<Icon.Exit color="white" />)
-    expect(container).toBeInTheDocument()
+  describe('Location', () => {
+    it('displays Location Icon', () => {
+      render(<Icon.Location color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Location Icon with no args', () => {
+      render(<Icon.Location />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Exit Icon with no args', () => {
-    const { container } = render(<Icon.Exit />)
-    expect(container).toBeInTheDocument()
+  describe('Lock', () => {
+    it('displays Lock Icon', () => {
+      render(<Icon.Lock color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Lock Icon with no args', () => {
+      render(<Icon.Lock />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Exit Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Exit data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
+  describe('Mail', () => {
+    it('displays Mail Icon', () => {
+      render(<Icon.Mail color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Mail Icon with no args', () => {
+      render(<Icon.Mail />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  // Github icon
-  it('displays Github Icon', () => {
-    const { container } = render(<Icon.Github color="white" />)
-    expect(container).toBeInTheDocument()
+  describe('Map', () => {
+    it('displays Map Icon', () => {
+      render(<Icon.Map color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Map Icon with no args', () => {
+      render(<Icon.Map />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Github Icon with no args', () => {
-    const { container } = render(<Icon.Github />)
-    expect(container).toBeInTheDocument()
+  describe('Settings', () => {
+    it('displays Settings Icon', () => {
+      render(<Icon.Settings color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Settings Icon with no args', () => {
+      render(<Icon.Settings />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  it('displays Github Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Github data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
+  describe('Time', () => {
+    it('displays Time Icon', () => {
+      render(<Icon.Time color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
+
+    it('displays Time Icon with no args', () => {
+      render(<Icon.Time />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 
-  // Hamburger icon
-  it('displays Hamburger Icon', () => {
-    const { container } = render(<Icon.Hamburger color="white" />)
-    expect(container).toBeInTheDocument()
-  })
+  describe('User', () => {
+    it('displays User Icon', () => {
+      render(<Icon.User color="red" />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
 
-  it('displays Hamburger Icon with no args', () => {
-    const { container } = render(<Icon.Hamburger />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Hamburger Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Hamburger data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Home icon
-  it('displays Home Icon', () => {
-    const { container } = render(<Icon.Home color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Home Icon with no args', () => {
-    const { container } = render(<Icon.Home />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Home Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Home data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Location icon
-  it('displays Location Icon', () => {
-    const { container } = render(<Icon.Location color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Location Icon with no args', () => {
-    const { container } = render(<Icon.Location />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Location Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Location data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Lock icon
-  it('displays Lock Icon', () => {
-    const { container } = render(<Icon.Lock color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Lock Icon with no args', () => {
-    const { container } = render(<Icon.Lock />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Lock Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Lock data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Mail icon
-  it('displays Mail Icon', () => {
-    const { container } = render(<Icon.Mail color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Mail Icon with no args', () => {
-    const { container } = render(<Icon.Mail />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Mail Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Mail data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Map icon
-  it('displays Map Icon', () => {
-    const { container } = render(<Icon.Map color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Map Icon with no args', () => {
-    const { container } = render(<Icon.Map />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Map Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Map data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Settings icon
-  it('displays Settings Icon', () => {
-    const { container } = render(<Icon.Settings color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Settings Icon with no args', () => {
-    const { container } = render(<Icon.Settings />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Settings Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Settings data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // Time icon
-  it('displays Time Icon', () => {
-    const { container } = render(<Icon.Time color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Time Icon with no args', () => {
-    const { container } = render(<Icon.Time />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays Time Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.Time data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
-  })
-
-  // User icon
-  it('displays User Icon', () => {
-    const { container } = render(<Icon.User color="white" />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays User Icon with no args', () => {
-    const { container } = render(<Icon.User />)
-    expect(container).toBeInTheDocument()
-  })
-
-  it('displays User Icon with data-testid', () => {
-    const { getByTestId } = render(<Icon.User data-testid="testid" />)
-    expect(getByTestId(/testid/i)).toBeInTheDocument()
+    it('displays User Icon with no args', () => {
+      render(<Icon.User />)
+      expect(screen.findAllByRole(role)).toBeInTheDocument()
+    })
   })
 })

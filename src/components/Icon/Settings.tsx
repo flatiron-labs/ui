@@ -2,7 +2,7 @@ import React from 'react'
 import { IconComponent } from './Icon'
 
 export const Settings: IconComponent = ({ color = 'currentColor', ...props }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" role="presentation" {...props}>
     <defs />
     <path stroke={color} strokeWidth="2" d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
     <path
