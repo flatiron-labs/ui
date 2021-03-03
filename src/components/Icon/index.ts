@@ -15,6 +15,10 @@ import { Twitter } from './Twitter'
 import { Youtube } from './Youtube'
 import { Facebook } from './Facebook'
 import { Instagram } from './Instagram'
+import { PinkOverlay } from './Overlays/PinkOverlay'
+import { BlueOverlay } from './Overlays/BlueOverlay'
+import { PurpleOverlay } from './Overlays/PurpleOverlay'
+import { YellowOverlay } from './Overlays/YellowOverlay'
 
 export const Icon = {
   Code,
@@ -33,5 +37,9 @@ export const Icon = {
   Twitter,
   Youtube,
   Facebook,
-  Instagram
+  Instagram,
+  PinkOverlay,
+  BlueOverlay,
+  PurpleOverlay,
+  YellowOverlay
 }
