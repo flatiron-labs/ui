@@ -1,0 +1,899 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon Code displays Code Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Code displays Code Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Dial displays Dial Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="3.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="2.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="8.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <ellipse
+    cx="11.5"
+    cy="20.5263"
+    fill="red"
+    rx="2.5"
+    ry="2.52632"
+  />
+  <ellipse
+    cx="11.5"
+    cy="20.5263"
+    fill="red"
+    rx="2.5"
+    ry="2.52632"
+  />
+  <ellipse
+    cx="11.5"
+    cy="20.5263"
+    fill="red"
+    rx="2.5"
+    ry="2.52632"
+  />
+  <circle
+    cx="19.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="14.5"
+    fill="red"
+    r="2.5"
+  />
+</svg>
+`;
+
+exports[`Icon Dial displays Dial Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="3.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="2.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="8.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="3.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="11.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <ellipse
+    cx="11.5"
+    cy="20.5263"
+    fill="currentColor"
+    rx="2.5"
+    ry="2.52632"
+  />
+  <ellipse
+    cx="11.5"
+    cy="20.5263"
+    fill="currentColor"
+    rx="2.5"
+    ry="2.52632"
+  />
+  <ellipse
+    cx="11.5"
+    cy="20.5263"
+    fill="currentColor"
+    rx="2.5"
+    ry="2.52632"
+  />
+  <circle
+    cx="19.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+  <circle
+    cx="19.5"
+    cy="14.5"
+    fill="currentColor"
+    r="2.5"
+  />
+</svg>
+`;
+
+exports[`Icon Exit displays Exit Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M3.273 2.667c-.598 0-1.091.603-1.091 1.333v16c0 .73.493 1.333 1.09 1.333h17.455c.598 0 1.091-.603 1.091-1.333V4c0-.73-.493-1.333-1.09-1.333H3.272zM0 4c0-2.203 1.47-4 3.273-4h17.454C22.53 0 24 1.797 24 4v16c0 2.203-1.47 4-3.273 4H3.273C1.47 24 0 22.203 0 20V4z"
+    fill="red"
+  />
+  <path
+    d="M19.164 12.619a.875.875 0 000-1.238l-5.568-5.568a.875.875 0 10-1.238 1.237l4.95 4.95-4.95 4.95a.875.875 0 001.238 1.237l5.568-5.568zm-18.073.256h17.454v-1.75H1.091v1.75z"
+    fill="red"
+  />
+</svg>
+`;
+
+exports[`Icon Exit displays Exit Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M3.273 2.667c-.598 0-1.091.603-1.091 1.333v16c0 .73.493 1.333 1.09 1.333h17.455c.598 0 1.091-.603 1.091-1.333V4c0-.73-.493-1.333-1.09-1.333H3.272zM0 4c0-2.203 1.47-4 3.273-4h17.454C22.53 0 24 1.797 24 4v16c0 2.203-1.47 4-3.273 4H3.273C1.47 24 0 22.203 0 20V4z"
+    fill="currentColor"
+  />
+  <path
+    d="M19.164 12.619a.875.875 0 000-1.238l-5.568-5.568a.875.875 0 10-1.238 1.237l4.95 4.95-4.95 4.95a.875.875 0 001.238 1.237l5.568-5.568zm-18.073.256h17.454v-1.75H1.091v1.75z"
+    fill="currentColor"
+  />
+</svg>
+`;
+
+exports[`Icon Github displays Github Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 6a6 6 0 00-1.896 11.693c.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615A5.782 5.782 0 0112 8.901c.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288A6 6 0 0012 6z"
+    fill="red"
+  />
+</svg>
+`;
+
+exports[`Icon Github displays Github Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2zm0-2C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 6a6 6 0 00-1.896 11.693c.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615A5.782 5.782 0 0112 8.901c.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288A6 6 0 0012 6z"
+    fill="currentColor"
+  />
+</svg>
+`;
+
+exports[`Icon Hamburger displays Hamburger Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <rect
+    fill="red"
+    height="3"
+    rx="1"
+    width="20"
+    x="2"
+    y="3"
+  />
+  <rect
+    fill="red"
+    height="3"
+    rx="1"
+    width="20"
+    x="2"
+    y="8"
+  />
+  <rect
+    fill="red"
+    height="3"
+    rx="1"
+    width="20"
+    x="2"
+    y="13"
+  />
+</svg>
+`;
+
+exports[`Icon Hamburger displays Hamburger Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <rect
+    fill="currentColor"
+    height="3"
+    rx="1"
+    width="20"
+    x="2"
+    y="3"
+  />
+  <rect
+    fill="currentColor"
+    height="3"
+    rx="1"
+    width="20"
+    x="2"
+    y="8"
+  />
+  <rect
+    fill="currentColor"
+    height="3"
+    rx="1"
+    width="20"
+    x="2"
+    y="13"
+  />
+</svg>
+`;
+
+exports[`Icon Home displays Home Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  preserveAspectRatio="xMidYMid"
+  role="presentation"
+  viewBox="0 0 20 22"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M1 8L10 1L19 8V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8Z"
+    stroke="red"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-opacity="0.94"
+    stroke-width="2"
+  />
+  <path
+    d="M7 21V11H13V21"
+    stroke="red"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-opacity="0.94"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Home displays Home Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  preserveAspectRatio="xMidYMid"
+  role="presentation"
+  viewBox="0 0 20 22"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M1 8L10 1L19 8V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8Z"
+    stroke="white"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-opacity="0.94"
+    stroke-width="2"
+  />
+  <path
+    d="M7 21V11H13V21"
+    stroke="white"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-opacity="0.94"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Location displays Location Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"
+    stroke="red"
+    stroke-width="2"
+  />
+  <path
+    d="M12 13a3 3 0 100-6 3 3 0 000 6z"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Location displays Location Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+  <path
+    d="M12 13a3 3 0 100-6 3 3 0 000 6z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Lock displays Lock Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M19 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2zM7 11V7a5 5 0 1110 0v4"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Lock displays Lock Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M19 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2zM7 11V7a5 5 0 1110 0v4"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Mail displays Mail Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M4 5c-.548 0-1 .452-1 1v12c0 .548.452 1 1 1h16c.548 0 1-.452 1-1V6c0-.548-.452-1-1-1H4zM1 6c0-1.652 1.348-3 3-3h16c1.652 0 3 1.348 3 3v12c0 1.652-1.348 3-3 3H4c-1.652 0-3-1.348-3-3V6z"
+    fill="red"
+  />
+  <path
+    d="M1.18 5.427a1 1 0 011.393-.246L12 11.779l9.427-6.598a1 1 0 011.146 1.638l-10 7a1 1 0 01-1.146 0l-10-7a1 1 0 01-.246-1.392z"
+    fill="red"
+  />
+</svg>
+`;
+
+exports[`Icon Mail displays Mail Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M4 5c-.548 0-1 .452-1 1v12c0 .548.452 1 1 1h16c.548 0 1-.452 1-1V6c0-.548-.452-1-1-1H4zM1 6c0-1.652 1.348-3 3-3h16c1.652 0 3 1.348 3 3v12c0 1.652-1.348 3-3 3H4c-1.652 0-3-1.348-3-3V6z"
+    fill="currentColor"
+  />
+  <path
+    d="M1.18 5.427a1 1 0 011.393-.246L12 11.779l9.427-6.598a1 1 0 011.146 1.638l-10 7a1 1 0 01-1.146 0l-10-7a1 1 0 01-.246-1.392z"
+    fill="currentColor"
+  />
+</svg>
+`;
+
+exports[`Icon Map displays Map Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Map displays Map Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Settings displays Settings Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M12 15a3 3 0 100-6 3 3 0 000 6z"
+    stroke="red"
+    stroke-width="2"
+  />
+  <path
+    d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a1.998 1.998 0 010 2.83 1.998 1.998 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a1.998 1.998 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 013.417 1.415 2 2 0 01-.587 1.415l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1v0z"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Settings displays Settings Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M12 15a3 3 0 100-6 3 3 0 000 6z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+  <path
+    d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a1.998 1.998 0 010 2.83 1.998 1.998 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a1.998 1.998 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 013.417 1.415 2 2 0 01-.587 1.415l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1v0z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Time displays Time Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M12 19a7 7 0 100-14 7 7 0 000 14z"
+    stroke="red"
+    stroke-width="2"
+  />
+  <path
+    d="M12 9v3l1.5 1.5M7.49 6.65l.35-3.83A2 2 0 019.83 1h4.35a2 2 0 012 1.82l.35 3.83m-.02 10.7l-.35 3.83a2 2 0 01-2 1.82H9.83a2 2 0 01-2-1.82l-.35-3.83h9.03z"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon Time displays Time Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M12 19a7 7 0 100-14 7 7 0 000 14z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+  <path
+    d="M12 9v3l1.5 1.5M7.49 6.65l.35-3.83A2 2 0 019.83 1h4.35a2 2 0 012 1.82l.35 3.83m-.02 10.7l-.35 3.83a2 2 0 01-2 1.82H9.83a2 2 0 01-2-1.82l-.35-3.83h9.03z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon User displays User Icon 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"
+    stroke="red"
+    stroke-width="2"
+  />
+</svg>
+`;
+
+exports[`Icon User displays User Icon with no args 1`] = `
+<svg
+  fill="none"
+  height="24"
+  role="presentation"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs />
+  <path
+    d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+</svg>
+`;
