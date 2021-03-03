@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { TextCard, Grid, Section, MediaCard, ContentCard } from '~/components'
+import { TextCard, Grid, Section, MediaCard, FileCard } from '~/components'
 
 export default {
   title: 'Composites/Page'
@@ -47,7 +47,7 @@ const Template: Story = () => (
 
     <Section title="Documents">
       <Grid container>
-        <ContentCard
+        <FileCard
           type="Resume"
           title="title_of_resume.pdf"
           cta="View"
@@ -57,14 +57,14 @@ const Template: Story = () => (
           tertiaryDescription="1/2/2233"
           onClick={() => null}
         />
-        <ContentCard
+        <FileCard
           type="Resume"
           cta="Upload"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
           onClick={() => null}
         />
-        <ContentCard
+        <FileCard
           type="Resume"
           title="title_of_resume.pdf"
           cta="View"
