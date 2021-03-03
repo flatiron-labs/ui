@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { H4, P } from '~/components/Typography'
-import { Spinner } from '~/components/Spinner'
+import { Icon } from '~/components/Icon'
 
 export interface Content {
   minHeight?: string
@@ -18,11 +18,10 @@ export interface SectionProps extends Content {
 }
 
 const StyledSection = styled.section`
-  padding-top: 4em;
+  padding-bottom: 5em;
 `
 
 const Content = styled.div<Content>`
-  margin-top: 1em;
   ${props => props.minHeight && `min-height: ${props.minHeight};`}
 `
 
@@ -39,26 +38,30 @@ export const Section = ({
   error,
   minHeight = '100px',
   ...props
-}: SectionProps): JSX.Element => (
-  <StyledSection {...props}>
-    {title && <H4>{title}</H4>}
+}: SectionProps): JSX.Element => {
+  const loading = dynamic && !error && !data
 
-    <Content minHeight={minHeight}>
-      {dynamic && error && (
-        <StatusContainer>
-          <P>failed to load</P>
-        </StatusContainer>
-      )}
+  return (
+    <StyledSection aria-busy={loading} {...props}>
+      {title && <H4>{title}</H4>}
 
-      {dynamic && !error && !data && (
-        <StatusContainer>
-          <Spinner />
-        </StatusContainer>
-      )}
+      <Content minHeight={minHeight}>
+        {dynamic && error && (
+          <StatusContainer>
+            <P>failed to load</P>
+          </StatusContainer>
+        )}
 
-      {dynamic && data && children}
+        {loading && (
+          <StatusContainer>
+            <Icon.LoadingIndicator />
+          </StatusContainer>
+        )}
 
-      {!dynamic && children}
-    </Content>
-  </StyledSection>
-)
+        {dynamic && data && children}
+
+        {!dynamic && children}
+      </Content>
+    </StyledSection>
+  )
+}

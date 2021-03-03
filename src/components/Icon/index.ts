@@ -4,6 +4,7 @@ import { Exit } from './Exit'
 import { Hamburger } from './Hamburger'
 import { Home } from './Home'
 import { Github } from './Github'
+import { LoadingIndicator } from './LoadingIndicator'
 import { Location } from './Location'
 import { Lock } from './Lock'
 import { Mail } from './Mail'
@@ -23,6 +24,7 @@ export const Icon = {
   Hamburger,
   Home,
   Github,
+  LoadingIndicator,
   Location,
   Lock,
   Mail,
