@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { TextCard, Grid, Section, LinkCard, FileCard } from '~/components'
+import { TextCard, Grid, Section, OverlayCard, FileCard } from '~/components'
 
 export default {
   title: 'Composites/Page'
@@ -19,9 +19,14 @@ const Template: Story = () => (
 
     <Section title="Links">
       <Grid container spacing={3}>
-        <LinkCard title="Try free courses" cta="View Pathwright" backgroundStyle="red" onClick={() => null} />
-        <LinkCard title="Course work & Curriculum" cta="View Canvas" backgroundStyle="turq" onClick={() => null} />
-        <LinkCard title="Access Career Services" cta="View Gradleaders" backgroundStyle="purple" onClick={() => null} />
+        <OverlayCard title="Try free courses" cta="View Pathwright" backgroundStyle="red" onClick={() => null} />
+        <OverlayCard title="Course work & Curriculum" cta="View Canvas" backgroundStyle="turq" onClick={() => null} />
+        <OverlayCard
+          title="Access Career Services"
+          cta="View Gradleaders"
+          backgroundStyle="purple"
+          onClick={() => null}
+        />
       </Grid>
     </Section>
 

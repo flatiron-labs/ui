@@ -1,15 +1,15 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { LinkCard, LinkCardProps } from '.'
+import { OverlayCard, OverlayCardProps } from '.'
 
 export default {
-  title: 'Content/LinkCard',
-  component: LinkCard
+  title: 'Content/OverlayCard',
+  component: OverlayCard
 } as Meta
 
-const Template: Story = (args: LinkCardProps) => (
+const Template: Story = (args: OverlayCardProps) => (
   <div style={{ paddingTop: '40px' }}>
-    <LinkCard {...args} />
+    <OverlayCard {...args} />
   </div>
 )
 

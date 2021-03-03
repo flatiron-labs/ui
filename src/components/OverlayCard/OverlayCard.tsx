@@ -5,7 +5,7 @@ import { Grid } from '~/components/Grid'
 import { Icon } from '~/index'
 import { Color } from '~/styles'
 
-export interface LinkCardProps {
+export interface OverlayCardProps {
   children?: React.ReactNode
   title?: string
   cta?: string | JSX.Element
@@ -34,7 +34,7 @@ const StyledText = styled.div`
   text-align: center;
 `
 
-const StyledButton = styled(Button)<LinkCardProps>`
+const StyledButton = styled(Button)<OverlayCardProps>`
   border: 2px solid ${props => Color[props.backgroundStyle]};
   margin-top: 10px;
   width: 100%;
@@ -47,7 +47,7 @@ const StyledButton = styled(Button)<LinkCardProps>`
   }
 `
 
-export const LinkCard = ({ cta, title, backgroundStyle, onClick }: LinkCardProps): JSX.Element => (
+export const OverlayCard = ({ cta, title, backgroundStyle, onClick }: OverlayCardProps): JSX.Element => (
   <Container>
     <StyledGrid backgroundStyle={backgroundStyle}>
       {backgroundStyle === 'red' && (
