@@ -160,4 +160,52 @@ describe('Icon', () => {
       expect(screen.getByRole(role)).toMatchSnapshot()
     })
   })
+
+  describe('Twitter', () => {
+    it('displays User Icon', () => {
+      render(<Icon.Twitter color="red" />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+
+    it('displays User Icon with no args', () => {
+      render(<Icon.Twitter />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+  })
+
+  describe('Facebook', () => {
+    it('displays User Icon', () => {
+      render(<Icon.Facebook color="red" />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+
+    it('displays User Icon with no args', () => {
+      render(<Icon.Facebook />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+  })
+
+  describe('Youtube', () => {
+    it('displays User Icon', () => {
+      render(<Icon.Youtube color="red" />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+
+    it('displays User Icon with no args', () => {
+      render(<Icon.Youtube />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+  })
+
+  describe('Instagram', () => {
+    it('displays User Icon', () => {
+      render(<Icon.Instagram color="red" />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+
+    it('displays User Icon with no args', () => {
+      render(<Icon.Instagram />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+  })
 })
