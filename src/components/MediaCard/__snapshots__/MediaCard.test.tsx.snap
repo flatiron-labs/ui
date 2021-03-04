@@ -19,7 +19,7 @@ exports[`MediaCard should render a custom cta element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg jALYxd"
+            class="sc-eCssSg gwIyGi"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
@@ -60,7 +60,7 @@ exports[`MediaCard should render a custom image element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg jALYxd"
+            class="sc-eCssSg gwIyGi"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
@@ -101,7 +101,7 @@ exports[`MediaCard should render children 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg jALYxd"
+            class="sc-eCssSg gwIyGi"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
