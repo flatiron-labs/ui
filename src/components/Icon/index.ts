@@ -15,10 +15,10 @@ import { Twitter } from './Twitter'
 import { Youtube } from './Youtube'
 import { Facebook } from './Facebook'
 import { Instagram } from './Instagram'
-import { PinkOverlay } from './Overlays/PinkOverlay'
-import { BlueOverlay } from './Overlays/BlueOverlay'
-import { PurpleOverlay } from './Overlays/PurpleOverlay'
-import { YellowOverlay } from './Overlays/YellowOverlay'
+import { PinkOverlay } from '../OverlayCard/Overlays/PinkOverlay'
+import { TurqOverlay } from '../OverlayCard/Overlays/TurqOverlay'
+import { PurpleOverlay } from '../OverlayCard/Overlays/PurpleOverlay'
+import { YellowOverlay } from '../OverlayCard/Overlays/YellowOverlay'
 
 export const Icon = {
   Code,
@@ -39,7 +39,7 @@ export const Icon = {
   Facebook,
   Instagram,
   PinkOverlay,
-  BlueOverlay,
+  TurqOverlay,
   PurpleOverlay,
   YellowOverlay
 }

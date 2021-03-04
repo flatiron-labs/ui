@@ -2,16 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
-import { Icon } from '~/index'
+import { TurqOverlay } from './Overlays/TurqOverlay'
+import { PinkOverlay } from './Overlays/PinkOverlay'
+import { YellowOverlay } from './Overlays/YellowOverlay'
+import { PurpleOverlay } from './Overlays/PurpleOverlay'
 import { Color } from '~/styles'
 
-type BackgroundType = 'turq' | 'red' | 'yellow' | 'purple'
+type BackgroundType = 'turq' | 'pink' | 'yellow' | 'purple'
 
 export interface OverlayCardProps {
+  background: BackgroundType
   children?: React.ReactNode
   title?: string
   cta?: string | JSX.Element
-  background: BackgroundType
+  className?: string
   onClick?: (e: React.MouseEvent) => void
 }
 
@@ -21,7 +25,7 @@ const Container = styled(props => (
   padding: 10px;
 `
 
-const StyledGrid = styled(props => <Grid container item xs={12} {...props} />)`
+const StyledGrid = styled(props => <Grid container item {...props} />)`
   border: 2px solid ${props => Color[props.background]};
   display: flex;
   justify-content: center;
@@ -49,17 +53,17 @@ const StyledButton = styled(Button)<OverlayCardProps>`
   }
 `
 
-export const OverlayCard = ({ cta, title, background, onClick }: OverlayCardProps): JSX.Element => {
+export const OverlayCard = ({ cta, title, background, onClick, ...props }: OverlayCardProps): JSX.Element => {
   const componentMap = {
-    turq: Icon.BlueOverlay,
-    red: Icon.PinkOverlay,
-    yellow: Icon.YellowOverlay,
-    purple: Icon.PurpleOverlay
+    turq: TurqOverlay,
+    pink: PinkOverlay,
+    yellow: YellowOverlay,
+    purple: PurpleOverlay
   }
   const Overlay = componentMap[background]
 
   return (
-    <Container>
+    <Container {...props}>
       <StyledGrid background={background}>
         <Overlay style={{ paddingTop: '20px' }} />
         <StyledText>{title}</StyledText>

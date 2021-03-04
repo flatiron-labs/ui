@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconComponent } from '../Icon'
+import { IconComponent } from '~/components/Icon/Icon'
 
 export const PurpleOverlay: IconComponent = ({ ...props }) => (
   <svg width="307" height="125" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>

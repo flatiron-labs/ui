@@ -19,7 +19,7 @@ const Template: Story = () => (
 
     <Section title="Links">
       <Grid container spacing={3}>
-        <OverlayCard title="Try free courses" cta="View Pathwright" background="red" onClick={() => null} />
+        <OverlayCard title="Try free courses" cta="View Pathwright" background="pink" onClick={() => null} />
         <OverlayCard title="Course work & Curriculum" cta="View Canvas" background="turq" onClick={() => null} />
         <OverlayCard title="Access Career Services" cta="View Gradleaders" background="purple" onClick={() => null} />
       </Grid>

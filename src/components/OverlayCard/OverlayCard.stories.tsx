@@ -17,7 +17,7 @@ export const Pink = Template.bind({})
 Pink.args = {
   title: 'Try free courses',
   cta: 'View Canvas',
-  background: 'red',
+  background: 'pink',
   onClick: () => null
 }
 

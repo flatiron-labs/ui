@@ -10,17 +10,17 @@ describe('OverlayCard', () => {
   }
 
   it('should render title', () => {
-    renderComponent({ title: 'Try courses', cta: 'View Canvas', background: 'red' })
+    renderComponent({ title: 'Try courses', cta: 'View Canvas', background: 'pink' })
     screen.getAllByText('Try courses')
   })
 
   it('should render cta', () => {
-    renderComponent({ title: 'Try courses', cta: 'View Canvas', background: 'red' })
+    renderComponent({ title: 'Try courses', cta: 'View Canvas', background: 'pink' })
     screen.getByText('View Canvas')
   })
 
   it('should render cta jsx element', () => {
-    renderComponent({ title: 'Try courses', cta: <Button>View Canvas</Button>, background: 'red' })
+    renderComponent({ title: 'Try courses', cta: <Button>View Canvas</Button>, background: 'pink' })
     screen.getByText('View Canvas')
   })
 })
