@@ -11,8 +11,8 @@ const src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8--
 
 const Template: Story = () => (
   <Page style={{ minHeight: '100vh' }}>
-    <Section>
-      <MainHeader date="Fall 2020" subheader="Software Engineering" header="Welcome Back John Smith!" />
+    <Section minHeight="50px">
+      <MainHeader secondarySubheader="Fall 2020" subheader="Software Engineering" header="Welcome Back John Smith!" />
     </Section>
 
     <Section title="Links">
@@ -49,7 +49,7 @@ const Template: Story = () => (
           cta="View"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
-          tertiarytitle="Completed"
+          tertiaryTitle="Completed"
           tertiaryDescription="1/2/2233"
           onClick={() => null}
         />
@@ -66,7 +66,7 @@ const Template: Story = () => (
           cta="View"
           secondaryTitle="Assigned"
           secondaryDescription="1/2/2233"
-          tertiarytitle="Completed"
+          tertiaryTitle="Completed"
           tertiaryDescription="1/2/2233"
           onClick={() => null}
         />

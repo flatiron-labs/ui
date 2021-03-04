@@ -13,5 +13,5 @@ export const Default = Template.bind({})
 Default.args = {
   header: 'Welcome Back John Smith',
   subheader: 'Software Engineering',
-  date: ' Fall 2021'
+  secondarySubheader: ' Fall 2021'
 }

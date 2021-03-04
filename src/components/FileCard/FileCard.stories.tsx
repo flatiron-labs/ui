@@ -20,7 +20,7 @@ Default.args = {
   cta: 'Upload',
   secondaryTitle: 'Assigned',
   secondaryDescription: '1/2/2022',
-  tertiarytitle: 'Completed',
+  tertiaryTitle: 'Completed',
   tertiaryDescription: '1/3/2023',
   onClick: () => null
 }

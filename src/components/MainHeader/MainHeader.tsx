@@ -1,26 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color } from '~/styles'
+import { Color, Font } from '~/styles'
 import { Grid } from '../Grid'
-import { H4, H3 } from '../Typography'
+import { H3 } from '../Typography'
 
 export interface MainHeaderProps {
   header: string
   subheader: string
-  date: string
+  secondarySubheader?: string
+  className?: string
 }
 
-const StyledH4 = styled(H4)`
-  color: ${Color.yellow};
+const StyledSpan = styled.span<{ white?: boolean }>`
+  color: ${props => (props.white ? Color.white : Color.yellow)};
   padding-right: 25px;
+  font-family: ${Font.firaCode}, monospace;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 `
 
-export const MainHeader = ({ header, subheader, date, ...props }: MainHeaderProps): JSX.Element => (
-  <Grid item xs={12} {...props}>
+export const MainHeader = ({ header, subheader, secondarySubheader, ...props }: MainHeaderProps): JSX.Element => (
+  <Grid item {...props}>
     <H3>{header}</H3>
     <Grid container direction="row">
-      <StyledH4>{subheader}</StyledH4>
-      <H4>{date}</H4>
+      <StyledSpan>{subheader}</StyledSpan>
+      <StyledSpan white>{secondarySubheader}</StyledSpan>
     </Grid>
   </Grid>
 )
