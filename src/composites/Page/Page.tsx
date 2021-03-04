@@ -10,8 +10,11 @@ export interface PageProps {
 const StyledContent = styled.div`
   align-items: flex-start;
   align-content: flex-start;
-  padding: 62px;
-  transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  padding: 62px 62px 31px;
+`
+
+const StyledHeader = styled(Header)`
+  margin-bottom: 4em;
 `
 
 export const Page = ({ children, ...props }: PageProps): JSX.Element => {
@@ -34,7 +37,7 @@ export const Page = ({ children, ...props }: PageProps): JSX.Element => {
 
           <Grid item xs={sidebarExpanded === true ? 5 : true} sm={sidebarExpanded === true ? 5 : true}>
             <StyledContent>
-              <Header />
+              <StyledHeader />
               {children}
             </StyledContent>
           </Grid>

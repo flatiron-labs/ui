@@ -10,7 +10,12 @@ const StyledFooter = styled(rest => <Grid container component="footer" {...rest}
   height: 100px;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 1rem;
+
+  ${Media.md} {
+    justify-content: space-between;
+    padding: 0 5rem;
+  }
 `
 
 const FooterLink = styled.a`
@@ -37,16 +42,24 @@ const SocialLinks = styled.ul`
   align-items: center;
   direction: row;
   justify-content: flex-end;
-`
 
-const SocialLink = styled.li`
-  padding: 3px;
-  cursor: pointer;
+  a {
+    color: black;
+  }
+
+  li {
+    padding-left: 1em;
+    cursor: pointer;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
 `
 
 export const Footer = (): JSX.Element => (
-  <StyledFooter>
-    <Grid item xs={10} sm={10} md={8}>
+  <StyledFooter spacing={1}>
+    <Grid item xs={10} sm={10} md={9}>
       <Grid container component="nav" direction="row" justify="space-between" alignItems="center" aria-label="Footer">
         <FooterLink href="https://portal.flatironschool.com/tos">Accessibility</FooterLink>
         <FooterLink href="https://flatironschool.com/accessibility">Terms &amp; Conditions</FooterLink>
@@ -58,31 +71,31 @@ export const Footer = (): JSX.Element => (
     <Hidden smDown>
       <Grid item xs={2}>
         <SocialLinks aria-label="Social links">
-          <SocialLink>
+          <li>
             <a href="#" title="Facebook">
-              <Icon.Github color={Color.black} />
+              <Icon.Facebook />
             </a>
-          </SocialLink>
-          <SocialLink>
+          </li>
+          <li>
             <a href="#" title="Twitter">
-              <Icon.Github color={Color.black} />
+              <Icon.Twitter />
             </a>
-          </SocialLink>
-          <SocialLink>
+          </li>
+          <li>
             <a href="#" title="Instagram">
-              <Icon.Github color={Color.black} />
+              <Icon.Instagram />
             </a>
-          </SocialLink>
-          <SocialLink>
+          </li>
+          <li>
             <a href="#" title="Github">
-              <Icon.Github color={Color.black} />
+              <Icon.Github />
             </a>
-          </SocialLink>
-          <SocialLink>
+          </li>
+          <li>
             <a href="#" title="YouTube">
-              <Icon.Github color={Color.black} />
+              <Icon.Youtube />
             </a>
-          </SocialLink>
+          </li>
         </SocialLinks>
       </Grid>
     </Hidden>
