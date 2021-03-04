@@ -15,10 +15,11 @@ export interface SectionProps extends Content {
   dynamic?: boolean
   data?: unknown
   error?: unknown
+  className?: string
 }
 
 const StyledSection = styled.section`
-  padding-bottom: 5em;
+  padding-bottom: 3em;
 `
 
 const Content = styled.div<Content>`
