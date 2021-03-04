@@ -13,8 +13,12 @@ const Container = styled(props => (
   }
 `
 
-export const Header = (): JSX.Element => (
-  <Container>
+export interface HeaderProps {
+  className?: string
+}
+
+export const Header: React.FC<HeaderProps> = props => (
+  <Container {...props}>
     <svg width="220" height="33" viewBox="0 0 220 33" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0)">
         <path d="M9.63669 0L0 33H4.25148L13.8882 0H9.63669Z" fill="#00EFE1" fillOpacity="0.95" />

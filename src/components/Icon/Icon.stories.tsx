@@ -22,6 +22,7 @@ export default {
 
 const Template: Story = (args: IcoProps) => (
   <Container>
+    <Icon.LoadingIndicator {...args} />
     <Icon.Code {...args} />
     <Icon.Dial {...args} />
     <Icon.Exit {...args} />

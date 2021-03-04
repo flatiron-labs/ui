@@ -11,7 +11,7 @@ export const Color = {
   turqDark: 'rgba(12, 50, 62, 1)',
   yellow: 'rgba(249, 197, 26, 1)',
   orange: 'rgba(255, 92, 0, 1)',
-  red: 'rgba(232, 3, 82, 1)',
+  pink: 'rgba(232, 3, 82, 1)',
   blue: 'rgba(51, 143, 255, 1)',
   purple: 'rgba(205, 162, 255, 1)',
   green: 'rgba(0, 239, 124, 1)',

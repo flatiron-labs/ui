@@ -1,13 +1,11 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { Grid, Section, MediaCard, FileCard, MainHeader } from '~/components'
+import { Grid, Section, OverlayCard, FileCard, MainHeader } from '~/components'
 
 export default {
   title: 'Composites/Page'
 } as Meta
-
-const src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU'
 
 const Template: Story = () => (
   <Page style={{ minHeight: '100vh' }}>
@@ -17,27 +15,9 @@ const Template: Story = () => (
 
     <Section title="Links">
       <Grid container spacing={3}>
-        <MediaCard
-          image={src}
-          title="Gradleaders"
-          description="this is information about gradleaders"
-          cta="View Gradleaders"
-          onClick={() => null}
-        />
-        <MediaCard
-          image={src}
-          title="Gradleaders"
-          description="this is information about gradleaders"
-          cta="View Gradleaders"
-          onClick={() => null}
-        />
-        <MediaCard
-          image={src}
-          title="Gradleaders"
-          description="this is information about gradleaders"
-          cta="View Gradleaders"
-          onClick={() => null}
-        />
+        <OverlayCard title="Try free courses" cta="View Pathwright" background="pink" onClick={() => null} />
+        <OverlayCard title="Course work & Curriculum" cta="View Canvas" background="turq" onClick={() => null} />
+        <OverlayCard title="Access Career Services" cta="View Gradleaders" background="purple" onClick={() => null} />
       </Grid>
     </Section>
 
