@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Color, Font } from '~/styles'
 import { Grid } from '../Grid'
-import { H3 } from '../Typography'
+import { H1 } from '../Typography'
 
 export interface MainHeaderProps {
   header: string
@@ -23,7 +23,7 @@ const StyledSpan = styled.span<{ white?: boolean }>`
 
 export const MainHeader = ({ header, subheader, secondarySubheader, ...props }: MainHeaderProps): JSX.Element => (
   <Grid item {...props}>
-    <H3>{header}</H3>
+    <H1 fontSize="1.65rem">{header}</H1>
     <Grid container direction="row">
       <StyledSpan>{subheader}</StyledSpan>
       <StyledSpan white>{secondarySubheader}</StyledSpan>

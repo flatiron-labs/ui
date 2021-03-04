@@ -9,21 +9,21 @@ const base = {
     margin-bottom: 10px;
   `
 }
-const H1 = styled.h1`
+const H1 = styled.h1<{ fontSize?: string }>`
   ${base.header}
-  font-size: 5.45rem;
+  font-size: ${props => (props.fontSize ? props.fontSize : '5.45rem')};
 `
-const H2 = styled.h2`
+const H2 = styled.h2<{ fontSize?: string }>`
   ${base.header}
-  font-size: 3.3rem;
+  font-size: ${props => (props.fontSize ? props.fontSize : '3.3rem')};
 `
-const H3 = styled.h3`
+const H3 = styled.h3<{ fontSize?: string }>`
   ${base.header}
-  font-size: 1.65rem;
+  font-size: ${props => (props.fontSize ? props.fontSize : '1.65rem')};
 `
-const H4 = styled.h4`
+const H4 = styled.h4<{ fontSize?: string }>`
   ${base.header}
-  font-size: 1.2rem;
+  font-size: ${props => (props.fontSize ? props.fontSize : '1.2rem')};
 `
 const P = styled.p`
   font-family: ${Font.firaCode}, monospace;
