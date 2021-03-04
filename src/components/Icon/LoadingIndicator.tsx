@@ -9,6 +9,7 @@ export const LoadingIndicator: IconComponent = ({ ...props }) => (
     role="status"
     aria-busy="true"
     aria-live="polite"
+    data-chromatic="ignore"
     {...props}
   >
     <defs />

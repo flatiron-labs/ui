@@ -22,12 +22,12 @@ export default {
 
 const Template: Story = (args: IcoProps) => (
   <Container>
+    <Icon.LoadingIndicator {...args} />
     <Icon.Code {...args} />
     <Icon.Dial {...args} />
     <Icon.Exit {...args} />
     <Icon.Hamburger {...args} />
     <Icon.Home {...args} />
-    <Icon.LoadingIndicator {...args} />
     <Icon.Location {...args} />
     <Icon.Lock {...args} />
     <Icon.Map {...args} />
