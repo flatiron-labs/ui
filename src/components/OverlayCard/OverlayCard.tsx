@@ -72,7 +72,7 @@ export const OverlayCard = ({ cta, title, background, onClick, ...props }: Overl
         {React.isValidElement(cta) ? (
           cta
         ) : (
-          <StyledButton onClick={onClick} background={background}>
+          <StyledButton onClick={onClick} background={background} md>
             {cta as string}
           </StyledButton>
         )}

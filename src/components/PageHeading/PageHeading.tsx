@@ -12,6 +12,7 @@ export interface PageHeadingProps {
 const marginBottom = '2.5em'
 
 const Header = styled(H1)<{ noSubheader?: boolean }>`
+  font-size: 2.5rem;
   ${props =>
     props.noSubheader &&
     `
@@ -21,7 +22,7 @@ const Header = styled(H1)<{ noSubheader?: boolean }>`
 
 const Subheader = styled(P)`
   color: ${Color.white};
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: ${marginBottom};

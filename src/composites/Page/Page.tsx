@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Grid, Header, Footer, Sidebar } from '~/index' // Intentionally using the root index.ts
+import { Grid, Header, Footer, Sidebar, Media } from '~/index' // Intentionally using the root index.ts
 
 export interface PageProps {
   children: JSX.Element[]
   style?: React.CSSProperties
 }
 
-const StyledContent = styled.div`
+const StyledContent = styled.div<{ sidebarExpanded?: boolean }>`
   align-items: flex-start;
   align-content: flex-start;
-  padding: 62px 62px 31px;
+  padding: 62px 20px 31px;
+  ${Media.md} {
+    padding: 62px 62px 31px;
+  }
+  ${props =>
+    props.sidebarExpanded &&
+    `
+    padding: 62px 80px 31px;
+    position: absolute;
+  `}
 `
 
 const StyledHeader = styled(Header)`
@@ -30,19 +39,18 @@ export const Page = ({ children, ...props }: PageProps): JSX.Element => {
           <Sidebar
             onExpand={handleOnExpand}
             expanded={sidebarExpanded}
-            xs={sidebarExpanded === true ? 7 : 2}
-            sm={sidebarExpanded === true ? 5 : 1}
+            xs={sidebarExpanded === true ?? 2}
+            sm={sidebarExpanded === true ?? 1}
             md={2}
           />
 
           <Grid item xs={sidebarExpanded === true ? 5 : true} sm={sidebarExpanded === true ? 5 : true}>
-            <StyledContent>
+            <StyledContent sidebarExpanded={sidebarExpanded}>
               <StyledHeader />
               {children}
             </StyledContent>
           </Grid>
         </Grid>
-
         <Footer />
       </Grid>
     </Grid>

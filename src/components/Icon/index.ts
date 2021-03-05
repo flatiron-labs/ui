@@ -21,6 +21,7 @@ import { TurqOverlay } from '../OverlayCard/Overlays/TurqOverlay'
 import { PurpleOverlay } from '../OverlayCard/Overlays/PurpleOverlay'
 import { YellowOverlay } from '../OverlayCard/Overlays/YellowOverlay'
 import { IconComponent } from './Icon'
+import { Close } from './Close'
 
 export const Icon: Record<string, IconComponent> = {
   Code,
@@ -44,5 +45,6 @@ export const Icon: Record<string, IconComponent> = {
   PinkOverlay,
   TurqOverlay,
   PurpleOverlay,
-  YellowOverlay
+  YellowOverlay,
+  Close
 }
