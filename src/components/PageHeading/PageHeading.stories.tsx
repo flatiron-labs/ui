@@ -11,7 +11,24 @@ const Template: Story = (args: PageHeadingProps) => <PageHeading {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-  header: 'Welcome Back John Smith',
-  subheader: 'Software Engineering',
-  secondarySubheader: ' Fall 2021'
+  title: 'Welcome Back John Smith',
+  subtitle: 'Software Engineering',
+  secondarySubtitle: ' Fall 2021'
+}
+
+export const WithoutSubtitle = Template.bind({})
+WithoutSubtitle.args = {
+  title: 'Welcome Back John Smith'
+}
+
+export const WithHighlightedSubtitle = Template.bind({})
+WithHighlightedSubtitle.args = {
+  title: 'Welcome Back John Smith',
+  subtitle: 'Software Engineering'
+}
+
+export const WithGenericSubtitle = Template.bind({})
+WithGenericSubtitle.args = {
+  title: 'Welcome Back John Smith',
+  secondarySubtitle: ' Fall 2021'
 }

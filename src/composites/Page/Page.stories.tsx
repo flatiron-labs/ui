@@ -9,7 +9,7 @@ export default {
 
 const Template: Story = () => (
   <Page style={{ minHeight: '100vh' }}>
-    <PageHeading secondarySubheader="Fall 2020" subheader="Software Engineering" header="Welcome Back John Smith!" />
+    <PageHeading title="Welcome Back John Smith!" subtitle="Software Engineering" secondarySubtitle="Fall 2020" />
 
     <Section title="Links">
       <Grid container spacing={3}>

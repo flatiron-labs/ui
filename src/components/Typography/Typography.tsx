@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Font } from '~/styles'
 
-interface HeadingProps {
+interface HeadingProps extends React.HTMLProps<HTMLHeadingElement> {
   fontSize?: string
 }
 
