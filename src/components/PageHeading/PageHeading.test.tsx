@@ -1,11 +1,11 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 
-import { MainHeader, MainHeaderProps } from '.'
+import { PageHeading, PageHeadingProps } from '.'
 
-describe('MainHeader', () => {
-  const renderComponent = ({ header, subheader, secondarySubheader }: MainHeaderProps) => {
-    render(<MainHeader header={header} subheader={subheader} secondarySubheader={secondarySubheader} />)
+describe('PageHeading', () => {
+  const renderComponent = ({ header, subheader, secondarySubheader }: PageHeadingProps) => {
+    render(<PageHeading header={header} subheader={subheader} secondarySubheader={secondarySubheader} />)
   }
 
   it('should render a header', () => {
