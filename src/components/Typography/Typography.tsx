@@ -15,7 +15,7 @@ const base = {
 }
 const H1 = styled.h1`
   ${base.header}
-  font-size: 1.65rem;
+  font-size: 1.65em;
 `
 const H2 = styled.h2<HeadingProps>`
   ${base.header}
