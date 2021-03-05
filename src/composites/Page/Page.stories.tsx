@@ -8,7 +8,7 @@ export default {
 } as Meta
 
 const Template: Story = () => (
-  <Page style={{ minHeight: '100vh' }}>
+  <Page style={{ minHeight: '100vh', position: 'relative' }}>
     <PageHeading title="Welcome Back John Smith!" subtitle="Software Engineering" secondarySubtitle="Fall 2020" />
 
     <Section title="Links">

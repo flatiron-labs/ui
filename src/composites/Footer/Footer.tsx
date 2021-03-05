@@ -10,7 +10,9 @@ const StyledFooter = styled(rest => <Grid container component="footer" {...rest}
   height: 100px;
   justify-content: center;
   align-items: center;
-  padding: 0 1rem;
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
 
   ${Media.md} {
     justify-content: space-between;
