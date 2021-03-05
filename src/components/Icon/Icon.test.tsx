@@ -215,4 +215,16 @@ describe('Icon', () => {
       expect(screen.getByRole(role)).toMatchSnapshot()
     })
   })
+
+  describe('Close', () => {
+    it('displays Close Icon', () => {
+      render(<Icon.Close color="red" />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+
+    it('displays Close Icon with no args', () => {
+      render(<Icon.Close />)
+      expect(screen.getByRole(role)).toMatchSnapshot()
+    })
+  })
 })
