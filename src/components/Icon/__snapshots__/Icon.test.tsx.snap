@@ -18,7 +18,7 @@ exports[`Icon Close displays Close Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Close displays Closr Icon with no args 1`] = `
+exports[`Icon Close displays Close Icon with no args 1`] = `
 <svg
   fill="none"
   height="25"
