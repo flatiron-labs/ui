@@ -14,12 +14,6 @@ const StyledContent = styled.div<{ sidebarExpanded?: boolean }>`
   ${Media.md} {
     padding: 62px 62px 31px;
   }
-  ${props =>
-    props.sidebarExpanded &&
-    `
-    padding: 62px 80px 31px;
-    position: absolute;
-  `}
 `
 
 const StyledHeader = styled(Header)`
