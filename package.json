@@ -14,6 +14,7 @@
     "build/"
   ],
   "scripts": {
+    "analyze": "source-map-explorer 'build/esm/*.js'",
     "build": "rm -rf build/* && rollup -c",
     "watch": "rollup -c -w",
     "lint:eslint": "eslint --max-warnings 0",
@@ -231,6 +232,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "sb": "^6.1.18",
+    "source-map-explorer": "^2.5.2",
     "storybook-addon-jsx": "^7.3.6",
     "styled-components": "^5.2.1",
     "ts-jest": "^26.5.1",
