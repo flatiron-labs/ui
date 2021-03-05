@@ -3,9 +3,9 @@
 exports[`Icon Close displays Close Icon 1`] = `
 <svg
   fill="none"
-  height="25"
+  height="24"
   role="presentation"
-  width="25"
+  width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
   <path
@@ -21,9 +21,9 @@ exports[`Icon Close displays Close Icon 1`] = `
 exports[`Icon Close displays Close Icon with no args 1`] = `
 <svg
   fill="none"
-  height="25"
+  height="24"
   role="presentation"
-  width="25"
+  width="24"
   xmlns="http://www.w3.org/2000/svg"
 >
   <path

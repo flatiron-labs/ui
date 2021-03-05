@@ -18,13 +18,6 @@ const StyledButton = styled(Button)`
   align-items: center;
 `
 
-const StyledGrid = styled(Grid)`
-  padding-top: 20px;
-  ${Media.sm} {
-    padding-top: 0;
-  }
-`
-
 export interface HeaderProps {
   className?: string
 }
@@ -42,13 +35,9 @@ export const Header: React.FC<HeaderProps> = props => (
         fill="#fff"
       />
     </svg>
-    <StyledGrid item>
-      <Grid container direction="row">
-        <StyledButton sm>
-          Turn off student base experience
-          <Icon.Exit style={{ paddingLeft: '5px' }} />
-        </StyledButton>
-      </Grid>
-    </StyledGrid>
+    <StyledButton sm>
+      Turn off student base experience
+      <Icon.Exit style={{ paddingLeft: '5px' }} />
+    </StyledButton>
   </Container>
 )
