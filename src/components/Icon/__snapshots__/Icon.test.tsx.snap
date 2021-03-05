@@ -722,23 +722,22 @@ exports[`Icon Instagram displays User Icon with no args 1`] = `
 
 exports[`Icon LoadingIndicator displays icon with no args 1`] = `
 <svg
-  aria-busy="true"
-  aria-live="polite"
-  data-chromatic="ignore"
+  display="block"
   height="80"
+  preserveAspectRatio="xMidYMid"
   role="status"
   width="80"
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs />
   <rect
-    fill="#fe718d"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#f9ed1a"
+    height="4"
+    rx="0"
+    ry="0"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -750,14 +749,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#f47e60"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#ff5c00"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(30 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -769,14 +768,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#f8b26a"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#ff006b"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(60 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -788,14 +787,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#abbd81"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#00efe1"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(90 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -807,14 +806,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#849b87"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#cda2ff"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(120 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -826,14 +825,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#6492ac"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#338fff"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(150 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -845,14 +844,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#637cb5"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#00ef7c"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(180 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -864,14 +863,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#6a63b6"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#f9ed1a"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(210 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -883,14 +882,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#fe718d"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#ff5c00"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(240 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -902,14 +901,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#f47e60"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#ff006b"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(270 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -921,14 +920,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#f8b26a"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#00efe1"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(300 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"
@@ -940,14 +939,14 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
     />
   </rect>
   <rect
-    fill="#abbd81"
-    height="12"
-    rx="3"
-    ry="6"
+    fill="#cda2ff"
+    height="4"
+    rx="0"
+    ry="0"
     transform="rotate(330 50 50)"
     width="6"
     x="47"
-    y="24"
+    y="28"
   >
     <animate
       attributeName="opacity"

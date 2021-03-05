@@ -8,6 +8,7 @@ export const LoadingIndicator: IconComponent = ({ ...props }) => (
     preserveAspectRatio="xMidYMid"
     height="80"
     width="80"
+    role="status"
     {...props}
   >
     <defs />
