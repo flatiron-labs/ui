@@ -4,8 +4,17 @@ import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
 import { Color, Font } from '~/styles'
 
+export interface OverlayCardBaseProps {
+  accent: string
+}
+
+export interface OverlayCardTopProps extends OverlayCardBaseProps {
+  backgroundImage: string
+}
+
 export interface OverlayCardProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+    OverlayCardTopProps {
   accent: 'turq' | 'pink' | 'yellow' | 'purple'
   image: string
   title?: string
@@ -18,7 +27,7 @@ const Container = styled(props => (
   padding: 10px;
 `
 
-const StyledButton = styled(Button)<{ accent: string }>`
+const StyledButton = styled(Button)<OverlayCardBaseProps>`
   border: 2px solid ${props => Color[props.accent]};
   margin-top: 10px;
   width: 100%;
@@ -32,7 +41,7 @@ const StyledButton = styled(Button)<{ accent: string }>`
   }
 `
 
-const Top = styled.div<{ accent: string; backgroundImage: string }>`
+const Top = styled.div<OverlayCardTopProps>`
   border: 2px solid ${props => Color[props.accent]};
   display: flex;
   justify-content: center;
