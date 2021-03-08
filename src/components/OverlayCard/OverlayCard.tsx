@@ -6,7 +6,7 @@ import { TurqOverlay } from './Overlays/TurqOverlay'
 import { PinkOverlay } from './Overlays/PinkOverlay'
 import { YellowOverlay } from './Overlays/YellowOverlay'
 import { PurpleOverlay } from './Overlays/PurpleOverlay'
-import { Color } from '~/styles'
+import { Color, Font } from '~/styles'
 
 type BackgroundType = 'turq' | 'pink' | 'yellow' | 'purple'
 
@@ -34,7 +34,7 @@ const StyledGrid = styled(props => <Grid container item {...props} />)`
 const StyledText = styled.div`
   padding-top: 30px;
   position: absolute;
-  font-family: Gotcha regular;
+  font-family: ${Font.gotcha};
   font-size: 2.5em;
   width: 250px;
   text-align: center;
