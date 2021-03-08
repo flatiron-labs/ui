@@ -2,7 +2,15 @@ import React from 'react'
 import { IconComponent } from '~/components/Icon/Icon'
 
 export const TurqOverlay: IconComponent = ({ ...props }) => (
-  <svg width="308" height="125" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    viewBox="0 0 308 125"
+    width="420"
+    height="125"
+    preserveAspectRatio="none"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       opacity=".5"
       fillRule="evenodd"
