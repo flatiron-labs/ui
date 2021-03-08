@@ -29,7 +29,7 @@ export const Page = ({ children, ...props }: PageProps): JSX.Element => {
   return (
     <Grid item {...props}>
       <Grid container style={{ minHeight: '100vh' }}>
-        <Grid container wrap="nowrap">
+        <Grid container wrap="nowrap" style={{ paddingBottom: '40px' }}>
           <Sidebar
             onExpand={handleOnExpand}
             expanded={sidebarExpanded}
