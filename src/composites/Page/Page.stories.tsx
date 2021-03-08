@@ -3,6 +3,10 @@ import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
 import { Grid, Section, OverlayCard, FileCard, PageHeading } from '~/components'
 
+import PinkOverlay from '~/assets/images/overlay-pink.svg'
+import PurpleOverlay from '~/assets/images/overlay-purple.svg'
+import TurqOverlay from '~/assets/images/overlay-turq.svg'
+
 export default {
   title: 'Composites/Page'
 } as Meta
@@ -13,9 +17,9 @@ const Template: Story = () => (
 
     <Section title="Links">
       <Grid container spacing={3}>
-        <OverlayCard title="Try free courses" cta="View Pathwright" background="pink" onClick={() => null} />
-        <OverlayCard title="Course work & Curriculum" cta="View Canvas" background="turq" onClick={() => null} />
-        <OverlayCard title="Access Career Services" cta="View Gradleaders" background="purple" onClick={() => null} />
+        <OverlayCard title="Try free courses" cta="View Pathwright" accent="pink" image={PinkOverlay} />
+        <OverlayCard title="Course work & Curriculum" cta="View Canvas" accent="turq" image={TurqOverlay} />
+        <OverlayCard title="Access Career Services" cta="View Gradleaders" accent="purple" image={PurpleOverlay} />
       </Grid>
     </Section>
 

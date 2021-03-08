@@ -2,21 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
-import { TurqOverlay } from './Overlays/TurqOverlay'
-import { PinkOverlay } from './Overlays/PinkOverlay'
-import { YellowOverlay } from './Overlays/YellowOverlay'
-import { PurpleOverlay } from './Overlays/PurpleOverlay'
 import { Color, Font } from '~/styles'
 
-type BackgroundType = 'turq' | 'pink' | 'yellow' | 'purple'
-
-export interface OverlayCardProps {
-  background: BackgroundType
-  children?: React.ReactNode
+export interface OverlayCardProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+  accent: 'turq' | 'pink' | 'yellow' | 'purple'
+  image: string
   title?: string
   cta?: string | JSX.Element
-  className?: string
-  onClick?: (e: React.MouseEvent) => void
 }
 
 const Container = styled(props => (
@@ -25,58 +18,55 @@ const Container = styled(props => (
   padding: 10px;
 `
 
-const StyledGrid = styled(props => <Grid container item {...props} />)`
-  border: 2px solid ${props => Color[props.background]};
-  display: flex;
-  justify-content: center;
-`
-
-const StyledText = styled.div`
-  padding-top: 30px;
-  position: absolute;
-  font-family: ${Font.gotcha};
-  font-size: 2.5em;
-  width: 250px;
-  text-align: center;
-`
-
-const StyledButton = styled(Button)<OverlayCardProps>`
-  border: 2px solid ${props => Color[props.background]};
+const StyledButton = styled(Button)<{ accent: string }>`
+  border: 2px solid ${props => Color[props.accent]};
   margin-top: 10px;
   width: 100%;
+
   &:focus,
   &:hover {
     border-color: ${Color.black};
-    background-color: ${props => Color[props.background]};
+    background-color: ${props => Color[props.accent]};
     color: ${Color.black};
     outline: 0;
   }
 `
 
-export const OverlayCard = ({ cta, title, background, onClick, ...props }: OverlayCardProps): JSX.Element => {
-  const componentMap = {
-    turq: TurqOverlay,
-    pink: PinkOverlay,
-    yellow: YellowOverlay,
-    purple: PurpleOverlay
-  }
-  const Overlay = componentMap[background]
+const Top = styled.div<{ accent: string; backgroundImage: string }>`
+  border: 2px solid ${props => Color[props.accent]};
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 125px;
+  background-image: url(${props => props.backgroundImage});
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-size: 100% 80%;
+  background-position: bottom center;
+  padding: 20px 15px 0;
 
-  return (
-    <Container {...props}>
-      <StyledGrid background={background}>
-        <Overlay style={{ paddingTop: '20px' }} />
-        <StyledText>{title}</StyledText>
-      </StyledGrid>
-      <Grid item xs={12}>
-        {React.isValidElement(cta) ? (
-          cta
-        ) : (
-          <StyledButton onClick={onClick} background={background} md>
-            {cta as string}
-          </StyledButton>
-        )}
-      </Grid>
-    </Container>
-  )
-}
+  p {
+    font-family: ${Font.gotcha};
+    font-size: 2.5em;
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px 1px ${Color.black};
+  }
+`
+
+export const OverlayCard = ({ cta, title, image, accent, onClick, ...props }: OverlayCardProps): JSX.Element => (
+  <Container {...props}>
+    <Top accent={accent} backgroundImage={image}>
+      <p>{title}</p>
+    </Top>
+    <Grid item xs={12}>
+      {React.isValidElement(cta) ? (
+        cta
+      ) : (
+        <StyledButton onClick={onClick} accent={accent} md>
+          {cta as string}
+        </StyledButton>
+      )}
+    </Grid>
+  </Container>
+)
