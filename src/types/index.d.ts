@@ -2,7 +2,7 @@ declare module '*.png'
 declare module '*.gif'
 
 declare module '*.svg' {
-  const content: any
+  const content: unknown
   export default content
 }
 
