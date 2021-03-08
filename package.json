@@ -22,8 +22,8 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook": "start-storybook -p 6006 -s assets",
+    "storybook:build": "build-storybook -s assets",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"

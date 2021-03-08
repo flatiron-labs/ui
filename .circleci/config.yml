@@ -11,7 +11,7 @@ workspace_root: &workspace_root ~/repo
 defaults: &defaults
   working_directory: *workspace_root
   docker:
-    - image: cimg/node:15.8.0
+    - image: cimg/node:15.11.0
   resource_class: large
 cache_key: &cache_key v2-dependencies-{{ checksum "yarn.lock" }}
 
