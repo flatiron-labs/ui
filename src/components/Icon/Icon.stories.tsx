@@ -6,11 +6,9 @@ import { Icon } from '.'
 import { Color } from '~/styles'
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  > * {
-    padding-bottom: 10px;
+  svg {
+    display: block;
+    margin-bottom: 10px;
   }
 `
 export default {

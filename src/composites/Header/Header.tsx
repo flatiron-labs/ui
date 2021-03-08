@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = props => (
     <FlatironLogo />
     <StyledButton sm>
       Turn off student base experience
-      <Icon.Exit style={{ paddingLeft: '5px' }} />
+      <Icon.Exit style={{ marginLeft: '5px' }} />
     </StyledButton>
   </Container>
 )

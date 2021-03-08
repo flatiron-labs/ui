@@ -31,14 +31,14 @@ const CheckBoxLabel = styled.label`
     background: ${Color.white};
     border-color: ${Color.white};
     border-radius: 50%;
-    border-style: solid;white
+    border-style: solid;
     border-width: 3px;
     content: '';
     display: block;
-    height: 11px;
-    margin: 3px;
+    height: 15px;
+    margin: 2px;
     transition: 0.2s;
-    width: 11px;
+    width: 15px;
   }
 `
 
@@ -62,11 +62,11 @@ const CheckBox = styled.input`
       border-width: 3px;
       content: '';
       display: block;
-      height: 11px;
-      margin: 3px;
+      height: 15px;
+      margin: 2px;
       margin-left: 21px;
       transition: 0.2s;
-      width: 11px;
+      width: 15px;
     }
   }
 `

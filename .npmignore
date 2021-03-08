@@ -4,3 +4,10 @@ build/**/*.stories.ts
 build/**/*.stories.d.ts
 build/**/*.test.ts
 build/**/*.test.d.ts
+
+dist/.DS_Store
+dist/**/.DS_Store
+dist/**/*.stories.ts
+dist/**/*.stories.d.ts
+dist/**/*.test.ts
+dist/**/*.test.d.ts
