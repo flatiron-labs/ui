@@ -9,14 +9,13 @@ export interface OverlayCardBaseProps {
 }
 
 export interface OverlayCardTopProps extends OverlayCardBaseProps {
-  backgroundImage: string
+  image: string
 }
 
 export interface OverlayCardProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
     OverlayCardTopProps {
   accent: 'turq' | 'pink' | 'yellow' | 'purple'
-  image: string
   title?: string
   cta?: string | JSX.Element
 }
@@ -47,7 +46,7 @@ const Top = styled.div<OverlayCardTopProps>`
   justify-content: center;
   width: 100%;
   min-height: 125px;
-  background-image: url(${props => props.backgroundImage});
+  background-image: url(${props => props.image});
   background-repeat: no-repeat;
   background-attachment: local;
   background-size: 100% 80%;
@@ -65,7 +64,7 @@ const Top = styled.div<OverlayCardTopProps>`
 
 export const OverlayCard = ({ cta, title, image, accent, onClick, ...props }: OverlayCardProps): JSX.Element => (
   <Container {...props}>
-    <Top accent={accent} backgroundImage={image}>
+    <Top accent={accent} image={image}>
       <p>{title}</p>
     </Top>
     <Grid item xs={12}>
