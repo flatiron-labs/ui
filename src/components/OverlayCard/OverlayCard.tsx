@@ -17,7 +17,7 @@ export interface OverlayCardTopProps extends OverlayCardBaseProps {
 export interface OverlayCardProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
     OverlayCardTopProps {
-  accent: OverlayCardAccentProps | null
+  accent: OverlayCardAccentProps
   title?: string
   cta?: string | JSX.Element
 }
