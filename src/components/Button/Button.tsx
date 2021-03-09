@@ -32,6 +32,7 @@ const StyledButton = styled.button<StyledButtonProps>`
       &:hover {
         border: 2px solid ${Color.turq};
         outline: 0;
+        transition: 150ms ease-in-out;
       }
     `}
 
@@ -46,6 +47,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         background-color: ${Color.turq};
         color: ${Color.black};
         outline: 0;
+        transition: 150ms ease-in-out;
       }
     `}
 

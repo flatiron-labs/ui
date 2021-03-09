@@ -17,9 +17,9 @@ const Container = styled(props => (
   <Grid
     item
     container
-    xs={12}
-    sm={6}
-    md={4}
+    xs={10}
+    sm={5}
+    md={3}
     alignItems="stretch"
     alignContent="flex-start"
     direction="column"
