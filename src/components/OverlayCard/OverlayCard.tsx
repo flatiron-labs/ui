@@ -4,6 +4,8 @@ import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
 import { Color, Font } from '~/styles'
 
+export type OverlayCardAccentProps = 'turq' | 'pink' | 'yellow' | 'purple' | null
+
 export interface OverlayCardBaseProps {
   accent: string
 }
@@ -15,7 +17,7 @@ export interface OverlayCardTopProps extends OverlayCardBaseProps {
 export interface OverlayCardProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
     OverlayCardTopProps {
-  accent: 'turq' | 'pink' | 'yellow' | 'purple'
+  accent: OverlayCardAccentProps
   title?: string
   cta?: string | JSX.Element
 }
