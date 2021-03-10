@@ -4,7 +4,7 @@ exports[`MediaCard should render a custom cta element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
     >
       <img
         alt=""
@@ -46,7 +46,7 @@ exports[`MediaCard should render a custom image element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
     >
       <img
         alt=""
@@ -72,7 +72,7 @@ exports[`MediaCard should render a custom image element 1`] = `
           </p>
         </div>
         <button
-          class="sc-bdfBwQ jRwVeu"
+          class="sc-bdfBwQ fWwvgz"
         >
           View Gradleaders
         </button>
@@ -86,7 +86,7 @@ exports[`MediaCard should render children 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4"
+      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
     >
       <img
         alt=""
@@ -113,7 +113,7 @@ exports[`MediaCard should render children 1`] = `
           </p>
         </div>
         <button
-          class="sc-bdfBwQ jRwVeu"
+          class="sc-bdfBwQ fWwvgz"
         >
           View Gradleaders
         </button>
