@@ -23,7 +23,7 @@ export interface OverlayCardProps
 }
 
 const Container = styled(props => (
-  <Grid alignItems="center" justify="center" container item xs={12} sm={6} md={4} {...props} />
+  <Grid alignItems="center" justify="center" container item xs={10} sm={5} md={3} {...props} />
 ))`
   padding: 10px;
 `
@@ -47,12 +47,10 @@ const Top = styled.div<OverlayCardTopProps>`
   display: flex;
   justify-content: center;
   width: 100%;
-  min-height: 125px;
+  min-height: 130px;
   background-image: url(${props => props.image});
   background-repeat: no-repeat;
-  background-attachment: local;
-  background-size: 100% 80%;
-  background-position: bottom center;
+  background-size: cover;
   padding: 20px 15px 0;
 
   p {

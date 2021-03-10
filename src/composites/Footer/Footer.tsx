@@ -60,7 +60,7 @@ const SocialLinks = styled.ul`
 `
 
 export const Footer = (): JSX.Element => (
-  <StyledFooter spacing={1}>
+  <StyledFooter>
     <Grid item xs={10} sm={10} md={9}>
       <Grid container component="nav" direction="row" justify="space-between" alignItems="center" aria-label="Footer">
         <FooterLink href="https://portal.flatironschool.com/tos">Accessibility</FooterLink>
