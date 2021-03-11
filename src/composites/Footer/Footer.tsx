@@ -63,8 +63,8 @@ export const Footer = (): JSX.Element => (
   <StyledFooter>
     <Grid item xs={10} sm={10} md={9}>
       <Grid container component="nav" direction="row" justify="space-between" alignItems="center" aria-label="Footer">
-        <FooterLink href="https://portal.flatironschool.com/tos">Accessibility</FooterLink>
-        <FooterLink href="https://flatironschool.com/accessibility">Terms &amp; Conditions</FooterLink>
+        <FooterLink href="https://flatironschool.com/accessibility">Accessibility</FooterLink>
+        <FooterLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</FooterLink>
         <FooterLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</FooterLink>
         <FooterLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterLink>
       </Grid>
@@ -74,27 +74,27 @@ export const Footer = (): JSX.Element => (
       <Grid item xs={2}>
         <SocialLinks aria-label="Social links">
           <li>
-            <a href="#" title="Facebook">
+            <a href="https://www.facebook.com/FlatironSchool/" title="Facebook">
               <Icon.Facebook />
             </a>
           </li>
           <li>
-            <a href="#" title="Twitter">
+            <a href="https://twitter.com/FlatironSchool" title="Twitter">
               <Icon.Twitter />
             </a>
           </li>
           <li>
-            <a href="#" title="Instagram">
+            <a href="https://www.instagram.com/FlatironSchool/" title="Instagram">
               <Icon.Instagram />
             </a>
           </li>
           <li>
-            <a href="#" title="Github">
+            <a href="https://github.com/flatiron-school" title="Github">
               <Icon.Github />
             </a>
           </li>
           <li>
-            <a href="#" title="YouTube">
+            <a href="https://www.youtube.com/user/FlatironSchoolNY" title="YouTube">
               <Icon.Youtube />
             </a>
           </li>
