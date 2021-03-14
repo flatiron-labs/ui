@@ -2498,7 +2498,7 @@
     "@octokit/openapi-types" "^3.3.0"
     "@types/node" ">= 8"
 
-"@pmmmwh/react-refresh-webpack-plugin@0.4.3", "@pmmmwh/react-refresh-webpack-plugin@^0.4.2":
+"@pmmmwh/react-refresh-webpack-plugin@0.4.3", "@pmmmwh/react-refresh-webpack-plugin@^0.4.2", "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz"
   integrity sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ==
@@ -2955,15 +2955,15 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/cli@6.1.18":
-  version "6.1.18"
-  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.1.18.tgz#923b86dd19d0bb1b8f4fc61ef36b34e0e9fc9997"
-  integrity sha512-a94M31svu00zJMaNzOJRyIxwSwed9/VhTCiba+uJL25sGagD3+zKwdUABIsOiVWtGCVxHEp9/lWyNKuKVQMMJQ==
+"@storybook/cli@6.1.21":
+  version "6.1.21"
+  resolved "https://registry.yarnpkg.com/@storybook/cli/-/cli-6.1.21.tgz#ba4e6f99cf895d2773ab74b29d3742cbd3ac7383"
+  integrity sha512-UGQcnjyKq72xvd7BGfsCaFlPpmIqyrcaoOZpo3pqmUcTAPC8Cg2FC7cUVWtl/avWdCcM0ZCHUNFI+RV2lG6SLA==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/preset-env" "^7.12.1"
-    "@storybook/codemod" "6.1.18"
-    "@storybook/node-logger" "6.1.18"
+    "@storybook/codemod" "6.1.21"
+    "@storybook/node-logger" "6.1.21"
     "@storybook/semver" "^7.3.2"
     chalk "^4.0.0"
     commander "^5.0.0"
@@ -3023,14 +3023,14 @@
     core-js "^3.0.1"
     global "^4.3.2"
 
-"@storybook/codemod@6.1.18":
-  version "6.1.18"
-  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.1.18.tgz#70c428eab0100609361e0502a222dfd333e2ca67"
-  integrity sha512-yroPFczVZJmPJNWvRbLTQ+hmoc7yZpeLupBSJfMKfmNiofycCUQ7gjTl4cjd5jjlzfasq7ZkvQmQKEocduyS4A==
+"@storybook/codemod@6.1.21":
+  version "6.1.21"
+  resolved "https://registry.yarnpkg.com/@storybook/codemod/-/codemod-6.1.21.tgz#f1219b48c504c185dddb103aa66db86d4c67a3e3"
+  integrity sha512-sgHdQtYQ/j+DZCEG4tOnm+AGStBTzPrz6Q2Uf0f7VEHajFA0ATldc/z6WT873gSHSOKQcLsXT8W3ZLVpjlW1TA==
   dependencies:
     "@mdx-js/mdx" "^1.6.19"
     "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.1.18"
+    "@storybook/node-logger" "6.1.21"
     core-js "^3.0.1"
     cross-spawn "^7.0.0"
     globby "^11.0.0"
@@ -3222,17 +3222,6 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/node-logger@6.1.18":
-  version "6.1.18"
-  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.1.18.tgz#cf45d30f3456b7eeb664233df05f654e5773cb18"
-  integrity sha512-gsiHQVratKBSoP11IqU2Td5W+KUc0qg+czqhzzp1JNMJ25/xBtCJ8MAIOX5JFhovzvB7H0j8y8VNF1YgmcmOQg==
-  dependencies:
-    "@types/npmlog" "^4.1.2"
-    chalk "^4.0.0"
-    core-js "^3.0.1"
-    npmlog "^4.1.2"
-    pretty-hrtime "^1.0.3"
-
 "@storybook/node-logger@6.1.21", "@storybook/node-logger@^6.1.21":
   version "6.1.21"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.1.21.tgz#bcf882209697acfe4fc60bc224676400bce260ed"
@@ -3263,11 +3252,12 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/preset-create-react-app@^3.1.6":
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-3.1.6.tgz#fdcc332343085d26fe50891be484c830921f2688"
-  integrity sha512-hH8g5bBqNVU1zl2K19fXazncaWX2eiOX+ZHN3RtfQioAgHtXH/S1TS92xJj7uxoU40GYjldRmv7+fhzJCyRxNg==
+"@storybook/preset-create-react-app@^3.1.7":
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-3.1.7.tgz#e48df77768bdcc4863e3918c11965c45e4110ac8"
+  integrity sha512-SR+HGSWCrhHA5sszuIHJYdh2tWNi/zu858WB5RM74OBW4ogo8Bv4/7td4p53eWbdm0zBDbnKcrBmwRrAYqwL9Q==
   dependencies:
+    "@pmmmwh/react-refresh-webpack-plugin" "^0.4.3"
     "@types/babel__core" "^7.1.7"
     "@types/webpack" "^4.41.13"
     babel-plugin-react-docgen "^4.1.0"
@@ -15266,12 +15256,12 @@ saxes@^5.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-sb@^6.1.18:
-  version "6.1.18"
-  resolved "https://registry.yarnpkg.com/sb/-/sb-6.1.18.tgz#9e68bc398a5230991f04263ab50ef5f0ef4632a0"
-  integrity sha512-7DvkIvfLIzbvhz31mhxyx5Aum7JVWF+6J9HkCFTiDHmw6/q0bHvdU96s7zqrluxsHk2xojH32qRhveinnj5a/A==
+sb@^6.1.21:
+  version "6.1.21"
+  resolved "https://registry.yarnpkg.com/sb/-/sb-6.1.21.tgz#f34c9591cd256e23119cde8cd1cee0c0e41b05d0"
+  integrity sha512-CrKOHJN8oXasKAQ9IiV7HOWN3zeD3h28YKFfhG39XHyZmBbF1ABXVK9ylb+eBMFcNN5SPDjlRgxRbs9hluc66A==
   dependencies:
-    "@storybook/cli" "6.1.18"
+    "@storybook/cli" "6.1.21"
 
 scheduler@^0.19.1:
   version "0.19.1"
