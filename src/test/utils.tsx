@@ -1,5 +1,3 @@
-/* eslint-disable react/require-default-props */
-
 import React, { ReactElement } from 'react'
 import { render, RenderOptions, RenderResult } from '@testing-library/react'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
