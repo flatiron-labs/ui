@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { H1, H2, H3, H4 } from '.'
-import { ThemeContext } from '~/styles'
+import { useTheme } from '~/context'
 
 export default {
   title: 'Typography',
@@ -9,19 +9,19 @@ export default {
 } as Meta
 
 const Template1: Story = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useTheme()
   return <H1 theme={theme}>Header</H1>
 }
 const Template2: Story = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useTheme()
   return <H2 theme={theme}>Header</H2>
 }
 const Template3: Story = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useTheme()
   return <H3 theme={theme}>Header</H3>
 }
 const Template4: Story = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useTheme()
   return <H4 theme={theme}>Header</H4>
 }
 

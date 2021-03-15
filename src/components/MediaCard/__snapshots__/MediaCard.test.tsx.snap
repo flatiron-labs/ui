@@ -19,13 +19,13 @@ exports[`MediaCard should render a custom cta element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg bkshNr"
+            class="sc-eCssSg kEUfgN"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
           <p
-            class="sc-iBPRYJ kFazRz"
+            class="sc-iBPRYJ lnBxcp"
           >
             this is information about gradleaders
           </p>
@@ -60,13 +60,13 @@ exports[`MediaCard should render a custom image element 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg bkshNr"
+            class="sc-eCssSg kEUfgN"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
           <p
-            class="sc-iBPRYJ kFazRz"
+            class="sc-iBPRYJ lnBxcp"
           >
             this is information about gradleaders
           </p>
@@ -101,13 +101,13 @@ exports[`MediaCard should render children 1`] = `
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg bkshNr"
+            class="sc-eCssSg kEUfgN"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
           <p
-            class="sc-iBPRYJ kFazRz"
+            class="sc-iBPRYJ lnBxcp"
           >
             this is information about gradleaders
           </p>
