@@ -46,4 +46,60 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${Font.firaCode};
     color: ${Color.white};
   }
+
+  h1 {
+    font-family: ${Font.firaCode};
+    font-weight: 300;
+    font-size: 6rem;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+  }
+
+  h2 {
+    font-family: ${Font.firaCode};
+    font-weight: 300;
+    font-wize: 3.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+  }
+
+  h3 {
+    font-family: ${Font.firaCode};
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1.167;
+    letter-spacing: 0em;
+  }
+
+  h4 {
+    font-family: ${Font.firaCode};
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+  }
+
+  h5 {
+    font-family: ${Font.firaCode};
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+  }
+
+  h6 {
+    font-family: ${Font.firaCode};
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: '0.0075em';
+  }
+
+  p {
+    font-family: ${Font.firaCode};
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+  }
 `

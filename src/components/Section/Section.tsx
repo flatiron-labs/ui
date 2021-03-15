@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import { H4, P } from '~/components/Typography'
 import { Icon } from '~/components/Icon'
 
 export interface Content {
@@ -44,12 +42,12 @@ export const Section = ({
 
   return (
     <StyledSection aria-busy={loading} {...props}>
-      {title && <H4>{title}</H4>}
+      {title && <h4>{title}</h4>}
 
       <Content minHeight={minHeight}>
         {dynamic && error && (
           <StatusContainer>
-            <P>failed to load</P>
+            <p>failed to load</p>
           </StatusContainer>
         )}
 

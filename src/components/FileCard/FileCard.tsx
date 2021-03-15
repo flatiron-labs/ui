@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
-import { H4, P } from '~/components/Typography'
 import { Color } from '~/styles'
 
 export interface FileCardProps {
@@ -60,18 +59,18 @@ export const FileCard = ({
     <StyledGrid>
       {type && <StyledLegend>{type}</StyledLegend>}
       <StyledGridItem container item sm={12} md={4} {...props}>
-        {title ? <H4>{title}</H4> : <H4>No Upload</H4>}
+        {title ? <h6>{title}</h6> : <h6>No Upload</h6>}
       </StyledGridItem>
       {(secondaryTitle || secondaryDescription) && (
         <StyledGridItem container item sm={12} md={tertiaryTitle ? 2 : 4} {...props}>
-          <P>{secondaryTitle}</P>
-          <P>{secondaryDescription}</P>
+          <p>{secondaryTitle}</p>
+          <p>{secondaryDescription}</p>
         </StyledGridItem>
       )}
       {(tertiaryTitle || tertiaryDescription) && (
         <StyledGridItem container item sm={12} md={tertiaryTitle ? 2 : 4} {...props}>
-          <P>{tertiaryTitle}</P>
-          <P>{tertiaryDescription}</P>
+          <p>{tertiaryTitle}</p>
+          <p>{tertiaryDescription}</p>
         </StyledGridItem>
       )}
       <StyledGridItem container item sm={12} md={4} {...props} alignItems="flex-end">

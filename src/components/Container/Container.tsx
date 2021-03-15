@@ -1,5 +1,6 @@
 /* eslint-disable import/no-named-default */
 import React from 'react'
+import { flatironTheme, ThemeProvider } from '~/context'
 import { GlobalStyle } from '~/styles'
 
 export interface ContainerProps {
@@ -7,8 +8,8 @@ export interface ContainerProps {
 }
 
 export const Container = ({ children }: ContainerProps): JSX.Element => (
-  <>
+  <ThemeProvider theme={flatironTheme}>
     <GlobalStyle />
     <>{children}</>
-  </>
+  </ThemeProvider>
 )

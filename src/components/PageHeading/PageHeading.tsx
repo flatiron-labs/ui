@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Color } from '~/styles'
-import { H1, P } from '../Typography'
 
 export interface PageHeadingProps {
   title: string
@@ -11,7 +10,7 @@ export interface PageHeadingProps {
 
 const marginBottom = '2.5em'
 
-const Header = styled(H1)<{ noSubheader?: boolean }>`
+const Header = styled.h1<{ noSubheader?: boolean }>`
   font-size: 2.5rem;
   ${props =>
     props.noSubheader &&
@@ -20,7 +19,7 @@ const Header = styled(H1)<{ noSubheader?: boolean }>`
   `}
 `
 
-const Subheader = styled(P)`
+const Subheader = styled.p`
   color: ${Color.white};
   font-size: 1.5rem;
   font-weight: bold;

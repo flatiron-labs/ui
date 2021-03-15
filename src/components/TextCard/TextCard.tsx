@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Color } from '~/styles'
 import { Grid } from '../Grid'
-import { H4 } from '../Typography'
 
 export interface TextCardProps {
   label: string
@@ -13,7 +12,7 @@ const Content = styled.div`
   border: 2px solid ${Color.turqDark};
 `
 
-const Heading = styled(H4)`
+const Heading = styled.h4`
   color: ${Color.turq};
   padding-top: 10px;
   padding-left: 10px;

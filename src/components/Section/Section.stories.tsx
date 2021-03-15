@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { TextCard, Grid, Section, P } from '~/components'
+import { TextCard, Grid, Section } from '~/components'
 
 export default {
   title: 'Layout/Section'
@@ -19,7 +19,7 @@ const Template: Story = args => (
 const TemplateDynamic: Story = args => (
   <Section {...args}>
     <Grid container spacing={3}>
-      <P>{JSON.stringify(args.data)}</P>
+      <p>{JSON.stringify(args.data)}</p>
     </Grid>
   </Section>
 )
