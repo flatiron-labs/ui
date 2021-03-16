@@ -22,7 +22,7 @@ To apply your theme wrap your components in our ThemeProvider:
 import ThemeProvider from '@flatiron-school/ui'
 
 export default () => {
-  return <ThemeProvider theme={yourTheme}> </ThemProvider>
+  return <ThemeProvider theme={yourTheme}> </ThemeProvider>
 }
 ```
 
