@@ -19,6 +19,7 @@ export const useTheme = (): Theme => {
   return context
 }
 
-export const ThemeProvider = ({ children, theme }: ThemeProviderProps): JSX.Element => (
-  <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
-)
+export const ThemeProvider = ({ children, theme }: ThemeProviderProps): JSX.Element => {
+  let mergedTheme = { ...flatironTheme, ...theme }
+  return <ThemeContext.Provider value={mergedTheme}>{children}</ThemeContext.Provider>
+}

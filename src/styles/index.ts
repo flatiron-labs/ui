@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
+import { flatironTheme } from './theme'
+
+export * from './theme'
 
 export const Color = {
   black: 'rgba(3, 4, 22, 1)',
@@ -49,57 +52,57 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: ${Font.firaCode};
-    font-weight: 300;
-    font-size: 6rem;
-    line-height: 1.167;
-    letter-spacing: -0.01562em;
+    font-weight: ${flatironTheme.theme.typography.h1.fontWeight};
+    font-size: ${flatironTheme.theme.typography.h1.fontSize};
+    line-height: ${flatironTheme.theme.typography.h1.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.h1.letterSpacing};
   }
 
   h2 {
     font-family: ${Font.firaCode};
-    font-weight: 300;
-    font-wize: 3.75rem;
-    line-height: 1.2;
-    letter-spacing: -0.00833em;
+    font-weight: ${flatironTheme.theme.typography.h2.fontWeight};
+    font-size: ${flatironTheme.theme.typography.h2.fontSize};
+    line-height: ${flatironTheme.theme.typography.h2.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.h2.letterSpacing};
   }
 
   h3 {
     font-family: ${Font.firaCode};
-    font-weight: 400;
-    font-size: 3rem;
-    line-height: 1.167;
-    letter-spacing: 0em;
+    font-weight: ${flatironTheme.theme.typography.h3.fontWeight};
+    font-size: ${flatironTheme.theme.typography.h3.fontSize};
+    line-height: ${flatironTheme.theme.typography.h3.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.h3.letterSpacing};
   }
 
   h4 {
     font-family: ${Font.firaCode};
-    font-weight: 400;
-    font-size: 1.75rem;
-    line-height: 1.235;
-    letter-spacing: 0.00735em;
+    font-weight: ${flatironTheme.theme.typography.h4.fontWeight};
+    font-size: ${flatironTheme.theme.typography.h4.fontSize};
+    line-height: ${flatironTheme.theme.typography.h4.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.h4.letterSpacing};
   }
 
   h5 {
     font-family: ${Font.firaCode};
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 1.334;
-    letter-spacing: 0em;
+    font-weight: ${flatironTheme.theme.typography.h5.fontWeight};
+    font-size: ${flatironTheme.theme.typography.h5.fontSize};
+    line-height: ${flatironTheme.theme.typography.h5.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.h5.letterSpacing};
   }
 
   h6 {
     font-family: ${Font.firaCode};
-    font-weight: 500;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    letter-spacing: '0.0075em';
+    font-weight: ${flatironTheme.theme.typography.h6.fontWeight};
+    font-size: ${flatironTheme.theme.typography.h6.fontSize};
+    line-height: ${flatironTheme.theme.typography.h6.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.h6.letterSpacing};
   }
 
   p {
     font-family: ${Font.firaCode};
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.75;
-    letter-spacing: 0.00938em;
+    font-weight: ${flatironTheme.theme.typography.subtitle1.fontWeight};
+    font-size: ${flatironTheme.theme.typography.subtitle1.fontSize};
+    line-height: ${flatironTheme.theme.typography.subtitle1.lineHeight};
+    letter-spacing: ${flatironTheme.theme.typography.subtitle1.letterSpacing};
   }
 `

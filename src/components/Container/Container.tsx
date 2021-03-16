@@ -1,7 +1,7 @@
 /* eslint-disable import/no-named-default */
 import React from 'react'
-import { flatironTheme, ThemeProvider } from '~/context'
-import { GlobalStyle } from '~/styles'
+import { ThemeProvider } from '~/context'
+import { GlobalStyle, flatironTheme } from '~/styles'
 
 export interface ContainerProps {
   children: React.ReactNode
