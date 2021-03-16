@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color } from '~/styles'
+import { flatironTheme } from '~/styles'
 
 interface StyledAvatarProps {
   backgroundColor?: string
@@ -13,8 +13,8 @@ export interface AvatarProps extends StyledAvatarProps {
 
 const StyledDiv = styled.div<StyledAvatarProps>`
   align-items: center;
-  color: ${props => (props.color ? props.color : Color.black)};
-  background-color: ${props => (props.backgroundColor ? props.backgroundColor : Color.blue)};
+  color: ${props => (props.color ? props.color : flatironTheme.colors.common.black)};
+  background-color: ${props => (props.backgroundColor ? props.backgroundColor : flatironTheme.colors.common.blue)};
   display: flex;
   border-radius: 50%;
   font-size: 20px;

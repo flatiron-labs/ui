@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid, Avatar, Icon, Hidden, GridSize } from '~/components'
-import { Color, Media } from '~/styles'
+import { flatironTheme, Media } from '~/styles'
 
 interface StyledLinkProps {
   active?: boolean
@@ -17,12 +17,12 @@ const StyledButton = styled.button`
 `
 
 const StyledSidebar = styled(Grid)`
-  border-right: 1px ${Color.greyDarkest} solid;
+  border-right: 1px ${flatironTheme.colors.common.greyDarkest} solid;
   padding: 62px 0 0 0;
 `
 
 const StyledLink = styled.a<StyledLinkProps>`
-  color: ${Color.white};
+  color: ${flatironTheme.colors.common.white};
   display: flex;
   font-size: 19px;
   text-decoration: none;
@@ -33,13 +33,17 @@ const StyledLink = styled.a<StyledLinkProps>`
   ${props =>
     props.active &&
     `
-    color: ${Color.turq};
-    background: linear-gradient(to right, ${Color.black}, ${Color.greyDarkest} 12%);
+    color: ${flatironTheme.colors.common.turq};
+    background: linear-gradient(to right, ${flatironTheme.colors.common.black}, ${flatironTheme.colors.common.greyDarkest} 12%);
   `}
 
   &:hover {
-    color: ${Color.turq};
-    background: linear-gradient(to right, ${Color.black}, ${Color.greyDarkest} 12%);
+    color: ${flatironTheme.colors.common.turq};
+    background: linear-gradient(
+      to right,
+      ${flatironTheme.colors.common.black},
+      ${flatironTheme.colors.common.greyDarkest} 12%
+    );
   }
 
   ${props =>
@@ -91,15 +95,15 @@ export const Sidebar = ({ expanded, onExpand, ...props }: SidebarProps): JSX.Ele
 
       <Grid container component="nav" direction="column" aria-label="Primary">
         <StyledLink href="#" title="Home" expanded={expanded} active>
-          <Icon.Home color={Color.white} />
+          <Icon.Home color={flatironTheme.colors.common.white} />
           {expanded ? <>Home</> : <Hidden smDown>Home</Hidden>}
         </StyledLink>
         <StyledLink href="#" expanded={expanded} title="Profile">
-          <Icon.User color={Color.white} />
+          <Icon.User color={flatironTheme.colors.common.white} />
           {expanded ? <>Profile</> : <Hidden smDown> Profile</Hidden>}
         </StyledLink>
         <StyledLink href="#" expanded={expanded} title="Settings">
-          <Icon.Settings color={Color.white} />
+          <Icon.Settings color={flatironTheme.colors.common.white} />
           {expanded ? <>Settings</> : <Hidden smDown>Settings</Hidden>}
         </StyledLink>
       </Grid>

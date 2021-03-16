@@ -4,7 +4,7 @@ exports[`MediaCard should render a custom cta element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
+      class="MuiGrid-root sc-gsTCUz fFbheE MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
     >
       <img
         alt=""
@@ -13,20 +13,17 @@ exports[`MediaCard should render a custom cta element 1`] = `
         width="386"
       />
       <div
-        class="MuiGrid-root sc-iBPRYJ dNlfDJ MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+        class="MuiGrid-root sc-dlfnbm gQaIiI MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
       >
         <div
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg gwIyGi"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
-          <p
-            class="sc-jSgupP fnyTMs"
-          >
+          <p>
             this is information about gradleaders
           </p>
         </div>
@@ -46,7 +43,7 @@ exports[`MediaCard should render a custom image element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
+      class="MuiGrid-root sc-gsTCUz fFbheE MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
     >
       <img
         alt=""
@@ -54,25 +51,22 @@ exports[`MediaCard should render a custom image element 1`] = `
         src="https://placekeanu.com/318/159/g"
       />
       <div
-        class="MuiGrid-root sc-iBPRYJ dNlfDJ MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+        class="MuiGrid-root sc-dlfnbm gQaIiI MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
       >
         <div
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg gwIyGi"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
-          <p
-            class="sc-jSgupP fnyTMs"
-          >
+          <p>
             this is information about gradleaders
           </p>
         </div>
         <button
-          class="sc-bdfBwQ fWwvgz"
+          class="sc-bdfBwQ jEFczo"
         >
           View Gradleaders
         </button>
@@ -86,7 +80,7 @@ exports[`MediaCard should render children 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gKsewC kSnaNW MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
+      class="MuiGrid-root sc-gsTCUz fFbheE MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
     >
       <img
         alt=""
@@ -95,25 +89,22 @@ exports[`MediaCard should render children 1`] = `
         width="386"
       />
       <div
-        class="MuiGrid-root sc-iBPRYJ dNlfDJ MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+        class="MuiGrid-root sc-dlfnbm gQaIiI MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
       >
         <div
           class="MuiGrid-root MuiGrid-item"
         >
           <h4
-            class="sc-eCssSg gwIyGi"
             style="color: rgb(0, 239, 225);"
           >
             Canvas
           </h4>
-          <p
-            class="sc-jSgupP fnyTMs"
-          >
+          <p>
             this is information about gradleaders
           </p>
         </div>
         <button
-          class="sc-bdfBwQ fWwvgz"
+          class="sc-bdfBwQ jEFczo"
         >
           View Gradleaders
         </button>

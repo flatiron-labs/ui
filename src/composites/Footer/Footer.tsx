@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Grid, Hidden, Icon } from '~/components'
-import { Color, Media } from '~/styles'
+import { flatironTheme, Media } from '~/styles'
 
 const StyledFooter = styled(rest => <Grid container component="footer" {...rest} />)`
-  background-color: ${Color.yellow};
-  color: ${Color.black};
+  background-color: ${flatironTheme.colors.common.yellow};
+  color: ${flatironTheme.colors.common.black};
   width: 100%;
   height: 100px;
   justify-content: center;
@@ -21,14 +21,14 @@ const StyledFooter = styled(rest => <Grid container component="footer" {...rest}
 `
 
 const FooterLink = styled.a`
-  color: ${Color.black};
+  color: ${flatironTheme.colors.common.black};
   font-size: 14px;
   padding: 7px 0;
   text-decoration: none;
   font-weight: bold;
 
   &:hover {
-    color: ${Color.turq};
+    color: ${flatironTheme.colors.common.turq};
   }
 
   ${Media.md} {
