@@ -308,7 +308,7 @@ export const flatironTheme: Theme = {
       h4: {
         fontFamily: '"Fira Code", sans-serif',
         fontWeight: 400,
-        fontSize: '2.125rem',
+        fontSize: '1.6rem',
         lineHeight: 1.235,
         letterSpacing: '0.00735em'
       },
