@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { FileCard, FileCardProps } from '.'
-import { Color } from '~/styles'
+import { flatironTheme } from '~/styles'
 
 export default {
   title: 'Content/FileCard',
@@ -30,7 +30,7 @@ CtaWithJsx.args = {
   title: 'Resume',
   description: 'title_of_resume.pdf',
   cta: (
-    <a href="#" style={{ width: '100%', color: Color.turq, textAlign: 'center' }}>
+    <a href="#" style={{ width: '100%', color: flatironTheme.colors.common.turq, textAlign: 'center' }}>
       LINK
     </a>
   ),

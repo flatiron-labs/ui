@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
-import { Color } from '~/styles'
+import { flatironTheme } from '~/styles'
 
 export interface FileCardProps {
   children?: React.ReactNode
@@ -22,16 +22,16 @@ const Container = styled(props => <Grid container alignItems="center" justify="c
   position: relative;
 `
 const StyledGrid = styled(props => <Grid container item {...props} />)`
-  border: 2px solid ${Color.greyDarkest};
+  border: 2px solid ${flatironTheme.colors.common.greyDarkest};
   padding: 5px 20px;
 `
 
-const StyledLegend = styled.p`
+const StyledLegend = styled.div`
   position: absolute;
   margin-top: -13px;
   margin-left: 4px;
-  color: ${Color.yellow};
-  background-color: ${Color.black};
+  color: ${flatironTheme.colors.common.yellow};
+  background-color: ${flatironTheme.colors.common.black};
   padding-left: 8px;
   padding-right: 8px;
   font-weight: bold;
@@ -77,7 +77,7 @@ export const FileCard = ({
         {React.isValidElement(cta) ? (
           cta
         ) : (
-          <Button style={{ width: '100%', borderColor: Color.turqDark }} lg onClick={onClick}>
+          <Button style={{ width: '100%', borderColor: flatironTheme.colors.common.turqDark }} lg onClick={onClick}>
             {cta as string}
           </Button>
         )}

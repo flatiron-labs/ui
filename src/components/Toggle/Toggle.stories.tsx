@@ -9,7 +9,7 @@ export default {
 
 const Template: Story = (args: ToggleProps) => <Toggle {...args} />
 
-export const ToggleOnly = Template.bind({})
+export const Default = Template.bind({})
 
 export const ToggleWithLabel = Template.bind({})
 ToggleWithLabel.args = {

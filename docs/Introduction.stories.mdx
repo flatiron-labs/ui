@@ -1,12 +1,12 @@
 import { Meta } from '@storybook/addon-docs/blocks'
 import title from './images/header.png'
-import { Font } from '~/styles'
+import { flatironTheme } from '~/styles'
 
 <Meta title="Introduction" />
 
 <style>{`
   .title {
-    font-family: '${Font.firaCode};
+    font-family: ${flatironTheme.typography.fontFamily};
     font-weight: 900;
     font-size: 24px;
     color: #999;
@@ -17,7 +17,7 @@ import { Font } from '~/styles'
     color: black;
   }
   .heading {
-    font-family: ${Font.firaCode};
+    font-family: ${flatironTheme.typography.fontFamily};
     font-weight: 900;
     font-size: 19px;
     color: #999;
@@ -28,7 +28,7 @@ import { Font } from '~/styles'
     color: black;
   }
   .subheading {
-    font-family: ${Font.firaCode};
+    font-family: ${flatironTheme.typography.fontFamily};
     font-weight: 900;
     font-size: 16px;
     color: #999;

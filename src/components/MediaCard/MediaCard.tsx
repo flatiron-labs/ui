@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color } from '~/styles'
+import { flatironTheme } from '~/styles'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
 
@@ -37,7 +37,7 @@ const Content = styled(props => (
 ))`
   flex-grow: 1;
   padding: 1.5rem;
-  background-color: ${Color.greyDarkest};
+  background-color: ${flatironTheme.colors.common.greyDarkest};
 `
 
 export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
@@ -46,7 +46,7 @@ export const MediaCard = ({ title, image, description, cta, onClick }: MediaCard
 
     <Content>
       <Grid item>
-        <h4 style={{ color: Color.turq }}>{title}</h4>
+        <h4 style={{ color: flatironTheme.colors.common.turq }}>{title}</h4>
         <p>{description}</p>
       </Grid>
 

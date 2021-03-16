@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, Font } from '~/styles'
+import { flatironTheme } from '~/styles'
 import uuid from '~/utils/uuid'
 
 export interface ToggleProps {
@@ -14,11 +14,11 @@ const StyledDiv = styled.div`
   flex-direction: row;
   align-items: flex-end;
   font-size: 14px;
-  font-family: ${Font.firaCode};
+  font-family: ${flatironTheme.typography.fontFamily};
 `
 
 const CheckBoxLabel = styled.label`
-  border-color: ${Color.white};
+  border-color: ${flatironTheme.colors.common.white};
   border-radius: 17px;
   border-style: solid;
   border-width: 2px;
@@ -28,8 +28,8 @@ const CheckBoxLabel = styled.label`
   width: 42px;
 
   &::after {
-    background: ${Color.white};
-    border-color: ${Color.white};
+    background: ${flatironTheme.colors.common.white};
+    border-color: ${flatironTheme.colors.common.white};
     border-radius: 50%;
     border-style: solid;
     border-width: 3px;
@@ -49,14 +49,14 @@ const CheckBox = styled.input`
   z-index: 1;
 
   &:checked + ${CheckBoxLabel} {
-    border-color: ${Color.turq};
-    background: ${Color.black};
+    border-color: ${flatironTheme.colors.common.turq};
+    background: ${flatironTheme.colors.common.black};
     border-style: solid;
     border-width: 2px;
 
     &::after {
-      background: ${Color.white};
-      border-color: ${Color.white};
+      background: ${flatironTheme.colors.common.white};
+      border-color: ${flatironTheme.colors.common.white};
       border-radius: 50%;
       border-style: solid;
       border-width: 3px;
@@ -72,7 +72,7 @@ const CheckBox = styled.input`
 `
 
 const StyledLabel = styled.div`
-  border-color: ${Color.black};
+  border-color: ${flatironTheme.colors.common.black};
   padding: 4px 4px 4px 8px;
 `
 
