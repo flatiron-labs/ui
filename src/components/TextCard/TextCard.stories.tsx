@@ -9,8 +9,8 @@ export default {
 
 const Template: Story = (args: TextCardProps) => <TextCard {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Default = Template.bind({})
+Default.args = {
   label: 'Full Name',
   value: 'Johnathan Smith'
 }

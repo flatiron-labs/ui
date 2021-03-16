@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color } from '~/styles'
+import { flatironTheme } from '~/styles'
 
 export interface StyledButtonProps {
   primary?: boolean
@@ -27,10 +27,10 @@ const StyledButton = styled.button<StyledButtonProps>`
   ${props =>
     props.primary &&
     `
-      border: 2px solid ${Color.black};
+      border: 2px solid ${flatironTheme.colors.common.black};
       &:focus,
       &:hover {
-        border: 2px solid ${Color.turq};
+        border: 2px solid ${flatironTheme.colors.common.turq};
         outline: 0;
         transition: 150ms ease-in-out;
       }
@@ -39,13 +39,13 @@ const StyledButton = styled.button<StyledButtonProps>`
   ${props =>
     !props.primary &&
     `
-      border: 2px solid ${Color.turq};
-      color: ${Color.white};
+      border: 2px solid ${flatironTheme.colors.common.turq};
+      color: ${flatironTheme.colors.common.white};
       &:focus,
       &:hover {
-        border-color:${Color.turq};
-        background-color: ${Color.turq};
-        color: ${Color.black};
+        border-color:${flatironTheme.colors.common.turq};
+        background-color: ${flatironTheme.colors.common.turq};
+        color: ${flatironTheme.colors.common.black};
         outline: 0;
         transition: 150ms ease-in-out;
       }

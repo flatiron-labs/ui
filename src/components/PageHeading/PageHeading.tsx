@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color } from '~/styles'
-import { H1, P } from '../Typography'
+import { flatironTheme } from '~/styles'
 
 export interface PageHeadingProps {
   title: string
@@ -11,7 +10,7 @@ export interface PageHeadingProps {
 
 const marginBottom = '2.5em'
 
-const Header = styled(H1)<{ noSubheader?: boolean }>`
+const Header = styled.h1<{ noSubheader?: boolean }>`
   font-size: 2.5rem;
   ${props =>
     props.noSubheader &&
@@ -20,16 +19,8 @@ const Header = styled(H1)<{ noSubheader?: boolean }>`
   `}
 `
 
-const Subheader = styled(P)`
-  color: ${Color.white};
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: ${marginBottom};
-`
-
 const Highlight = styled.span`
-  color: ${Color.yellow};
+  color: ${flatironTheme.colors.common.yellow};
   display: inline-block;
   padding-right: 25px;
 `
@@ -42,10 +33,10 @@ export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingP
       <Header noSubheader={!hasSubheader}>{title}</Header>
 
       {hasSubheader && (
-        <Subheader>
+        <h5>
           {subtitle && <Highlight>{subtitle}</Highlight>}
           {secondarySubtitle}
-        </Subheader>
+        </h5>
       )}
     </>
   )

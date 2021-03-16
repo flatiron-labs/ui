@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
 import { IcoProps } from './Icon'
 import { Icon } from '.'
-import { Color } from '~/styles'
+import { flatironTheme } from '~/styles'
 
 const Container = styled.div`
   svg {
@@ -12,7 +12,7 @@ const Container = styled.div`
   }
 `
 export default {
-  title: 'Icons/Icon',
+  title: 'Global/Icon',
   argTypes: {
     color: { control: 'color' }
   }
@@ -43,5 +43,5 @@ const Template: Story = (args: IcoProps) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  color: Color.white
+  color: flatironTheme.colors.common.white
 }
