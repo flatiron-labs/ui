@@ -12,19 +12,11 @@ export interface MediaCardProps {
   onClick?: (e: React.MouseEvent) => void
 }
 
-const Container = styled(props => (
-  <Grid
-    item
-    container
-    xs={10}
-    sm={5}
-    md={3}
-    alignItems="stretch"
-    alignContent="flex-start"
-    direction="column"
-    {...props}
-  />
-))`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: ${flatironTheme.colors.common.greyDarkest};
   img {
     width: 100%;
     height: auto;
@@ -32,31 +24,31 @@ const Container = styled(props => (
   }
 `
 
-const Content = styled(props => (
-  <Grid item container direction="column" alignContent="space-between" justify="space-between" {...props} />
-))`
-  flex-grow: 1;
-  padding: 1.5rem;
-  background-color: ${flatironTheme.colors.common.greyDarkest};
+const TextContainer = styled.div`
+  margin: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
-  <Container>
-    {React.isValidElement(image) ? image : <img src={image as string} width={386} height={193} alt="" />}
+  <Grid item container xs={10} sm={6} md={3} direction="column">
+    <Container>
+      {React.isValidElement(image) ? image : <img src={image as string} width={386} height={193} alt="" />}
 
-    <Content>
-      <Grid item>
+      <TextContainer>
         <h4 style={{ color: flatironTheme.colors.common.turq }}>{title}</h4>
         <p>{description}</p>
-      </Grid>
 
-      {React.isValidElement(cta) ? (
-        cta
-      ) : (
-        <Button md onClick={onClick}>
-          {cta as string}
-        </Button>
-      )}
-    </Content>
-  </Container>
+        {React.isValidElement(cta) ? (
+          cta
+        ) : (
+          <Button md onClick={onClick}>
+            {cta as string}
+          </Button>
+        )}
+      </TextContainer>
+    </Container>
+  </Grid>
 )
