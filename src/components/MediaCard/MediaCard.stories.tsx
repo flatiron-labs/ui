@@ -15,7 +15,7 @@ const Template: Story = (args: MediaCardProps) => (
 )
 
 const TemplateMulti: Story = () => (
-  <Grid container spacing={3} justify="space-between" direction="row" alignItems="stretch">
+  <Grid container spacing={3}>
     <MediaCard
       image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU"
       title="Gradleaders"
@@ -27,6 +27,13 @@ const TemplateMulti: Story = () => (
       image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU"
       title="Gradleaders"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      cta="View Gradleaders"
+      onClick={() => null}
+    />
+    <MediaCard
+      image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV6DEYCmyc8---CLd9r0GFz4VLk31QYpdl2w&usqp=CAU"
+      title="Gradleaders"
+      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra pharetra massa massa ultricies mi."
       cta="View Gradleaders"
       onClick={() => null}
     />

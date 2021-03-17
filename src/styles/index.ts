@@ -1,8 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { flatironTheme } from './theme'
+import { flatironTheme, Theme } from './theme'
 
 export * from './theme'
+
+export interface ThemeProps {
+  theme?: Theme
+}
 
 export const Media = {
   xs: `@media only screen and (min-width: ${flatironTheme.breakpoints.values.xs + 1}px)`,
