@@ -25,11 +25,19 @@ const Highlight = styled.span`
   padding-right: 25px;
 `
 
+const Container = styled.div<{ noSubheader?: boolean }>`
+  ${props =>
+    !props.noSubheader &&
+    `
+  margin-bottom: ${marginBottom};
+`}
+`
+
 export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingProps): JSX.Element => {
   const hasSubheader = subtitle || secondarySubtitle
 
   return (
-    <>
+    <Container>
       <Header noSubheader={!hasSubheader}>{title}</Header>
 
       {hasSubheader && (
@@ -38,6 +46,6 @@ export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingP
           {secondarySubtitle}
         </h5>
       )}
-    </>
+    </Container>
   )
 }

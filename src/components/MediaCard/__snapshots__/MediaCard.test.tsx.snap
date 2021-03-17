@@ -4,19 +4,19 @@ exports[`MediaCard should render a custom cta element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gsTCUz fFbheE MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-10 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
     >
-      <img
-        alt=""
-        height="193"
-        src="https://placekeanu.com/318/159/g"
-        width="386"
-      />
       <div
-        class="MuiGrid-root sc-dlfnbm gQaIiI MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+        class="sc-gsTCUz hMCroH"
       >
+        <img
+          alt=""
+          height="193"
+          src="https://placekeanu.com/318/159/g"
+          width="386"
+        />
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="sc-dlfnbm dVghKd"
         >
           <h4
             style="color: rgb(0, 239, 225);"
@@ -26,13 +26,13 @@ exports[`MediaCard should render a custom cta element 1`] = `
           <p>
             this is information about gradleaders
           </p>
+          <a
+            href="https://google.com"
+            title="Search Google"
+          >
+            Google
+          </a>
         </div>
-        <a
-          href="https://google.com"
-          title="Search Google"
-        >
-          Google
-        </a>
       </div>
     </div>
   </div>
@@ -43,18 +43,18 @@ exports[`MediaCard should render a custom image element 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gsTCUz fFbheE MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-10 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
     >
-      <img
-        alt=""
-        role="presentation"
-        src="https://placekeanu.com/318/159/g"
-      />
       <div
-        class="MuiGrid-root sc-dlfnbm gQaIiI MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+        class="sc-gsTCUz hMCroH"
       >
+        <img
+          alt=""
+          role="presentation"
+          src="https://placekeanu.com/318/159/g"
+        />
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="sc-dlfnbm dVghKd"
         >
           <h4
             style="color: rgb(0, 239, 225);"
@@ -64,12 +64,12 @@ exports[`MediaCard should render a custom image element 1`] = `
           <p>
             this is information about gradleaders
           </p>
+          <button
+            class="sc-bdfBwQ jEFczo"
+          >
+            View Gradleaders
+          </button>
         </div>
-        <button
-          class="sc-bdfBwQ jEFczo"
-        >
-          View Gradleaders
-        </button>
       </div>
     </div>
   </div>
@@ -80,19 +80,19 @@ exports[`MediaCard should render children 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root sc-gsTCUz fFbheE MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-flex-start MuiGrid-grid-xs-10 MuiGrid-grid-sm-5 MuiGrid-grid-md-3"
+      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-grid-xs-10 MuiGrid-grid-sm-6 MuiGrid-grid-md-3"
     >
-      <img
-        alt=""
-        height="193"
-        src="https://placekeanu.com/318/159/g"
-        width="386"
-      />
       <div
-        class="MuiGrid-root sc-dlfnbm gQaIiI MuiGrid-container MuiGrid-item MuiGrid-direction-xs-column MuiGrid-align-content-xs-space-between MuiGrid-justify-xs-space-between"
+        class="sc-gsTCUz hMCroH"
       >
+        <img
+          alt=""
+          height="193"
+          src="https://placekeanu.com/318/159/g"
+          width="386"
+        />
         <div
-          class="MuiGrid-root MuiGrid-item"
+          class="sc-dlfnbm dVghKd"
         >
           <h4
             style="color: rgb(0, 239, 225);"
@@ -102,12 +102,12 @@ exports[`MediaCard should render children 1`] = `
           <p>
             this is information about gradleaders
           </p>
+          <button
+            class="sc-bdfBwQ jEFczo"
+          >
+            View Gradleaders
+          </button>
         </div>
-        <button
-          class="sc-bdfBwQ jEFczo"
-        >
-          View Gradleaders
-        </button>
       </div>
     </div>
   </div>

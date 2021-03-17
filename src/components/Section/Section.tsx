@@ -20,6 +20,10 @@ const StyledSection = styled.section`
   padding-bottom: 3em;
 `
 
+const StyledH4 = styled.h4`
+  padding-bottom: 0.5em;
+`
+
 const Content = styled.div<Content>`
   ${props => props.minHeight && `min-height: ${props.minHeight};`}
 `
@@ -42,7 +46,7 @@ export const Section = ({
 
   return (
     <StyledSection aria-busy={loading} {...props}>
-      {title && <h4>{title}</h4>}
+      {title && <StyledH4>{title}</StyledH4>}
 
       <Content minHeight={minHeight}>
         {dynamic && error && (
