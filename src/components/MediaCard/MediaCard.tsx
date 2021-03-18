@@ -12,7 +12,7 @@ export interface MediaCardProps {
   onClick?: (e: React.MouseEvent) => void
 }
 
-const Container = styled.div`
+const Container = styled(Grid)`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -20,7 +20,6 @@ const Container = styled.div`
   img {
     width: 100%;
     height: auto;
-    aspect-ratio: attr(width) / attr(height);
   }
 `
 
@@ -33,12 +32,12 @@ const TextContainer = styled.div`
 `
 
 export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
-  <Grid item container xs={10} sm={6} md={3} direction="column">
-    <Container>
+  <Grid item container xs={12} sm={6} md={6} lg={3} justify="center">
+    <Container item xs={11}>
       {React.isValidElement(image) ? image : <img src={image as string} width={386} height={193} alt="" />}
 
       <TextContainer>
-        <h4 style={{ color: flatironTheme.colors.common.turq }}>{title}</h4>
+        <h5 style={{ color: flatironTheme.colors.common.turq }}>{title}</h5>
         <p>{description}</p>
 
         {React.isValidElement(cta) ? (
