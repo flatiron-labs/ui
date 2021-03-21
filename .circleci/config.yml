@@ -1,5 +1,3 @@
-# CircleCI
-
 version: 2.1
 
 # -------------------------
@@ -22,7 +20,10 @@ workflows:
   build_and_test:
     jobs:
       - test
-      - build_and_release:
+      - chromatic:
+          requires:
+            - test
+      - release:
           requires:
             - test
 
@@ -61,8 +62,8 @@ jobs:
           name: Run Tests
           command: yarn test
 
-  # Build for Chromatic and Release
-  build_and_release:
+  # Build for Chromatic
+  chromatic:
     <<: *defaults
 
     docker:
@@ -89,3 +90,21 @@ jobs:
       - run:
           name: Push to Chromatic
           command: yarn chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-once-uploaded --storybook-build-dir ./storybook-static
+
+  # Build for Chromatic
+  release:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: *cache_key
+
+      - run:
+          name: Build Package
+          command: yarn build
+
+      - run:
+          name: Release Package
+          command: npx semantic-release || true
