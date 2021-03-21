@@ -24,12 +24,6 @@ module.exports = {
     //   }
     // ],
     '@semantic-release/npm', // Plugin to publish a npm package // https://github.com/semantic-release/npm
-    [
-      '@semantic-release/github',
-      {
-        // Plugin to publish a GitHub release and comment on released Pull Requests/Issues.
-        assets: [{ path: 'dist/**', label: 'Release' }]
-      }
-    ]
+    '@semantic-release/github'
   ]
 }
