@@ -12,17 +12,22 @@ module.exports = {
     // Plugins will run in series, in the order defined, for each steps if they implement it.
     '@semantic-release/commit-analyzer', // Responsible for determining the type of the next release (major, minor or patch) https://github.com/semantic-release/commit-analyzer
     '@semantic-release/release-notes-generator', // Generate release notes for the commits added since the last release with conventional-changelog https://github.com/semantic-release/release-notes-generator
-    // [
-    //   '@semantic-release/changelog', { // Plugin to create or update a changelog file.
-    //     changelogFile: 'CHANGELOG.md'
-    //   }
-    // ],
-    // [
-    //   '@semantic-release/git', { // Plugin to commit release assets to the project's git repository.
-    //     assets: ['CHANGELOG.md'],
-    //     message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-    //   }
-    // ],
+    [
+      '@semantic-release/changelog',
+      {
+        // Plugin to create or update a changelog file.
+        changelogFile: 'CHANGELOG.md'
+      }
+    ],
+    [
+      '@semantic-release/git',
+      {
+        // Plugin to commit release assets to the project's git repository.
+        assets: ['CHANGELOG.md'],
+        // eslint-disable-next-line no-template-curly-in-string
+        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+      }
+    ],
     '@semantic-release/npm', // Plugin to publish a npm package // https://github.com/semantic-release/npm
     '@semantic-release/github' // Plugin to publish a GitHub release and comment on released Pull Requests/Issues. // https://github.com/semantic-release/github
   ]
