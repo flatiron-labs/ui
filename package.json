@@ -258,6 +258,8 @@
     "@csstools/normalize.css": "^11.0.1",
     "@hookform/devtools": "^2.2.1",
     "@reach/auto-id": "^0.13.2",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "@react-hook/window-size": "^3.0.7",
     "react-hook-form": "^6.15.5",
     "styled-normalize": "^8.0.7",

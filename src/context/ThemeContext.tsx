@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from 'react'
-import { flatironTheme, Theme } from '~/styles/theme'
+import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
+import { GlobalStyle, flatironTheme, Theme } from '~/styles'
 
 interface ThemeProviderProps {
   children: React.ReactNode
@@ -21,5 +22,13 @@ export const useTheme = (): Theme => {
 
 export const ThemeProvider = ({ children, theme }: ThemeProviderProps): JSX.Element => {
   let mergedTheme = { ...flatironTheme, ...theme }
-  return <ThemeContext.Provider value={mergedTheme}>{children}</ThemeContext.Provider>
+
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeContext.Provider value={mergedTheme}>
+        <EmotionThemeProvider theme={mergedTheme}>{children}</EmotionThemeProvider>
+      </ThemeContext.Provider>
+    </>
+  )
 }
