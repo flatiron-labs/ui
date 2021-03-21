@@ -205,7 +205,9 @@
     "babel-plugin-root-import": "^6.6.0",
     "babel-preset-react-app": "^10.0.0",
     "chromatic": "^5.7.0",
+    "commitizen": "^4.2.3",
     "css-mediaquery": "^0.1.2",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.22.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -249,5 +251,10 @@
     "@react-hook/window-size": "^3.0.7",
     "styled-normalize": "^8.0.7",
     "uuid": "^8.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
