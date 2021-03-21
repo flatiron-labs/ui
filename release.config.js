@@ -1,6 +1,4 @@
 module.exports = {
-  // TODO: Create a sharable config
-  // extends: '',
   branches: [
     // The branches on which releases should happen
     '+([0-9])?(.{+([0-9]),x}).x', // Regular releases to a distribution channel matching the branch name from any existing branch with a name matching a maintenance release range (N.N.x or N.x.x or N.x with N being a number)
