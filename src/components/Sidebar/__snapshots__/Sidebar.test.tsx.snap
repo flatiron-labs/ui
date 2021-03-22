@@ -29,7 +29,7 @@ exports[`Sidebar should render 1`] = `
         class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
       >
         <a
-          class="sc-iktFzd cHTosH"
+          class="sc-giIncl eNzbSH"
           href="/"
         >
           <svg
@@ -52,7 +52,7 @@ exports[`Sidebar should render 1`] = `
           </span>
         </a>
         <a
-          class="sc-iktFzd cHTosH"
+          class="sc-giIncl eNzbSH"
           href="/profile"
         >
           <svg
@@ -75,7 +75,7 @@ exports[`Sidebar should render 1`] = `
           </span>
         </a>
         <a
-          class="sc-iktFzd cHTosH"
+          class="sc-giIncl eNzbSH"
           href="/settings"
         >
           <svg
