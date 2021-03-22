@@ -26,10 +26,6 @@ const LogoContainer = styled.div`
   }
 `
 
-const StyledHeader = styled(Header)`
-  margin-bottom: 4em;
-`
-
 export const Page = ({ children, ...props }: PageProps): JSX.Element => (
   <Grid item {...props}>
     <Grid container style={{ minHeight: '100vh' }}>
@@ -51,10 +47,7 @@ export const Page = ({ children, ...props }: PageProps): JSX.Element => (
           </NavLinkContainer>
         </Sidebar>
         <Grid item>
-          <StyledContent>
-            <StyledHeader />
-            {children}
-          </StyledContent>
+          <StyledContent>{children}</StyledContent>
         </Grid>
       </Grid>
       <Footer />
