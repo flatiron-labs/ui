@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Grid, Header, Footer, Sidebar, Media, FlatironLogo, NavLinkContainer, NavLink } from '~/index' // Intentionally using the root index.ts
+import { Grid, Footer, Sidebar, Media, FlatironLogo, NavLinkContainer, NavLink } from '~/index' // Intentionally using the root index.ts
 
 export interface PageProps {
   children: JSX.Element[]
