@@ -1,4 +1,11 @@
 
+## [1.2.1](https://github.com/flatiron-labs/ui/compare/v1.2.0...v1.2.1) (2021-03-23)
+
+
+### Bug Fixes
+
+* **informationsnippet:** add export ([0ca297f](https://github.com/flatiron-labs/ui/commit/0ca297f83215102100528d043b866fdc59ddd131))
+
 # [1.2.0](https://github.com/flatiron-labs/ui/compare/v1.1.0...v1.2.0) (2021-03-23)
 
 
