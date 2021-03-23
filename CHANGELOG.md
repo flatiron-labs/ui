@@ -1,3 +1,9 @@
+# [1.3.0](https://github.com/flatiron-labs/ui/compare/v1.2.1...v1.3.0) (2021-03-23)
+
+
+### Features
+
+* **sidebar:** add component ([8cfba06](https://github.com/flatiron-labs/ui/commit/8cfba06970242728e91961746b249e4d6d41b754))
 
 ## [1.2.1](https://github.com/flatiron-labs/ui/compare/v1.2.0...v1.2.1) (2021-03-23)
 
