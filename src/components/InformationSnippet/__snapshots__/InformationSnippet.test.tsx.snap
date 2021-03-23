@@ -2,7 +2,7 @@
 
 exports[`InformationSnippet should render 1`] = `
 <div
-  class="sc-ezrdKe cvPpFT"
+  class="sc-cBNfnY iejoAO"
   data-testid="InformationSnippet"
 >
   <svg
@@ -23,7 +23,7 @@ exports[`InformationSnippet should render 1`] = `
   <div>
     <span>
       Full Name
-      :
+      : 
     </span>
     John Snow
   </div>
