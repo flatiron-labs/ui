@@ -1,14 +1,12 @@
 import React from 'react'
-import { render } from '~/test/utils'
-import { InformationSnippet, InformationSnippetProps } from '.'
+import { render, screen } from '~/test/utils'
+import { InformationSnippet } from '.'
 
 describe('InformationSnippet', () => {
-  const renderComponent = (props: InformationSnippetProps) => {
-    render(<InformationSnippet {...props} />)
-  }
-
   it('should render', () => {
-    renderComponent({ icon: 'User', title: 'Full Name', details: 'John Snow' })
-    expect(document.querySelector('body')).toMatchSnapshot()
+    const testId = 'InformationSnippet'
+
+    render(<InformationSnippet icon="User" title="Full Name" details="John Snow" data-testid={testId} />)
+    expect(screen.getByTestId(testId)).toMatchSnapshot()
   })
 })

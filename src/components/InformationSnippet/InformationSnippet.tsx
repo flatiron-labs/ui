@@ -38,7 +38,7 @@ const Container = styled.div<ThemeProps>`
   }
 `
 
-export interface InformationSnippetProps {
+export interface InformationSnippetProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: string
   title: string
   details: string
