@@ -85,8 +85,7 @@ export const InformationSnippet = ({ icon, title, details, ...props }: Props): J
       }}
       {...props}
     >
-      {/* TODO: Stitches */}
-      <SelectedIcon color="#ffffff" />
+      <SelectedIcon />
       <InnerContainer>
         <Span>{title}: </Span>
         {details}
