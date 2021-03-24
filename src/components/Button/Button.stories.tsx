@@ -59,3 +59,8 @@ AsLink.args = {
   as: 'a',
   href: 'https://google.com'
 }
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  appearance: 'disabled'
+}

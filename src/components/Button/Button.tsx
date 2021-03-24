@@ -32,6 +32,17 @@ export const Button = styled('button', {
           backgroundColor: '$cyan500',
           color: '$black500'
         }
+      },
+      disabled: {
+        borderColor: '$grey1000',
+        color: '$grey750',
+        cursor: 'not-allowed',
+
+        '&:focus, &:hover': {
+          borderColor: '$grey1000',
+          backgroundColor: '$black500',
+          color: '$grey750'
+        }
       }
     },
 
