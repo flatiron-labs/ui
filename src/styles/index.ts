@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'styled-normalize'
 import { flatironTheme, Theme } from './theme'
 
 export * from './theme'
@@ -16,8 +15,6 @@ export const Media = {
 }
 
 export const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
   body {
     background-color: ${flatironTheme.colors.common.black};
     font-family: ${flatironTheme.typography.fontFamily};
@@ -80,3 +77,6 @@ export const GlobalStyle = createGlobalStyle`
     letter-spacing: ${flatironTheme.typography.subtitle1.letterSpacing};
   }
 `
+
+// TODO: Move here
+export * from './stitches.config'

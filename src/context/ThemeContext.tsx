@@ -26,9 +26,7 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps): JSX.Elem
   return (
     <>
       <GlobalStyle />
-      <ThemeContext.Provider value={mergedTheme}>
-        <EmotionThemeProvider theme={mergedTheme}>{children}</EmotionThemeProvider>
-      </ThemeContext.Provider>
+      <EmotionThemeProvider theme={mergedTheme}>{children}</EmotionThemeProvider>
     </>
   )
 }

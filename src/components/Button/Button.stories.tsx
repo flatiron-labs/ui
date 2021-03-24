@@ -1,32 +1,61 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Story, Meta } from '@storybook/react'
-import { Button, ButtonProps } from '.'
+
+import { Button } from '.'
 
 export default {
   title: 'Inputs/Button',
   component: Button,
   argTypes: {
-    primary: {
-      defaultValue: false,
-      description: 'Adjust button type',
+    appearance: {
+      description: 'Adjust button appearance',
+      defaultValue: 'secondary',
       control: {
-        type: 'boolean'
+        type: 'select',
+        options: ['primary', 'secondary'],
+        default: 'secondary'
+      }
+    },
+    size: {
+      description: 'Adjust button size',
+      defaultValue: 'small',
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large'],
+        default: 'small'
       }
     }
   }
 } as Meta
 
-const Template: Story = (args: ButtonProps) => <Button {...args}>Button</Button>
+const Template: Story = args => <Button {...args}>Button</Button>
+
+export const Default = Template.bind({})
+Default.args = {
+  onClick: () => action('clicked')
+}
+
+export const Medium = Template.bind({})
+Medium.args = {
+  size: 'medium',
+  onClick: () => action('clicked')
+}
+
+export const Large = Template.bind({})
+Large.args = {
+  size: 'large',
+  onClick: () => action('clicked')
+}
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  onClick: () => action('button clicked')
+  appearance: 'primary',
+  onClick: () => action('clicked')
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  primary: false,
-  onClick: () => action('button clicked')
+export const AsLink = Template.bind({})
+AsLink.args = {
+  as: 'a',
+  href: 'https://google.com'
 }

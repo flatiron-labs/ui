@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should allow setting of the appearance 1`] = `
+<button
+  class="sxmy5cm sxmy5cm4gzc7--appearance-primary sxmy5cm91xhv--size-small"
+>
+  foo
+</button>
+`;
+
+exports[`Button should allow setting of the as prop 1`] = `
+<a
+  class="sxmy5cm sxmy5cm7coim--appearance-secondary sxmy5cm91xhv--size-small"
+  href="https://google.com"
+>
+  foo
+</a>
+`;
+
+exports[`Button should allow setting of the size 1`] = `
+<button
+  class="sxmy5cm sxmy5cm7coim--appearance-secondary sxmy5cmwr7zu--size-medium"
+>
+  foo
+</button>
+`;
+
+exports[`Button should render children 1`] = `
+<button
+  class="sxmy5cm sxmy5cm7coim--appearance-secondary sxmy5cm91xhv--size-small"
+>
+  foo
+</button>
+`;

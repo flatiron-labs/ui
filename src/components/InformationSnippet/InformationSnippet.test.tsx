@@ -3,10 +3,29 @@ import { render, screen } from '~/test/utils'
 import { InformationSnippet } from '.'
 
 describe('InformationSnippet', () => {
-  it('should render', () => {
-    const testId = 'InformationSnippet'
+  const testId = 'InformationSnippet'
 
-    render(<InformationSnippet icon="User" title="Full Name" details="John Snow" data-testid={testId} />)
+  it('should render with a column format', () => {
+    render(
+      <InformationSnippet direction="column" icon="User" title="Full Name" details="John Snow" data-testid={testId} />
+    )
+
+    screen.getByRole('presentation') // svg
+    screen.getByText('Full Name:')
+    screen.getByText('John Snow')
+
+    expect(screen.getByTestId(testId)).toMatchSnapshot()
+  })
+
+  it('should render with a row format', () => {
+    render(
+      <InformationSnippet direction="row" icon="User" title="Full Name" details="John Snow" data-testid={testId} />
+    )
+
+    screen.getByRole('presentation') // svg
+    screen.getByText('Full Name:')
+    screen.getByText('John Snow')
+
     expect(screen.getByTestId(testId)).toMatchSnapshot()
   })
 })

@@ -1,22 +1,39 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { InformationSnippet, InformationSnippetProps } from '.'
-import { Grid } from '~/index'
+import { InformationSnippet } from '.'
 
 export default {
   title: 'Inputs/InformationSnippet',
-  component: InformationSnippet
+  component: InformationSnippet,
+  argTypes: {
+    direction: {
+      description: 'Adjust direction (used for responsiveness)',
+      defaultValue: 'row',
+      control: {
+        type: 'select',
+        options: ['row', 'column'],
+        default: 'row'
+      }
+    }
+  }
 } as Meta
 
-const Template: Story = (args: InformationSnippetProps) => <InformationSnippet {...args} />
+type Args = GetComponentProps<typeof InformationSnippet>
 
-const TemplateMulti: Story = (args: InformationSnippetProps) => (
-  <Grid>
+const Template: Story = (args: Args) => <InformationSnippet {...args} />
+const TemplateResponsive: Story = () => (
+  <>
+    <InformationSnippet direction="row" icon="Code" title="Course" details="Software Engineering" />
+    <InformationSnippet direction="column" icon="Location" title="Address" details="14411 South 49th Drive New York" />
+  </>
+)
+const TemplateMulti: Story = (args: Args) => (
+  <>
     <InformationSnippet {...args} />
     <InformationSnippet icon="Code" title="Course" details="Software Engineering" />
     <InformationSnippet icon="Time" title="Cohort" details="12/12/2022" />
     <InformationSnippet icon="Location" title="Address" details="14411 South 49th Drive New York" />
-  </Grid>
+  </>
 )
 
 export const Default = Template.bind({})
@@ -26,9 +43,7 @@ Default.args = {
   details: 'John Snow'
 }
 
+export const Responsive = TemplateResponsive.bind({})
+
 export const Mulitple = TemplateMulti.bind({})
-Mulitple.args = {
-  icon: 'User',
-  title: 'Full Name',
-  details: 'John Snow'
-}
+Mulitple.args = Default.args

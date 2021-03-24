@@ -12,7 +12,7 @@
 import { Button } from '@flatiron-school/ui'
 
 export default () => {
-  return <Button primary>Foo</Button>
+  return <Button>Foo</Button>
 }
 ```
 

@@ -1,60 +1,96 @@
 import React from 'react'
-import styled from 'styled-components'
+import type { StitchesVariants } from '@stitches/react'
+
 import { Icon } from '~/components'
-import { useTheme } from '~/context'
-import { Media, ThemeProps } from '~/styles'
+import { styled } from '~/styles/stitches.config'
 
-const Container = styled.div<ThemeProps>`
-  border-bottom: 2px dashed ${props => props.theme.colors.common.greyDarkest};
-  display: flex;
-  align-items: flex-start;
-  direction: row;
-  padding-bottom: 20px;
-  padding-top: 20px;
+const InnerContainer = styled('div', {
+  marginLeft: '20px',
+  fontSize: '18px',
+  lineHeight: '$750',
+  color: '$grey750'
+})
 
-  div {
-    margin-left: 20px;
-    font-size: 18px;
-    line-height: 1.5em;
-    color: ${props => props.theme.colors.common.greyDark};
+const Span = styled('span', {
+  fontWeight: '$bold',
+  color: '$white500',
 
-    span {
-      font-size: 19px;
-      font-weight: bold;
-      color: ${props => props.theme.colors.common.white};
-      display: block;
-      margin-bottom: 0.5em;
-    }
-  }
-
-  ${Media.sm} {
-    align-items: center;
-
-    div span {
-        display: inline;
-        margin-bottom: 0;
+  variants: {
+    display: {
+      block: {
+        display: 'block',
+        marginBottom: '$3'
+      },
+      inline: {
+        display: 'inline',
+        marginBottom: 0
       }
     }
   }
-`
+})
 
-export interface InformationSnippetProps extends React.HTMLAttributes<HTMLDivElement> {
+const Container = styled('div', {
+  borderBottomColor: '$grey1000',
+  borderBottomStyle: 'dashed',
+  borderBottomWidth: '2px',
+  display: 'flex',
+  flexDirection: 'row',
+  padding: '$8 0',
+
+  '& svg': {
+    alignSelf: 'flex-start'
+  },
+
+  [`& ${Span}`]: {
+    fontWeight: '$bold',
+    color: '$white500'
+  },
+
+  variants: {
+    direction: {
+      column: {
+        alignItems: 'center',
+
+        [`& ${Span}`]: {
+          display: 'block',
+          marginBottom: '$3'
+        }
+      },
+      row: {
+        alignItems: 'flex-start',
+
+        [`& ${Span}`]: {
+          display: 'inline',
+          marginBottom: 0
+        }
+      }
+    }
+  }
+})
+
+type Props = {
   icon: string
   title: string
   details: string
-}
+} & StitchesVariants<typeof Container>
 
-export const InformationSnippet = ({ icon, title, details, ...props }: InformationSnippetProps): JSX.Element => {
+export const InformationSnippet = ({ icon, title, details, ...props }: Props): JSX.Element => {
   const SelectedIcon = Icon[icon]
-  const theme = useTheme()
 
   return (
-    <Container theme={theme} {...props}>
-      <SelectedIcon color={theme.colors.common.white} />
-      <div>
-        <span>{title}: </span>
+    <Container
+      direction={{
+        '@initial': 'column',
+        '@sm': 'row'
+      }}
+      {...props}
+    >
+      {/* TODO: Stitches */}
+      <SelectedIcon color="#ffffff" />
+      <InnerContainer>
+        <Span>{title}: </Span>
         {details}
-      </div>
+      </InnerContainer>
     </Container>
   )
 }
