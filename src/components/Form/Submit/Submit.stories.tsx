@@ -62,5 +62,6 @@ Active.args = {
 export const Disabled = Template.bind({})
 Disabled.args = {
   ...Default.args,
+  appearance: 'disabled',
   disabled: true
 }
