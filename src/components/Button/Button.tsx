@@ -33,6 +33,7 @@ export const Button = styled('button', {
           color: '$black500'
         }
       },
+
       disabled: {
         borderColor: '$grey1000',
         color: '$grey750',
@@ -51,10 +52,12 @@ export const Button = styled('button', {
         fontSize: '12px',
         padding: '10px 30px'
       },
+
       medium: {
         fontSize: '14px',
         padding: '12px 40px'
       },
+
       large: {
         fontSize: '16px',
         padding: '12px 50px'
