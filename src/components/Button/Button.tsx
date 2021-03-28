@@ -7,9 +7,11 @@ export const Button = styled('button', {
   borderStyle: 'solid',
   borderWidth: '2px',
   cursor: 'pointer',
+  display: 'inline-flex',
   fontWeight: 'bold',
-  textAlign: 'center',
+  justifyContent: 'center',
   outline: 0,
+  textAlign: 'center',
   textDecoration: 'none',
   transition: '$easeInOut',
 
@@ -62,11 +64,22 @@ export const Button = styled('button', {
         fontSize: '16px',
         padding: '12px 50px'
       }
+    },
+
+    width: {
+      full: {
+        width: '100%'
+      },
+      auto: {
+        justifySelf: 'start',
+        width: 'auto'
+      }
     }
   },
 
   defaultVariants: {
     size: 'small',
-    appearance: 'secondary'
+    appearance: 'secondary',
+    width: 'auto'
   }
 })

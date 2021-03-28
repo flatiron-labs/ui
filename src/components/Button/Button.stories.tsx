@@ -64,3 +64,8 @@ export const Disabled = Template.bind({})
 Disabled.args = {
   appearance: 'disabled'
 }
+
+export const FullWidth = Template.bind({})
+FullWidth.args = {
+  width: 'full'
+}

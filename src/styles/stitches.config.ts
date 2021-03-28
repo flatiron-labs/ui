@@ -1,8 +1,8 @@
-import { createCss } from '@stitches/react'
+import { createCss, StitchesCss } from '@stitches/react'
 
-// Token Property Mapping
+export type { StitchesVariants } from '@stitches/react'
 
-export const { styled, css, global, keyframes } = createCss({
+const stitches = createCss({
   theme: {
     fonts: {
       firaCode: 'Fira Code, sans-serif',
@@ -123,3 +123,10 @@ export const { styled, css, global, keyframes } = createCss({
   insertionMethod: 'append'
   // themeMap: '',
 })
+
+export type CSS = StitchesCss<typeof stitches>
+export const { styled, css, theme, getCssString, global, keyframes, config } = stitches
+export const { utils } = config
+
+export type StitchesTheme = typeof config.theme // TODO: Swap to "Theme" when old theme is removed
+export type resolveTokens<T extends keyof StitchesTheme> = `$${Extract<keyof StitchesTheme[T], string | number>}`

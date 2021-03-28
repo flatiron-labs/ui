@@ -1,15 +1,17 @@
 /* eslint-disable react/require-default-props */
 
 import React from 'react'
+import type { StitchesVariants } from '@stitches/react'
+
 import { Button } from '~/components/Button'
 
-interface Props {
+type Props = {
   readonly active?: boolean
   readonly activeLabel?: React.ReactNode | string
   readonly children?: React.ReactNode | string
   readonly register?: any // eslint-disable-line @typescript-eslint/no-explicit-any
   readonly ref?: string
-}
+} & StitchesVariants<typeof Button>
 
 export const Submit = ({
   active,
@@ -23,9 +25,6 @@ export const Submit = ({
     aria-busy={active}
     aria-live="polite"
     disabled={active}
-    css={{
-      justifySelf: 'start'
-    }}
     ref={register}
     size="large"
     type="submit"

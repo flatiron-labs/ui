@@ -43,7 +43,7 @@ export const MediaCard = ({ title, image, description, cta, onClick }: MediaCard
         {React.isValidElement(cta) ? (
           cta
         ) : (
-          <Button md onClick={onClick}>
+          <Button size="medium" onClick={onClick}>
             {cta as string}
           </Button>
         )}

@@ -1,80 +1,104 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react'
-import styled from 'styled-components'
 import { Button } from '~/components/Button'
-import { Grid } from '~/components/Grid'
-import { flatironTheme } from '~/styles'
+import { styled, CSS, resolveTokens } from '~/styles/stitches.config'
 
-export type OverlayCardAccentProps = 'turq' | 'pink' | 'yellow' | 'purple'
+// const Container = styledComp(props => (
+//   <Grid alignItems="center" justify="center" container item xs={12} sm={6} md={4} {...props} />
+// ))`
+//   padding: 10px;
+// `
 
-export interface OverlayCardBaseProps {
-  accent: string
-}
+// const StyledButton = styledComp(Button)<OverlayCardBaseProps>`
+//   border: 2px solid ${props => flatironTheme.colors.common[props.accent]};
+//   margin-top: 10px;
+//   width: 100%;
 
-export interface OverlayCardTopProps extends OverlayCardBaseProps {
-  image: string
-}
+//   &:focus,
+//   &:hover {
+//     border-color: ${flatironTheme.colors.common.black};
+//     background-color: ${props => flatironTheme.colors.common[props.accent]};
+//     color: ${flatironTheme.colors.common.black};
+//     outline: 0;
+//   }
+// `
 
-export interface OverlayCardProps
-  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-    OverlayCardTopProps {
-  accent: OverlayCardAccentProps
-  title?: string
+const Top = styled('div', {
+  borderStyle: 'solid',
+  borderWidth: '2px',
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  minHeight: '130px',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  padding: '20px 15px 0'
+})
+
+const Bottom = styled('div', {
+  marginTop: '10px'
+})
+
+const Title = styled('div', {
+  fontFamily: '$gotcha',
+  fontSize: '2.5em',
+  width: '100%',
+  textAlign: 'center',
+  textShadow: '3px 3px 1px $black500'
+})
+
+// const Container = styledComp(props => (
+//   <Grid alignItems="center" justify="center" container item xs={12} sm={6} md={4} {...props} />
+// ))`
+//   padding: 10px;
+// `
+
+const Container = styled('div', {})
+
+//  interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+type Props = {
+  // accentColor: typeof resolveOptions<'colors'> // '$cyan500' | '$pink500' | '$yellow500' | '$purple500'
+  // accentColor: keyof typeof config.theme.colors // '$cyan500' | '$pink500' | '$yellow500' | '$purple500'
+  accentColor: resolveTokens<'colors'>
   cta?: string | JSX.Element
-}
+  image: string
+  title?: string
+  css?: CSS
+} & React.HTMLAttributes<HTMLDivElement> &
+  React.HTMLAttributes<HTMLButtonElement>
 
-const Container = styled(props => (
-  <Grid alignItems="center" justify="center" container item xs={12} sm={6} md={4} {...props} />
-))`
-  padding: 10px;
-`
-
-const StyledButton = styled(Button)<OverlayCardBaseProps>`
-  border: 2px solid ${props => flatironTheme.colors.common[props.accent]};
-  margin-top: 10px;
-  width: 100%;
-
-  &:focus,
-  &:hover {
-    border-color: ${flatironTheme.colors.common.black};
-    background-color: ${props => flatironTheme.colors.common[props.accent]};
-    color: ${flatironTheme.colors.common.black};
-    outline: 0;
-  }
-`
-
-const Top = styled.div<OverlayCardTopProps>`
-  border: 2px solid ${props => flatironTheme.colors.common[props.accent]};
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  min-height: 130px;
-  background-image: url(${props => props.image});
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px 15px 0;
-`
-
-const Title = styled.div`
-  font-family: ${flatironTheme.customFont};
-  font-size: 2.5em;
-  width: 100%;
-  text-align: center;
-  text-shadow: 3px 3px 1px ${flatironTheme.colors.common.black};
-`
-
-export const OverlayCard = ({ cta, title, image, accent, onClick, ...props }: OverlayCardProps): JSX.Element => (
+export const OverlayCard = ({ cta, title, image, accentColor, onClick, ...props }: Props): JSX.Element => (
   <Container {...props}>
-    <Top accent={accent} image={image}>
+    <Top
+      css={{
+        backgroundImage: `url(${image})`,
+        borderColor: accentColor
+      }}
+    >
       <Title>{title}</Title>
     </Top>
-    <Grid item xs={12}>
+    <Bottom>
       {React.isValidElement(cta) ? (
         cta
       ) : (
-        <StyledButton onClick={onClick} accent={accent} md>
+        <Button
+          css={{
+            borderColor: accentColor,
+
+            '&:focus, &:hover': {
+              backgroundColor: accentColor,
+              color: '$black500',
+              outline: 0
+            }
+          }}
+          onClick={onClick}
+          size="medium"
+          width="full"
+        >
           {cta as string}
-        </StyledButton>
+        </Button>
       )}
-    </Grid>
+    </Bottom>
   </Container>
 )

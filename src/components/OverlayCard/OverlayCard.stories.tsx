@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { OverlayCard, OverlayCardProps } from '.'
+import { OverlayCard } from '.'
 
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 import PurpleOverlay from '~/assets/images/overlay-purple.svg'
@@ -12,10 +12,10 @@ export default {
   title: 'Content/OverlayCard',
   component: OverlayCard,
   argTypes: {
-    accent: {
+    accentColor: {
       control: {
         type: 'select',
-        options: ['turq', 'pink', 'yellow', 'purple']
+        options: ['$cyan500', '$pink500', '$yellow500', '$purple500']
       }
     },
     image: {
@@ -27,16 +27,28 @@ export default {
   }
 } as Meta
 
-const Template: Story = (args: OverlayCardProps) => <OverlayCard {...args} />
+const Template: Story = (args: GetComponentProps<typeof OverlayCard>) => <OverlayCard {...args} />
 
 const TemplateMulti: Story = () => (
   <Grid container spacing={3} justify="space-between" direction="row" alignItems="stretch">
-    <OverlayCard title="Try free courses" cta="View Canvas" accent="turq" image={TurqOverlay} onClick={() => null} />
-    <OverlayCard title="Try free courses" cta="View Canvas" accent="pink" image={PinkOverlay} onClick={() => null} />
     <OverlayCard
       title="Try free courses"
       cta="View Canvas"
-      accent="purple"
+      accentColor="$cyan500"
+      image={TurqOverlay}
+      onClick={() => null}
+    />
+    <OverlayCard
+      title="Try free courses"
+      cta="View Canvas"
+      accentColor="$pink500"
+      image={PinkOverlay}
+      onClick={() => null}
+    />
+    <OverlayCard
+      title="Try free courses"
+      cta="View Canvas"
+      accentColor="$purple500"
       image={PurpleOverlay}
       onClick={() => null}
     />
@@ -47,7 +59,7 @@ export const Default = Template.bind({})
 Default.args = {
   title: 'Try free courses',
   cta: 'View Canvas',
-  accent: 'pink',
+  accentColor: '$pink500',
   image: PinkOverlay,
   onClick: () => null
 }

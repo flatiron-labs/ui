@@ -17,9 +17,14 @@ const Template: Story = () => (
 
     <Section title="Links">
       <Grid container spacing={3}>
-        <OverlayCard title="Try free courses" cta="View Pathwright" accent="pink" image={PinkOverlay} />
-        <OverlayCard title="Course work & Curriculum" cta="View Canvas" accent="turq" image={TurqOverlay} />
-        <OverlayCard title="Access Career Services" cta="View Gradleaders" accent="purple" image={PurpleOverlay} />
+        <OverlayCard title="Try free courses" cta="View Pathwright" accentColor="$pink500" image={PinkOverlay} />
+        <OverlayCard title="Course work & Curriculum" cta="View Canvas" accentColor="$cyan500" image={TurqOverlay} />
+        <OverlayCard
+          title="Access Career Services"
+          cta="View Gradleaders"
+          accentColor="$purple500"
+          image={PurpleOverlay}
+        />
       </Grid>
     </Section>
 

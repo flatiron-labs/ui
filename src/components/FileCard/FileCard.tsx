@@ -77,7 +77,7 @@ export const FileCard = ({
         {React.isValidElement(cta) ? (
           cta
         ) : (
-          <Button style={{ width: '100%', borderColor: flatironTheme.colors.common.turqDark }} lg onClick={onClick}>
+          <Button size="large" width="full" onClick={onClick}>
             {cta as string}
           </Button>
         )}
