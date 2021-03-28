@@ -4,26 +4,6 @@ import React from 'react'
 import { Button } from '~/components/Button'
 import { styled, CSS, resolveTokens } from '~/styles/stitches.config'
 
-// const Container = styledComp(props => (
-//   <Grid alignItems="center" justify="center" container item xs={12} sm={6} md={4} {...props} />
-// ))`
-//   padding: 10px;
-// `
-
-// const StyledButton = styledComp(Button)<OverlayCardBaseProps>`
-//   border: 2px solid ${props => flatironTheme.colors.common[props.accent]};
-//   margin-top: 10px;
-//   width: 100%;
-
-//   &:focus,
-//   &:hover {
-//     border-color: ${flatironTheme.colors.common.black};
-//     background-color: ${props => flatironTheme.colors.common[props.accent]};
-//     color: ${flatironTheme.colors.common.black};
-//     outline: 0;
-//   }
-// `
-
 const Top = styled('div', {
   borderStyle: 'solid',
   borderWidth: '2px',
@@ -48,18 +28,7 @@ const Title = styled('div', {
   textShadow: '3px 3px 1px $black500'
 })
 
-// const Container = styledComp(props => (
-//   <Grid alignItems="center" justify="center" container item xs={12} sm={6} md={4} {...props} />
-// ))`
-//   padding: 10px;
-// `
-
-const Container = styled('div', {})
-
-//  interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 type Props = {
-  // accentColor: typeof resolveOptions<'colors'> // '$cyan500' | '$pink500' | '$yellow500' | '$purple500'
-  // accentColor: keyof typeof config.theme.colors // '$cyan500' | '$pink500' | '$yellow500' | '$purple500'
   accentColor: resolveTokens<'colors'>
   cta?: string | JSX.Element
   image: string
@@ -68,8 +37,14 @@ type Props = {
 } & React.HTMLAttributes<HTMLDivElement> &
   React.HTMLAttributes<HTMLButtonElement>
 
+export const OverlayCardContainer = styled('div', {
+  display: 'grid',
+  gridGap: '$7',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
+})
+
 export const OverlayCard = ({ cta, title, image, accentColor, onClick, ...props }: Props): JSX.Element => (
-  <Container {...props}>
+  <div {...props}>
     <Top
       css={{
         backgroundImage: `url(${image})`,
@@ -100,5 +75,5 @@ export const OverlayCard = ({ cta, title, image, accentColor, onClick, ...props 
         </Button>
       )}
     </Bottom>
-  </Container>
+  </div>
 )
