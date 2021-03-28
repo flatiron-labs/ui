@@ -1,7 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { OverlayCard } from '.'
-import { ResponsiveGrid } from '~/components/ResponsiveGrid'
 
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 import PurpleOverlay from '~/assets/images/overlay-purple.svg'

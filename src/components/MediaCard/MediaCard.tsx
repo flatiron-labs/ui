@@ -1,53 +1,62 @@
 import React from 'react'
-import styled from 'styled-components'
-import { flatironTheme } from '~/styles'
+import { styled } from '~/styles/stitches.config'
 import { Button } from '~/components/Button'
-import { Grid } from '~/components/Grid'
 
 export interface MediaCardProps {
-  image: string | JSX.Element
-  title: string
-  description: string
   cta: string | JSX.Element
+  description: string
+  image: string | JSX.Element
   onClick?: (e: React.MouseEvent) => void
+  title: string
 }
 
-const Container = styled(Grid)`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  background-color: ${flatironTheme.colors.common.greyDarkest};
-  img {
-    width: 100%;
-    height: auto;
-  }
-`
+const Container = styled('div', {
+  backgroundColor: '$grey1000',
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gridTemplateRows: '1fr 1fr 1fr fit-content'
+})
 
-const TextContainer = styled.div`
-  margin: 1rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`
+const Image = styled('div', {
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  height: '193px',
+  width: '100%'
+})
+
+const ContentContainer = styled('div', {
+  display: 'grid',
+  gridGap: '$7',
+  gridTemplateColumns: '1fr',
+  gridTemplateRows: '1fr 1fr 1fr fit-content',
+  padding: '$7 $7 $7 $7'
+})
+
+const CTAContainer = styled('div', {
+  alignSelf: 'end'
+})
+
+const Title = styled('h5', {
+  color: '$cyan500'
+})
 
 export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
-  <Grid item container xs={12} sm={6} md={6} lg={3} justify="center">
-    <Container item xs={11}>
-      {React.isValidElement(image) ? image : <img src={image as string} width={386} height={193} alt="" />}
+  <Container>
+    <Image css={{ background: `url("${image}")` }} />
 
-      <TextContainer>
-        <h5 style={{ color: flatironTheme.colors.common.turq }}>{title}</h5>
-        <p>{description}</p>
+    <ContentContainer>
+      <Title>{title}</Title>
+      <p>{description}</p>
 
+      <CTAContainer>
         {React.isValidElement(cta) ? (
           cta
         ) : (
-          <Button size="medium" onClick={onClick}>
+          <Button size="medium" width="full" onClick={onClick}>
             {cta as string}
           </Button>
         )}
-      </TextContainer>
-    </Container>
-  </Grid>
+      </CTAContainer>
+    </ContentContainer>
+  </Container>
 )
