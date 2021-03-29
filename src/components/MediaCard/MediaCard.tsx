@@ -1,14 +1,8 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
 import { Button } from '~/components/Button'
-
-export interface MediaCardProps {
-  cta: string | JSX.Element
-  description: string
-  image: string | JSX.Element
-  onClick?: (e: React.MouseEvent) => void
-  title: string
-}
 
 const Container = styled('div', {
   backgroundColor: '$grey1000',
@@ -40,23 +34,78 @@ const Title = styled('h5', {
   color: '$cyan500'
 })
 
-export const MediaCard = ({ title, image, description, cta, onClick }: MediaCardProps): JSX.Element => (
-  <Container>
-    <Image css={{ background: `url("${image}")` }} />
+// type Props = {
+//   cta: string
+//   description: string
+//   image: string
+//   href: string
+//   title: string
+// } & HTMLAnchorElement & HTMLButtonElement
 
-    <ContentContainer>
-      <Title>{title}</Title>
-      <p>{description}</p>
+type Props = {
+  cta: string
+  description: string
+  image: string
+  href: string
+  title: string
+} & React.ComponentPropsWithoutRef<'a'>
 
-      <CTAContainer>
-        {React.isValidElement(cta) ? (
-          cta
-        ) : (
-          <Button size="medium" width="full" onClick={onClick}>
-            {cta as string}
+export const MediaCard = React.forwardRef(
+  ({ title, image, description, cta, href, onClick }: Props, ref: React.Ref<HTMLAnchorElement>) => (
+    <Container>
+      <Image css={{ backgroundImage: `url("${image}")` }} />
+
+      <ContentContainer>
+        <Title>{title}</Title>
+        <p>{description}</p>
+
+        <CTAContainer>
+          <Button size="medium" width="full" href={href} onClick={onClick} ref={ref}>
+            {cta}
           </Button>
-        )}
-      </CTAContainer>
-    </ContentContainer>
-  </Container>
+        </CTAContainer>
+      </ContentContainer>
+    </Container>
+  )
 )
+
+// export const MediaCard = React.forwardRef((
+//   { title, image, description, cta, href, onClick }: Props,
+//   ref: Ref
+// ) => (
+//   <Container>
+//     <Image css={{ backgroundImage: `url("${image}")` }} />
+
+//     <ContentContainer>
+//       <Title>{title}</Title>
+//       <p>{description}</p>
+
+//       <CTAContainer>
+//         <Button size="medium" width="full" href={href} onClick={onClick} ref={ref}>
+//           cta
+//         </Button>
+//       </CTAContainer>
+//     </ContentContainer>
+//   </Container>
+// ))
+
+MediaCard.displayName = 'MediaCard'
+
+// export const MediaCard = React.forwardRef<HTMLAnchorElement | HTMLButtonElement>(
+//   ({ title, image, description, cta, onClick }: Props), ref
+// ): JSX.Element => (
+//   <Container>
+//     <Image css={{ backgroundImage: `url("${image}")` }} />
+
+//     <ContentContainer>
+//       <Title>{title}</Title>
+//       <p>{description}</p>
+
+//       <CTAContainer>
+//         <Button size="medium" width="full">
+//           {cta as string}
+//         </Button>
+//       </CTAContainer>
+//     </ContentContainer>
+//   </Container>
+// ))

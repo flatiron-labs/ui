@@ -1,6 +1,6 @@
 import { styled } from '~/styles/stitches.config'
 
-export const Button = styled('button', {
+export const Button = styled('a', {
   backgroundColor: 'transparent',
   borderColor: '$cyan500',
   borderRadius: '0',
