@@ -34,14 +34,6 @@ const Title = styled('h5', {
   color: '$cyan500'
 })
 
-// type Props = {
-//   cta: string
-//   description: string
-//   image: string
-//   href: string
-//   title: string
-// } & HTMLAnchorElement & HTMLButtonElement
-
 type Props = {
   cta: string
   description: string
@@ -50,8 +42,8 @@ type Props = {
   title: string
 } & React.ComponentPropsWithoutRef<'a'>
 
-export const MediaCard = React.forwardRef(
-  ({ title, image, description, cta, href, onClick }: Props, ref: React.Ref<HTMLAnchorElement>) => (
+export const MediaCard = React.forwardRef<HTMLAnchorElement, Props>(
+  ({ title, image, description, cta, href, onClick }, ref) => (
     <Container>
       <Image css={{ backgroundImage: `url("${image}")` }} />
 
@@ -69,43 +61,4 @@ export const MediaCard = React.forwardRef(
   )
 )
 
-// export const MediaCard = React.forwardRef((
-//   { title, image, description, cta, href, onClick }: Props,
-//   ref: Ref
-// ) => (
-//   <Container>
-//     <Image css={{ backgroundImage: `url("${image}")` }} />
-
-//     <ContentContainer>
-//       <Title>{title}</Title>
-//       <p>{description}</p>
-
-//       <CTAContainer>
-//         <Button size="medium" width="full" href={href} onClick={onClick} ref={ref}>
-//           cta
-//         </Button>
-//       </CTAContainer>
-//     </ContentContainer>
-//   </Container>
-// ))
-
 MediaCard.displayName = 'MediaCard'
-
-// export const MediaCard = React.forwardRef<HTMLAnchorElement | HTMLButtonElement>(
-//   ({ title, image, description, cta, onClick }: Props), ref
-// ): JSX.Element => (
-//   <Container>
-//     <Image css={{ backgroundImage: `url("${image}")` }} />
-
-//     <ContentContainer>
-//       <Title>{title}</Title>
-//       <p>{description}</p>
-
-//       <CTAContainer>
-//         <Button size="medium" width="full">
-//           {cta as string}
-//         </Button>
-//       </CTAContainer>
-//     </ContentContainer>
-//   </Container>
-// ))

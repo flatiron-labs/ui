@@ -1,112 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MediaCard should render a custom cta element 1`] = `
+exports[`<MediaCard /> should render children 1`] = `
 <body>
   <div>
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"
+      class="sxfum34"
     >
       <div
-        class="MuiGrid-root sc-gsTCUz dQnJmO MuiGrid-item MuiGrid-grid-xs-11"
+        class="sxboz0t sxboz0t-wznx2"
+      />
+      <div
+        class="sxqkbqy"
       >
-        <img
-          alt=""
-          height="193"
-          src="https://placekeanu.com/318/159/g"
-          width="386"
-        />
-        <div
-          class="sc-dlfnbm dVghKd"
+        <h5
+          class="sx1vryy"
         >
-          <h5
-            style="color: rgb(0, 239, 225);"
-          >
-            Canvas
-          </h5>
-          <p>
-            this is information about gradleaders
-          </p>
+          Canvas
+        </h5>
+        <p>
+          this is information about gradleaders
+        </p>
+        <div
+          class="sxutsku"
+        >
           <a
-            href="https://google.com"
-            title="Search Google"
+            class="sxt5frx sxt5frx7coim--appearance-secondary sxt5frxwr7zu--size-medium sxt5frxh8nzl--width-full"
+            href="http://localhost/"
           >
-            Google
+            View
           </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`MediaCard should render a custom image element 1`] = `
-<body>
-  <div>
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"
-    >
-      <div
-        class="MuiGrid-root sc-gsTCUz dQnJmO MuiGrid-item MuiGrid-grid-xs-11"
-      >
-        <img
-          alt=""
-          role="presentation"
-          src="https://placekeanu.com/318/159/g"
-        />
-        <div
-          class="sc-dlfnbm dVghKd"
-        >
-          <h5
-            style="color: rgb(0, 239, 225);"
-          >
-            Canvas
-          </h5>
-          <p>
-            this is information about gradleaders
-          </p>
-          <button
-            class="sc-bdfBwQ jEFczo"
-          >
-            View Gradleaders
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`MediaCard should render children 1`] = `
-<body>
-  <div>
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-justify-xs-center MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-6 MuiGrid-grid-lg-3"
-    >
-      <div
-        class="MuiGrid-root sc-gsTCUz dQnJmO MuiGrid-item MuiGrid-grid-xs-11"
-      >
-        <img
-          alt=""
-          height="193"
-          src="https://placekeanu.com/318/159/g"
-          width="386"
-        />
-        <div
-          class="sc-dlfnbm dVghKd"
-        >
-          <h5
-            style="color: rgb(0, 239, 225);"
-          >
-            Canvas
-          </h5>
-          <p>
-            this is information about gradleaders
-          </p>
-          <button
-            class="sc-bdfBwQ jEFczo"
-          >
-            View Gradleaders
-          </button>
         </div>
       </div>
     </div>
