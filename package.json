@@ -261,7 +261,7 @@
     "@hookform/devtools": "^2.2.1",
     "@reach/auto-id": "^0.13.2",
     "@react-hook/window-size": "^3.0.7",
-    "@stitches/react": "^0.1.2",
+    "@stitches/react": "^0.1.4",
     "react-hook-form": "^6.15.5",
     "styled-normalize": "^8.0.7",
     "uuid": "^8.3.2",
