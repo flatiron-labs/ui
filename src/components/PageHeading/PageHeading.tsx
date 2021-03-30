@@ -1,51 +1,33 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react'
-import styled from 'styled-components'
-import { flatironTheme } from '~/styles'
+import { styled } from '~/styles/stitches.config'
 
-export interface PageHeadingProps {
+interface Props {
   title: string
-  subtitle?: string
-  secondarySubtitle?: string
+  subtitle?: string | false
+  secondarySubtitle?: string | false
 }
 
-const marginBottom = '2.5em'
+const Title = styled('h1', {
+  fontSize: '2.5rem'
+})
 
-const Header = styled.h1<{ noSubheader?: boolean }>`
-  font-size: 2.5rem;
-  ${props =>
-    props.noSubheader &&
-    `
-    margin-bottom: ${marginBottom};
-  `}
-`
+const Highlight = styled('span', {
+  color: '$yellow500',
+  display: 'inline-block',
+  paddingRight: '25px'
+})
 
-const Highlight = styled.span`
-  color: ${flatironTheme.colors.common.yellow};
-  display: inline-block;
-  padding-right: 25px;
-`
+export const PageHeading = ({ title, subtitle, secondarySubtitle }: Props): JSX.Element => (
+  <div>
+    <Title>{title}</Title>
 
-const Container = styled.div<{ noSubheader?: boolean }>`
-  ${props =>
-    !props.noSubheader &&
-    `
-  margin-bottom: ${marginBottom};
-`}
-`
-
-export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingProps): JSX.Element => {
-  const hasSubheader = subtitle || secondarySubtitle
-
-  return (
-    <Container>
-      <Header noSubheader={!hasSubheader}>{title}</Header>
-
-      {hasSubheader && (
-        <h5>
-          {subtitle && <Highlight>{subtitle}</Highlight>}
-          {secondarySubtitle}
-        </h5>
-      )}
-    </Container>
-  )
-}
+    {(subtitle || secondarySubtitle) && (
+      <h5>
+        {subtitle && <Highlight>{subtitle}</Highlight>}
+        {secondarySubtitle}
+      </h5>
+    )}
+  </div>
+)
