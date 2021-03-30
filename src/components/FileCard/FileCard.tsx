@@ -4,21 +4,6 @@ import React from 'react'
 import { styled } from '~/styles/stitches.config'
 import { Button } from '~/components/Button'
 
-interface Props {
-  cta: string
-  onClick?: (e: React.MouseEvent) => void
-  secondary?: {
-    title?: string
-    description?: string
-  }
-  tertiary?: {
-    title?: string
-    description?: string
-  }
-  title?: string
-  type?: string
-}
-
 const Container = styled('div', {
   border: '2px solid $grey1000',
   padding: '15px 30px',
@@ -54,49 +39,60 @@ const Column = styled('div', {
   justifyContent: 'center'
 })
 
-export const FileCard: FCWithoutChildren<Props> = ({
-  cta,
-  secondary,
-  tertiary,
-  title = 'No Upload',
-  type,
-  ...rest
-}) => (
-  <Container
-    direction={{
-      '@initial': 'column',
-      '@md': 'row'
-    }}
-    {...rest}
-  >
-    {type && <Legend>{type}</Legend>}
+type Props = {
+  cta: string
+  secondary?: {
+    title?: string
+    description?: string
+  }
+  tertiary?: {
+    title?: string
+    description?: string
+  }
+  title?: string
+  type?: string
+} & React.ComponentPropsWithoutRef<'a'>
 
-    <Column>
-      <h6>{title}</h6>
-    </Column>
+export const FileCard = React.forwardRef<HTMLAnchorElement, Props>(
+  ({ cta, href, onClick, secondary, tertiary, title = 'No Upload', type, ...rest }, ref) => (
+    <Container
+      direction={{
+        '@initial': 'column',
+        '@md': 'row'
+      }}
+      {...{ 'data-testid': rest['data-testid'] }}
+    >
+      {type && <Legend>{type}</Legend>}
 
-    <Column>
-      {secondary && (
-        <>
-          <p>{secondary.title}</p>
-          <p>{secondary.description}</p>
-        </>
-      )}
-    </Column>
+      <Column>
+        <h6>{title}</h6>
+      </Column>
 
-    <Column>
-      {tertiary && (
-        <>
-          <p>{tertiary.title}</p>
-          <p>{tertiary.description}</p>
-        </>
-      )}
-    </Column>
+      <Column>
+        {secondary && (
+          <>
+            <p>{secondary.title}</p>
+            <p>{secondary.description}</p>
+          </>
+        )}
+      </Column>
 
-    <Column>
-      <Button size="large" width="full">
-        {cta}
-      </Button>
-    </Column>
-  </Container>
+      <Column>
+        {tertiary && (
+          <>
+            <p>{tertiary.title}</p>
+            <p>{tertiary.description}</p>
+          </>
+        )}
+      </Column>
+
+      <Column>
+        <Button size="large" width="full" href={href} onClick={onClick} ref={ref}>
+          {cta}
+        </Button>
+      </Column>
+    </Container>
+  )
 )
+
+FileCard.displayName = 'FileCard'
