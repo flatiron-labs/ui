@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { OverlayCard } from '.'
+import { OverlayCard } from '~/components/OverlayCard'
 
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 import PurpleOverlay from '~/assets/images/overlay-purple.svg'

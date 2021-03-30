@@ -1,26 +1,24 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { TextCard, Grid, Section } from '~/components'
+import { ResponsiveGrid, Section, TextCard } from '~/components'
 
 export default {
   title: 'Layout/Section'
 } as Meta
 
-const Template: Story = args => (
+const Template: Story = (args: GetComponentProps<typeof Section>) => (
   <Section {...args}>
-    <Grid container spacing={3}>
+    <ResponsiveGrid>
       <TextCard label="Full Name" value="John Smith" />
       <TextCard label="Full Name" value="John Smith" />
       <TextCard label="Full Name" value="John Smith" />
-    </Grid>
+    </ResponsiveGrid>
   </Section>
 )
 
 const TemplateDynamic: Story = args => (
   <Section {...args}>
-    <Grid container spacing={3}>
-      <p>{JSON.stringify(args.data)}</p>
-    </Grid>
+    <p>Data: {JSON.stringify(args.data)}</p>
   </Section>
 )
 

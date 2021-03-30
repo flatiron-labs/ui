@@ -1,37 +1,26 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from '~/styles/stitches.config'
 import { Icon } from '~/components/Icon'
 
-export interface Content {
-  minHeight?: string
-}
-
-export interface SectionProps extends Content {
+interface Props extends Partial<typeof Container> {
   title?: string
   children: React.ReactNode
   style?: React.CSSProperties
   dynamic?: boolean
   data?: unknown
   error?: unknown
-  className?: string
+  minHeight?: string
 }
 
-const StyledSection = styled.section`
-  padding-bottom: 3em;
-`
-
-const StyledH4 = styled.h4`
-  padding-bottom: 0.5em;
-`
-
-const Content = styled.div<Content>`
-  ${props => props.minHeight && `min-height: ${props.minHeight};`}
-`
-
-const StatusContainer = styled.div`
-  display: flex;
-  justify-content: center;
-`
+const Container = styled('section', { paddingBottom: '3em' })
+const Title = styled('h4', { paddingBottom: '0.5em' })
+const Content = styled('div', {})
+const StatusContainer = styled('div', {
+  display: 'flex',
+  justifyContent: 'center'
+})
 
 export const Section = ({
   title,
@@ -41,14 +30,14 @@ export const Section = ({
   error,
   minHeight = '100px',
   ...props
-}: SectionProps): JSX.Element => {
+}: Props): JSX.Element => {
   const loading = dynamic && !error && !data
 
   return (
-    <StyledSection aria-busy={loading} {...props}>
-      {title && <StyledH4>{title}</StyledH4>}
+    <Container aria-busy={loading} {...props}>
+      {title && <Title>{title}</Title>}
 
-      <Content minHeight={minHeight}>
+      <Content css={{ minHeight: minHeight ?? '0' }}>
         {dynamic && error && (
           <StatusContainer>
             <p>failed to load</p>
@@ -65,6 +54,6 @@ export const Section = ({
 
         {!dynamic && children}
       </Content>
-    </StyledSection>
+    </Container>
   )
 }
