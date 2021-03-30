@@ -22,15 +22,7 @@ const StatusContainer = styled('div', {
   justifyContent: 'center'
 })
 
-export const Section = ({
-  title,
-  children,
-  dynamic,
-  data,
-  error,
-  minHeight = '100px',
-  ...props
-}: Props): JSX.Element => {
+export const Section: FC<Props> = ({ title, children, dynamic, data, error, minHeight = '100px', ...props }) => {
   const loading = dynamic && !error && !data
 
   return (

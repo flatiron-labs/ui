@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon Close displays Close Icon 1`] = `
+exports[`<Icon /> <Icon.Close /> displays Close Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -18,7 +18,7 @@ exports[`Icon Close displays Close Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Close displays Close Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Close /> displays Close Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -36,7 +36,7 @@ exports[`Icon Close displays Close Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Code displays Code Icon 1`] = `
+exports[`<Icon /> <Icon.Code /> displays Code Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -53,7 +53,7 @@ exports[`Icon Code displays Code Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Code displays Code Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Code /> displays Code Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -70,7 +70,7 @@ exports[`Icon Code displays Code Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Dial displays Dial Icon 1`] = `
+exports[`<Icon /> <Icon.Dial /> displays Dial Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -264,7 +264,7 @@ exports[`Icon Dial displays Dial Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Dial displays Dial Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Dial /> displays Dial Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -458,7 +458,7 @@ exports[`Icon Dial displays Dial Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Exit displays Exit Icon 1`] = `
+exports[`<Icon /> <Icon.Exit /> displays Exit Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -476,7 +476,7 @@ exports[`Icon Exit displays Exit Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Exit displays Exit Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Exit /> displays Exit Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -494,7 +494,7 @@ exports[`Icon Exit displays Exit Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Facebook displays User Icon 1`] = `
+exports[`<Icon /> <Icon.Face />book displays User Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -512,7 +512,7 @@ exports[`Icon Facebook displays User Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Facebook displays User Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Face />book displays User Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -530,7 +530,7 @@ exports[`Icon Facebook displays User Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Github displays Github Icon 1`] = `
+exports[`<Icon /> <Icon.Github /> displays Github Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -546,7 +546,7 @@ exports[`Icon Github displays Github Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Github displays Github Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Github /> displays Github Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -562,7 +562,7 @@ exports[`Icon Github displays Github Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Hamburger displays Hamburger Icon 1`] = `
+exports[`<Icon /> <Icon.Hamburger /> displays Hamburger Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -598,7 +598,7 @@ exports[`Icon Hamburger displays Hamburger Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Hamburger displays Hamburger Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Hamburger /> displays Hamburger Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -634,7 +634,7 @@ exports[`Icon Hamburger displays Hamburger Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Home displays Home Icon 1`] = `
+exports[`<Icon /> <Icon.Home /> displays Home Icon 1`] = `
 <svg
   height="24"
   role="presentation"
@@ -652,7 +652,7 @@ exports[`Icon Home displays Home Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Home displays Home Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Home /> displays Home Icon with no args 1`] = `
 <svg
   height="24"
   role="presentation"
@@ -670,7 +670,7 @@ exports[`Icon Home displays Home Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Instagram displays User Icon 1`] = `
+exports[`<Icon /> <Icon.Instagram /> displays User Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -695,7 +695,7 @@ exports[`Icon Instagram displays User Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Instagram displays User Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Instagram /> displays User Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -720,7 +720,7 @@ exports[`Icon Instagram displays User Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon LoadingIndicator displays icon with no args 1`] = `
+exports[`<Icon /> <Icon.LoadingIndicator /> displays icon with no args 1`] = `
 <svg
   display="block"
   height="80"
@@ -960,7 +960,7 @@ exports[`Icon LoadingIndicator displays icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Location displays Location Icon 1`] = `
+exports[`<Icon /> <Icon.Location /> displays Location Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -982,7 +982,7 @@ exports[`Icon Location displays Location Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Location displays Location Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Location /> displays Location Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1004,7 +1004,7 @@ exports[`Icon Location displays Location Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Lock displays Lock Icon 1`] = `
+exports[`<Icon /> <Icon.Lock /> displays Lock Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1021,7 +1021,7 @@ exports[`Icon Lock displays Lock Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Lock displays Lock Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Lock /> displays Lock Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1038,7 +1038,7 @@ exports[`Icon Lock displays Lock Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Mail displays Mail Icon 1`] = `
+exports[`<Icon /> <Icon.Mail /> displays Mail Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1058,7 +1058,7 @@ exports[`Icon Mail displays Mail Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Mail displays Mail Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Mail /> displays Mail Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1078,7 +1078,7 @@ exports[`Icon Mail displays Mail Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Map displays Map Icon 1`] = `
+exports[`<Icon /> <Icon.Map /> displays Map Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1095,7 +1095,7 @@ exports[`Icon Map displays Map Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Map displays Map Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Map /> displays Map Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1112,7 +1112,7 @@ exports[`Icon Map displays Map Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Settings displays Settings Icon 1`] = `
+exports[`<Icon /> <Icon.Settings /> displays Settings Icon 1`] = `
 <svg
   height="24"
   role="presentation"
@@ -1130,7 +1130,7 @@ exports[`Icon Settings displays Settings Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Settings displays Settings Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Settings /> displays Settings Icon with no args 1`] = `
 <svg
   height="24"
   role="presentation"
@@ -1148,7 +1148,7 @@ exports[`Icon Settings displays Settings Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Time displays Time Icon 1`] = `
+exports[`<Icon /> <Icon.Time /> displays Time Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1170,7 +1170,7 @@ exports[`Icon Time displays Time Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Time displays Time Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Time /> displays Time Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1192,7 +1192,7 @@ exports[`Icon Time displays Time Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Twitter displays User Icon 1`] = `
+exports[`<Icon /> <Icon.Twit />ter displays User Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1210,7 +1210,7 @@ exports[`Icon Twitter displays User Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Twitter displays User Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Twit />ter displays User Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1228,7 +1228,7 @@ exports[`Icon Twitter displays User Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon User displays User Icon 1`] = `
+exports[`<Icon /> <Icon.User /> displays User Icon 1`] = `
 <svg
   height="24"
   role="presentation"
@@ -1246,7 +1246,7 @@ exports[`Icon User displays User Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon User displays User Icon with no args 1`] = `
+exports[`<Icon /> <Icon.User /> displays User Icon with no args 1`] = `
 <svg
   height="24"
   role="presentation"
@@ -1264,7 +1264,7 @@ exports[`Icon User displays User Icon with no args 1`] = `
 </svg>
 `;
 
-exports[`Icon Youtube displays User Icon 1`] = `
+exports[`<Icon /> <Icon.Youtube /> displays User Icon 1`] = `
 <svg
   fill="none"
   height="24"
@@ -1289,7 +1289,7 @@ exports[`Icon Youtube displays User Icon 1`] = `
 </svg>
 `;
 
-exports[`Icon Youtube displays User Icon with no args 1`] = `
+exports[`<Icon /> <Icon.Youtube /> displays User Icon with no args 1`] = `
 <svg
   fill="none"
   height="24"

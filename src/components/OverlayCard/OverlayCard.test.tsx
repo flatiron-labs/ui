@@ -1,27 +1,16 @@
 import React from 'react'
-import { Button } from '~/index'
 import { render, screen } from '~/test/utils'
-
-import { OverlayCard } from '.'
+import { OverlayCard } from '~/components/OverlayCard'
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 
-describe('OverlayCard', () => {
-  const props: GetComponentProps<typeof OverlayCard> = {
-    title: 'Try courses',
-    accentColor: '$pink500',
-    image: PinkOverlay
-  }
-
+describe('<OverlayCard />', () => {
   it('should render title & cta', () => {
-    render(<OverlayCard {...props} cta="View Canvas" />)
-    screen.getAllByText('Try courses')
-    screen.getByText('View Canvas')
-  })
+    const title = 'Try courses'
+    const cta = 'View Canvas'
 
-  it('should render cta jsx element', () => {
-    const text = 'View Canvas Btn'
+    render(<OverlayCard title={title} accentColor="$pink500" image={PinkOverlay} cta={cta} />)
 
-    render(<OverlayCard {...props} cta={<Button>${text}</Button>} />)
-    screen.getByText(text)
+    screen.getAllByText(title)
+    screen.getByText(cta)
   })
 })

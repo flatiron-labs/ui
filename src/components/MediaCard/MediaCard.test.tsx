@@ -1,7 +1,6 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-
-import { MediaCard } from '.'
+import { MediaCard } from '~/components/MediaCard'
 
 describe('<MediaCard />', () => {
   const link = 'http://localhost/'

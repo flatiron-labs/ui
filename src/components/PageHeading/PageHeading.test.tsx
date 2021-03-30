@@ -1,9 +1,8 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-
 import { PageHeading } from '~/components/PageHeading'
 
-describe('PageHeading', () => {
+describe('<PageHeading  />', () => {
   const title = 'title'
   const subtitle = 'subtitle'
   const secondarySubtitle = 'secondarySubtitle'

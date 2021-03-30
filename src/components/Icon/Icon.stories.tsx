@@ -1,8 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
-import { IcoProps } from './Icon'
-import { Icon } from '.'
+import { Icon } from '~/components/Icon'
 import { flatironTheme } from '~/styles'
 
 const Container = styled.div`
@@ -18,7 +17,9 @@ export default {
   }
 } as Meta
 
-const Template: Story = (args: IcoProps) => (
+type Props = typeof Icon.Code
+
+const Template: Story = (args: GetComponentProps<Props>) => (
   <Container>
     <Icon.LoadingIndicator {...args} />
     <Icon.Code {...args} />

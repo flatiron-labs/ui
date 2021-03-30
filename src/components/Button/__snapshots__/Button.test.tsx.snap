@@ -1,34 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button should allow setting of the appearance 1`] = `
-<button
-  class="sxmy5cm sxmy5cm4gzc7--appearance-primary sxmy5cm91xhv--size-small"
+exports[`<Button /> should allow setting of the appearance 1`] = `
+<a
+  class="sxt5frx sxt5frx4gzc7--appearance-primary sxt5frx91xhv--size-small sxt5frxkaqi1--width-auto"
 >
   foo
-</button>
+</a>
 `;
 
-exports[`Button should allow setting of the as prop 1`] = `
+exports[`<Button /> should allow setting of the as prop 1`] = `
 <a
-  class="sxmy5cm sxmy5cm7coim--appearance-secondary sxmy5cm91xhv--size-small"
+  class="sxt5frx sxt5frx7coim--appearance-secondary sxt5frx91xhv--size-small sxt5frxkaqi1--width-auto"
   href="https://google.com"
 >
   foo
 </a>
 `;
 
-exports[`Button should allow setting of the size 1`] = `
-<button
-  class="sxmy5cm sxmy5cm7coim--appearance-secondary sxmy5cmwr7zu--size-medium"
+exports[`<Button /> should allow setting of the size 1`] = `
+<a
+  class="sxt5frx sxt5frx7coim--appearance-secondary sxt5frxwr7zu--size-medium sxt5frxkaqi1--width-auto"
 >
   foo
-</button>
+</a>
 `;
 
-exports[`Button should render children 1`] = `
-<button
-  class="sxmy5cm sxmy5cm7coim--appearance-secondary sxmy5cm91xhv--size-small"
+exports[`<Button /> should render children 1`] = `
+<a
+  class="sxt5frx sxt5frx7coim--appearance-secondary sxt5frx91xhv--size-small sxt5frxkaqi1--width-auto"
 >
   foo
-</button>
+</a>
 `;

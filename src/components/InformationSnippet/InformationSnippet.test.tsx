@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-import { InformationSnippet } from '.'
+import { InformationSnippet } from '~/components/InformationSnippet'
 
-describe('InformationSnippet', () => {
+describe('<InformationSnippet />', () => {
   const testId = 'InformationSnippet'
 
   it('should render with a column format', () => {

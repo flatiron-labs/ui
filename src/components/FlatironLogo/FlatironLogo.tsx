@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const FlatironLogo: React.FC = () => (
+export const FlatironLogo: FC = () => (
   <svg width="160" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.008 0L0 24h3.092L10.1 0H7.01zM13.34 0L6.33 24h3.092l7.009-24H13.34z" fill="#00EFE1" fillOpacity=".95" />
     <path

@@ -1,11 +1,11 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-import { Icon } from '.'
+import { Icon } from '~/components/Icon'
 
-const role = 'presentation'
+describe('<Icon />', () => {
+  const role = 'presentation'
 
-describe('Icon', () => {
-  describe('Code', () => {
+  describe('<Icon.Code />', () => {
     it('displays Code Icon', () => {
       render(<Icon.Code color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -17,7 +17,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Dial', () => {
+  describe('<Icon.Dial />', () => {
     it('displays Dial Icon', () => {
       render(<Icon.Dial color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -29,7 +29,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Exit', () => {
+  describe('<Icon.Exit />', () => {
     it('displays Exit Icon', () => {
       render(<Icon.Exit color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -41,7 +41,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Github', () => {
+  describe('<Icon.Github />', () => {
     it('displays Github Icon', () => {
       render(<Icon.Github color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -53,7 +53,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Hamburger', () => {
+  describe('<Icon.Hamburger />', () => {
     it('displays Hamburger Icon', () => {
       render(<Icon.Hamburger color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -65,7 +65,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Home', () => {
+  describe('<Icon.Home />', () => {
     it('displays Home Icon', () => {
       render(<Icon.Home color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -77,14 +77,14 @@ describe('Icon', () => {
     })
   })
 
-  describe('LoadingIndicator', () => {
+  describe('<Icon.LoadingIndicator />', () => {
     it('displays icon with no args', () => {
       render(<Icon.LoadingIndicator />)
       expect(screen.getByRole('status')).toMatchSnapshot()
     })
   })
 
-  describe('Location', () => {
+  describe('<Icon.Location />', () => {
     it('displays Location Icon', () => {
       render(<Icon.Location color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -96,7 +96,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Lock', () => {
+  describe('<Icon.Lock />', () => {
     it('displays Lock Icon', () => {
       render(<Icon.Lock color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -108,7 +108,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Mail', () => {
+  describe('<Icon.Mail />', () => {
     it('displays Mail Icon', () => {
       render(<Icon.Mail color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -120,7 +120,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Map', () => {
+  describe('<Icon.Map />', () => {
     it('displays Map Icon', () => {
       render(<Icon.Map color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -132,7 +132,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Settings', () => {
+  describe('<Icon.Settings />', () => {
     it('displays Settings Icon', () => {
       render(<Icon.Settings color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -144,7 +144,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Time', () => {
+  describe('<Icon.Time />', () => {
     it('displays Time Icon', () => {
       render(<Icon.Time color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -156,7 +156,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('User', () => {
+  describe('<Icon.User />', () => {
     it('displays User Icon', () => {
       render(<Icon.User color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -168,7 +168,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Twitter', () => {
+  describe('<Icon.Twit />ter', () => {
     it('displays User Icon', () => {
       render(<Icon.Twitter color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -180,7 +180,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Facebook', () => {
+  describe('<Icon.Face />book', () => {
     it('displays User Icon', () => {
       render(<Icon.Facebook color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -192,7 +192,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Youtube', () => {
+  describe('<Icon.Youtube />', () => {
     it('displays User Icon', () => {
       render(<Icon.Youtube color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -204,7 +204,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Instagram', () => {
+  describe('<Icon.Instagram />', () => {
     it('displays User Icon', () => {
       render(<Icon.Instagram color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()
@@ -216,7 +216,7 @@ describe('Icon', () => {
     })
   })
 
-  describe('Close', () => {
+  describe('<Icon.Close />', () => {
     it('displays Close Icon', () => {
       render(<Icon.Close color="red" />)
       expect(screen.getByRole(role)).toMatchSnapshot()

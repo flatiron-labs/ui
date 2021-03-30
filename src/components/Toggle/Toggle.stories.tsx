@@ -1,13 +1,14 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Toggle, ToggleProps } from '.'
+
+import { Toggle } from '~/components/Toggle'
 
 export default {
   title: 'Inputs/Toggle',
   component: Toggle
 } as Meta
 
-const Template: Story = (args: ToggleProps) => <Toggle {...args} />
+const Template: Story = (args: GetComponentProps<typeof Toggle>) => <Toggle {...args} />
 
 export const Default = Template.bind({})
 

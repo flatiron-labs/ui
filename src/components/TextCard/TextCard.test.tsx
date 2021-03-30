@@ -1,6 +1,5 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-
 import { TextCard } from '~/components/TextCard'
 
 describe('<TextCard />', () => {

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { flatironTheme } from '~/styles'
 import uuid from '~/utils/uuid'
 
-export interface ToggleProps {
+interface Props {
   'data-testid'?: string
   children?: React.ReactNode
   label?: string
@@ -77,7 +77,7 @@ const StyledLabel = styled.div`
 `
 
 // TODO: Update so there's not two labels
-export const Toggle = (props: ToggleProps): JSX.Element => {
+export const Toggle: FC<Props> = props => {
   const { label, 'data-testid': dataTestId } = props
   const id = uuid()
 

@@ -74,7 +74,7 @@ type Props = {
   details: string
 } & StitchesVariants<typeof Container>
 
-export const InformationSnippet = ({ icon, title, details, ...props }: Props): JSX.Element => {
+export const InformationSnippet: FCWithoutChildren<Props> = ({ icon, title, details, ...props }) => {
   const SelectedIcon = Icon[icon]
 
   return (

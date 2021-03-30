@@ -43,7 +43,7 @@ export const OverlayCardContainer = styled('div', {
   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
 })
 
-export const OverlayCard = ({ cta, title, image, accentColor, onClick, ...props }: Props): JSX.Element => (
+export const OverlayCard: FC<Props> = ({ cta, title, image, accentColor, onClick, ...props }) => (
   <div {...props}>
     <Top
       css={{

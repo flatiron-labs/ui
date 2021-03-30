@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, screen, waitFor } from '~/test/utils'
-import { Container } from '.'
+import { Container } from '~/components/Container'
 
-describe('Container', () => {
+describe('<Container />', () => {
   const text = 'Content'
 
   const renderComponent = () =>

@@ -15,7 +15,7 @@ const Title = styled('h4', {
   color: '$cyan500'
 })
 
-export const TextCard = ({ label, value, ...props }: Props): JSX.Element => (
+export const TextCard: FCWithoutChildren<Props> = ({ label, value, ...props }) => (
   <Container {...props}>
     <Title>{label}</Title>
     <p>{value}</p>

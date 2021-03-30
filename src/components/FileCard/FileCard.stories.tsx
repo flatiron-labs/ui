@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { FileCard, FileCardProps } from '.'
+import { FileCard } from '.'
 import { flatironTheme } from '~/styles'
 
 export default {
@@ -8,11 +8,7 @@ export default {
   component: FileCard
 } as Meta
 
-const Template: Story = (args: FileCardProps) => (
-  <div style={{ paddingTop: '40px' }}>
-    <FileCard {...args} />
-  </div>
-)
+const Template: Story = (args: GetComponentProps<typeof FileCard>) => <FileCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

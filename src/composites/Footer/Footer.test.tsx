@@ -1,8 +1,8 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-import { Footer } from '.'
+import { Footer } from '~/composites/Footer'
 
-describe('Footer', () => {
+describe('<Footer />', () => {
   it('should render', () => {
     render(<Footer />)
     screen.getByLabelText('Social links')

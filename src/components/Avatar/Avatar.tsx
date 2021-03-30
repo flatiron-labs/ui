@@ -7,7 +7,7 @@ interface StyledAvatarProps {
   color?: string
 }
 
-export interface AvatarProps extends StyledAvatarProps {
+interface Props extends StyledAvatarProps {
   children: React.ReactNode
 }
 
@@ -23,7 +23,7 @@ const StyledDiv = styled.div<StyledAvatarProps>`
   width: 62px;
 `
 
-export const Avatar = ({ children, ...props }: AvatarProps): JSX.Element => (
+export const Avatar: FC<Props> = ({ children, ...props }) => (
   <StyledDiv {...props}>
     <>{children}</>
   </StyledDiv>

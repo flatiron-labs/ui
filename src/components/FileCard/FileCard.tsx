@@ -1,10 +1,12 @@
+/* eslint-disable react/require-default-props */
+
 import React from 'react'
 import styled from 'styled-components'
 import { Button } from '~/components/Button'
 import { Grid } from '~/components/Grid'
 import { flatironTheme } from '~/styles'
 
-export interface FileCardProps {
+interface Props {
   children?: React.ReactNode
   cta: string | JSX.Element
   title?: string
@@ -44,7 +46,7 @@ const StyledGridItem = styled(Grid)`
   padding: 10px;
 `
 
-export const FileCard = ({
+export const FileCard: FC<Props> = ({
   cta,
   title,
   type,
@@ -54,7 +56,7 @@ export const FileCard = ({
   tertiaryDescription,
   onClick,
   ...props
-}: FileCardProps): JSX.Element => (
+}) => (
   <Container>
     <StyledGrid>
       {type && <StyledLegend>{type}</StyledLegend>}

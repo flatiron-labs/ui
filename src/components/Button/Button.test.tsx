@@ -1,9 +1,9 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
 
-import { Button } from '.'
+import { Button } from '~/components/Button'
 
-describe('Button', () => {
+describe('<Button />', () => {
   const child = 'foo'
   it('should render children', () => {
     render(<Button>{child}</Button>)

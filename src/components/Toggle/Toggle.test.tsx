@@ -1,21 +1,18 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-import { Toggle, ToggleProps } from '.'
+import { Toggle } from '~/components/Toggle'
 
-describe('Toggle', () => {
+describe('<Toggle />', () => {
   const testId = 'test-component'
-
-  const renderComponent = ({ label }: ToggleProps = {}) => {
-    render(<Toggle data-testid={testId} label={label} />)
-  }
+  const label = 'Test label'
 
   it('should render a toggle', () => {
-    renderComponent()
+    render(<Toggle data-testid={testId} />)
     screen.getByTestId(testId)
   })
 
   it('should render a toggle with label', () => {
-    renderComponent({ label: 'Test label' })
-    screen.getByText(/Test label/i)
+    render(<Toggle data-testid={testId} label={label} />)
+    screen.getByText(label)
   })
 })

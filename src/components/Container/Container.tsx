@@ -5,8 +5,7 @@ import { ThemeProvider } from '~/context'
 import { Theme } from '~/styles'
 import { global } from '~/styles/stitches.config'
 
-export interface ContainerProps {
-  children: React.ReactNode
+interface Props {
   theme?: Theme
 }
 
@@ -45,7 +44,7 @@ const globalStyles = global({
   }
 })
 
-export const Container = ({ children, theme }: ContainerProps): JSX.Element => {
+export const Container: FC<Props> = ({ children, theme }) => {
   globalStyles()
 
   return (

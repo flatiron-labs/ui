@@ -1,8 +1,8 @@
-import React, { SVGProps } from 'react'
+import { SVGProps } from 'react'
 
-export type IcoProps = {
-  color?: string
-  children?: never
-} & SVGProps<SVGSVGElement>
-
-export type IconComponent = React.FC<IcoProps>
+type IconComponent = FC<
+  {
+    color?: string
+    children?: never
+  } & SVGProps<SVGSVGElement>
+>

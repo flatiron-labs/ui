@@ -19,7 +19,7 @@ const Highlight = styled('span', {
   paddingRight: '25px'
 })
 
-export const PageHeading = ({ title, subtitle, secondarySubtitle }: Props): JSX.Element => (
+export const PageHeading: FC<Props> = ({ title, subtitle, secondarySubtitle }) => (
   <div>
     <Title>{title}</Title>
 

@@ -1,21 +1,18 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
+import { Avatar } from '~/components/Avatar'
 
-import { Avatar, AvatarProps } from '.'
-
-describe('Avatar', () => {
+describe('<Avatar />', () => {
   const testId = 'test-component'
+  const initials = 'JS'
 
-  const renderComponent = ({ children, color, backgroundColor }: AvatarProps) => {
+  it('should render appropriate elements', () => {
     render(
-      <Avatar data-testid={testId} color={color} backgroundColor={backgroundColor}>
-        {children}
+      <Avatar data-testid={testId} color="green" backgroundColor="blue">
+        {initials}
       </Avatar>
     )
-  }
 
-  it('should render children', () => {
-    renderComponent({ children: 'JS' })
-    screen.getByText(/JS/i)
+    screen.getByText(initials)
   })
 })
