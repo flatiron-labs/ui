@@ -18,6 +18,7 @@ interface FCWithoutChildren<P = {}> {
   contextTypes?: ValidationMap<unknown>
   defaultProps?: Partial<P>
   displayName?: string
+  'data-testid'?: string
 }
 
 // eslint-disable-next-line @typescript-eslint/ban-types

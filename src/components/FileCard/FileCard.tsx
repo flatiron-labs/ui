@@ -1,89 +1,102 @@
 /* eslint-disable react/require-default-props */
 
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from '~/styles/stitches.config'
 import { Button } from '~/components/Button'
-import { Grid } from '~/components/Grid'
-import { flatironTheme } from '~/styles'
 
 interface Props {
-  children?: React.ReactNode
-  cta: string | JSX.Element
+  cta: string
+  onClick?: (e: React.MouseEvent) => void
+  secondary?: {
+    title?: string
+    description?: string
+  }
+  tertiary?: {
+    title?: string
+    description?: string
+  }
   title?: string
   type?: string
-  secondaryTitle?: string
-  secondaryDescription?: string
-  tertiaryTitle?: string
-  tertiaryDescription?: string
-  onClick?: (e: React.MouseEvent) => void
 }
 
-const Container = styled(props => <Grid container alignItems="center" justify="center" {...props} />)`
-  padding-bottom: 25px;
-  padding-top: 15px;
-  position: relative;
-`
-const StyledGrid = styled(props => <Grid container item {...props} />)`
-  border: 2px solid ${flatironTheme.colors.common.greyDarkest};
-  padding: 5px 20px;
-`
+const Container = styled('div', {
+  border: '2px solid $grey1000',
+  padding: '15px 30px',
+  display: 'grid',
+  gridGap: '$7',
 
-const StyledLegend = styled.div`
-  position: absolute;
-  margin-top: -13px;
-  margin-left: 4px;
-  color: ${flatironTheme.colors.common.yellow};
-  background-color: ${flatironTheme.colors.common.black};
-  padding-left: 8px;
-  padding-right: 8px;
-  font-weight: bold;
-`
+  variants: {
+    direction: {
+      column: {
+        gridTemplateColumns: '1fr'
+      },
+      row: {
+        gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))'
+      }
+    }
+  }
+})
 
-const StyledGridItem = styled(Grid)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-`
+const Legend = styled('div', {
+  backgroundColor: '$black500',
+  color: '$yellow500',
+  fontWeight: 'bold',
+  marginTop: '-23px',
+  marginLeft: '4px',
+  paddingLeft: '8px',
+  paddingRight: '8px',
+  position: 'absolute'
+})
 
-export const FileCard: FC<Props> = ({
+const Column = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center'
+})
+
+export const FileCard: FCWithoutChildren<Props> = ({
   cta,
-  title,
+  secondary,
+  tertiary,
+  title = 'No Upload',
   type,
-  secondaryTitle,
-  secondaryDescription,
-  tertiaryTitle,
-  tertiaryDescription,
-  onClick,
-  ...props
+  ...rest
 }) => (
-  <Container>
-    <StyledGrid>
-      {type && <StyledLegend>{type}</StyledLegend>}
-      <StyledGridItem container item sm={12} md={4} {...props}>
-        {title ? <h6>{title}</h6> : <h6>No Upload</h6>}
-      </StyledGridItem>
-      {(secondaryTitle || secondaryDescription) && (
-        <StyledGridItem container item sm={12} md={tertiaryTitle ? 2 : 4} {...props}>
-          <p>{secondaryTitle}</p>
-          <p>{secondaryDescription}</p>
-        </StyledGridItem>
+  <Container
+    direction={{
+      '@initial': 'column',
+      '@md': 'row'
+    }}
+    {...rest}
+  >
+    {type && <Legend>{type}</Legend>}
+
+    <Column>
+      <h6>{title}</h6>
+    </Column>
+
+    <Column>
+      {secondary && (
+        <>
+          <p>{secondary.title}</p>
+          <p>{secondary.description}</p>
+        </>
       )}
-      {(tertiaryTitle || tertiaryDescription) && (
-        <StyledGridItem container item sm={12} md={tertiaryTitle ? 2 : 4} {...props}>
-          <p>{tertiaryTitle}</p>
-          <p>{tertiaryDescription}</p>
-        </StyledGridItem>
+    </Column>
+
+    <Column>
+      {tertiary && (
+        <>
+          <p>{tertiary.title}</p>
+          <p>{tertiary.description}</p>
+        </>
       )}
-      <StyledGridItem container item sm={12} md={4} {...props} alignItems="flex-end">
-        {React.isValidElement(cta) ? (
-          cta
-        ) : (
-          <Button size="large" width="full" onClick={onClick}>
-            {cta as string}
-          </Button>
-        )}
-      </StyledGridItem>
-    </StyledGrid>
+    </Column>
+
+    <Column>
+      <Button size="large" width="full">
+        {cta}
+      </Button>
+    </Column>
   </Container>
 )

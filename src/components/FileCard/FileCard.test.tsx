@@ -1,34 +1,61 @@
 import React from 'react'
 import { render, screen } from '~/test/utils'
-import { Button } from '~/components/Button'
 import { FileCard } from '~/components/FileCard'
 
 describe('<FileCard />', () => {
+  const testid = 'filecard'
   const props = {
-    title: 'title_of_resume.pdf',
     cta: 'Upload',
+    secondary: {
+      title: 'Assigned',
+      description: '1/2/2022'
+    },
+    tertiary: {
+      title: 'Completed',
+      description: '1/3/2023'
+    },
+    title: 'title_of_resume.pdf',
     type: 'Resume',
-    secondaryTitle: 'Assigned',
-    secondaryDescription: '1.2.1996'
+    'data-testid': testid
   }
 
-  it('should render appropriate elements', () => {
-    render(<FileCard {...props} />)
+  describe('all information', () => {
+    it('should render appropriate elements', () => {
+      render(<FileCard {...props} />)
 
-    screen.getByText(props.title) // Title
-    screen.getByText(props.type) // Type
-    screen.getByText(props.cta) // CTA
-    screen.getByText(props.secondaryTitle) // secondaryTitle
-    screen.getByText(props.secondaryDescription) // secondaryDescription
+      screen.getByText(props.title)
+      screen.getByText(props.type)
+      screen.getByText(props.cta)
+      screen.getByText(props.secondary.title)
+      screen.getByText(props.secondary.description)
+
+      screen.getByText(props.tertiary.title)
+      screen.getByText(props.tertiary.description)
+
+      expect(screen.getByTestId(testid)).toMatchSnapshot()
+    })
   })
 
-  it('should render cta jsx element', () => {
-    render(<FileCard {...props} cta={<Button>{props.cta}</Button>} />)
+  describe('no title', () => {
+    it('should render appropriate elements', () => {
+      render(<FileCard {...props} title={undefined} />)
 
-    screen.getByText(props.title) // Title
-    screen.getByText(props.type) // Type
-    screen.getByText(props.cta) // CTA Button
-    screen.getByText(props.secondaryTitle) // secondaryTitle
-    screen.getByText(props.secondaryDescription) // secondaryDescription
+      screen.getByText('No Upload')
+      expect(screen.getByTestId(testid)).toMatchSnapshot()
+    })
+  })
+
+  describe('no secondary information', () => {
+    it('should render appropriate elements', () => {
+      render(<FileCard {...props} secondary={undefined} />)
+      expect(screen.getByTestId(testid)).toMatchSnapshot()
+    })
+  })
+
+  describe('no teritiary information', () => {
+    it('should render appropriate elements', () => {
+      render(<FileCard {...props} tertiary={undefined} />)
+      expect(screen.getByTestId(testid)).toMatchSnapshot()
+    })
   })
 })

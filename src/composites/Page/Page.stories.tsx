@@ -34,27 +34,37 @@ const Template: Story = () => (
           type="Resume"
           title="title_of_resume.pdf"
           cta="View"
-          secondaryTitle="Assigned"
-          secondaryDescription="1/2/2233"
-          tertiaryTitle="Completed"
-          tertiaryDescription="1/2/2233"
+          secondary={{
+            title: 'Assigned',
+            description: '1/2/2233'
+          }}
+          tertiary={{
+            title: 'Completed',
+            description: '1/2/2233'
+          }}
           onClick={() => null}
         />
         <FileCard
           type="Resume"
           cta="Upload"
-          secondaryTitle="Assigned"
-          secondaryDescription="1/2/2233"
+          secondary={{
+            title: 'Assigned',
+            description: '1/2/2233'
+          }}
           onClick={() => null}
         />
         <FileCard
           type="Resume"
           title="title_of_resume.pdf"
           cta="View"
-          secondaryTitle="Assigned"
-          secondaryDescription="1/2/2233"
-          tertiaryTitle="Completed"
-          tertiaryDescription="1/2/2233"
+          secondary={{
+            title: 'Assigned',
+            description: '1/2/2233'
+          }}
+          tertiary={{
+            title: 'Completed',
+            description: '1/2/2233'
+          }}
           onClick={() => null}
         />
       </Grid>
