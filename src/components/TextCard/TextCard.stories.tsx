@@ -1,13 +1,13 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { TextCard, TextCardProps } from '.'
+import { TextCard } from '~/components/TextCard'
 
 export default {
   title: 'Content/TextCard',
   component: TextCard
 } as Meta
 
-const Template: Story = (args: TextCardProps) => <TextCard {...args} />
+const Template: Story = (args: GetComponentProps<typeof TextCard>) => <TextCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

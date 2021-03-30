@@ -1,27 +1,23 @@
 import React from 'react'
-import styled from 'styled-components'
-import { flatironTheme } from '~/styles'
-import { Grid } from '../Grid'
+import { styled } from '~/styles/stitches.config'
 
-export interface TextCardProps {
+interface Props extends Partial<typeof Container> {
   label: string
   value: string
 }
 
-const Content = styled.div`
-  border: 2px solid ${flatironTheme.colors.common.turqDark};
-  padding: 10px;
-`
+const Container = styled('div', {
+  border: '2px solid $cyan500',
+  padding: '10px'
+})
 
-const Heading = styled.h4`
-  color: ${flatironTheme.colors.common.turq};
-`
+const Title = styled('h4', {
+  color: '$cyan500'
+})
 
-export const TextCard = ({ label, value, ...props }: TextCardProps): JSX.Element => (
-  <Grid item xs={12} md={6} {...props}>
-    <Content>
-      <Heading>{label}</Heading>
-      <p>{value}</p>
-    </Content>
-  </Grid>
+export const TextCard = ({ label, value, ...props }: Props): JSX.Element => (
+  <Container {...props}>
+    <Title>{label}</Title>
+    <p>{value}</p>
+  </Container>
 )
