@@ -121,7 +121,10 @@ const stitches = createCss({
   utils: {},
   prefix: '',
   insertionMethod: 'append'
-  // themeMap: '',
+  // themeMap: {
+  //   ...defaultThemeMap
+  //   boxShadow: color
+  // },
 })
 
 export type CSS = StitchesCss<typeof stitches>

@@ -1,105 +1,89 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Grid, Hidden, Icon } from '~/components'
-import { flatironTheme, Media } from '~/styles'
+import { styled } from '~/styles/stitches.config'
 
-const StyledFooter = styled(rest => <Grid container component="footer" {...rest} />)`
-  background-color: ${flatironTheme.colors.common.yellow};
-  color: ${flatironTheme.colors.common.black};
-  width: 100%;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  z-index: 1000;
+const Root = styled('footer', {
+  alignItems: 'center',
+  backgroundColor: '$yellow500',
+  color: '$black500',
+  display: 'grid',
+  gap: '3rem',
+  gridTemplateColumns: '1fr',
+  minHeight: '100px',
+  padding: '1rem',
+  textAlign: 'center',
 
-  ${Media.md} {
-    justify-content: space-between;
-    padding: 0 5rem;
-  }
-`
+  '@sm': {
+    gridTemplateColumns: '3fr 1fr',
+    textAlign: 'inherit'
+  },
 
-const FooterLink = styled.a`
-  color: ${flatironTheme.colors.common.black};
-  font-size: 14px;
-  padding: 7px 0;
-  text-decoration: none;
-  font-weight: bold;
-
-  &:hover {
-    color: ${flatironTheme.colors.common.turq};
-  }
-
-  ${Media.md} {
-    font-size: 16px;
-  }
-`
-
-const SocialLinks = styled.ul`
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  direction: row;
-  justify-content: flex-end;
-
-  a {
-    color: black;
-  }
-
-  li {
-    padding-left: 1em;
-    cursor: pointer;
-
-    &:first-child {
-      padding-left: 0;
+  variants: {
+    lockToBottom: {
+      true: {
+        bottom: '0',
+        position: 'absolute',
+        width: '100%',
+        zIndex: '1000'
+      }
     }
   }
-`
+})
 
-export const Footer = (): JSX.Element => (
-  <StyledFooter>
-    <Grid item xs={10} sm={10} md={9}>
-      <Grid container component="nav" direction="row" justify="space-between" alignItems="center" aria-label="Footer">
-        <FooterLink href="https://flatironschool.com/accessibility">Accessibility</FooterLink>
-        <FooterLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</FooterLink>
-        <FooterLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</FooterLink>
-        <FooterLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterLink>
-      </Grid>
-    </Grid>
+Root.displayName = 'Footer.Root'
 
-    <Hidden smDown>
-      <Grid item xs={2}>
-        <SocialLinks aria-label="Social links">
-          <li>
-            <a href="https://www.facebook.com/FlatironSchool/" title="Facebook">
-              <Icon.Facebook />
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/FlatironSchool" title="Twitter">
-              <Icon.Twitter />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/FlatironSchool/" title="Instagram">
-              <Icon.Instagram />
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/flatiron-school" title="Github">
-              <Icon.Github />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/FlatironSchoolNY" title="YouTube">
-              <Icon.Youtube />
-            </a>
-          </li>
-        </SocialLinks>
-      </Grid>
-    </Hidden>
-  </StyledFooter>
-)
+const Nav = styled('nav', {
+  display: 'grid',
+  fontSize: '14px',
+  gap: '1rem',
+
+  '@sm': {
+    display: 'flex',
+    justifyContent: 'space-between'
+  }
+})
+
+Nav.displayName = 'Footer.Nav'
+
+const NavLink = styled('a', {
+  color: '$black500',
+  fontWeight: 'bold',
+  paddingRight: '1rem',
+  textDecoration: 'none',
+
+  '&:last-child': {
+    paddingRight: 0
+  },
+
+  '&:hover': {
+    color: '$cyan500'
+  }
+})
+
+NavLink.displayName = 'Footer.NavLink'
+
+const Social = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'row',
+  justifyContent: 'space-between'
+})
+
+Social.displayName = 'Footer.Social'
+
+const SocialLink = styled('a', {
+  color: '$black500',
+  cursor: 'pointer',
+
+  '&:hover': {
+    color: '$cyan500'
+  }
+})
+
+SocialLink.displayName = 'Footer.SocialLink'
+
+export const Footer = {
+  Nav,
+  NavLink,
+  Root,
+  Social,
+  SocialLink
+}

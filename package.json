@@ -259,6 +259,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@hookform/devtools": "^2.2.1",
+    "@radix-ui/react-switch": "^0.0.11",
     "@reach/auto-id": "^0.13.2",
     "@react-hook/window-size": "^3.0.7",
     "@stitches/react": "^0.1.4",
