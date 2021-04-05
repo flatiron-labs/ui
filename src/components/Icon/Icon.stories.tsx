@@ -2,7 +2,6 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import styled from 'styled-components'
 import { Icon } from '~/components/Icon'
-import { flatironTheme } from '~/styles'
 
 const Container = styled.div`
   svg {
@@ -44,5 +43,5 @@ const Template: Story = (args: GetComponentProps<Props>) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  color: flatironTheme.colors.common.white
+  color: 'white'
 }

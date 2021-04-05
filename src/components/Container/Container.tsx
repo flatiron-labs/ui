@@ -1,13 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable import/no-named-default */
-import React from 'react'
-import { ThemeProvider } from '~/context'
-import { Theme } from '~/styles'
 import { global } from '~/styles/stitches.config'
-
-interface Props {
-  theme?: Theme
-}
 
 const globalStyles = global({
   '*': {
@@ -26,6 +19,9 @@ const globalStyles = global({
     display: 'none'
   },
   body: {
+    backgroundColor: '$black500',
+    color: '$white500',
+    fontFamily: '$firaCode',
     lineHeight: '1'
   },
   'ol, ul': {
@@ -41,15 +37,61 @@ const globalStyles = global({
   },
   table: {
     borderSpacing: '0'
+  },
+  // TODO: Remove in favor of <Heading /> and local styles
+  h1: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 300,
+    fontSize: '6rem',
+    lineHeight: 1.167,
+    letterSpacing: '-0.01562em'
+  },
+  h2: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 300,
+    fontSize: '3.75rem',
+    lineHeight: 1.2,
+    letterSpacing: '-0.00833em'
+  },
+  h3: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 400,
+    fontSize: '3rem',
+    lineHeight: 1.167,
+    letterSpacing: '0em'
+  },
+  h4: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 400,
+    fontSize: '1.6rem',
+    lineHeight: 1.235,
+    letterSpacing: '0.00735em'
+  },
+  h5: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 400,
+    fontSize: '1.5rem',
+    lineHeight: 1.334,
+    letterSpacing: '0em'
+  },
+  h6: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 500,
+    fontSize: '1.25rem',
+    lineHeight: 1.6,
+    letterSpacing: '0.0075em'
+  },
+  p: {
+    fontFamily: '"Fira Code", sans-serif',
+    fontWeight: 400,
+    fontSize: '1rem',
+    lineHeight: 1.75,
+    letterSpacing: '0.00938em'
   }
 })
 
-export const Container: FC<Props> = ({ children, theme }) => {
+export const Container: FC = ({ children }) => {
   globalStyles()
 
-  return (
-    <ThemeProvider theme={theme}>
-      <>{children}</>
-    </ThemeProvider>
-  )
+  return children
 }

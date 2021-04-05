@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Input, Select } from '~/components'
-import { Media } from '~/styles'
 import { usStateAbbreviations } from '~/data'
 
 interface Props {
@@ -43,7 +42,7 @@ const AddressSecondary = styled.div`
   display: grid;
   gap: 2em 1.5em;
 
-  ${Media.sm} {
+  @media only screen and (min-width: 601px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 `

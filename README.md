@@ -16,16 +16,6 @@ export default () => {
 }
 ```
 
-To apply your theme wrap your components in our ThemeProvider:
-
-```jsx
-import ThemeProvider from '@flatiron-school/ui'
-
-export default () => {
-  return <ThemeProvider theme={yourTheme}> </ThemeProvider>
-}
-```
-
 ### Available Components
 
 [TODO]
