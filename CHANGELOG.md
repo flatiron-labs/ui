@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/flatiron-labs/ui/compare/v1.3.0...v1.4.0) (2021-04-05)
+
+
+### Features
+
+* **progress:** add component ([0a2ca78](https://github.com/flatiron-labs/ui/commit/0a2ca78f779f8b89f0ad7a79ab80dc9fd44cc2cd))
+
 # [1.3.0](https://github.com/flatiron-labs/ui/compare/v1.2.1...v1.3.0) (2021-03-23)
 
 
