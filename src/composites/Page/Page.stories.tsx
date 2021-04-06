@@ -1,7 +1,7 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { Grid, Section, OverlayCard, FileCard, PageHeading } from '~/components'
+import { Section, OverlayCard, FileCard, PageHeading, ResponsiveGrid } from '~/components'
 
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 import PurpleOverlay from '~/assets/images/overlay-purple.svg'
@@ -16,7 +16,15 @@ const Template: Story = () => (
     <PageHeading title="Welcome Back John Smith!" subtitle="Software Engineering" secondarySubtitle="Fall 2020" />
 
     <Section title="Links">
-      <Grid container spacing={3}>
+      <ResponsiveGrid min="200px">
+        {/*
+        <OverlayCard accentColor="$pink500">
+          <OverlayCard.Image src={{PinkOverlay}} />
+          <OverlayCard.Title>Try free courses</OverlayCard.Title>
+          <OverlayCard.Button>View Pathwright</OverlayCard.Button>
+        </OverlayCard>
+        */}
+
         <OverlayCard title="Try free courses" cta="View Pathwright" accentColor="$pink500" image={PinkOverlay} />
         <OverlayCard title="Course work & Curriculum" cta="View Canvas" accentColor="$cyan500" image={TurqOverlay} />
         <OverlayCard
@@ -25,11 +33,27 @@ const Template: Story = () => (
           accentColor="$purple500"
           image={PurpleOverlay}
         />
-      </Grid>
+      </ResponsiveGrid>
     </Section>
 
     <Section title="Documents">
-      <Grid container>
+      <ResponsiveGrid>
+        {/*
+        <FileCard type="Resume" title="title_of_resume.pdf">
+          <FileCard.Column>
+            <FileCard.ColumnTitle>Assigned</FileCard.ColumnTitle>
+            <FileCard.ColumnDescription>1/2/2233</FileCard.ColumnDescription>
+          </FileCard.Column>
+          <FileCard.Column>
+            <FileCard.ColumnTitle>Completed</FileCard.ColumnTitle>
+            <FileCard.ColumnDescription>1/2/2233</FileCard.ColumnDescription>
+          </FileCard.Column>
+          <FileCard.Column>
+            <FileCard.Button>View</FileCard.Button>
+          </FileCard.Column>
+        </FileCard>
+        */}
+
         <FileCard
           type="Resume"
           title="title_of_resume.pdf"
@@ -67,7 +91,7 @@ const Template: Story = () => (
           }}
           onClick={() => null}
         />
-      </Grid>
+      </ResponsiveGrid>
     </Section>
   </Page>
 )

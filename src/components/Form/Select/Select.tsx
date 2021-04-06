@@ -1,10 +1,10 @@
 /* eslint-disable react/require-default-props */
 import React from 'react'
-import styled from 'styled-components'
+
 import { useFormContext } from 'react-hook-form'
 import { useId } from '@reach/auto-id'
 
-import { useTheme } from '~/context'
+import { styled } from '~/styles/stitches.config'
 
 interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
   readonly options: string[] | Record<string, string>
@@ -16,88 +16,97 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSelectE
   readonly value?: string | number
 }
 
-interface ContainerProps {
-  error: boolean
-}
+const Container = styled('div', {
+  position: 'relative',
 
-const Container = styled.div<ContainerProps>`
-  position: relative;
+  display: 'grid',
+  gridTemplateAreas: 'select',
+  alignItems: 'center',
 
-  display: grid;
-  grid-template-areas: 'select';
-  align-items: center;
+  '&:after': {
+    gridArea: 'select',
+    content: '',
+    width: '0.8em',
+    height: '0.5em',
+    backgroundColor: '$grey1000',
+    clipPath: 'polygon(100% 0%, 0 0%, 50% 100%)',
+    justifySelf: 'end',
+    marginRight: '1em'
+  },
 
-  &:after {
-    grid-area: select;
-    content: '';
-    width: 0.8em;
-    height: 0.5em;
-    background-color: ${props => props.theme.colors.common.greyDarkest};
-    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-    justify-self: end;
-    margin-right: 1em;
-  }
+  select: {
+    gridArea: 'select',
+    width: '100%',
+    height: '64px',
+    cursor: 'pointer',
+    borderRadius: '0',
+    padding: '0 1em',
+    background: 'transparent',
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    color: '$white500',
+    appearance: 'none',
+    transition: 'border-color 0.3s ease',
+    outline: 0,
 
-  select {
-    grid-area: select;
-    width: 100%;
-    height: 64px;
-    cursor: pointer;
-    border-radius: 0;
-    padding: 0 1em;
-    background: transparent;
-    border: 2px solid ${props => (props.error ? props.theme.colors.common.pink : props.theme.colors.common.greyDarkest)};
-    color: ${props => props.theme.colors.common.white};
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    transition: border-color 0.3s ease;
-    outline: 0;
+    'option[data-placeholder]': {
+      color: '$grey750'
+    },
 
-    option[data-placeholder] {
-      color: ${props => props.theme.colors.common.greyDark};
+    'option[value=""][disabled]': {
+      display: 'none'
+    },
+
+    '&:focus': {
+      borderColor: '$cyan500',
+      outline: 0
+    },
+
+    '&:disabled': {
+      cursor: 'not-allowed'
     }
+  },
 
-    option[value=''][disabled] {
-      display: none;
-    }
-
-    &:focus {
-      border-color: ${props => props.theme.colors.common.turq};
-      outline: 0;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-  }
-`
-
-const DetailsContainer = styled.div`
-  position: absolute;
-  z-index: 10;
-  background-color: ${props => props.theme.colors.common.black};
-  padding: 0 10px;
-  top: -4px;
-  left: 15px;
-  font-size: 12px;
-
-  label {
-    color: ${props => props.theme.colors.common.yellow};
-  }
-
-  span {
-    margin-left: 1em;
-
-    &.error {
-      color: ${props => props.theme.colors.common.pink};
+  variants: {
+    error: {
+      true: {
+        select: {
+          borderColor: '$pink500'
+        }
+      },
+      false: {
+        select: {
+          borderColor: '$grey1000'
+        }
+      }
     }
   }
-`
+})
 
-export const Select = ({ name, label, help, options, ...rest }: Props): JSX.Element => {
+const DetailsContainer = styled('div', {
+  position: 'absolute',
+  zIndex: 10,
+  backgroundColor: '$black500',
+  padding: '0 10px',
+  top: '-4px',
+  left: '15px',
+  fontSize: '12px',
+
+  '& label': {
+    color: '$yellow500'
+  },
+
+  '& span': {
+    marginLeft: '1em',
+
+    '&.error': {
+      color: '$pink500'
+    }
+  }
+})
+
+export const Select: FCWithoutChildren<Props> = ({ name, label, help, options, ...rest }) => {
   const id = useId(rest.id)
-  const theme = useTheme()
   const { register, errors } = useFormContext()
   const conditionalProps = {}
   const helpId = `form-${name}-help`
@@ -117,8 +126,8 @@ export const Select = ({ name, label, help, options, ...rest }: Props): JSX.Elem
   }
 
   return (
-    <Container error={!!scopedErrors} theme={theme}>
-      <DetailsContainer theme={theme}>
+    <Container error={!!scopedErrors}>
+      <DetailsContainer>
         <label id={id} htmlFor={name}>
           {label}
         </label>

@@ -1,12 +1,13 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { Sidebar } from '.'
+
+import { Sidebar } from '~/components/Sidebar'
 import { Nav } from '~/components/Nav'
 import { Icon } from '~/components/Icon'
 
 export default {
-  title: 'Global/Sidebar',
-  component: Sidebar
+  title: 'Global/Navigation',
+  component: Nav.Root
 } as Meta
 
 const Template: Story = () => (
@@ -25,6 +26,10 @@ const Template: Story = () => (
       <Nav.Link href="/settings">
         <Icon.Settings />
         <Nav.Title>Settings</Nav.Title>
+      </Nav.Link>
+
+      <Nav.Link href="/">
+        <Nav.Title>Link w/o Icon</Nav.Title>
       </Nav.Link>
     </Nav.Root>
   </Sidebar>

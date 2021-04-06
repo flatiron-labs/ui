@@ -1,17 +1,17 @@
 import React from 'react'
 import { render } from '~/test/utils'
 import { Sidebar } from '.'
-import { NavLink, NavContainer } from '~/components'
+import { Nav } from '~/components'
 
 describe('Sidebar', () => {
   const renderComponent = () => {
     render(
       <Sidebar expanded>
-        <NavContainer>
-          <NavLink href="/" icon="Home">
-            Home
-          </NavLink>
-        </NavContainer>
+        <Nav.Root>
+          <Nav.Link href="/">
+            <Nav.Title>Home</Nav.Title>
+          </Nav.Link>
+        </Nav.Root>
       </Sidebar>
     )
   }
