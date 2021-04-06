@@ -15,7 +15,6 @@ interface Props extends Partial<typeof Container> {
 }
 
 const Container = styled('section', {
-  paddingBottom: '3em',
   width: '100%'
 })
 const Title = styled('h4', { paddingBottom: '0.5em' })

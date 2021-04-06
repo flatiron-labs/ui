@@ -12,7 +12,7 @@ export default {
 const Template: Story = (args: GetComponentProps<typeof MediaCard>) => <MediaCard {...args} />
 
 const TemplateMulti: Story = () => (
-  <ResponsiveGrid>
+  <ResponsiveGrid min="200px">
     <MediaCard
       image="https://via.placeholder.com/348x193"
       title="HTML Tutorial for Beginners"

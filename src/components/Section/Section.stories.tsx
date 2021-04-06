@@ -8,7 +8,7 @@ export default {
 
 const Template: Story = (args: GetComponentProps<typeof Section>) => (
   <Section {...args}>
-    <ResponsiveGrid>
+    <ResponsiveGrid min="500px">
       <TextCard label="Full Name" value="John Smith" />
       <TextCard label="Full Name" value="John Smith" />
       <TextCard label="Full Name" value="John Smith" />
