@@ -1,9 +1,10 @@
 /* eslint-disable react/require-default-props */
 import React from 'react'
-import styled from 'styled-components'
 import Yup from 'yup'
 import { useForm, Resolver, transformToNestObject, FieldValues, FormProvider } from 'react-hook-form'
 import { DevTool } from '@hookform/devtools'
+
+import { styled } from '~/styles/stitches.config'
 
 const parseErrorSchema = (error: Yup.ValidationError, validateAllFieldCriteria: boolean) =>
   Array.isArray(error.inner) && error.inner.length
@@ -74,18 +75,17 @@ const yupResolver = <TFieldValues extends FieldValues>(
 
 interface Props extends React.HTMLAttributes<HTMLFormElement> {
   defaultValues: Record<string, unknown>
-  children: JSX.Element | JSX.Element[]
   label: string
   schema: Yup.AnyObjectSchema
   debug?: boolean
 }
 
-const FormGrid = styled.form`
-  display: grid;
-  gap: 2em;
-`
+const FormGrid = styled('form', {
+  display: 'grid',
+  gap: '2em'
+})
 
-export const Form = ({ defaultValues, children, onSubmit, label, schema, debug, ...props }: Props): JSX.Element => {
+export const Form: FC<Props> = ({ defaultValues, children, onSubmit, label, schema, debug, ...props }) => {
   const methods = useForm({
     defaultValues,
     resolver: yupResolver(schema),

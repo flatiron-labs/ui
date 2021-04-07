@@ -1,14 +1,16 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import styled from 'styled-components'
+
+import { styled } from '~/styles/stitches.config'
 import { Icon } from '~/components/Icon'
 
-const Container = styled.div`
-  svg {
-    display: block;
-    margin-bottom: 10px;
+const Container = styled('div', {
+  svg: {
+    display: 'block',
+    marginBottom: '10px'
   }
-`
+})
+
 export default {
   title: 'Global/Icon',
   argTypes: {

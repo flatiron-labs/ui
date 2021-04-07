@@ -26,7 +26,4 @@ If you want to contribute through code or documentation, the [Contributing guide
 
 ### Other
 
-- [Why I don't use React.FC](https://fettblog.eu/typescript-react-why-i-dont-use-react-fc/#2.-fc%3C%3E-always-imply-children)
 - [TS Styleguide](https://basarat.gitbook.io/typescript/styleguide)
-- [Jest styled-components](https://github.com/styled-components/jest-styled-components#react-testing-library)
-- [Jest styled-components toHaveStyleRule](https://github.com/styled-components/jest-styled-components#tohavestylerule)

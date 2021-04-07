@@ -1,5 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
+
+import { styled } from '~/styles/stitches.config'
 import { Input, Select } from '~/components'
 import { usStateAbbreviations } from '~/data'
 
@@ -8,44 +9,44 @@ interface Props {
   readonly legend: string
 }
 
-const Fieldset = styled.fieldset`
-  display: grid;
-  gap: 2em;
+const Fieldset = styled('fieldset', {
+  display: 'grid',
+  gap: '2em',
 
   // START TODO: Move to Globals
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block-start: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  padding-block-end: 0;
-  border-top-width: 0;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
+  marginInlineStart: 0,
+  marginInlineEnd: 0,
+  paddingBlockStart: 0,
+  paddingInlineStart: 0,
+  paddingInlineEnd: 0,
+  paddingBlockEnd: 0,
+  borderTopWidth: 0,
+  borderRightWidth: 0,
+  borderBottomWidth: 0,
+  borderLeftWidth: 0,
   // END TODO: Move to Globals
 
-  legend {
+  '& legend': {
     // START TODO: Create visually-hidden CSS helper
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    overflow: 'hidden',
+    position: 'absolute',
+    whiteSpace: 'nowrap',
+    width: '1px'
     // END TODO: Create visually-hidden CSS helper
   }
-`
+})
 
-const AddressSecondary = styled.div`
-  display: grid;
-  gap: 2em 1.5em;
+const AddressSecondary = styled('div', {
+  display: 'grid',
+  gap: '2em 1.5em',
 
-  @media only screen and (min-width: 601px) {
-    grid-template-columns: 1fr 1fr 1fr;
+  '@media only screen and (min-width: 601px)': {
+    gridTemplateColumns: '1fr 1fr 1fr'
   }
-`
+})
 
 export const Address = ({ legend, fieldPrefix }: Props): JSX.Element => (
   <Fieldset>
