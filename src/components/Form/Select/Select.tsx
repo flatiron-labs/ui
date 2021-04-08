@@ -17,37 +17,37 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSelectE
 }
 
 const Container = styled('div', {
+  alignItems: 'center',
+  display: 'grid',
+  // gridTemplateAreas: 'select',
   position: 'relative',
 
-  display: 'grid',
-  gridTemplateAreas: 'select',
-  alignItems: 'center',
-
   '&:after': {
-    gridArea: 'select',
-    content: '',
-    width: '0.8em',
-    height: '0.5em',
+    // gridArea: 'select',
     backgroundColor: '$grey1000',
     clipPath: 'polygon(100% 0%, 0 0%, 50% 100%)',
+    content: '',
+    height: '0.5em',
     justifySelf: 'end',
-    marginRight: '1em'
+    marginRight: '1em',
+    width: '0.8em'
   },
 
   select: {
-    gridArea: 'select',
-    width: '100%',
-    height: '64px',
-    cursor: 'pointer',
-    borderRadius: '0',
-    padding: '0 1em',
+    appearance: 'none',
     background: 'transparent',
+    borderRadius: '0',
     borderStyle: 'solid',
     borderWidth: '2px',
     color: '$white500',
-    appearance: 'none',
-    transition: 'border-color 0.3s ease',
+    cursor: 'pointer',
+    fontSize: '$30',
+    // gridArea: 'select',
+    height: '64px',
     outline: 0,
+    padding: '0 1em',
+    transition: 'border-color 0.3s ease',
+    width: '100%',
 
     'option[data-placeholder]': {
       color: '$grey750'
@@ -84,19 +84,19 @@ const Container = styled('div', {
 })
 
 const DetailsContainer = styled('div', {
-  position: 'absolute',
-  zIndex: 10,
   backgroundColor: '$black500',
-  padding: '0 10px',
-  top: '-4px',
-  left: '15px',
   fontSize: '12px',
+  left: '15px',
+  padding: '0 10px',
+  position: 'absolute',
+  top: '-4px',
+  zIndex: 10,
 
-  '& label': {
+  label: {
     color: '$yellow500'
   },
 
-  '& span': {
+  span: {
     marginLeft: '1em',
 
     '&.error': {

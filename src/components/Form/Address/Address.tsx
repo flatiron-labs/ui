@@ -14,19 +14,19 @@ const Fieldset = styled('fieldset', {
   gap: '2em',
 
   // START TODO: Move to Globals
-  marginInlineStart: 0,
-  marginInlineEnd: 0,
-  paddingBlockStart: 0,
-  paddingInlineStart: 0,
-  paddingInlineEnd: 0,
-  paddingBlockEnd: 0,
-  borderTopWidth: 0,
-  borderRightWidth: 0,
   borderBottomWidth: 0,
   borderLeftWidth: 0,
+  borderRightWidth: 0,
+  borderTopWidth: 0,
+  marginInlineEnd: 0,
+  marginInlineStart: 0,
+  paddingBlockEnd: 0,
+  paddingBlockStart: 0,
+  paddingInlineEnd: 0,
+  paddingInlineStart: 0,
   // END TODO: Move to Globals
 
-  '& legend': {
+  legend: {
     // START TODO: Create visually-hidden CSS helper
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',

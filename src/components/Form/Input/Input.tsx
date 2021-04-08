@@ -44,17 +44,19 @@ const Container = styled('div', {
   position: 'relative',
 
   input: {
-    width: '100%',
     background: 'transparent',
-    height: '64px',
-    color: '$white500',
     borderStyle: 'solid',
     borderWidth: '2px',
+    color: '$white500',
+    fontFamily: '$firaCode',
+    fontSize: '$30',
+    height: '64px',
     transition: 'border-color 0.3s ease',
+    width: '100%',
 
     '&::placeholder': {
-      transition: 'color 0.3s ease',
-      color: '$grey750'
+      color: '$grey750',
+      transition: 'color 0.3s ease'
     },
 
     '&:focus::placeholder': {
@@ -71,47 +73,64 @@ const Container = styled('div', {
     }
   },
 
-  '& svg': {
+  svg: {
+    color: '$grey750',
+    left: '15px',
     position: 'absolute',
-    zIndex: 20,
     top: '21px',
-    left: '15px'
+    zIndex: 20
   },
 
   variants: {
+    active: {
+      true: {
+        svg: {
+          color: '$white500'
+        }
+      },
+      false: {}
+    },
     error: {
       true: {
-        borderColor: '$pink500'
+        input: {
+          borderColor: '$pink500'
+        }
       },
       false: {
-        borderColor: '$grey1000'
+        input: {
+          borderColor: '$grey1000'
+        }
       }
     },
     icon: {
       true: {
-        padding: '0 1em 0 3em'
+        input: {
+          padding: '0 1em 0 3em'
+        }
       },
       false: {
-        padding: '0 3em 0 1em'
+        input: {
+          padding: '0 3em 0 1em'
+        }
       }
     }
   }
 })
 
 const DetailsContainer = styled('div', {
-  position: 'absolute',
-  zIndex: 10,
   backgroundColor: '$black500',
-  padding: '0 10px',
-  top: '-4px',
+  fontSize: '$10',
   left: '15px',
-  fontSize: '12px',
+  padding: '0 10px',
+  position: 'absolute',
+  top: '-4px',
+  zIndex: 10,
 
-  '& label': {
+  label: {
     color: '$yellow500'
   },
 
-  '& span': {
+  span: {
     marginLeft: '1em',
 
     '&.error': {
@@ -145,7 +164,7 @@ export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, he
   }
 
   return (
-    <Container error={!!scopedErrors} icon={!!icon}>
+    <Container error={!!scopedErrors} icon={!!icon} active={active}>
       <DetailsContainer>
         <label id={id} htmlFor={name}>
           {label}
@@ -160,7 +179,7 @@ export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, he
         )}
       </DetailsContainer>
 
-      {FormIcon && <FormIcon css={{ color: active ? '$white500' : '$grey750' }} />}
+      {FormIcon && <FormIcon />}
 
       <input
         aria-labelledby={id}
