@@ -187,14 +187,14 @@
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "@storybook/addon-a11y": "^6.2.3",
-    "@storybook/addon-actions": "^6.2.3",
-    "@storybook/addon-essentials": "^6.2.3",
-    "@storybook/addon-links": "^6.2.3",
-    "@storybook/node-logger": "^6.2.3",
+    "@storybook/addon-a11y": "^6.2.5",
+    "@storybook/addon-actions": "^6.2.5",
+    "@storybook/addon-essentials": "^6.2.5",
+    "@storybook/addon-links": "^6.2.5",
+    "@storybook/node-logger": "^6.2.5",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/preset-typescript": "^3.0.0",
-    "@storybook/react": "^6.2.3",
+    "@storybook/react": "^6.2.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -202,7 +202,6 @@
     "@types/node": "^14.14.34",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
-    "@types/styled-components": "^5.1.8",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
     "babel-loader": "^8.2.2",
@@ -247,11 +246,7 @@
     "typescript": "^4.2.3",
     "web-vitals": "^1.1.1"
   },
-  "resolutions": {
-    "styled-components": "^5"
-  },
   "dependencies": {
-    "@csstools/normalize.css": "^11.0.1",
     "@hookform/devtools": "^2.2.1",
     "@radix-ui/react-switch": "^0.0.11",
     "@reach/auto-id": "^0.13.2",
@@ -259,7 +254,6 @@
     "@stitches/react": "^0.1.4",
     "phosphor-react": "^1.2.1",
     "react-hook-form": "^6.15.5",
-    "styled-normalize": "^8.0.7",
     "uuid": "^8.3.2",
     "yup": "^0.32.9"
   },

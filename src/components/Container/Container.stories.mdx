@@ -5,11 +5,14 @@ import { Container } from '.'
 
 # Container Component
 
-## The Container Component is used to wrap and layout all of the children components within the page.
+The Container Component is used to wrap and layout all of the children components within the page.
 
-The Container component defines global styles that will be applied to the page for a consistent UI.
+Additionally, it does the following:
 
-The Container component wraps your components. It creates a new `div` DOM element.
+- Defines constistent global styles
+- Instantiates `IconContext` with sensible defaults for later usage by `phosphor-react` icons.
+
+## Usage
 
 ```jsx
 import { Container } from '@flatironschool/ui'
