@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useId } from '@reach/auto-id'
 
+import type { Icon } from 'phosphor-react'
+
 import { styled } from '~/styles/stitches.config'
-import { Icon } from '~/components'
 
 type ValidFormInputTypes =
   | 'button'
@@ -37,7 +38,7 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLInputEl
   readonly register?: any // eslint-disable-line @typescript-eslint/no-explicit-any
   readonly disabled?: boolean
   readonly help?: string
-  readonly icon?: string
+  readonly icon?: Icon
 }
 
 const Container = styled('div', {
@@ -149,7 +150,6 @@ export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, he
 
   const conditionalProps = {}
   const helpId = `form-${name}-help`
-  const FormIcon = Icon[icon]
 
   if (!label || label === '') {
     throw new Error('label is required')
@@ -179,7 +179,7 @@ export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, he
         )}
       </DetailsContainer>
 
-      {FormIcon && <FormIcon />}
+      {icon && React.createElement(icon)}
 
       <input
         aria-labelledby={id}

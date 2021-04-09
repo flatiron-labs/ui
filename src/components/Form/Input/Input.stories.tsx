@@ -1,7 +1,10 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import * as Yup from 'yup'
-import { Form, Submit, Icon } from '~/components'
+
+import { Code, User } from 'phosphor-react'
+
+import { Form, Submit } from '~/components'
 import { Input } from '.'
 
 export default {
@@ -27,14 +30,6 @@ export default {
       type: { name: 'string', required: false },
       control: {
         type: 'text'
-      }
-    },
-    icon: {
-      name: 'Input Icon',
-      type: { name: 'string', required: false },
-      control: {
-        type: 'select',
-        options: Object.keys(Icon)
       }
     },
     type: {
@@ -68,7 +63,7 @@ export const Default = Template.bind({})
 Default.args = {
   label: 'Name',
   help: 'Enter your full name',
-  icon: 'User',
+  icon: User,
   name: 'fullName'
 }
 
@@ -76,7 +71,7 @@ export const PresetValues = Template.bind({})
 PresetValues.args = {
   label: 'Name',
   help: 'Enter your full name',
-  icon: 'User',
+  icon: User,
   name: 'fullName',
   defaultValues: {
     fullName: 'John Doe'
@@ -94,7 +89,7 @@ export const Error = Template.bind({})
 Error.args = {
   label: 'Email',
   help: 'Hit submit to view the error state',
-  icon: 'Code',
+  icon: Code,
   name: 'email',
   schema: Yup.object({
     email: Yup.string().email().required('Email is required')
@@ -106,6 +101,6 @@ Password.args = {
   label: 'Password',
   help: 'Minimum of eight characters',
   type: 'password',
-  icon: 'Code',
+  icon: Code,
   name: 'password'
 }

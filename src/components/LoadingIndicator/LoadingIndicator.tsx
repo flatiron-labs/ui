@@ -1,7 +1,8 @@
-import React from 'react'
-import { IconComponent } from './Icon'
+import React, { SVGProps } from 'react'
 
-export const LoadingIndicator: IconComponent = ({ ...props }) => (
+type Props = SVGProps<SVGSVGElement>
+
+export const LoadingIndicator: FCWithoutChildren<Props> = ({ ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     display="block"

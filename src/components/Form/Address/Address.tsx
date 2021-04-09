@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { MapPin } from 'phosphor-react'
+
 import { styled } from '~/styles/stitches.config'
 import { Input, Select } from '~/components'
 import { usStateAbbreviations } from '~/data'
@@ -52,8 +54,8 @@ export const Address = ({ legend, fieldPrefix }: Props): JSX.Element => (
   <Fieldset>
     <legend>{legend}</legend>
 
-    <Input name={`${fieldPrefix}Line1`} label="Address" icon="Location" />
-    <Input name={`${fieldPrefix}Line2`} label="Address Line 2" icon="Location" />
+    <Input name={`${fieldPrefix}Line1`} label="Address" icon={MapPin} />
+    <Input name={`${fieldPrefix}Line2`} label="Address Line 2" icon={MapPin} />
 
     <AddressSecondary>
       <Input name={`${fieldPrefix}City`} label="City" />

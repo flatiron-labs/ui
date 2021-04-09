@@ -1,6 +1,9 @@
 import React from 'react'
+
+import { FacebookLogo, Gear, GithubLogo, House, InstagramLogo, TwitterLogo, User, YoutubeLogo } from 'phosphor-react'
+
 import { styled } from '~/styles/stitches.config'
-import { Footer, Sidebar, Icon, Nav } from '~/components' // Intentionally using the root index.ts
+import { Footer, Sidebar, Nav } from '~/components' // Intentionally using the root index.ts
 
 const Container = styled('div', {
   minHeight: '100vh',
@@ -23,17 +26,17 @@ export const Page: FC = ({ children, ...props }) => (
       <Sidebar expanded>
         <Nav.Root>
           <Nav.Link href="/">
-            <Icon.Home />
+            <House />
             <Nav.Title>Home</Nav.Title>
           </Nav.Link>
 
           <Nav.Link href="/profile">
-            <Icon.User />
+            <User />
             <Nav.Title>Profile</Nav.Title>
           </Nav.Link>
 
           <Nav.Link href="/settings">
-            <Icon.Settings />
+            <Gear />
             <Nav.Title>Settings</Nav.Title>
           </Nav.Link>
         </Nav.Root>
@@ -52,19 +55,19 @@ export const Page: FC = ({ children, ...props }) => (
 
       <Footer.Social>
         <Footer.SocialLink href="https://facebook.com" title="Facebook">
-          <Icon.Facebook />
+          <FacebookLogo />
         </Footer.SocialLink>
         <Footer.SocialLink href="https://twitter.com" title="Twitter">
-          <Icon.Twitter />
+          <TwitterLogo />
         </Footer.SocialLink>
         <Footer.SocialLink href="https://instagram.com" title="Instagram">
-          <Icon.Instagram />
+          <InstagramLogo />
         </Footer.SocialLink>
         <Footer.SocialLink href="https://github.com" title="GitHub">
-          <Icon.Github />
+          <GithubLogo />
         </Footer.SocialLink>
         <Footer.SocialLink href="https://youtube.com" title="Youtube">
-          <Icon.Youtube />
+          <YoutubeLogo />
         </Footer.SocialLink>
       </Footer.Social>
     </Footer.Root>

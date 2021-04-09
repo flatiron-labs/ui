@@ -1,7 +1,7 @@
 import React from 'react'
 import type { StitchesVariants } from '@stitches/react'
+import type { Icon } from 'phosphor-react'
 
-import { Icon } from '~/components'
 import { styled } from '~/styles/stitches.config'
 
 const InnerContainer = styled('div', {
@@ -69,27 +69,23 @@ const Container = styled('div', {
 })
 
 type Props = {
-  icon: string
+  icon: Icon
   title: string
   details: string
 } & StitchesVariants<typeof Container>
 
-export const InformationSnippet: FCWithoutChildren<Props> = ({ icon, title, details, ...props }) => {
-  const SelectedIcon = Icon[icon]
-
-  return (
-    <Container
-      direction={{
-        '@initial': 'column',
-        '@sm': 'row'
-      }}
-      {...props}
-    >
-      <SelectedIcon />
-      <InnerContainer>
-        <Span>{title}: </Span>
-        {details}
-      </InnerContainer>
-    </Container>
-  )
-}
+export const InformationSnippet: FCWithoutChildren<Props> = ({ icon, title, details, ...props }) => (
+  <Container
+    direction={{
+      '@initial': 'column',
+      '@sm': 'row'
+    }}
+    {...props}
+  >
+    {icon && React.createElement(icon)}
+    <InnerContainer>
+      <Span>{title}: </Span>
+      {details}
+    </InnerContainer>
+  </Container>
+)

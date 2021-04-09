@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
-import { Icon } from '~/components/Icon'
+import { LoadingIndicator } from '~/components/LoadingIndicator'
 
 interface Props extends Partial<typeof Container> {
   title?: string
@@ -40,7 +40,7 @@ export const Section: FC<Props> = ({ title, children, dynamic, data, error, minH
 
         {loading && (
           <StatusContainer>
-            <Icon.LoadingIndicator />
+            <LoadingIndicator />
           </StatusContainer>
         )}
 

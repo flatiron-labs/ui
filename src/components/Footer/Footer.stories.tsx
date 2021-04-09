@@ -1,8 +1,9 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
+import { FacebookLogo, GithubLogo, InstagramLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react'
+
 import { Footer } from '~/components/Footer'
-import { Icon } from '~/components/Icon'
 
 export default {
   title: 'Composites/Footer'
@@ -19,19 +20,19 @@ const Template: Story = (args: unknown) => (
 
     <Footer.Social>
       <Footer.SocialLink href="https://facebook.com" title="Facebook">
-        <Icon.Facebook />
+        <FacebookLogo />
       </Footer.SocialLink>
       <Footer.SocialLink href="https://twitter.com" title="Twitter">
-        <Icon.Twitter />
+        <TwitterLogo />
       </Footer.SocialLink>
       <Footer.SocialLink href="https://instagram.com" title="Instagram">
-        <Icon.Instagram />
+        <InstagramLogo />
       </Footer.SocialLink>
       <Footer.SocialLink href="https://github.com" title="GitHub">
-        <Icon.Github />
+        <GithubLogo />
       </Footer.SocialLink>
       <Footer.SocialLink href="https://youtube.com" title="Youtube">
-        <Icon.Youtube />
+        <YoutubeLogo />
       </Footer.SocialLink>
     </Footer.Social>
   </Footer.Root>

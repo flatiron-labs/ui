@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable import/no-named-default */
-import { global } from '~/styles/stitches.config'
+import React from 'react'
+import { IconContext } from 'phosphor-react'
+
+import { global, theme } from '~/styles/stitches.config'
 
 const globalStyles = global({
   '*': {
@@ -93,5 +96,16 @@ const globalStyles = global({
 export const Container: FC = ({ children }) => {
   globalStyles()
 
-  return children
+  return (
+    <IconContext.Provider
+      value={{
+        color: 'currentColor',
+        size: theme.fontSizes['70'],
+        weight: 'regular',
+        mirrored: false
+      }}
+    >
+      {children}
+    </IconContext.Provider>
+  )
 }

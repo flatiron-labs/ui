@@ -1,5 +1,8 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
+
+import { Clock, Code, MapPin, User } from 'phosphor-react'
+
 import { InformationSnippet } from '.'
 
 export default {
@@ -23,22 +26,22 @@ type Args = GetComponentProps<typeof InformationSnippet>
 const Template: Story = (args: Args) => <InformationSnippet {...args} />
 const TemplateResponsive: Story = () => (
   <>
-    <InformationSnippet direction="row" icon="Code" title="Course" details="Software Engineering" />
-    <InformationSnippet direction="column" icon="Location" title="Address" details="14411 South 49th Drive New York" />
+    <InformationSnippet direction="row" icon={Code} title="Course" details="Software Engineering" />
+    <InformationSnippet direction="column" icon={MapPin} title="Address" details="14411 South 49th Drive New York" />
   </>
 )
 const TemplateMulti: Story = (args: Args) => (
   <>
     <InformationSnippet {...args} />
-    <InformationSnippet icon="Code" title="Course" details="Software Engineering" />
-    <InformationSnippet icon="Time" title="Cohort" details="12/12/2022" />
-    <InformationSnippet icon="Location" title="Address" details="14411 South 49th Drive New York" />
+    <InformationSnippet icon={Code} title="Course" details="Software Engineering" />
+    <InformationSnippet icon={Clock} title="Cohort" details="12/12/2022" />
+    <InformationSnippet icon={MapPin} title="Address" details="14411 South 49th Drive New York" />
   </>
 )
 
 export const Default = Template.bind({})
 Default.args = {
-  icon: 'User',
+  icon: User,
   title: 'Full Name',
   details: 'John Snow'
 }

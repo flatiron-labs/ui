@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Icons" />
+
+# Icons
+
+## Source
+
+We use icons from [Phosphor Icons](https://phosphoricons.com). Feel free to visit their site to see and search what's available.
+
+To see their React implementation, please visit the [GitHub page](https://github.com/phosphor-icons/phosphor-react).
+
+**While we implement a handful of icons here, you'll need to include the `phosphor-react` package in your respective project to use any outside the context of the UI Kit.**
+
+## Defaults
+
+There are defaults set on the icons via Phosphor React's `IconContext`.
+
+The defaults are as follows:
+
+```js
+{
+  color: 'currentColor', // `currentColor` is a special value that inherits from the parent element's color
+  size: theme.fontSizes['70'], // Maps to 24px
+  weight: 'regular',
+  mirrored: false
+}
+```
+
+## Usage
+
+Please only use `theme.fontSizes[...]` and `theme.colors[...]` from `~/styles/stitches.config` when passing sizes and colors.
+
+**Most of the time**, you likely won't need to change the styling via props. See [defaults](#defaults)
+
+```jsx
+import { Container } from '@flatironschool/ui'
+import { FacebookLogo, YoutubeLogo } from 'phosphor-react'
+import { theme } from '~/styles/stitches.config' // DO NOT use theme this way outside the Phosphor Icon context
+
+const App = () => (
+  <Container>
+    <YoutubeLogo />
+    <FacebookLogo color={theme.colors['black500']} size={theme.fontSizes['70']} />
+  </Container>
+)
+```
