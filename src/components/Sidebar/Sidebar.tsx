@@ -27,3 +27,5 @@ export const Sidebar = styled('div', {
   //   display: flex !important;
   // }
 })
+
+Sidebar.displayName = 'Sidebar'
