@@ -4,12 +4,12 @@ import { Footer } from '~/components/Footer'
 
 describe('<Footer />', () => {
   it('should render', () => {
-    render(<Footer.Root />)
+    render(<Footer />)
     screen.getByLabelText('Social links')
   })
 
   it('should render', () => {
-    render(<Footer.Root />)
+    render(<Footer />)
     expect(screen.queryByLabelText('Social links')).toBeNull()
   })
 })

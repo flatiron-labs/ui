@@ -1,6 +1,6 @@
 import { styled } from '~/styles/stitches.config'
 
-const Root = styled('footer', {
+export const Footer = styled('footer', {
   alignItems: 'center',
   backgroundColor: '$yellow500',
   color: '$black500',
@@ -28,9 +28,9 @@ const Root = styled('footer', {
   }
 })
 
-Root.displayName = 'Footer.Root'
+Footer.displayName = 'Footer'
 
-const Nav = styled('nav', {
+export const FooterNav = styled('nav', {
   display: 'grid',
   fontSize: '14px',
   gap: '1rem',
@@ -41,9 +41,9 @@ const Nav = styled('nav', {
   }
 })
 
-Nav.displayName = 'Footer.Nav'
+FooterNav.displayName = 'FooterNav'
 
-const NavLink = styled('a', {
+export const FooterNavLink = styled('a', {
   color: '$black500',
   fontWeight: 'bold',
   paddingRight: '1rem',
@@ -58,18 +58,18 @@ const NavLink = styled('a', {
   }
 })
 
-NavLink.displayName = 'Footer.NavLink'
+FooterNavLink.displayName = 'FooterNavLink'
 
-const Social = styled('div', {
+export const FooterSocial = styled('div', {
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'row',
   justifyContent: 'space-between'
 })
 
-Social.displayName = 'Footer.Social'
+FooterSocial.displayName = 'FooterSocial'
 
-const SocialLink = styled('a', {
+export const FooterSocialLink = styled('a', {
   color: '$black500',
   cursor: 'pointer',
 
@@ -78,12 +78,4 @@ const SocialLink = styled('a', {
   }
 })
 
-SocialLink.displayName = 'Footer.SocialLink'
-
-export const Footer = {
-  Nav,
-  NavLink,
-  Root,
-  Social,
-  SocialLink
-}
+FooterSocialLink.displayName = 'FooterSocialLink'

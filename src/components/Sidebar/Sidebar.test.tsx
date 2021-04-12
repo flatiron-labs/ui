@@ -1,23 +1,20 @@
 import React from 'react'
 import { render } from '~/test/utils'
 import { Sidebar } from '.'
-import { Nav } from '~/components'
+import { Nav, NavLink, NavLinkTitle } from '~/components'
 
 describe('Sidebar', () => {
-  const renderComponent = () => {
+  it('should render', () => {
     render(
       <Sidebar expanded>
-        <Nav.Root>
-          <Nav.Link href="/">
-            <Nav.Title>Home</Nav.Title>
-          </Nav.Link>
-        </Nav.Root>
+        <Nav>
+          <NavLink href="/">
+            <NavLinkTitle>Home</NavLinkTitle>
+          </NavLink>
+        </Nav>
       </Sidebar>
     )
-  }
 
-  it('should render', () => {
-    renderComponent()
     expect(document.querySelector('body')).toMatchSnapshot()
   })
 })

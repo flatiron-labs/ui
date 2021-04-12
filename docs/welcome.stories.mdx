@@ -1,0 +1,69 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Welcome/Getting Started" />
+
+# Flatiron School UI Kit
+
+This project provides a set of components for the Flatiron School Design System that can be used to implement user experiences consistent with Flatiron's design principles.
+
+## Getting Started
+
+### React
+
+#### Installation
+
+`yarn add @flatiron-school/ui`
+
+#### Usage
+
+```jsx
+  import React from 'react'
+  import { Button } from '@flatiron-school/ui'
+
+  <Button as="a" href="/profile/edit">Edit Profile</Button>
+  <Button type="submit">Save</Button>
+```
+
+### Global CSS
+
+Most styles are included with the components themselves, but there are a few overarching styles/fonts aimed at simplifying and adding consistency across apps.
+
+#### Installation
+
+`yarn add @flatiron-school/ui`
+
+#### Usage
+
+Import these files in your top-most entrypoint.
+
+```jsx
+import '@flatiron-school/ui/dist/normalize.css'
+import '@flatiron-school/ui/dist/fonts.css'
+```
+
+## Reporting a Bug
+
+If you spot a bug, inconsistency, or typo, please [open a bug issue](https://github.com/flatiron-labs/ui/issues/new?labels=bug). Better yet, submit a pull request to addresses it.
+
+## Feature Requests
+
+If you have an idea, we would love to hear about it. The best way to suggest a feature is to [open a feature issue](https://github.com/flatiron-labs/ui/issues/new?labels=feature). The UI Kit core team will take a look and discuss it with you.
+
+## Contributing
+
+Want to contribute to the UI Kit? Please read our [contributing guidelines]() to find out more and how to get started.
+
+## Open Development
+
+All work on the UI Kit happens directly on [GitHub](https://github.com/flatiron-labs/ui). Both core team members and external contributors can send pull requests which go through the same review process. Any and all issues are public and available for discussion.
+
+## Versioning
+
+Canvas Kit follows [semantic versioning](https://semver.org/) and is enforced automatically by [commitizen](http://commitizen.github.io/cz-cli/).
+
+## Supported Browsers
+
+- Microsoft Edge: last 2 versions
+- Mozilla Firefox: last 2 versions
+- Google Chrome: last 2 versions
+- Apple Safari: last 2 versions

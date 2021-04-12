@@ -1,0 +1,71 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="Welcome/API & Pattern Guidelines" />
+
+# Welcome/API & Pattern Guidelines
+
+- [Theme](#theme)
+- [Naming](#naming)
+  - [Props](#props)
+  - [T-Shirt Sizes](#t-shirt-sizes)
+  - [Event Handlers](#event-handlers)
+- [Patterns](#patterns)
+  - [Event Handlers](#event-handlers)
+  - [Prop Spread Behavior](#prop-spread-behavior)
+  - [Event Handlers](#event-handlers)
+
+## Theme
+
+We utilize [Stitches](https://stitches.dev) for easy theming.
+
+- Please ensure that you always use the primitives and tokens provided whereever possible. Examples:
+  - Spacing: `$s`
+  - Radii: `$circle`
+- Use the provided types (e.g. `resolveTokens`, `StitchesVariants`, `CSS`, etc.) to restrict prop values
+
+## Naming
+
+### Components
+
+- We utilize [Compound Components](#compound-components) and na
+  - Top-level component: the actual component that is imported (eg: `Avatar.Root` or `Button`). There is only one per set of components.
+  - Sub-component: components used withhin the top-level component should be prefixed with the name of the top-level component (eg: `Avatar.Image` or `Avatar.Fallback`).
+
+### Props
+
+- Prop names should never include the component name (e.g. type, not buttonType)
+- Use the same props for the same concepts across components
+- Avoid names that reference color, position, and size. For example:
+  - `blueIcon` can be bad because it may not be blue to everyone and changing colors or making colors variable is a breaking change.
+  - `leftIcon` can be bad because we can change the position with RTL or add something to the left of that, then it wouldn't make sense anymore.
+  - `mediumIcon` can be bad if we add another size in between... then which one is medium? Is it mediumLarge now?
+
+### T-shirt Sizes
+
+- Always use the shortest enumeration (`$xs`, `$s`, `$m`, `$l`, `$xl`, etc.)
+- Do not use longer versions (e.g. `$sm`)
+
+### Event Handlers
+
+- Always use standard on{Descriptor}{Event} naming (onClick, onChange, onBreakpointChange, etc.)
+- Only use a descriptor if:
+  - You need more context
+  - There is already a handler for that type of event (e.g. `onChange`, `onValidColorChange`)
+
+## Patterns
+
+- Extend the interface of the primary element/component in your component (e.g. interface Props extends React.InputHTMLAttributes<HTMLInputElement>)
+  - Do not extend Stitches components which are exported directly
+- Intentionally destructure your props so that every prop is assigned. This allows you to use spread the way it was intended.
+- Only spread props on one element/component (or create a specific prop to spread (e.g. inputProps))
+
+```jsx
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  type: ButtonType,
+  size: ButtonSize,
+  icon: CanvasIcon
+}
+
+const { type, size, icon, ...elemProps } = props
+<ButtonContainer type={type} size={size} icon={icon} {...elemProps} />
+```

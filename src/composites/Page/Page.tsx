@@ -3,7 +3,17 @@ import React from 'react'
 import { FacebookLogo, Gear, GithubLogo, House, InstagramLogo, TwitterLogo, User, YoutubeLogo } from 'phosphor-react'
 
 import { styled } from '~/styles/stitches.config'
-import { Footer, Sidebar, Nav } from '~/components' // Intentionally using the root index.ts
+import {
+  Footer,
+  FooterNav,
+  FooterNavLink,
+  FooterSocial,
+  FooterSocialLink,
+  Sidebar,
+  Nav,
+  NavLink,
+  NavLinkTitle
+} from '~/components' // Intentionally using the root index.ts
 
 const Container = styled('div', {
   minHeight: '100vh',
@@ -24,52 +34,52 @@ export const Page: FC = ({ children, ...props }) => (
   <Container {...props}>
     <div style={{ paddingBottom: '40px' }}>
       <Sidebar expanded>
-        <Nav.Root>
-          <Nav.Link href="/">
+        <Nav>
+          <NavLink href="/">
             <House />
-            <Nav.Title>Home</Nav.Title>
-          </Nav.Link>
+            <NavLinkTitle>Home</NavLinkTitle>
+          </NavLink>
 
-          <Nav.Link href="/profile">
+          <NavLink href="/profile">
             <User />
-            <Nav.Title>Profile</Nav.Title>
-          </Nav.Link>
+            <NavLinkTitle>Profile</NavLinkTitle>
+          </NavLink>
 
-          <Nav.Link href="/settings">
+          <NavLink href="/settings">
             <Gear />
-            <Nav.Title>Settings</Nav.Title>
-          </Nav.Link>
-        </Nav.Root>
+            <NavLinkTitle>Settings</NavLinkTitle>
+          </NavLink>
+        </Nav>
       </Sidebar>
 
       <Content>{children}</Content>
     </div>
 
-    <Footer.Root lockToBottom>
-      <Footer.Nav>
-        <Footer.NavLink href="https://flatironschool.com/accessibility">Accessibility</Footer.NavLink>
-        <Footer.NavLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</Footer.NavLink>
-        <Footer.NavLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</Footer.NavLink>
-        <Footer.NavLink href="https://portal.flatironschool.com/privacy">Privacy Policy</Footer.NavLink>
-      </Footer.Nav>
+    <Footer lockToBottom>
+      <FooterNav>
+        <FooterNavLink href="https://flatironschool.com/accessibility">Accessibility</FooterNavLink>
+        <FooterNavLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</FooterNavLink>
+        <FooterNavLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</FooterNavLink>
+        <FooterNavLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterNavLink>
+      </FooterNav>
 
-      <Footer.Social>
-        <Footer.SocialLink href="https://facebook.com" title="Facebook">
+      <FooterSocial>
+        <FooterSocialLink href="https://facebook.com" title="Facebook">
           <FacebookLogo />
-        </Footer.SocialLink>
-        <Footer.SocialLink href="https://twitter.com" title="Twitter">
+        </FooterSocialLink>
+        <FooterSocialLink href="https://twitter.com" title="Twitter">
           <TwitterLogo />
-        </Footer.SocialLink>
-        <Footer.SocialLink href="https://instagram.com" title="Instagram">
+        </FooterSocialLink>
+        <FooterSocialLink href="https://instagram.com" title="Instagram">
           <InstagramLogo />
-        </Footer.SocialLink>
-        <Footer.SocialLink href="https://github.com" title="GitHub">
+        </FooterSocialLink>
+        <FooterSocialLink href="https://github.com" title="GitHub">
           <GithubLogo />
-        </Footer.SocialLink>
-        <Footer.SocialLink href="https://youtube.com" title="Youtube">
+        </FooterSocialLink>
+        <FooterSocialLink href="https://youtube.com" title="Youtube">
           <YoutubeLogo />
-        </Footer.SocialLink>
-      </Footer.Social>
-    </Footer.Root>
+        </FooterSocialLink>
+      </FooterSocial>
+    </Footer>
   </Container>
 )

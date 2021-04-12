@@ -8,7 +8,7 @@ import PurpleOverlay from '~/assets/images/overlay-purple.svg'
 import TurqOverlay from '~/assets/images/overlay-turq.svg'
 
 export default {
-  title: 'Composites/Page'
+  title: 'Layouts/Page'
 } as Meta
 
 const Template: Story = () => (

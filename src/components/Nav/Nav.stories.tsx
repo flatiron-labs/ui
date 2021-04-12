@@ -4,35 +4,35 @@ import { Story, Meta } from '@storybook/react'
 import { Gear, House, User } from 'phosphor-react'
 
 import { Sidebar } from '~/components/Sidebar'
-import { Nav } from '~/components/Nav'
+import { Nav, NavLink, NavLinkTitle } from '~/components/Nav'
 
 export default {
   title: 'Global/Navigation',
-  component: Nav.Root
+  component: Nav
 } as Meta
 
 const Template: Story = () => (
   <Sidebar expanded>
-    <Nav.Root title="primary">
-      <Nav.Link href="/">
+    <Nav title="primary">
+      <NavLink href="/">
         <House />
-        <Nav.Title>Home</Nav.Title>
-      </Nav.Link>
+        <NavLinkTitle>Home</NavLinkTitle>
+      </NavLink>
 
-      <Nav.Link href="/profile">
+      <NavLink href="/profile">
         <User />
-        <Nav.Title>Profile</Nav.Title>
-      </Nav.Link>
+        <NavLinkTitle>Profile</NavLinkTitle>
+      </NavLink>
 
-      <Nav.Link href="/settings">
+      <NavLink href="/settings">
         <Gear />
-        <Nav.Title>Settings</Nav.Title>
-      </Nav.Link>
+        <NavLinkTitle>Settings</NavLinkTitle>
+      </NavLink>
 
-      <Nav.Link href="/">
-        <Nav.Title>Link w/o Icon</Nav.Title>
-      </Nav.Link>
-    </Nav.Root>
+      <NavLink href="/">
+        <NavLinkTitle>Link w/o Icon</NavLinkTitle>
+      </NavLink>
+    </Nav>
   </Sidebar>
 )
 

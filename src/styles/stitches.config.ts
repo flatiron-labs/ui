@@ -131,5 +131,5 @@ export type CSS = StitchesCss<typeof stitches>
 export const { styled, css, theme, getCssString, global, keyframes, config } = stitches
 export const { utils } = config
 
-export type StitchesTheme = typeof config.theme // TODO: Swap to "Theme" when old theme is removed
-export type resolveTokens<T extends keyof StitchesTheme> = `$${Extract<keyof StitchesTheme[T], string | number>}`
+export type Theme = typeof config.theme
+export type resolveTokens<T extends keyof Theme> = `$${Extract<keyof Theme[T], string | number>}`

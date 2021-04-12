@@ -1,14 +1,14 @@
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
 
-type LinkProps = {
+type NavLink = {
   active?: boolean
   href?: string
 }
 
 type TNavLinkRenderFn = React.ForwardRefRenderFunction<
   HTMLAnchorElement,
-  React.ComponentPropsWithoutRef<React.FC<LinkProps>>
+  React.ComponentPropsWithoutRef<React.FC<NavLink>>
 >
 
 const LinkContainer = styled('a', {
@@ -54,17 +54,11 @@ const NavLinkRenderFn: TNavLinkRenderFn = ({ children, ...props }, ref) => (
   </LinkContainer>
 )
 
-const Root = styled('nav', {})
-Root.displayName = 'Nav.Root'
+export const Nav = styled('nav', {})
+Nav.displayName = 'Nav'
 
-const Link = React.forwardRef(NavLinkRenderFn)
-Link.displayName = 'Nav.Link'
+export const NavLink = React.forwardRef(NavLinkRenderFn)
+NavLink.displayName = 'NavLink'
 
-const Title = styled('span', { paddingTop: '4px' })
-Title.displayName = 'Nav.Title'
-
-export const Nav = {
-  Link,
-  Root,
-  Title
-}
+export const NavLinkTitle = styled('span', { paddingTop: '4px' })
+NavLinkTitle.displayName = 'NavLinkTitle'

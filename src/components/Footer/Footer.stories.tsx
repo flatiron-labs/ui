@@ -3,39 +3,39 @@ import { Story, Meta } from '@storybook/react'
 
 import { FacebookLogo, GithubLogo, InstagramLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react'
 
-import { Footer } from '~/components/Footer'
+import { Footer, FooterNav, FooterNavLink, FooterSocial, FooterSocialLink } from '~/components/Footer'
 
 export default {
   title: 'Composites/Footer'
 } as Meta
 
 const Template: Story = (args: unknown) => (
-  <Footer.Root {...args}>
-    <Footer.Nav>
-      <Footer.NavLink href="https://flatironschool.com/accessibility">Accessibility</Footer.NavLink>
-      <Footer.NavLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</Footer.NavLink>
-      <Footer.NavLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</Footer.NavLink>
-      <Footer.NavLink href="https://portal.flatironschool.com/privacy">Privacy Policy</Footer.NavLink>
-    </Footer.Nav>
+  <Footer {...args}>
+    <FooterNav>
+      <FooterNavLink href="https://flatironschool.com/accessibility">Accessibility</FooterNavLink>
+      <FooterNavLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</FooterNavLink>
+      <FooterNavLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</FooterNavLink>
+      <FooterNavLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterNavLink>
+    </FooterNav>
 
-    <Footer.Social>
-      <Footer.SocialLink href="https://facebook.com" title="Facebook">
+    <FooterSocial>
+      <FooterSocialLink href="https://facebook.com" title="Facebook">
         <FacebookLogo />
-      </Footer.SocialLink>
-      <Footer.SocialLink href="https://twitter.com" title="Twitter">
+      </FooterSocialLink>
+      <FooterSocialLink href="https://twitter.com" title="Twitter">
         <TwitterLogo />
-      </Footer.SocialLink>
-      <Footer.SocialLink href="https://instagram.com" title="Instagram">
+      </FooterSocialLink>
+      <FooterSocialLink href="https://instagram.com" title="Instagram">
         <InstagramLogo />
-      </Footer.SocialLink>
-      <Footer.SocialLink href="https://github.com" title="GitHub">
+      </FooterSocialLink>
+      <FooterSocialLink href="https://github.com" title="GitHub">
         <GithubLogo />
-      </Footer.SocialLink>
-      <Footer.SocialLink href="https://youtube.com" title="Youtube">
+      </FooterSocialLink>
+      <FooterSocialLink href="https://youtube.com" title="Youtube">
         <YoutubeLogo />
-      </Footer.SocialLink>
-    </Footer.Social>
-  </Footer.Root>
+      </FooterSocialLink>
+    </FooterSocial>
+  </Footer>
 )
 
 export const Default = Template.bind({})
