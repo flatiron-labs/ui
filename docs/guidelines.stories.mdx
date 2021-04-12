@@ -52,7 +52,7 @@ We utilize [Stitches](https://stitches.dev) for easy theming.
   - You need more context
   - There is already a handler for that type of event (e.g. `onChange`, `onValidColorChange`)
 
-## Patterns
+## Patterns (TODO)
 
 - Extend the interface of the primary element/component in your component (e.g. interface Props extends React.InputHTMLAttributes<HTMLInputElement>)
   - Do not extend Stitches components which are exported directly
@@ -62,10 +62,9 @@ We utilize [Stitches](https://stitches.dev) for easy theming.
 ```jsx
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   type: ButtonType,
-  size: ButtonSize,
-  icon: CanvasIcon
+  size: ButtonSize
 }
 
-const { type, size, icon, ...elemProps } = props
-<ButtonContainer type={type} size={size} icon={icon} {...elemProps} />
+const { type, size, icon, ...rest } = props
+<Button type={type} size={size} icon={icon} {...rest} />
 ```
