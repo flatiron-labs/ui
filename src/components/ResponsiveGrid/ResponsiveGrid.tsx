@@ -5,21 +5,27 @@ const Container = styled('div', {
   display: 'grid'
 })
 
-interface Props {
-  min: resolveTokens<'space'>
-  max: resolveTokens<'space'>
-  gap: resolveTokens<'space'>
-  css?: Record<string, unknown>
-}
+type Props = React.ComponentPropsWithoutRef<
+  React.FC<{
+    min?: resolveTokens<'space'>
+    max?: resolveTokens<'space'>
+    gap?: resolveTokens<'space'>
+  }>
+>
 
-export const ResponsiveGrid: FC<Props> = ({ children, min, max = '1fr', gap = '$8', css }) => (
-  <Container
-    css={{
-      gridGap: gap,
-      gridTemplateColumns: min ? `repeat(auto-fit, minmax(${min}, ${max}))` : max,
-      ...css
-    }}
-  >
-    {children}
-  </Container>
+export const ResponsiveGrid = React.forwardRef<HTMLDivElement, Props>(
+  ({ children, min, max = '1fr', gap = '$8', ...rest }, ref) => (
+    <Container
+      ref={ref}
+      css={{
+        gridGap: gap,
+        gridTemplateColumns: min ? `repeat(auto-fit, minmax(${min}, ${max}))` : max
+      }}
+      {...rest}
+    >
+      {children}
+    </Container>
+  )
 )
+
+ResponsiveGrid.displayName = 'ResponsiveGrid'

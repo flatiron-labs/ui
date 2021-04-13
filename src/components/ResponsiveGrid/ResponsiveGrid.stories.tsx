@@ -18,7 +18,7 @@ export default {
 } as Meta
 
 const Template: Story = ({ ...args }: GetComponentProps<typeof ResponsiveGrid>) => (
-  <ResponsiveGrid {...args}>
+  <ResponsiveGrid css={{ display: 'block' }} {...args}>
     <Box />
     <Box />
     <Box />
