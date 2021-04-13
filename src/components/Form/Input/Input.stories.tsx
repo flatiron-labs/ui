@@ -8,7 +8,7 @@ import { Form, Submit } from '~/components'
 import { Input } from '.'
 
 export default {
-  title: 'Form/Input',
+  title: 'Components/Form/Input',
   component: Input,
   argTypes: {
     name: {

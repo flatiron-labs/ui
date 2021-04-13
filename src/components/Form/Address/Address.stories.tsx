@@ -5,7 +5,7 @@ import { Form, Submit } from '~/components'
 import { Address } from '.'
 
 export default {
-  title: 'Form/Address',
+  title: 'Components/Form/Address',
   component: Address,
   argTypes: {
     legend: {

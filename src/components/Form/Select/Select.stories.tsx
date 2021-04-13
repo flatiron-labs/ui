@@ -6,7 +6,7 @@ import { Select } from '.'
 import { usStateAbbreviations } from '~/data'
 
 export default {
-  title: 'Form/Select',
+  title: 'Components/Form/Select',
   component: Select,
   argTypes: {
     options: {

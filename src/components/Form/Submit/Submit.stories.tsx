@@ -5,7 +5,7 @@ import { Form } from '~/components'
 import { Submit } from '.'
 
 export default {
-  title: 'Form/Submit',
+  title: 'Components/Form/Submit',
   component: Submit,
   argTypes: {
     active: {
