@@ -12,3 +12,17 @@ describe('<Section />', () => {
     screen.getByText(/foo/i)
   })
 })
+
+// describe('<Section />', () => {
+//   it('should render children', () => {
+//     render(
+//       <Section>
+//         <Section.Title>Personal Information</SectionTitle>
+//         <Section.Content>
+//           <p>foo</p>
+//         </Section.Content>
+//       </Section>
+//     )
+//     screen.getByText(/foo/i)
+//   })
+// })

@@ -9,13 +9,13 @@ export default {
 
 export const TextOnly: Story = () => (
   <Avatar>
-    <AvatarFallback>UI</AvatarFallback>
+    <AvatarFallback>JD</AvatarFallback>
   </Avatar>
 )
 
 export const WithImage: Story = () => (
   <Avatar>
-    <AvatarImage src="https://picsum.photos/id/1005/400/400" />
-    <AvatarFallback>UI</AvatarFallback>
+    <AvatarImage src="https://picsum.photos/id/1005/400/400" alt="John Doe's avatar" />
+    <AvatarFallback>JD</AvatarFallback>
   </Avatar>
 )

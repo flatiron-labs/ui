@@ -1,31 +1,41 @@
-import React from 'react'
-import { render, screen } from '~/test/utils'
-
-import { Button } from '~/components/Button'
-
 describe('<Button />', () => {
-  const child = 'foo'
-  it('should render children', () => {
-    render(<Button>{child}</Button>)
-    expect(screen.getByText(child)).toMatchSnapshot()
+  before(() => {
+    cy.prefix('components-button')
+  })
+  after(() => {
+    cy.unsetPrefix()
   })
 
-  it('should allow setting of the appearance', () => {
-    render(<Button appearance="primary">{child}</Button>)
-    expect(screen.getByText(child)).toMatchSnapshot()
+  context('as a button', () => {
+    it('acts as a button', () => {
+      cy.sb('default')
+
+      cy.get('button').as('button').should('exist').should('contain.text', 'Button')
+
+      cy.a11y()
+
+      cy.on('window:alert', str => {
+        expect(str).to.equal('clicked')
+      })
+
+      cy.get('@button').click()
+    })
   })
 
-  it('should allow setting of the size', () => {
-    render(<Button size="medium">{child}</Button>)
-    expect(screen.getByText(child)).toMatchSnapshot()
-  })
+  context('as a link', () => {
+    it('acts as a link', () => {
+      cy.sb('as-link')
 
-  it('should allow setting of the as prop', () => {
-    render(
-      <Button as="a" href="https://google.com">
-        {child}
-      </Button>
-    )
-    expect(screen.getByText(child)).toMatchSnapshot()
+      cy.get('a')
+        .as('link')
+        .should('exist')
+        .should('contain.text', 'Button')
+        .should('have.attr', 'href')
+        .and('include', '/AsLink-test')
+
+      cy.a11y()
+    })
   })
 })
+
+export {}

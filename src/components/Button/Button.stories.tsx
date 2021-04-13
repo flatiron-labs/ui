@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Story, Meta } from '@storybook/react'
@@ -5,7 +6,7 @@ import { Story, Meta } from '@storybook/react'
 import { Button } from '.'
 
 export default {
-  title: 'Inputs/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     appearance: {
@@ -31,33 +32,38 @@ export default {
 
 const Template: Story = args => <Button {...args}>Button</Button>
 
+const onClick = () => {
+  alert('clicked')
+  action('clicked')
+}
+
 export const Default = Template.bind({})
 Default.args = {
-  onClick: () => action('clicked')
+  onClick
 }
 
 export const Medium = Template.bind({})
 Medium.args = {
   size: 'medium',
-  onClick: () => action('clicked')
+  onClick
 }
 
 export const Large = Template.bind({})
 Large.args = {
   size: 'large',
-  onClick: () => action('clicked')
+  onClick
 }
 
 export const Primary = Template.bind({})
 Primary.args = {
   appearance: 'primary',
-  onClick: () => action('clicked')
+  onClick
 }
 
 export const AsLink = Template.bind({})
 AsLink.args = {
   as: 'a',
-  href: 'https://google.com'
+  href: '/AsLink-test'
 }
 
 export const Disabled = Template.bind({})

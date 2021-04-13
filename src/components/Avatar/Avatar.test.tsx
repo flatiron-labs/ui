@@ -1,26 +1,57 @@
-import React from 'react'
-import { render, screen } from '~/test/utils'
-import { Avatar, AvatarFallback, AvatarImage } from '~/components/Avatar'
-
 describe('<Avatar />', () => {
-  it('should render the image', () => {
-    render(
-      <Avatar>
-        <AvatarImage src="https://picsum.photos/id/1005/400/400" data-testid="image" />
-        <AvatarFallback>UI</AvatarFallback>
-      </Avatar>
-    )
-
-    screen.getByText('UI')
+  before(() => {
+    cy.prefix('components-avatar')
+  })
+  after(() => {
+    cy.unsetPrefix()
   })
 
-  it('should render the initials', () => {
-    render(
-      <Avatar>
-        <AvatarFallback>UI</AvatarFallback>
-      </Avatar>
-    )
+  context('has image', () => {
+    it('renders an image', () => {
+      cy.sb('with-image')
 
-    screen.getByText('UI')
+      cy.intercept('https://picsum.photos/**', req => {
+        req.reply({
+          fixture: 'avatar.jpg'
+        })
+      })
+
+      cy.get('img')
+        .should('be.visible')
+        .and($img => {
+          // "naturalWidth" and "naturalHeight" are set when the image loads
+          expect($img[0].naturalWidth).to.be.greaterThan(0)
+        })
+
+      cy.get('span span').should('not.exist')
+
+      cy.a11y()
+    })
+
+    context('image fails to render', () => {
+      it('renders fallback text', () => {
+        cy.sb('with-image')
+
+        cy.intercept('https://picsum.photos/**', req => {
+          req.reply(404, 'not found', {})
+        })
+
+        cy.get('span img').should('not.exist')
+        cy.get('span span').should('contain.text', 'JD')
+
+        cy.a11y()
+      })
+    })
+  })
+
+  context('text only', () => {
+    it('renders text', () => {
+      cy.sb('text-only')
+
+      cy.get('span span').should('contain.text', 'JD')
+      cy.a11y()
+    })
   })
 })
+
+export {}

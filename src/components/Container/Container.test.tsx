@@ -1,27 +1,27 @@
-import React from 'react'
-import { render, screen, waitFor } from '~/test/utils'
-import { Container } from '~/components/Container'
-
 describe('<Container />', () => {
-  const text = 'Content'
+  before(() => {
+    cy.prefix('components-container')
+  })
+  after(() => {
+    cy.unsetPrefix()
+  })
 
-  const renderComponent = () =>
-    render(
-      <Container>
-        <p>Content</p>
-      </Container>
-    )
-
-  it('should append the global styles', async () => {
-    renderComponent()
-
-    await waitFor(() => {
-      expect(document.querySelector('style[data-styled="active"]')).toMatchSnapshot()
+  context('global styles', () => {
+    it('appends global styles', () => {
+      cy.sb('default')
+      cy.get('style#stitches')
     })
   })
 
-  it('should render children', () => {
-    renderComponent()
-    expect(screen.getByText(text)).toBeInTheDocument()
+  context('children', () => {
+    it('accepts children', () => {
+      cy.sb('default')
+
+      cy.get('#root').should('contain.text', '[children]')
+
+      cy.a11y()
+    })
   })
 })
+
+export {}

@@ -1,17 +1,16 @@
-import React, { SVGProps } from 'react'
+import React, { forwardRef } from 'react'
+import { styled } from '~/styles'
 
-type Props = SVGProps<SVGSVGElement>
+const SVGContainer = styled('svg', {
+  display: 'block',
+  height: '80px',
+  width: '80px'
+})
 
-export const LoadingIndicator: FCWithoutChildren<Props> = ({ ...props }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    display="block"
-    preserveAspectRatio="xMidYMid"
-    height="80"
-    width="80"
-    role="status"
-    {...props}
-  >
+type Props = Partial<typeof SVGContainer>
+
+export const LoadingIndicator = forwardRef<SVGSVGElement, Props>(({ ...props }, ref) => (
+  <SVGContainer xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" role="status" ref={ref} {...props}>
     <defs />
     <rect width="6" height="4" x="47" y="28" fill="#f9ed1a" rx="0" ry="0">
       <animate
@@ -105,5 +104,7 @@ export const LoadingIndicator: FCWithoutChildren<Props> = ({ ...props }) => (
     <rect width="6" height="4" x="47" y="28" fill="#cda2ff" rx="0" ry="0" transform="rotate(330 50 50)">
       <animate attributeName="opacity" begin="0s" dur="1s" keyTimes="0;1" repeatCount="indefinite" values="1;0" />
     </rect>
-  </svg>
-)
+  </SVGContainer>
+))
+
+LoadingIndicator.displayName = 'LoadingIndicator'

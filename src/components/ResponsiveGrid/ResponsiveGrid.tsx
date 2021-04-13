@@ -1,7 +1,7 @@
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
 
-const Root = styled('div', {
+const Container = styled('div', {
   display: 'grid'
 })
 
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const ResponsiveGrid: FC<Props> = ({ children, min, max = '1fr', gap = '$8', css }) => (
-  <Root
+  <Container
     css={{
       gridGap: gap,
       gridTemplateColumns: min ? `repeat(auto-fit, minmax(${min}, ${max}))` : max,
@@ -21,5 +21,5 @@ export const ResponsiveGrid: FC<Props> = ({ children, min, max = '1fr', gap = '$
     }}
   >
     {children}
-  </Root>
+  </Container>
 )
