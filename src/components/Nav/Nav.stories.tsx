@@ -7,7 +7,7 @@ import { Sidebar } from '~/components/Sidebar'
 import { Nav, NavLink, NavLinkTitle } from '~/components/Nav'
 
 export default {
-  title: 'Global/Navigation',
+  title: 'Components/Nav',
   component: Nav
 } as Meta
 
