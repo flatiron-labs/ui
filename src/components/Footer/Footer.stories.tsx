@@ -6,7 +6,7 @@ import { FacebookLogo, GithubLogo, InstagramLogo, TwitterLogo, YoutubeLogo } fro
 import { Footer, FooterNav, FooterNavLink, FooterSocial, FooterSocialLink } from '~/components/Footer'
 
 export default {
-  title: 'Composites/Footer'
+  title: 'Components/Footer'
 } as Meta
 
 const Template: Story = (args: unknown) => (
@@ -18,7 +18,7 @@ const Template: Story = (args: unknown) => (
       <FooterNavLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterNavLink>
     </FooterNav>
 
-    <FooterSocial>
+    <FooterSocial data-cy="social">
       <FooterSocialLink href="https://facebook.com" title="Facebook">
         <FacebookLogo />
       </FooterSocialLink>
