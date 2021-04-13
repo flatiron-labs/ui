@@ -1,15 +1,15 @@
 import React from 'react'
-import { styled } from '~/styles/stitches.config'
+import { styled, resolveTokens } from '~/styles/stitches.config'
 
 const Container = styled('div', {
   display: 'grid'
 })
 
 interface Props {
-  min: string // TODO: Stitches/CSS Units
-  max: string // TODO: Stitches/CSS Units
-  gap: string // TODO: Stitches Units
-  css: Record<string, unknown> // TODO: Stitches Units
+  min: resolveTokens<'space'>
+  max: resolveTokens<'space'>
+  gap: resolveTokens<'space'>
+  css?: Record<string, unknown>
 }
 
 export const ResponsiveGrid: FC<Props> = ({ children, min, max = '1fr', gap = '$8', css }) => (
