@@ -7,8 +7,8 @@ const Container = styled('div', {
 
 type Props = React.ComponentPropsWithoutRef<
   React.FC<{
-    min?: resolveTokens<'space'>
-    max?: resolveTokens<'space'>
+    min?: resolveTokens<'space'> | string
+    max?: resolveTokens<'space'> | string
     gap?: resolveTokens<'space'>
   }>
 >
