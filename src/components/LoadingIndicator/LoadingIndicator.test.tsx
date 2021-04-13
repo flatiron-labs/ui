@@ -1,13 +1,6 @@
 describe('<LoadingIndicator />', () => {
-  before(() => {
-    cy.prefix('components-loadingindicator')
-  })
-  after(() => {
-    cy.unsetPrefix()
-  })
-
   it('renders and is accessible', () => {
-    cy.sb('default')
+    cy.sb('components-loadingindicator--default')
     cy.get('svg')
     cy.a11y()
   })

@@ -31,14 +31,14 @@
 
 import { terminalLog } from './terminalLog'
 
-let sbPrefix
+let sbPrefix = ''
 
 Cypress.Commands.add('prefix', prefix => {
   sbPrefix = `${prefix}--`
 })
 
 Cypress.Commands.add('unsetPrefix', () => {
-  sbPrefix = undefined
+  sbPrefix = ''
 })
 
 Cypress.Commands.add('sb', (id, options) => {
