@@ -1,8 +1,9 @@
 describe('<Button />', () => {
-  before(() => {
+  beforeEach(() => {
     cy.prefix('components-button')
   })
-  after(() => {
+
+  afterEach(() => {
     cy.unsetPrefix()
   })
 

@@ -1,8 +1,9 @@
 describe('<Container />', () => {
-  before(() => {
+  beforeEach(() => {
     cy.prefix('components-container')
   })
-  after(() => {
+
+  afterEach(() => {
     cy.unsetPrefix()
   })
 

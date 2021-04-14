@@ -1,10 +1,9 @@
-/// <reference types="cypress" />
-
 describe('<Footer />', () => {
-  before(() => {
+  beforeEach(() => {
     cy.prefix('components-footer')
   })
-  after(() => {
+
+  afterEach(() => {
     cy.unsetPrefix()
   })
 

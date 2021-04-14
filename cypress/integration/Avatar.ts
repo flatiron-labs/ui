@@ -1,8 +1,9 @@
 describe('<Avatar />', () => {
-  before(() => {
+  beforeEach(() => {
     cy.prefix('components-avatar')
   })
-  after(() => {
+
+  afterEach(() => {
     cy.unsetPrefix()
   })
 

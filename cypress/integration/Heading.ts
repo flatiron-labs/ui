@@ -1,6 +1,10 @@
 describe('<Heading />', () => {
-  before(() => {
+  beforeEach(() => {
     cy.prefix('components-typography-heading')
+  })
+
+  afterEach(() => {
+    cy.unsetPrefix()
   })
 
   it('renders headers and is accessible', () => {
