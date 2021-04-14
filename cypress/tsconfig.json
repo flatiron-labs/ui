@@ -1,8 +1,10 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "dom"],
+    "noEmit": true,
+    // be explicit about types included
+    // to avoid clashing with Jest types
     "types": ["cypress", "cypress-axe"]
   },
-  "include": ["**/*.ts", "**/*.d.ts"]
+  "include": ["../node_modules/cypress", "../node_modules/cypress-axe", "./**/*.ts"]
 }

@@ -1,5 +1,3 @@
-/* eslint-disable react/require-default-props */
-
 import React from 'react'
 import { Button } from '~/components/Button'
 import { styled, CSS, resolveTokens } from '~/styles/stitches.config'

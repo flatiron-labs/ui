@@ -1,7 +1,5 @@
 {
   "baseUrl": "http://localhost:6006",
-  "testFiles": "**/*.test.{js,ts,jsx,tsx}",
-  "integrationFolder": "src",
   "component": {
     "testFiles": "**/*.TODO.test.{js,ts,jsx,tsx}",
     "componentFolder": "src",

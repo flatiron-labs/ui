@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React from 'react'
 import Yup from 'yup'
 import { useForm, Resolver, transformToNestObject, FieldValues, FormProvider } from 'react-hook-form'

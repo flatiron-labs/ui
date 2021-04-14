@@ -110,6 +110,7 @@
       "jsx-a11y/anchor-is-valid": "off",
       "react/jsx-props-no-spreading": "off",
       "react/no-unescaped-entities": "off",
+      "react/require-default-props": "off",
       "import/no-cycle": [
         0,
         {
@@ -201,6 +202,7 @@
     "@testing-library/cypress": "^7.0.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.2.5",
+    "@testing-library/react-hooks": "^5.1.1",
     "@testing-library/user-event": "^12.8.3",
     "@types/cypress-axe": "^0.8.0",
     "@types/jest": "^26.0.20",

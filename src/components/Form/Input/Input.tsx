@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React, { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useId } from '@reach/auto-id'

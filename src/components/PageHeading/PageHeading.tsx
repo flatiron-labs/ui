@@ -1,5 +1,3 @@
-/* eslint-disable react/require-default-props */
-
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
 
@@ -19,6 +17,19 @@ const Highlight = styled('span', {
   paddingRight: '25px'
 })
 
+// export const PageHeading: FC<Props> = ({ title, subtitle, secondarySubtitle }) => (
+//   <div>
+//     <Title>{title}</Title>
+
+//     {(subtitle || secondarySubtitle) && (
+//       <h5>
+//         {subtitle && <Highlight>{subtitle}</Highlight>}
+//         {secondarySubtitle}
+//       </h5>
+//     )}
+//   </div>
+// )
+
 export const PageHeading: FC<Props> = ({ title, subtitle, secondarySubtitle }) => (
   <div>
     <Title>{title}</Title>
@@ -31,3 +42,9 @@ export const PageHeading: FC<Props> = ({ title, subtitle, secondarySubtitle }) =
     )}
   </div>
 )
+
+// <PageHeading>
+//   <Title></Title>
+//   <Subtitle></Subtitle>
+//   <SecondarySubtitle></SecondarySubtitle>
+// </PageHeading> */}
