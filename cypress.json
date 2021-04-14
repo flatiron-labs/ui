@@ -1,9 +1,3 @@
 {
-  "baseUrl": "http://localhost:6006",
-  "component": {
-    "testFiles": "**/*.TODO.test.{js,ts,jsx,tsx}",
-    "componentFolder": "src",
-    "viewportHeight": 500,
-    "viewportWidth": 700
-  }
+  "baseUrl": "http://localhost:6006"
 }

@@ -2,4 +2,5 @@
 
 beforeEach(() => {
   cy.unsetPrefix()
+  cy.unsetAxe()
 })

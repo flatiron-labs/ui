@@ -1,9 +1,3 @@
-/// <reference types="cypress" />
-/// <reference types="cypress-axe" />
-
-// visit(url: string, options?: Partial<VisitOptions>): Chainable<AUTWindow>
-// visit(options: Partial<VisitOptions> & { url: string }): Chainable<AUTWindow>
-
 /**
  * Visit the given url
  *
@@ -34,7 +28,7 @@ declare namespace Cypress {
      * Custom command to visit the appropriate Storybook Story URL via the id
      * @example cy.sb('with-image')
      */
-    sb(id: string, options?: Partial<VisitOptions>): Chainable<AUTWindow>
+    sb(id: string, options?: Partial<VisitOptions> & { a11y?: boolean }): Chainable<AUTWindow>
 
     /**
      * Custom command validate a11y conformity

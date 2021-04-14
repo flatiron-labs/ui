@@ -32,6 +32,7 @@
 import { terminalLog } from './terminalLog'
 
 let sbPrefix = ''
+let axeInjected = false
 
 Cypress.Commands.add('prefix', prefix => {
   sbPrefix = `${prefix}--`
@@ -43,10 +44,14 @@ Cypress.Commands.add('unsetPrefix', () => {
 
 Cypress.Commands.add('sb', (id, options) => {
   cy.visit(`/iframe.html?viewMode=story&id=${sbPrefix}${id}`, options)
-  cy.injectAxe()
 })
 
 Cypress.Commands.add('a11y', () => {
+  if (!axeInjected) {
+    cy.injectAxe()
+    axeInjected = true
+  }
+
   cy.checkA11y(
     '#root',
     {
@@ -57,4 +62,8 @@ Cypress.Commands.add('a11y', () => {
     },
     terminalLog
   )
+})
+
+Cypress.Commands.add('unsetAxe', () => {
+  axeInjected = true
 })
