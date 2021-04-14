@@ -4,7 +4,6 @@ import { FileCard } from '~/components/FileCard'
 
 describe('<FileCard />', () => {
   const testid = 'filecard'
-  const link = 'http://localhost/'
   const props = {
     cta: 'Upload',
     secondary: {
@@ -58,12 +57,5 @@ describe('<FileCard />', () => {
       render(<FileCard {...props} tertiary={undefined} />)
       // expect(screen.getByTestId(testid)).toMatchSnapshot()
     })
-  })
-
-  it('should pass ref to cta', () => {
-    const ref = React.createRef<HTMLAnchorElement>()
-
-    render(<FileCard {...props} href={link} ref={ref} data-testid={undefined} />)
-    // expect(ref.current.href).toEqual(link)
   })
 })

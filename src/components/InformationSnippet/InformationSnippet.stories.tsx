@@ -6,7 +6,7 @@ import { Clock, Code, MapPin, User } from 'phosphor-react'
 import { InformationSnippet } from '.'
 
 export default {
-  title: 'Inputs/InformationSnippet',
+  title: 'Components/InformationSnippet',
   component: InformationSnippet,
   argTypes: {
     direction: {

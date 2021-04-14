@@ -52,7 +52,7 @@ type Props = {
 } & React.ComponentPropsWithoutRef<'a'>
 
 export const FileCard = React.forwardRef<HTMLAnchorElement, Props>(
-  ({ cta, href, onClick, secondary, tertiary, title = 'No Upload', type, ...rest }, ref) => (
+  ({ cta, href, secondary, tertiary, title = 'No Upload', type, ...rest }, ref) => (
     <Container
       direction={{
         '@initial': 'column',
@@ -85,7 +85,7 @@ export const FileCard = React.forwardRef<HTMLAnchorElement, Props>(
       </Column>
 
       <Column>
-        <Button size="large" width="full" href={href} onClick={onClick} ref={ref}>
+        <Button size="large" width="full" href={href} as="a" ref={ref}>
           {cta}
         </Button>
       </Column>

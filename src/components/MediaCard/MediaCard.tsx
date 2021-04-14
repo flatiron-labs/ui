@@ -40,23 +40,21 @@ type Props = {
   title: string
 } & React.ComponentPropsWithoutRef<'a'>
 
-export const MediaCard = React.forwardRef<HTMLAnchorElement, Props>(
-  ({ title, image, description, cta, href, onClick }, ref) => (
-    <Container>
-      <Image css={{ backgroundImage: `url("${image}")` }} />
+export const MediaCard = React.forwardRef<HTMLAnchorElement, Props>(({ title, image, description, cta, href }, ref) => (
+  <Container>
+    <Image css={{ backgroundImage: `url("${image}")` }} />
 
-      <ContentContainer>
-        <Title>{title}</Title>
-        <p>{description}</p>
+    <ContentContainer>
+      <Title>{title}</Title>
+      <p>{description}</p>
 
-        <CTAContainer>
-          <Button size="medium" width="full" href={href} onClick={onClick} ref={ref}>
-            {cta}
-          </Button>
-        </CTAContainer>
-      </ContentContainer>
-    </Container>
-  )
-)
+      <CTAContainer>
+        <Button size="medium" width="full" href={href} as="a" ref={ref}>
+          {cta}
+        </Button>
+      </CTAContainer>
+    </ContentContainer>
+  </Container>
+))
 
 MediaCard.displayName = 'MediaCard'

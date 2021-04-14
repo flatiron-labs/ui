@@ -9,7 +9,7 @@ export const useLevel = (): number => useContext(LevelContext)
 
 export const Level: FC<Props> = ({ children, value }) => {
   const contextLevel = useContext(LevelContext)
-  const level = value ? parseInt(value, 10) : contextLevel + 1
+  const level = value ?? contextLevel + 1
 
   return <LevelContext.Provider value={level}>{children}</LevelContext.Provider>
 }

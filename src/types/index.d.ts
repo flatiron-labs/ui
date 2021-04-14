@@ -12,8 +12,7 @@ type GetComponentProps<T> = T extends import('react').ComponentType<infer P> | i
   : never
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-interface FCWithoutChildren<P = {}> {
-  (props: P, context?: unknown): JSX.Element | null
+interface FCDefaultProps<P = {}> {
   propTypes?: WeakValidationMap<P>
   contextTypes?: ValidationMap<unknown>
   defaultProps?: Partial<P>
@@ -21,7 +20,14 @@ interface FCWithoutChildren<P = {}> {
   'data-testid'?: string
 }
 
+type AddChildren<P> = { children: React.ReactNode } & P
+
 // eslint-disable-next-line @typescript-eslint/ban-types
-interface FC<P = {}> extends FCWithoutChildren {
-  (props: PropsWithChildren<P>, context?: unknown): JSX.Element | null
+interface FCWithoutChildren<P = {}> extends FCDefaultProps<P> {
+  (props: P, context?: unknown): JSX.Element | null
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+interface FC<P = {}> extends FCDefaultProps<AddChildren<P>> {
+  (props: AddChildren<P>, context?: unknown): JSX.Element | null
 }

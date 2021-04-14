@@ -24,7 +24,7 @@ describe('<Level />', () => {
   describe('can set initial value', () => {
     it('should set the current level to 4', () => {
       const wrapper = ({ children }) => (
-        <Level value="3">
+        <Level value={3}>
           <Level>{children}</Level>
         </Level>
       )
