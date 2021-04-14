@@ -3,10 +3,6 @@ describe('<Container />', () => {
     cy.prefix('components-container')
   })
 
-  afterEach(() => {
-    cy.unsetPrefix()
-  })
-
   context('global styles', () => {
     it('appends global styles', () => {
       cy.sb('default')

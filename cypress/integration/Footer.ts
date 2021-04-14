@@ -3,10 +3,6 @@ describe('<Footer />', () => {
     cy.prefix('components-footer')
   })
 
-  afterEach(() => {
-    cy.unsetPrefix()
-  })
-
   it('renders and is accessible', () => {
     cy.sb('default')
 

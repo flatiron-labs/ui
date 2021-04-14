@@ -3,10 +3,6 @@ describe('<Button />', () => {
     cy.prefix('components-button')
   })
 
-  afterEach(() => {
-    cy.unsetPrefix()
-  })
-
   context('as a button', () => {
     it('acts as a button', () => {
       cy.sb('default')

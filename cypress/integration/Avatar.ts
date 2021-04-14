@@ -3,10 +3,6 @@ describe('<Avatar />', () => {
     cy.prefix('components-avatar')
   })
 
-  afterEach(() => {
-    cy.unsetPrefix()
-  })
-
   context('has image', () => {
     it('renders an image', () => {
       cy.sb('with-image')
