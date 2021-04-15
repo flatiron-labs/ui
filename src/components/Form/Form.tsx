@@ -86,7 +86,7 @@ const FormGrid = styled('form', {
 })
 
 export const Form = React.forwardRef<RefElement, Props>(
-  ({ defaultValues, children, onSubmit, label, schema, debug, ...props }) => {
+  ({ defaultValues, children, onSubmit, label, schema, debug, ...rest }) => {
     const methods = useForm({
       defaultValues,
       resolver: yupResolver(schema),
@@ -96,7 +96,7 @@ export const Form = React.forwardRef<RefElement, Props>(
     return (
       <FormProvider {...methods}>
         {debug ? <DevTool control={methods.control} /> : null}
-        <FormGrid onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...props}>
+        <FormGrid onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...rest}>
           {children}
         </FormGrid>
       </FormProvider>
