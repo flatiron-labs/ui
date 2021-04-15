@@ -1,6 +1,4 @@
 import React from 'react'
-import type { StitchesVariants } from '@stitches/react'
-
 import { Button } from '~/components/Button'
 
 type Props = {
@@ -8,7 +6,7 @@ type Props = {
   readonly activeLabel?: React.ReactNode | string
   readonly register?: any // eslint-disable-line @typescript-eslint/no-explicit-any
   readonly ref?: string
-} & StitchesVariants<typeof Button>
+} & StitchesComponent<typeof Button>
 
 export const Submit: FC<Props> = ({ active, activeLabel = 'Saving', children = 'Save', register, ...rest }) => (
   <Button

@@ -72,12 +72,12 @@ const yupResolver = <TFieldValues extends FieldValues>(
   }
 }
 
-interface Props extends React.HTMLAttributes<HTMLFormElement> {
+type Props = {
   defaultValues: Record<string, unknown>
   label: string
   schema: Yup.AnyObjectSchema
   debug?: boolean
-}
+} & StitchesComponent<typeof FormGrid>
 
 const FormGrid = styled('form', {
   display: 'grid',

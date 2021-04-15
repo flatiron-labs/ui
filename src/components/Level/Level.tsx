@@ -5,6 +5,8 @@ type Props = {
 }
 
 export const LevelContext = createContext(1)
+LevelContext.displayName = 'LevelContext'
+
 export const useLevel = (): number => useContext(LevelContext)
 
 export const Level: FC<Props> = ({ children, value }) => {

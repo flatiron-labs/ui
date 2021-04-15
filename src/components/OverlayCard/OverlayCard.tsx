@@ -33,7 +33,7 @@ type Props = {
   title?: string
   css?: CSS
 } & React.HTMLAttributes<HTMLDivElement> &
-  React.HTMLAttributes<HTMLButtonElement>
+  StitchesComponent<typeof Button>
 
 export const OverlayCardContainer = styled('div', {
   display: 'grid',
