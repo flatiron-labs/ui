@@ -60,7 +60,7 @@ export const Container: FC = ({ children }) => {
     <IconContext.Provider
       value={{
         color: 'currentColor',
-        size: theme.fontSizes['70'],
+        size: theme.fontSizes['70'].value,
         weight: 'regular',
         mirrored: false
       }}
