@@ -5,13 +5,11 @@ const Container = styled('div', {
   display: 'grid'
 })
 
-type Props = React.ComponentPropsWithoutRef<
-  React.FC<{
-    min?: resolveTokens<'space'> | string
-    max?: resolveTokens<'space'> | string
-    gap?: resolveTokens<'space'>
-  }>
->
+type Props = {
+  min?: resolveTokens<'space'> | string
+  max?: resolveTokens<'space'> | string
+  gap?: resolveTokens<'space'>
+} & StitchesComponent<typeof Container>
 
 export const ResponsiveGrid = React.forwardRef<HTMLDivElement, Props>(
   ({ children, min, max = '1fr', gap = '$8', ...rest }, ref) => (
