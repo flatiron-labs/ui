@@ -72,31 +72,34 @@ const yupResolver = <TFieldValues extends FieldValues>(
   }
 }
 
+type RefElement = typeof FormGrid
 type Props = {
   defaultValues: Record<string, unknown>
   label: string
   schema: Yup.AnyObjectSchema
   debug?: boolean
-} & StitchesComponent<typeof FormGrid>
+} & StitchesComponent<RefElement>
 
 const FormGrid = styled('form', {
   display: 'grid',
   gap: '2em'
 })
 
-export const Form: FC<Props> = ({ defaultValues, children, onSubmit, label, schema, debug, ...props }) => {
-  const methods = useForm({
-    defaultValues,
-    resolver: yupResolver(schema),
-    mode: 'onChange'
-  })
+export const Form = React.forwardRef<RefElement, Props>(
+  ({ defaultValues, children, onSubmit, label, schema, debug, ...props }) => {
+    const methods = useForm({
+      defaultValues,
+      resolver: yupResolver(schema),
+      mode: 'onChange'
+    })
 
-  return (
-    <FormProvider {...methods}>
-      {debug ? <DevTool control={methods.control} /> : null}
-      <FormGrid onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...props}>
-        {children}
-      </FormGrid>
-    </FormProvider>
-  )
-}
+    return (
+      <FormProvider {...methods}>
+        {debug ? <DevTool control={methods.control} /> : null}
+        <FormGrid onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...props}>
+          {children}
+        </FormGrid>
+      </FormProvider>
+    )
+  }
+)

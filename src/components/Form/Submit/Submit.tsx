@@ -1,13 +1,13 @@
 import React from 'react'
 import { Button } from '~/components/Button'
 
-type El = typeof Button
+type RefElement = typeof Button
 type Props = {
   readonly active?: boolean
   readonly activeLabel?: React.ReactNode | string
-} & StitchesComponent<El>
+} & StitchesComponent<RefElement>
 
-export const Submit = React.forwardRef<El, Props>(
+export const Submit = React.forwardRef<RefElement, Props>(
   ({ active, activeLabel = 'Submitting', children = 'Submit', ...rest }, ref) => (
     <Button
       as="button"
