@@ -35,9 +35,9 @@ const Template: Story = () => (
       <ResponsiveGrid min="200px">
         {/*
         <OverlayCard accentColor="$pink500">
-          <OverlayCard.Image src={{PinkOverlay}} />
-          <OverlayCard.Title>Try free courses</OverlayCard.Title>
-          <OverlayCard.Button>View Pathwright</OverlayCard.Button>
+          <OverlayCardImage src={{PinkOverlay}} />
+          <OverlayCardTitle>Try free courses</OverlayCard.Title>
+          <OverlayCardButton>View Pathwright</OverlayCard.Button>
         </OverlayCard>
         */}
 
@@ -56,17 +56,17 @@ const Template: Story = () => (
       <ResponsiveGrid>
         {/*
         <FileCard type="Resume" title="title_of_resume.pdf">
-          <FileCard.Column>
-            <FileCard.ColumnTitle>Assigned</FileCard.ColumnTitle>
-            <FileCard.ColumnDescription>1/2/2233</FileCard.ColumnDescription>
-          </FileCard.Column>
-          <FileCard.Column>
-            <FileCard.ColumnTitle>Completed</FileCard.ColumnTitle>
-            <FileCard.ColumnDescription>1/2/2233</FileCard.ColumnDescription>
-          </FileCard.Column>
-          <FileCard.Column>
-            <FileCard.Button>View</FileCard.Button>
-          </FileCard.Column>
+          <FileCardColumn>
+            <FileCardColumnTitle>Assigned</FileCardColumnTitle>
+            <FileCardColumnDescription>1/2/2233</FileCardColumnDescription>
+          </FileCardColumn>
+          <FileCardColumn>
+            <FileCardColumnTitle>Completed</FileCardColumnTitle>
+            <FileCardColumnDescription>1/2/2233</FileCardColumnDescription>
+          </FileCardColumn>
+          <FileCardColumn>
+            <FileCardButton>View</FileCardButton>
+          </FileCardColumn>
         </FileCard>
         */}
 
