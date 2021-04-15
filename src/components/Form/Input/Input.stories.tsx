@@ -48,7 +48,8 @@ type Args = GetComponentProps<typeof Input> & {
 
 const Template: Story = ({ defaultValues, schema, ...args }: Args) => (
   <Form
-    onSubmit={() => null}
+    // eslint-disable-next-line no-alert
+    onSubmit={() => alert('onSubmit')}
     defaultValues={defaultValues}
     label="Storybook Form"
     schema={schema ?? Yup.object({})}
@@ -69,10 +70,7 @@ Default.args = {
 
 export const PresetValues = Template.bind({})
 PresetValues.args = {
-  label: 'Name',
-  help: 'Enter your full name',
-  icon: User,
-  name: 'fullName',
+  ...Default.args,
   defaultValues: {
     fullName: 'John Doe'
   }
@@ -103,4 +101,15 @@ Password.args = {
   type: 'password',
   icon: Code,
   name: 'password'
+}
+
+export const Functional = Template.bind({})
+Functional.args = {
+  label: 'Email',
+  help: 'Required',
+  icon: Code,
+  name: 'email',
+  schema: Yup.object({
+    email: Yup.string().email().required('Email is required')
+  })
 }

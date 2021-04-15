@@ -1,4 +1,4 @@
-describe('<Avatar />', () => {
+describe('<Submit />', () => {
   beforeEach(() => {
     cy.prefix('components-form-submit')
   })
