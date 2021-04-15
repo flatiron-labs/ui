@@ -30,7 +30,8 @@ type Args = GetComponentProps<typeof Select> & {
 
 const Template: Story = ({ defaultValues, schema, ...args }: Args) => (
   <Form
-    onSubmit={() => null}
+    // eslint-disable-next-line no-alert
+    onSubmit={() => alert('onSubmit')}
     defaultValues={defaultValues}
     label="Storybook Form"
     schema={schema ?? Yup.object({})}

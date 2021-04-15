@@ -1,81 +1,79 @@
-describe('<Input />', () => {
+describe('<Select />', () => {
   beforeEach(() => {
-    cy.prefix('components-form-input')
+    cy.prefix('components-form-select')
   })
 
+  const colors = {
+    focus: 'rgb(31, 32, 54)',
+    error: 'rgb(232, 3, 82)'
+  }
+
   describe('states', () => {
-    it('renders basic <Input />', () => {
-      cy.sb('functional')
+    it('renders basic <Select />', () => {
+      cy.sb('default')
 
-      cy.get('input[name=email]').as('input')
+      cy.get('select[name=homeState]').as('select')
 
-      cy.get('@input').parent().as('parent')
+      cy.get('@select').parent().as('parent')
 
-      cy.get('@input').should('have.attr', 'placeholder', 'Email')
+      cy.get('@select').should('have.value', '')
 
-      cy.get('@parent').find('label[for=email]').should('be.visible').should('have.text', 'Email')
+      cy.get('@parent').find('label[for=homeState]').should('be.visible').should('have.text', 'State')
 
-      cy.get('@parent').find('span[id=form-email-help]').should('be.visible').should('have.text', 'Required')
+      cy.get('@parent').find('span[id=form-homeState-help]').should('be.visible').should('have.text', 'Select a State')
 
       cy.a11y()
     })
 
-    it('renders basic disabled <Input />', () => {
+    it('renders basic disabled <Select />', () => {
       cy.sb('disabled')
 
-      cy.get('input[name=fullName]').as('input').should('have.attr', 'placeholder', 'Name').should('be.disabled')
+      cy.get('select[name=homeState]').should('be.disabled')
 
       cy.a11y()
     })
 
-    it('visually indicates focus on the parent', () => {
-      cy.sb('functional')
+    it('visually indicates focus on the select', () => {
+      cy.sb('default')
 
-      cy.get('input[name=email]')
-        .focus()
+      cy.get('select[name=homeState]').focus().should('have.css', 'borderColor', colors.focus)
+
+      cy.a11y()
+    })
+
+    it('visually indicates error on the select', () => {
+      cy.sb('default')
+
+      cy.get('select[name=homeState]').as('select')
+
+      cy.get('@select').select('NY').should('have.value', 'NY').should('have.css', 'borderColor', colors.error)
+
+      cy.get('@select')
         .parent()
-        .should('have.attr', 'class')
-        .and('match', /--active-true/)
-
-      cy.a11y()
-    })
-
-    it('visually indicates error on the parent', () => {
-      cy.sb('functional')
-
-      cy.get('button[type=submit]').click()
-
-      cy.get('input[name=email]').parent().as('parent')
-
-      cy.get('@parent')
-        .should('have.attr', 'class')
-        .and('match', /--active-true/)
-        .and('match', /--error-true/)
-
-      cy.get('@parent').find('span[id=form-email-help]').should('have.text', 'Email is required')
+        .find('span[id=form-homeState-help]')
+        .should('be.visible')
+        .should('have.css', 'color', colors.error)
+        .should('have.text', 'Must be PA')
 
       cy.a11y()
     })
 
     it('visually indicates success', () => {
-      cy.sb('functional')
+      cy.sb('default')
+
+      cy.get('select[name=homeState]').as('select')
+
+      cy.get('@select').focus().select('PA').should('have.value', 'PA').should('have.css', 'borderColor', colors.focus)
 
       cy.get('button[type=submit]').click()
 
-      cy.get('input[name=email]').as('input')
-
-      cy.get('@input').parent().as('parent')
-
-      cy.get('@input').type('foo@bar.com').should('have.value', 'foo@bar.com')
-
-      cy.get('button[type=submit]').click()
+      cy.get('@select').parent().as('parent')
 
       cy.get('@parent')
         .should('have.attr', 'class')
-        .and('match', /--active-false/)
         .and('match', /--error-false/)
 
-      cy.get('@parent').find('span[id=form-email-help]').should('have.text', 'Required')
+      cy.get('@parent').find('span[id=form-homeState-help]').should('have.text', 'Select a State')
 
       cy.a11y()
 
