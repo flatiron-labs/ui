@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 import { useId } from '@reach/auto-id'
 
+import type { FieldError } from 'react-hook-form'
 import type { Icon } from 'phosphor-react'
 
 import { styled } from '~/styles/stitches.config'
+
+import { Label } from '~/components/Form/Label'
 
 type ValidFormInputTypes =
   | 'button'
@@ -39,6 +42,10 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLInputEl
   readonly help?: string
   readonly icon?: Icon
 }
+
+/* -------------------------------------------------------------------------------------------------
+ * Container
+ * -----------------------------------------------------------------------------------------------*/
 
 const Container = styled('div', {
   position: 'relative',
@@ -87,8 +94,7 @@ const Container = styled('div', {
         svg: {
           color: '$white500'
         }
-      },
-      false: {}
+      }
     },
     error: {
       true: {
@@ -117,27 +123,9 @@ const Container = styled('div', {
   }
 })
 
-const DetailsContainer = styled('div', {
-  backgroundColor: '$black500',
-  fontSize: '$10',
-  left: '15px',
-  padding: '0 10px',
-  position: 'absolute',
-  top: '-4px',
-  zIndex: 10,
-
-  label: {
-    color: '$yellow500'
-  },
-
-  span: {
-    marginLeft: '1em',
-
-    '&.error': {
-      color: '$pink500'
-    }
-  }
-})
+/* -------------------------------------------------------------------------------------------------
+ * Input
+ * -----------------------------------------------------------------------------------------------*/
 
 export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, help, icon, ...rest }) => {
   const id = useId(rest.id)
@@ -145,14 +133,10 @@ export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, he
   const [active, setActive] = useState(false)
   const setActiveState = () => setActive(!active)
 
-  const scopedErrors: Record<'message' | 'type', string> = errors[name] ?? false
-
-  const conditionalProps = {}
+  const scopedErrors: FieldError | false = errors[name] ?? false
   const helpId = `form-${name}-help`
 
-  if (!label || label === '') {
-    throw new Error('label is required')
-  }
+  const conditionalProps = {}
 
   if (help) {
     conditionalProps['aria-describedby'] = helpId
@@ -164,19 +148,7 @@ export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, he
 
   return (
     <Container error={!!scopedErrors} icon={!!icon} active={active}>
-      <DetailsContainer>
-        <label id={id} htmlFor={name}>
-          {label}
-        </label>
-
-        {help && !scopedErrors && <span id={helpId}>{help}</span>}
-
-        {scopedErrors && (
-          <span id={helpId} className="error">
-            {scopedErrors.message}
-          </span>
-        )}
-      </DetailsContainer>
+      <Label id={id} name={name} label={label} helpId={helpId} helpText={help} errors={scopedErrors} />
 
       {icon && React.createElement(icon)}
 

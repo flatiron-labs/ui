@@ -1,7 +1,6 @@
 import React from 'react'
 import Yup from 'yup'
 import { useForm, Resolver, transformToNestObject, FieldValues, FormProvider } from 'react-hook-form'
-import { DevTool } from '@hookform/devtools'
 
 import { styled } from '~/styles/stitches.config'
 
@@ -95,7 +94,6 @@ export const Form = React.forwardRef<RefElement, Props>(
 
     return (
       <FormProvider {...methods}>
-        {debug ? <DevTool control={methods.control} /> : null}
         <FormGrid onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...rest}>
           {children}
         </FormGrid>

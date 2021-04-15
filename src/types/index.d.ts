@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+
 declare module '*.png'
 declare module '*.gif'
 declare module '*.svg' {
@@ -11,7 +13,6 @@ type GetComponentProps<T> = T extends import('react').ComponentType<infer P> | i
   ? P
   : never
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 interface FCDefaultProps<P = {}> {
   propTypes?: WeakValidationMap<P>
   contextTypes?: ValidationMap<unknown>
@@ -22,12 +23,10 @@ interface FCDefaultProps<P = {}> {
 
 type AddChildren<P> = { children: React.ReactNode } & P
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 interface FCWithoutChildren<P = {}> extends FCDefaultProps<P> {
   (props: P, context?: unknown): JSX.Element | null
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 interface FC<P = {}> extends FCDefaultProps<AddChildren<P>> {
   (props: AddChildren<P>, context?: unknown): JSX.Element | null
 }

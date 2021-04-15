@@ -44,7 +44,18 @@ const Template: Story = ({ defaultValues, schema, ...args }: Args) => (
 export const Default = Template.bind({})
 Default.args = {
   label: 'State',
-  help: 'Select a State'
+  help: 'Select a State',
+  schema: Yup.object({
+    homeState: Yup.string().equals(['PA'], 'Must be PA')
+  })
+}
+
+export const PresetValues = Template.bind({})
+PresetValues.args = {
+  ...Default.args,
+  defaultValues: {
+    homeState: 'PA'
+  }
 }
 
 export const Disabled = Template.bind({})
@@ -52,6 +63,13 @@ Disabled.args = {
   ...Default.args,
   help: 'Roll over',
   disabled: true
+}
+
+export const Required = Template.bind({})
+Required.args = {
+  label: 'State',
+  help: 'Hit submit to view the error state',
+  required: true
 }
 
 export const Error = Template.bind({})

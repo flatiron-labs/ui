@@ -48,14 +48,6 @@ const Container = styled('div', {
     transition: 'border-color 0.3s ease',
     width: '100%',
 
-    'option[data-placeholder]': {
-      color: '$grey750'
-    },
-
-    'option[value=""][disabled]': {
-      display: 'none'
-    },
-
     '&:focus': {
       borderColor: '$cyan500',
       outline: 0
@@ -63,6 +55,10 @@ const Container = styled('div', {
 
     '&:disabled': {
       cursor: 'not-allowed'
+    },
+
+    '&:invalid': {
+      color: '$grey750'
     }
   },
 
@@ -109,7 +105,6 @@ export const Select: FCWithoutChildren<Props> = ({ name, label, help, options, .
   const { register, errors } = useFormContext()
   const conditionalProps = {}
   const helpId = `form-${name}-help`
-
   const scopedErrors: Record<'message' | 'type', string> = errors[name] ?? false
 
   if (!label || label === '') {
@@ -139,9 +134,7 @@ export const Select: FCWithoutChildren<Props> = ({ name, label, help, options, .
       </DetailsContainer>
 
       <select aria-labelledby={id} name={name} ref={register} {...conditionalProps} {...rest}>
-        <option value="" disabled hidden data-placeholder>
-          {label}
-        </option>
+        <option value="">{label}</option>
 
         {(options as string[]).map((value: string) => (
           <option key={value} value={value}>
