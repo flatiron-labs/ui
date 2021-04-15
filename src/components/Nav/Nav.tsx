@@ -1,12 +1,10 @@
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
 
-type Props = React.ComponentPropsWithoutRef<
-  React.FC<{
-    active?: boolean
-    href?: string
-  }>
->
+type Props = {
+  active?: boolean
+  href?: string
+} & StitchesComponent<typeof LinkContainer>
 
 const LinkContainer = styled('a', {
   color: '$white500',
