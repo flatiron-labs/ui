@@ -37,13 +37,14 @@ export default {
 
 const Template: Story = (args: GetComponentProps<typeof Submit>) => (
   <Form
-    onSubmit={() => null}
+    // eslint-disable-next-line no-alert
+    onSubmit={() => alert('onSubmit')}
     defaultValues={{}}
     label="Storybook Form"
     schema={Yup.object({})}
     style={{ margin: '1em' }}
   >
-    <Submit {...args} />
+    <Submit {...args} data-cy="submit" />
   </Form>
 )
 

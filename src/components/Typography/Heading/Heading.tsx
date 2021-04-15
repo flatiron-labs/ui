@@ -11,12 +11,12 @@ type Props = {
 // Set as h1 to receive heading-specific props typechecking
 const DynamicHeading = styled('h1', {})
 
-export const Heading = React.forwardRef<HTMLHeadingElement, Props>(({ children, level, offset, ...props }, ref) => {
+export const Heading = React.forwardRef<HTMLHeadingElement, Props>(({ children, level, offset, ...rest }, ref) => {
   const contextLevel = useLevel()
   const headingLevel = level ? `h${level}` : `h${offset ? contextLevel + offset : contextLevel}`
 
   return (
-    <DynamicHeading as={headingLevel} ref={ref} {...props}>
+    <DynamicHeading as={headingLevel} ref={ref} {...rest}>
       {children}
     </DynamicHeading>
   )

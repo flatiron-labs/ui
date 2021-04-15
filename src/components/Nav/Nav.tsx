@@ -46,8 +46,8 @@ const LinkContainer = styled('a', {
 export const Nav = styled('nav', {})
 Nav.displayName = 'Nav'
 
-export const NavLink = React.forwardRef<HTMLAnchorElement, Props>(({ children, ...props }, ref) => (
-  <LinkContainer ref={ref} {...props}>
+export const NavLink = React.forwardRef<HTMLAnchorElement, Props>(({ children, ...rest }, ref) => (
+  <LinkContainer ref={ref} {...rest}>
     {children}
   </LinkContainer>
 ))

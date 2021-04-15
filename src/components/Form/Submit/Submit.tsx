@@ -1,25 +1,27 @@
 import React from 'react'
 import { Button } from '~/components/Button'
 
+type El = typeof Button
 type Props = {
   readonly active?: boolean
   readonly activeLabel?: React.ReactNode | string
-  readonly register?: any // eslint-disable-line @typescript-eslint/no-explicit-any
-  readonly ref?: string
-} & StitchesComponent<typeof Button>
+} & StitchesComponent<El>
 
-export const Submit: FC<Props> = ({ active, activeLabel = 'Saving', children = 'Save', register, ...rest }) => (
-  <Button
-    as="button"
-    appearance={active ? 'disabled' : 'secondary'}
-    aria-busy={active}
-    aria-live="polite"
-    disabled={active}
-    ref={register}
-    size="large"
-    type="submit"
-    {...rest}
-  >
-    {active ? activeLabel : children}
-  </Button>
+export const Submit = React.forwardRef<El, Props>(
+  ({ active, activeLabel = 'Submitting', children = 'Submit', ...rest }, ref) => (
+    <Button
+      as="button"
+      appearance={active ? 'disabled' : 'secondary'}
+      aria-busy={active}
+      aria-live="polite"
+      disabled={active}
+      size="large"
+      ref={ref}
+      type="submit"
+      {...rest}
+    >
+      {active ? activeLabel : children}
+    </Button>
+  )
 )
+Submit.displayName = 'Submit'
