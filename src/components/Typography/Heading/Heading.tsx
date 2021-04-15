@@ -2,23 +2,24 @@ import React from 'react'
 import { useLevel } from '~/components/Level'
 import { styled } from '~/styles'
 
-type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
-
 type Props = {
   level?: HeadingLevel
   offset?: Exclude<HeadingLevel, 6>
-} & Partial<typeof DynamicHeading>
+} & StitchesComponent<typeof DynamicHeading>
 
-const DynamicHeading = styled('h1', {}) // Set as h1 to receive heading props
+// Set as h1 to receive heading-specific props typechecking
+const DynamicHeading = styled('h1', {})
 
-export const Heading: FC<Props> = ({ children, level, offset, ...props }) => {
+export const Heading = React.forwardRef<HTMLHeadingElement, Props>(({ children, level, offset, ...props }, ref) => {
   const contextLevel = useLevel()
-  const headingLevel = (level ? `h${level}` : `h${offset ? contextLevel + offset : contextLevel}`) as HeadingElement
+  const headingLevel = level ? `h${level}` : `h${offset ? contextLevel + offset : contextLevel}`
 
   return (
-    <DynamicHeading as={headingLevel} {...props}>
+    <DynamicHeading as={headingLevel} ref={ref} {...props}>
       {children}
     </DynamicHeading>
   )
-}
+})
+
+Heading.displayName = 'Heading'

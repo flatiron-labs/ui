@@ -1,50 +1,73 @@
 import React from 'react'
+import { Heading } from '~/components/Typography/Heading'
+import { Level } from '~/components/Level'
 import { styled } from '~/styles/stitches.config'
+import { textOnlyChild } from '~/utils/textOnlyChild'
 
-interface Props {
-  title: string
-  subtitle?: string | false
-  secondarySubtitle?: string | false
-}
-
-const Title = styled('h1', {
-  fontSize: '2.5rem'
+export const StyledPageHeading = styled('div', {
+  display: 'grid',
+  gap: '$7'
 })
+StyledPageHeading.displayName = 'PageHeading'
 
-const Highlight = styled('span', {
-  color: '$yellow500',
-  display: 'inline-block',
-  paddingRight: '25px'
+export const PageHeadingTitle = styled(Heading, {
+  all: 'unset',
+  color: '$white500',
+  display: 'block',
+  fontFamily: '$firaCode',
+  fontSize: '2.5rem',
+  fontWeight: '$light',
+  letterSpacing: '-$6',
+  lineHeight: '1.167em'
 })
+PageHeadingTitle.displayName = 'PageHeadingTitle'
 
-// export const PageHeading: FC<Props> = ({ title, subtitle, secondarySubtitle }) => (
-//   <div>
-//     <Title>{title}</Title>
+const StyledPageHeadingSubtitle = styled(Heading, {
+  all: 'unset',
+  color: '$white500',
+  display: 'inline-flex',
+  flexWrap: 'wrap',
+  fontFamily: '$firaCode',
+  fontSize: '$70',
+  fontWeight: '$regular',
+  letterSpacing: '-$6',
+  lineHeight: '1.334em'
+})
+StyledPageHeadingSubtitle.displayName = 'StyledPageHeadingSubtitle'
 
-//     {(subtitle || secondarySubtitle) && (
-//       <h5>
-//         {subtitle && <Highlight>{subtitle}</Highlight>}
-//         {secondarySubtitle}
-//       </h5>
-//     )}
-//   </div>
-// )
+export const PageHeadingContent = styled('span', {
+  marginRight: '$7',
 
-export const PageHeading: FC<Props> = ({ title, subtitle, secondarySubtitle }) => (
-  <div>
-    <Title>{title}</Title>
+  '&:last-child': {
+    marginRight: '0'
+  },
 
-    {(subtitle || secondarySubtitle) && (
-      <h5>
-        {subtitle && <Highlight>{subtitle}</Highlight>}
-        {secondarySubtitle}
-      </h5>
-    )}
-  </div>
+  variants: {
+    highlight: {
+      true: {
+        color: '$yellow500'
+      }
+    }
+  }
+})
+PageHeadingContent.displayName = 'PageHeadingContent'
+
+export const PageHeadingSubtitle = React.forwardRef<HTMLHeadingElement, StitchesComponent<typeof Heading>>(
+  ({ children, ...props }, ref) => (
+    <Level>
+      <StyledPageHeadingSubtitle ref={ref} {...props}>
+        {textOnlyChild(children) ? <PageHeadingContent highlight>{children}</PageHeadingContent> : children}
+      </StyledPageHeadingSubtitle>
+    </Level>
+  )
 )
+PageHeadingSubtitle.displayName = 'PageHeadingSubtitle'
 
-// <PageHeading>
-//   <Title></Title>
-//   <Subtitle></Subtitle>
-//   <SecondarySubtitle></SecondarySubtitle>
-// </PageHeading> */}
+export const PageHeading = React.forwardRef<HTMLDivElement, StitchesComponent<typeof StyledPageHeading>>(
+  ({ children, ...props }, ref) => (
+    <StyledPageHeading ref={ref} {...props}>
+      {textOnlyChild(children) ? <PageHeadingTitle>{children}</PageHeadingTitle> : children}
+    </StyledPageHeading>
+  )
+)
+PageHeading.displayName = 'PageHeading'

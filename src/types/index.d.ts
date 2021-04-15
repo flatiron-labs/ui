@@ -31,3 +31,5 @@ interface FCWithoutChildren<P = {}> extends FCDefaultProps<P> {
 interface FC<P = {}> extends FCDefaultProps<AddChildren<P>> {
   (props: AddChildren<P>, context?: unknown): JSX.Element | null
 }
+
+type StitchesComponent<C> = TStyledComponentProps<C> & TExtractVariantProps<C>

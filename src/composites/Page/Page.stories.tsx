@@ -1,7 +1,17 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
-import { Section, OverlayCard, FileCard, PageHeading, ResponsiveGrid, MediaCard } from '~/components'
+import {
+  FileCard,
+  MediaCard,
+  OverlayCard,
+  PageHeading,
+  PageHeadingContent,
+  PageHeadingSubtitle,
+  PageHeadingTitle,
+  ResponsiveGrid,
+  Section
+} from '~/components'
 
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 import PurpleOverlay from '~/assets/images/overlay-purple.svg'
@@ -13,7 +23,13 @@ export default {
 
 const Template: Story = () => (
   <Page>
-    <PageHeading title="Welcome Back John Smith!" subtitle="Software Engineering" secondarySubtitle="Fall 2020" />
+    <PageHeading>
+      <PageHeadingTitle>Welcome Back John Smith!</PageHeadingTitle>
+      <PageHeadingSubtitle>
+        <PageHeadingContent highlight>Software Engineering</PageHeadingContent>
+        <PageHeadingContent>Fall 2020</PageHeadingContent>
+      </PageHeadingSubtitle>
+    </PageHeading>
 
     <Section title="Links">
       <ResponsiveGrid min="200px">
