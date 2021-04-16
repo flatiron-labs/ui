@@ -2,12 +2,13 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Progress, ProgressProps } from '.'
 import { flatironTheme } from '~/styles'
+import { Grid } from '~/index'
 
 export default {
   title: 'Data/Progress',
   component: Progress,
   argTypes: {
-    activeColor: {
+    color: {
       defaultValue: flatironTheme.colors.common.pink,
       description: 'Adjust color of complete progress',
       control: 'color'
@@ -23,19 +24,15 @@ export default {
   }
 } as Meta
 
-const Template: Story = (args: ProgressProps) => <Progress {...args} />
+const Template: Story = (args: ProgressProps) => (
+  <Grid item md={6}>
+    <Progress {...args} />
+  </Grid>
+)
 
 export const Default = Template.bind({})
 Default.args = {
-  activeColor: flatironTheme.colors.common.pink,
+  color: flatironTheme.colors.common.pink,
   total: 40,
   complete: 10
-}
-
-export const WithLabel = Template.bind({})
-WithLabel.args = {
-  activeColor: flatironTheme.colors.common.blue,
-  total: 40,
-  complete: 10,
-  label: 'Number of tasks complete'
 }

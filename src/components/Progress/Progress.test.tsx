@@ -4,18 +4,13 @@ import { Progress } from '.'
 
 const testId = 'Progress'
 
-describe('OverlayCard', () => {
+describe('Progress', () => {
   const renderComponent = () => {
-    render(<Progress label="Tasks complete" data-testid={testId} />)
+    render(<Progress complete={40} total={60} data-testid={testId} />)
   }
 
   it('should render', () => {
     renderComponent()
     expect(screen.getByTestId(testId)).toMatchSnapshot()
-  })
-
-  it('should render label', () => {
-    renderComponent()
-    expect(screen.getAllByText('Tasks complete')).toMatchSnapshot()
   })
 })
