@@ -118,7 +118,21 @@ const stitches = createCss({
     lg: '(min-width: 1441px)',
     xl: '(min-width: 1921px)'
   },
-  utils: {},
+  utils: {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    visuallyHidden: config => (value: boolean) => ({
+      border: 0,
+      clip: 'rect(0, 0, 0, 0)',
+      height: 1,
+      margin: -1,
+      overflow: 'hidden',
+      padding: 0,
+      position: 'absolute',
+      whiteSpace: 'nowrap',
+      width: 1,
+      wordWrap: 'normal'
+    })
+  },
   prefix: '',
   insertionMethod: 'append'
   // themeMap: {

@@ -29,15 +29,7 @@ const FieldSet = styled('fieldset', {
  * -----------------------------------------------------------------------------------------------*/
 
 const Legend = styled('legend', {
-  // START TODO: Create visually-hidden CSS helper
-  clip: 'rect(0 0 0 0)',
-  clipPath: 'inset(50%)',
-  height: '1px',
-  overflow: 'hidden',
-  position: 'absolute',
-  whiteSpace: 'nowrap',
-  width: '1px'
-  // END TODO: Create visually-hidden CSS helper
+  visuallyHidden: true
 })
 
 /* -------------------------------------------------------------------------------------------------
