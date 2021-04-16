@@ -1,10 +1,10 @@
 import React from 'react'
+
 import { styled } from '~/styles/stitches.config'
 
-type Props = {
-  active?: boolean
-  href?: string
-} & StitchesComponent<typeof LinkContainer>
+/* -------------------------------------------------------------------------------------------------
+ * LinkContainer
+ * -----------------------------------------------------------------------------------------------*/
 
 const LinkContainer = styled('a', {
   color: '$white500',
@@ -43,15 +43,31 @@ const LinkContainer = styled('a', {
   }
 })
 
-export const Nav = styled('nav', {})
-Nav.displayName = 'Nav'
+/* -------------------------------------------------------------------------------------------------
+ * NavLink
+ * -----------------------------------------------------------------------------------------------*/
 
-export const NavLink = React.forwardRef<HTMLAnchorElement, Props>(({ children, ...rest }, ref) => (
+type NavLinkProps = React.ComponentPropsWithRef<typeof LinkContainer> & {
+  active?: boolean
+}
+
+export const NavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(({ children, ...rest }, ref) => (
   <LinkContainer ref={ref} {...rest}>
     {children}
   </LinkContainer>
 ))
 NavLink.displayName = 'NavLink'
 
+/* -------------------------------------------------------------------------------------------------
+ * NavLinkTitle
+ * -----------------------------------------------------------------------------------------------*/
+
 export const NavLinkTitle = styled('span', { paddingTop: '4px' })
 NavLinkTitle.displayName = 'NavLinkTitle'
+
+/* -------------------------------------------------------------------------------------------------
+ * Nav
+ * -----------------------------------------------------------------------------------------------*/
+
+export const Nav = styled('nav', {})
+Nav.displayName = 'Nav'
