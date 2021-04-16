@@ -1,5 +1,9 @@
 import { styled } from '~/styles/stitches.config'
 
+/* -------------------------------------------------------------------------------------------------
+ * Sidebar
+ * -----------------------------------------------------------------------------------------------*/
+
 export const Sidebar = styled('div', {
   backgroundColor: '$black500',
   borderRight: '1px solid $grey1000',

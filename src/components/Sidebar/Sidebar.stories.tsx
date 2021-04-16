@@ -1,36 +1,22 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 
-import { Gear, House, User } from 'phosphor-react'
-
 import { Sidebar } from '.'
-import { Nav, NavLink, NavLinkTitle } from '~/components/Nav'
 
 export default {
-  title: 'Global/Sidebar',
+  title: 'Components/Sidebar',
   component: Sidebar
 } as Meta
 
-const Template: Story = () => (
-  <Sidebar expanded>
-    <Nav title="primary">
-      <NavLink href="/">
-        <House />
-        <NavLinkTitle>Home</NavLinkTitle>
-      </NavLink>
+type Args = GetComponentProps<typeof Sidebar>
 
-      <NavLink href="/profile">
-        <User />
-        <NavLinkTitle>Profile</NavLinkTitle>
-      </NavLink>
-
-      <NavLink href="/settings">
-        <Gear />
-        <NavLinkTitle>Settings</NavLinkTitle>
-      </NavLink>
-    </Nav>
+const Template: Story = (args: Args) => (
+  <Sidebar {...args} css={{ backgroundColor: 'darkblue' }}>
+    <p>I am the sidebar, hear me roar!</p>
   </Sidebar>
 )
 
 export const Default = Template.bind({})
-Default.args = {}
+Default.args = {
+  expanded: true
+}
