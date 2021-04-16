@@ -72,7 +72,6 @@ describe('<Input />', () => {
 
       cy.get('@parent')
         .should('have.attr', 'class')
-        .and('match', /--active-false/)
         .and('match', /--error-false/)
 
       cy.get('@parent').find('span[id=form-email-help]').should('have.text', 'Required')

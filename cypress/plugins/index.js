@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 
 // Used by cypress-axe for console reporting
-module.exports = (on, config) => {
+module.exports = on => {
   on('task', {
     log(message) {
       console.log(message)

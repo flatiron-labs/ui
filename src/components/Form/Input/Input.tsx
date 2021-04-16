@@ -128,7 +128,7 @@ const Container = styled('div', {
  * -----------------------------------------------------------------------------------------------*/
 
 export const Input: FCWithoutChildren<Props> = ({ type = 'text', name, label, help, icon, ...rest }) => {
-  const id = useId(rest.id)
+  const id = useId()
   const { register, errors } = useFormContext()
   const [active, setActive] = useState(false)
   const setActiveState = () => setActive(!active)

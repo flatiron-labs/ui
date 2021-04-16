@@ -30,12 +30,12 @@ const Container = styled('div', {
 })
 
 type Props = React.ComponentPropsWithRef<typeof Container> & {
-  id: string | number
-  name: string
-  label: string
-  helpId: string
-  helpText?: string
-  errors: FieldError | false
+  readonly id: string | number
+  readonly name: string
+  readonly label: string
+  readonly helpId: string
+  readonly helpText?: string
+  readonly errors: FieldError | false
 }
 
 /* -------------------------------------------------------------------------------------------------

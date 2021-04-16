@@ -76,7 +76,6 @@ type Props = {
   defaultValues: Record<string, unknown>
   label: string
   schema: Yup.AnyObjectSchema
-  debug?: boolean
 } & StitchesComponent<RefElement>
 
 const FormGrid = styled('form', {
@@ -85,7 +84,7 @@ const FormGrid = styled('form', {
 })
 
 export const Form = React.forwardRef<RefElement, Props>(
-  ({ defaultValues, children, onSubmit, label, schema, debug, ...rest }) => {
+  ({ defaultValues, children, onSubmit, label, schema, ...rest }) => {
     const methods = useForm({
       defaultValues,
       resolver: yupResolver(schema),

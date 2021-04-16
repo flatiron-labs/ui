@@ -46,7 +46,11 @@ describe('<Select />', () => {
 
       cy.get('select[name=homeState]').as('select')
 
-      cy.get('@select').select('NY').should('have.value', 'NY').should('have.css', 'borderColor', colors.error)
+      cy.get('@select')
+        .select('NY')
+        .should('have.value', 'NY')
+        .should('have.attr', 'class')
+        .and('match', /--error-true/)
 
       cy.get('@select')
         .parent()
@@ -61,19 +65,15 @@ describe('<Select />', () => {
     it('visually indicates success', () => {
       cy.sb('default')
 
-      cy.get('select[name=homeState]').as('select')
-
-      cy.get('@select').focus().select('PA').should('have.value', 'PA').should('have.css', 'borderColor', colors.focus)
+      cy.get('select[name=homeState]').as('select').focus().select('PA').should('have.value', 'PA')
 
       cy.get('button[type=submit]').click()
 
-      cy.get('@select').parent().as('parent')
-
-      cy.get('@parent')
+      cy.get('@select')
         .should('have.attr', 'class')
         .and('match', /--error-false/)
 
-      cy.get('@parent').find('span[id=form-homeState-help]').should('have.text', 'Select a State')
+      cy.get('@select').parent().find('span[id=form-homeState-help]').should('have.text', 'Select a State')
 
       cy.a11y()
 
