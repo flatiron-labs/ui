@@ -14,8 +14,8 @@ type Args = {
 }
 const Template: Story = ({ title, content }: Args) => (
   <TextCard>
-    <TextCardTitle>{title}</TextCardTitle>
-    <TextCardContent>{content}</TextCardContent>
+    <TextCardTitle data-cy="title">{title}</TextCardTitle>
+    <TextCardContent data-cy="content">{content}</TextCardContent>
   </TextCard>
 )
 
