@@ -4,7 +4,7 @@ import { styled } from '~/styles/stitches.config'
  * Sidebar
  * -----------------------------------------------------------------------------------------------*/
 
-export const Sidebar = styled('div', {
+export const Sidebar = styled('aside', {
   backgroundColor: '$black500',
   borderRight: '1px solid $grey1000',
   flexDirection: 'column',
