@@ -1,21 +1,17 @@
 import React from 'react'
-
 import { MapPin } from 'phosphor-react'
 
 import { styled } from '~/styles/stitches.config'
 import { Input, Select } from '~/components'
 import { usStateAbbreviations } from '~/data'
 
-interface Props {
-  readonly fieldPrefix: string
-  readonly legend: string
-}
+/* -------------------------------------------------------------------------------------------------
+ * FieldSet
+ * -----------------------------------------------------------------------------------------------*/
 
-const Fieldset = styled('fieldset', {
+const FieldSet = styled('fieldset', {
   display: 'grid',
   gap: '2em',
-
-  // START TODO: Move to Globals
   borderBottomWidth: 0,
   borderLeftWidth: 0,
   borderRightWidth: 0,
@@ -25,21 +21,28 @@ const Fieldset = styled('fieldset', {
   paddingBlockEnd: 0,
   paddingBlockStart: 0,
   paddingInlineEnd: 0,
-  paddingInlineStart: 0,
-  // END TODO: Move to Globals
-
-  legend: {
-    // START TODO: Create visually-hidden CSS helper
-    clip: 'rect(0 0 0 0)',
-    clipPath: 'inset(50%)',
-    height: '1px',
-    overflow: 'hidden',
-    position: 'absolute',
-    whiteSpace: 'nowrap',
-    width: '1px'
-    // END TODO: Create visually-hidden CSS helper
-  }
+  paddingInlineStart: 0
 })
+
+/* -------------------------------------------------------------------------------------------------
+ * Legend
+ * -----------------------------------------------------------------------------------------------*/
+
+const Legend = styled('legend', {
+  // START TODO: Create visually-hidden CSS helper
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  height: '1px',
+  overflow: 'hidden',
+  position: 'absolute',
+  whiteSpace: 'nowrap',
+  width: '1px'
+  // END TODO: Create visually-hidden CSS helper
+})
+
+/* -------------------------------------------------------------------------------------------------
+ * AddressSecondary
+ * -----------------------------------------------------------------------------------------------*/
 
 const AddressSecondary = styled('div', {
   display: 'grid',
@@ -50,9 +53,18 @@ const AddressSecondary = styled('div', {
   }
 })
 
-export const Address = ({ legend, fieldPrefix }: Props): JSX.Element => (
-  <Fieldset>
-    <legend>{legend}</legend>
+/* -------------------------------------------------------------------------------------------------
+ * Address
+ * -----------------------------------------------------------------------------------------------*/
+
+type Props = React.ComponentPropsWithRef<typeof FieldSet> & {
+  readonly fieldPrefix: string
+  readonly legend: string
+}
+
+export const Address = React.forwardRef<HTMLFieldSetElement, Props>(({ legend, fieldPrefix, ...rest }, ref) => (
+  <FieldSet {...rest} ref={ref}>
+    <Legend>{legend}</Legend>
 
     <Input name={`${fieldPrefix}Line1`} label="Address" icon={MapPin} />
     <Input name={`${fieldPrefix}Line2`} label="Address Line 2" icon={MapPin} />
@@ -64,5 +76,7 @@ export const Address = ({ legend, fieldPrefix }: Props): JSX.Element => (
     </AddressSecondary>
 
     <Input name={`${fieldPrefix}Country`} label="Country" />
-  </Fieldset>
-)
+  </FieldSet>
+))
+
+Address.displayName = 'Address'
