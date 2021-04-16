@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/flatiron-labs/ui/compare/v1.4.0...v1.5.0) (2021-04-16)
+
+
+### Features
+
+* **progress:** update progress ui ([6bbc0d6](https://github.com/flatiron-labs/ui/commit/6bbc0d6c1178908d40a248596eeacc46968153d0))
+
 # [1.4.0](https://github.com/flatiron-labs/ui/compare/v1.3.0...v1.4.0) (2021-04-05)
 
 
