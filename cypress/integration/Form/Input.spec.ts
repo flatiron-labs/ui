@@ -28,7 +28,7 @@ describe('<Input />', () => {
       cy.a11y()
     })
 
-    it('visually indicates focus on the parent', () => {
+    it('visually indicates focus on the input', () => {
       cy.sb('functional')
 
       cy.get('input[name=email]')
@@ -40,19 +40,23 @@ describe('<Input />', () => {
       cy.a11y()
     })
 
-    it('visually indicates error on the parent', () => {
+    it('visually indicates error on the input', () => {
       cy.sb('functional')
 
       cy.get('button[type=submit]').click()
 
-      cy.get('input[name=email]').parent().as('parent')
+      cy.get('input[name=email]').as('input')
 
-      cy.get('@parent')
+      cy.get('@input')
         .should('have.attr', 'class')
-        .and('match', /--active-true/)
         .and('match', /--error-true/)
 
-      cy.get('@parent').find('span[id=form-email-help]').should('have.text', 'Email is required')
+      cy.get('@input')
+        .parent()
+        .should('have.attr', 'class')
+        .and('match', /--active-true/)
+
+      cy.get('@input').parent().find('span[id=form-email-help]').should('have.text', 'Email is required')
 
       cy.a11y()
     })
@@ -69,10 +73,6 @@ describe('<Input />', () => {
       cy.get('@input').type('foo@bar.com').should('have.value', 'foo@bar.com')
 
       cy.get('button[type=submit]').click()
-
-      cy.get('@parent')
-        .should('have.attr', 'class')
-        .and('match', /--error-false/)
 
       cy.get('@parent').find('span[id=form-email-help]').should('have.text', 'Required')
 

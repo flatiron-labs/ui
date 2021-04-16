@@ -1,13 +1,25 @@
 import React, { createContext, useContext } from 'react'
 
-type Props = {
-  value?: number
-}
+/* -------------------------------------------------------------------------------------------------
+ * LevelContext
+ * -----------------------------------------------------------------------------------------------*/
 
 export const LevelContext = createContext(1)
 LevelContext.displayName = 'LevelContext'
 
+/* -------------------------------------------------------------------------------------------------
+ * useLevel
+ * -----------------------------------------------------------------------------------------------*/
+
 export const useLevel = (): number => useContext(LevelContext)
+
+/* -------------------------------------------------------------------------------------------------
+ * Level
+ * -----------------------------------------------------------------------------------------------*/
+
+type Props = {
+  value?: number
+}
 
 export const Level: FC<Props> = ({ children, value }) => {
   const contextLevel = useContext(LevelContext)

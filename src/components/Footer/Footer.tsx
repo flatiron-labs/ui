@@ -1,5 +1,9 @@
 import { styled } from '~/styles/stitches.config'
 
+/* -------------------------------------------------------------------------------------------------
+ * Footer
+ * -----------------------------------------------------------------------------------------------*/
+
 export const Footer = styled('footer', {
   alignItems: 'center',
   backgroundColor: '$yellow500',
@@ -30,6 +34,10 @@ export const Footer = styled('footer', {
 
 Footer.displayName = 'Footer'
 
+/* -------------------------------------------------------------------------------------------------
+ * FooterNav
+ * -----------------------------------------------------------------------------------------------*/
+
 export const FooterNav = styled('nav', {
   display: 'grid',
   fontSize: '14px',
@@ -42,6 +50,10 @@ export const FooterNav = styled('nav', {
 })
 
 FooterNav.displayName = 'FooterNav'
+
+/* -------------------------------------------------------------------------------------------------
+ * FooterNavLink
+ * -----------------------------------------------------------------------------------------------*/
 
 export const FooterNavLink = styled('a', {
   color: '$black500',
@@ -60,6 +72,10 @@ export const FooterNavLink = styled('a', {
 
 FooterNavLink.displayName = 'FooterNavLink'
 
+/* -------------------------------------------------------------------------------------------------
+ * FooterSocial
+ * -----------------------------------------------------------------------------------------------*/
+
 export const FooterSocial = styled('div', {
   display: 'flex',
   alignItems: 'center',
@@ -68,6 +84,10 @@ export const FooterSocial = styled('div', {
 })
 
 FooterSocial.displayName = 'FooterSocial'
+
+/* -------------------------------------------------------------------------------------------------
+ * FooterSocialLink
+ * -----------------------------------------------------------------------------------------------*/
 
 export const FooterSocialLink = styled('a', {
   color: '$black500',

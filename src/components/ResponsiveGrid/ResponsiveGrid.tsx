@@ -1,25 +1,33 @@
 import React from 'react'
 import { styled, resolveTokens } from '~/styles/stitches.config'
 
+/* -------------------------------------------------------------------------------------------------
+ * Container
+ * -----------------------------------------------------------------------------------------------*/
+
 const Container = styled('div', {
   display: 'grid'
 })
 
-type Props = {
-  min?: resolveTokens<'space'> | string
-  max?: resolveTokens<'space'> | string
-  gap?: resolveTokens<'space'>
-} & StitchesComponent<typeof Container>
+/* -------------------------------------------------------------------------------------------------
+ * ResponsiveGrid
+ * -----------------------------------------------------------------------------------------------*/
+
+type Props = React.ComponentPropsWithRef<typeof Container> & {
+  readonly min?: resolveTokens<'space'> | string
+  readonly max?: resolveTokens<'space'> | string
+  readonly gap?: resolveTokens<'space'>
+}
 
 export const ResponsiveGrid = React.forwardRef<HTMLDivElement, Props>(
   ({ children, min, max = '1fr', gap = '$8', ...rest }, ref) => (
     <Container
-      ref={ref}
+      {...rest}
       css={{
         gridGap: gap,
         gridTemplateColumns: min ? `repeat(auto-fit, minmax(${min}, ${max}))` : max
       }}
-      {...rest}
+      ref={ref}
     >
       {children}
     </Container>

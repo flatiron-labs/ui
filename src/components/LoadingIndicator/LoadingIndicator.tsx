@@ -1,5 +1,9 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { styled } from '~/styles'
+
+/* -------------------------------------------------------------------------------------------------
+ * SVGContainer
+ * -----------------------------------------------------------------------------------------------*/
 
 const SVGContainer = styled('svg', {
   display: 'block',
@@ -7,9 +11,13 @@ const SVGContainer = styled('svg', {
   width: '80px'
 })
 
-type Props = Partial<typeof SVGContainer>
+/* -------------------------------------------------------------------------------------------------
+ * LoadingIndicator
+ * -----------------------------------------------------------------------------------------------*/
 
-export const LoadingIndicator = forwardRef<SVGSVGElement, Props>(({ ...props }, ref) => (
+type Props = React.ComponentPropsWithRef<typeof SVGContainer>
+
+export const LoadingIndicator = React.forwardRef<SVGSVGElement, Props>(({ ...props }, ref) => (
   <SVGContainer xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" role="status" ref={ref} {...props}>
     <defs />
     <rect width="6" height="4" x="47" y="28" fill="#f9ed1a" rx="0" ry="0">
