@@ -1,23 +1,54 @@
 import React from 'react'
 import { styled } from '~/styles/stitches.config'
 
-interface Props extends Partial<typeof Container> {
-  label: string
-  value: string
-}
+import { Level } from '~/components/Level'
+import { Heading } from '~/components/Typography/Heading'
 
-const Container = styled('div', {
-  border: '2px solid $cyan500',
-  padding: '10px'
+/* -------------------------------------------------------------------------------------------------
+ * TextCardTitle
+ * -----------------------------------------------------------------------------------------------*/
+
+export const TextCardTitle = styled(Heading, {
+  color: '$cyan500',
+  fontFamily: '$firaCode',
+  fontWeight: '$regular',
+  fontSize: '$80',
+  letterSpacing: '0.00735em'
 })
 
-const Title = styled('h4', {
-  color: '$cyan500'
+/* -------------------------------------------------------------------------------------------------
+ * TextCardContent
+ * -----------------------------------------------------------------------------------------------*/
+
+export const TextCardContent = styled('div', {
+  fontFamily: '$firaCode',
+  fontWeight: '$regular',
+  fontSize: '$30',
+  letterSpacing: '0.00938em'
 })
 
-export const TextCard: FCWithoutChildren<Props> = ({ label, value, ...props }) => (
-  <Container {...props}>
-    <Title>{label}</Title>
-    <p>{value}</p>
-  </Container>
-)
+/* -------------------------------------------------------------------------------------------------
+ * StyledTextCard
+ * -----------------------------------------------------------------------------------------------*/
+
+const StyledTextCard = styled('div', {
+  border: '2px solid $blue1000',
+  display: 'grid',
+  gap: '$5',
+  padding: '$5'
+})
+
+/* -------------------------------------------------------------------------------------------------
+ * TextCard
+ * -----------------------------------------------------------------------------------------------*/
+
+type Props = React.ComponentPropsWithRef<typeof StyledTextCard>
+
+export const TextCard = React.forwardRef<HTMLDivElement, Props>(({ children, ...rest }, ref) => (
+  <Level>
+    <StyledTextCard ref={ref} {...rest}>
+      {children}
+    </StyledTextCard>
+  </Level>
+))
+TextCard.displayName = 'TextCard'
