@@ -16,7 +16,7 @@ const Container = styled('div', {
 type Props = React.ComponentPropsWithRef<typeof Container> & {
   readonly min?: resolveTokens<'space'> | string
   readonly max?: resolveTokens<'space'> | string
-  readonly gap?: resolveTokens<'space'>
+  readonly gap?: resolveTokens<'space'> | 0
 }
 
 export const ResponsiveGrid = React.forwardRef<HTMLDivElement, Props>(

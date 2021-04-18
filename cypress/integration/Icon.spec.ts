@@ -1,4 +1,4 @@
-describe('<Avatar />', () => {
+describe('<Icon />', () => {
   beforeEach(() => {
     cy.prefix('components-icon')
   })
