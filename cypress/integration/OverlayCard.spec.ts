@@ -20,6 +20,11 @@ describe('<OverlayCard />', () => {
 
     cy.a11y()
   })
+
+  it('should be accessible with multiple similar components', () => {
+    cy.sb('multiple')
+    cy.a11y()
+  })
 })
 
 export {}

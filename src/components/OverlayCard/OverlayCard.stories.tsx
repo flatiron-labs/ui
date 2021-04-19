@@ -31,7 +31,6 @@ export default {
 const Template: Story = () => (
   <OverlayCard accentColor="pink">
     <OverlayCardImage src={PinkOverlay}>Coursework & Curriculum</OverlayCardImage>
-
     <OverlayCardCTA>View Canvas</OverlayCardCTA>
   </OverlayCard>
 )
