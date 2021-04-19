@@ -25,7 +25,7 @@ type Props = React.ComponentPropsWithRef<typeof StyledForm> & {
 }
 
 export const Form = React.forwardRef<HTMLFormElement, Props>(
-  ({ defaultValues, children, onSubmit, label, schema, ...rest }) => {
+  ({ defaultValues, children, onSubmit, label, schema, ...rest }, ref) => {
     const methods = useForm({
       defaultValues,
       resolver: formValidationResolver(schema),
@@ -34,7 +34,7 @@ export const Form = React.forwardRef<HTMLFormElement, Props>(
 
     return (
       <FormProvider {...methods}>
-        <StyledForm onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...rest}>
+        <StyledForm onSubmit={methods.handleSubmit(onSubmit)} aria-label={label} {...rest} ref={ref}>
           {children}
         </StyledForm>
       </FormProvider>
