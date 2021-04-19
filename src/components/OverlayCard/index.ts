@@ -1,1 +1,1 @@
-export { OverlayCard, OverlayCardContainer } from './OverlayCard'
+export * from './OverlayCard'

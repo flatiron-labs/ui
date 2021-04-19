@@ -8,6 +8,7 @@ export const Button = styled('button', {
   borderWidth: '2px',
   cursor: 'pointer',
   display: 'inline-flex',
+  fontFamily: '$firaCode',
   fontWeight: 'bold',
   justifyContent: 'center',
   outline: 0,

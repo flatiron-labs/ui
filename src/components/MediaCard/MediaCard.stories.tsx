@@ -5,7 +5,7 @@ import { MediaCard } from '~/components/MediaCard'
 import { ResponsiveGrid } from '~/components/ResponsiveGrid'
 
 export default {
-  title: 'Content/MediaCard',
+  title: 'Components/Cards/MediaCard',
   component: MediaCard
 } as Meta
 

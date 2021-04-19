@@ -1,77 +1,123 @@
 import React from 'react'
 import { Button } from '~/components/Button'
-import { styled, CSS, resolveTokens } from '~/styles/stitches.config'
+import { styled } from '~/styles/stitches.config'
 
-const Top = styled('div', {
+/* -------------------------------------------------------------------------------------------------
+ * OverlayCardImage
+ * -----------------------------------------------------------------------------------------------*/
+
+const StyledOverlayCardImage = styled('div', {
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
   borderStyle: 'solid',
   borderWidth: '2px',
   display: 'flex',
-  justifyContent: 'center',
-  width: '100%',
-  minHeight: '130px',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-  padding: '20px 15px 0'
-})
-
-const Bottom = styled('div', {
-  marginTop: '10px'
-})
-
-const Title = styled('div', {
   fontFamily: '$gotcha',
   fontSize: '2.5em',
-  width: '100%',
+  justifyContent: 'center',
+  minHeight: '130px',
+  padding: '20px 15px 0',
   textAlign: 'center',
-  textShadow: '3px 3px 1px $black500'
+  textShadow: '3px 3px 1px $black500',
+  width: '100%'
 })
 
-type Props = {
-  accentColor: resolveTokens<'colors'>
-  cta?: string | JSX.Element
-  image: string
-  title?: string
-  css?: CSS
-} & React.HTMLAttributes<HTMLDivElement> &
-  StitchesComponent<typeof Button>
+type OverlayCardImageProps = React.ComponentPropsWithRef<typeof StyledOverlayCardImage> & {
+  src: string
+}
 
-export const OverlayCardContainer = styled('div', {
-  display: 'grid',
-  gridGap: '$7',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'
-})
-
-export const OverlayCard: FC<Props> = ({ cta, title, image, accentColor, onClick, ...props }) => (
-  <div {...props}>
-    <Top
-      css={{
-        backgroundImage: `url(${image})`,
-        borderColor: accentColor
-      }}
-    >
-      <Title>{title}</Title>
-    </Top>
-    <Bottom>
-      {React.isValidElement(cta) ? (
-        cta
-      ) : (
-        <Button
-          css={{
-            borderColor: accentColor,
-
-            '&:focus, &:hover': {
-              backgroundColor: accentColor,
-              color: '$black500',
-              outline: 0
-            }
-          }}
-          onClick={onClick}
-          size="medium"
-          width="full"
-        >
-          {cta as string}
-        </Button>
-      )}
-    </Bottom>
-  </div>
+export const OverlayCardImage = React.forwardRef<HTMLDivElement, OverlayCardImageProps>(
+  ({ src, children, ...rest }, ref) => (
+    <StyledOverlayCardImage css={{ backgroundImage: `url(${src})` }} {...rest} className="overlay-card-image" ref={ref}>
+      {children}
+    </StyledOverlayCardImage>
+  )
 )
+
+OverlayCardImage.toString = () => '.overlay-card-image'
+OverlayCardImage.displayName = 'OverlayCardImage'
+
+/* -------------------------------------------------------------------------------------------------
+ * OverlayCardCTA
+ * -----------------------------------------------------------------------------------------------*/
+
+export const OverlayCardCTA = styled(Button, {
+  '&:focus, &:hover': {
+    color: '$black500',
+    outline: 0
+  },
+
+  defaultVariants: {
+    width: 'full'
+  }
+})
+
+OverlayCardCTA.displayName = 'OverlayCardCTA'
+
+/* -------------------------------------------------------------------------------------------------
+ * OverlayCard
+ * -----------------------------------------------------------------------------------------------*/
+
+export const OverlayCard = styled('div', {
+  display: 'grid',
+  gap: '$7',
+
+  variants: {
+    accentColor: {
+      pink: {
+        [`& ${OverlayCardImage}`]: {
+          borderColor: '$pink500'
+        },
+
+        [`& ${OverlayCardCTA}`]: {
+          borderColor: '$pink500',
+
+          '&:focus, &:hover': {
+            backgroundColor: '$pink500'
+          }
+        }
+      },
+      purple: {
+        [`& ${OverlayCardImage}`]: {
+          borderColor: '$purple500'
+        },
+
+        [`& ${OverlayCardCTA}`]: {
+          borderColor: '$purple500',
+
+          '&:focus, &:hover': {
+            backgroundColor: '$purple500'
+          }
+        }
+      },
+      cyan: {
+        [`& ${OverlayCardImage}`]: {
+          borderColor: '$cyan500'
+        },
+
+        [`& ${OverlayCardCTA}`]: {
+          borderColor: '$cyan500',
+
+          '&:focus, &:hover': {
+            backgroundColor: '$cyan500'
+          }
+        }
+      },
+      yellow: {
+        [`& ${OverlayCardImage}`]: {
+          borderColor: '$yellow500'
+        },
+
+        [`& ${OverlayCardCTA}`]: {
+          borderColor: '$yellow500',
+
+          '&:focus, &:hover': {
+            backgroundColor: '$yellow500'
+          }
+        }
+      }
+    }
+  }
+})
+
+OverlayCard.displayName = 'OverlayCard'
