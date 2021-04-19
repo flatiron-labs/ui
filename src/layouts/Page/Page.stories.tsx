@@ -2,9 +2,20 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { Page } from '.'
 import {
-  FileCard,
+  Button,
+  Document,
+  DocumentColumn,
+  DocumentLegend,
+  DocumentTitle,
   MediaCard,
+  MediaCardContent,
+  MediaCardCTA,
+  MediaCardDescription,
+  MediaCardImage,
+  MediaCardTitle,
   OverlayCard,
+  OverlayCardImage,
+  OverlayCardCTA,
   PageHeading,
   PageHeadingContent,
   PageHeadingSubtitle,
@@ -33,113 +44,100 @@ const Template: Story = () => (
 
     <Section title="Links">
       <ResponsiveGrid min="200px">
-        {/*
-        <OverlayCard accentColor="$pink500">
-          <OverlayCardImage src={{PinkOverlay}} />
-          <OverlayCardTitle>Try free courses</OverlayCard.Title>
-          <OverlayCardButton>View Pathwright</OverlayCard.Button>
-        </OverlayCard>
-        */}
+        <OverlayCard accentColor="cyan">
+          <OverlayCardImage src={TurqOverlay}>Coursework &amp; Curriculum</OverlayCardImage>
 
-        <OverlayCard title="Try free courses" cta="View Pathwright" accentColor="$pink500" image={PinkOverlay} />
-        <OverlayCard title="Course work & Curriculum" cta="View Canvas" accentColor="$cyan500" image={TurqOverlay} />
-        <OverlayCard
-          title="Access Career Services"
-          cta="View Gradleaders"
-          accentColor="$purple500"
-          image={PurpleOverlay}
-        />
+          <OverlayCardCTA>View Canvas</OverlayCardCTA>
+        </OverlayCard>
+
+        <OverlayCard accentColor="purple">
+          <OverlayCardImage src={PurpleOverlay}>Access career services</OverlayCardImage>
+
+          <OverlayCardCTA>View GradLeaders</OverlayCardCTA>
+        </OverlayCard>
+
+        <OverlayCard accentColor="pink">
+          <OverlayCardImage src={PinkOverlay}>Try free courses</OverlayCardImage>
+
+          <OverlayCardCTA>View Pathwright</OverlayCardCTA>
+        </OverlayCard>
       </ResponsiveGrid>
     </Section>
 
     <Section title="Documents">
       <ResponsiveGrid>
-        {/*
-        <FileCard type="Resume" title="title_of_resume.pdf">
-          <FileCardColumn>
-            <FileCardColumnTitle>Assigned</FileCardColumnTitle>
-            <FileCardColumnDescription>1/2/2233</FileCardColumnDescription>
-          </FileCardColumn>
-          <FileCardColumn>
-            <FileCardColumnTitle>Completed</FileCardColumnTitle>
-            <FileCardColumnDescription>1/2/2233</FileCardColumnDescription>
-          </FileCardColumn>
-          <FileCardColumn>
-            <FileCardButton>View</FileCardButton>
-          </FileCardColumn>
-        </FileCard>
-        */}
+        <Document>
+          <DocumentLegend>Resume</DocumentLegend>
+          <DocumentTitle>my_resume.pdf</DocumentTitle>
 
-        <FileCard
-          type="Resume"
-          title="title_of_resume.pdf"
-          cta="View"
-          secondary={{
-            title: 'Assigned',
-            description: '1/2/2233'
-          }}
-          tertiary={{
-            title: 'Completed',
-            description: '1/2/2233'
-          }}
-          onClick={() => null}
-        />
-        <FileCard
-          type="Resume"
-          cta="Upload"
-          secondary={{
-            title: 'Assigned',
-            description: '1/2/2233'
-          }}
-          onClick={() => null}
-        />
-        <FileCard
-          type="Resume"
-          title="title_of_resume.pdf"
-          cta="View"
-          secondary={{
-            title: 'Assigned',
-            description: '1/2/2233'
-          }}
-          tertiary={{
-            title: 'Completed',
-            description: '1/2/2233'
-          }}
-          onClick={() => null}
-        />
+          <DocumentColumn>
+            Requested
+            <br />
+            4/9/2021
+          </DocumentColumn>
+
+          <DocumentColumn>
+            Uploaded
+            <br />
+            4/16/2021
+          </DocumentColumn>
+
+          <DocumentColumn>
+            <Button size="large" width="full" href="https://google.com" as="a">
+              View
+            </Button>
+          </DocumentColumn>
+        </Document>
       </ResponsiveGrid>
     </Section>
 
     <Section title="Recommended Content">
       <ResponsiveGrid min="200px">
-        <MediaCard
-          image="https://via.placeholder.com/348x193"
-          title="HTML Tutorial for Beginners"
-          description="Learn HTML for a career in web development."
-          href="#html"
-          cta="View"
-        />
-        <MediaCard
-          image="https://via.placeholder.com/348x193"
-          title="HTML, CSS, JavaScript Explained"
-          description="Understanding what languages are used for building websites: HTML, CSS, JavaScript."
-          href="#explained"
-          cta="View"
-        />
-        <MediaCard
-          image="https://via.placeholder.com/348x193"
-          title="What Can You Do with Python?"
-          description="What is Python used for? What can you do with Python? Watch this video to find out."
-          href="#python"
-          cta="View"
-        />
-        <MediaCard
-          image="https://via.placeholder.com/348x193"
-          title="Data Science In 5 Minutes"
-          description="This 'What is Data Science' video will give you an idea of a life of Data Scientist."
-          href="#data-science"
-          cta="View"
-        />
+        <MediaCard>
+          <MediaCardImage src="https://via.placeholder.com/348x193" alt="Image: HTML Tutorial for Beginners" />
+
+          <MediaCardContent>
+            <MediaCardTitle>HTML Tutorial for Beginners</MediaCardTitle>
+            <MediaCardDescription>Learn HTML for a career in web development.</MediaCardDescription>
+            <MediaCardCTA>View</MediaCardCTA>
+          </MediaCardContent>
+        </MediaCard>
+
+        <MediaCard>
+          <MediaCardImage src="https://via.placeholder.com/348x193" alt="Image: HTML, CSS, JavaScript Explained" />
+
+          <MediaCardContent>
+            <MediaCardTitle>HTML, CSS, JavaScript Explained</MediaCardTitle>
+            <MediaCardDescription>
+              Understanding what languages are used for building websites: HTML, CSS, JavaScript.
+            </MediaCardDescription>
+            <MediaCardCTA>View</MediaCardCTA>
+          </MediaCardContent>
+        </MediaCard>
+
+        <MediaCard>
+          <MediaCardImage src="https://via.placeholder.com/348x193" alt="Image: What Can You Do with Python?" />
+
+          <MediaCardContent>
+            <MediaCardTitle>What Can You Do with Python?</MediaCardTitle>
+            <MediaCardDescription>
+              What is Python used for? What can you do with Python? Watch this video to find out.
+            </MediaCardDescription>
+            <MediaCardCTA>View</MediaCardCTA>
+          </MediaCardContent>
+        </MediaCard>
+
+        <MediaCard>
+          <MediaCardImage src="https://via.placeholder.com/348x193" alt="Image: Data Science In 5 Minutes" />
+
+          <MediaCardContent>
+            <MediaCardTitle>Data Science In 5 Minutes</MediaCardTitle>
+            <MediaCardDescription>
+              This 'What is Data Science' video will give you an idea of a life of Data Scientist.
+            </MediaCardDescription>
+            <MediaCardCTA>View</MediaCardCTA>
+          </MediaCardContent>
+        </MediaCard>
       </ResponsiveGrid>
     </Section>
   </Page>
