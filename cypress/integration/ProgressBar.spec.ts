@@ -7,7 +7,7 @@ describe('<ProgressBar />', () => {
   let color = {
     frame: 'rgb(127, 138, 142)',
     default: 'rgb(92, 92, 92)',
-    yellow: 'rgb(127, 138, 142)'
+    yellow: 'rgb(249, 197, 26)'
   }
 
   it('renders a progress bar', () => {
