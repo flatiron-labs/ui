@@ -266,6 +266,7 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^0.0.11",
+    "@radix-ui/react-progress": "^0.0.11",
     "@radix-ui/react-switch": "^0.0.11",
     "@reach/auto-id": "^0.13.2",
     "@react-hook/window-size": "^3.0.7",

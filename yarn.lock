@@ -2408,6 +2408,16 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-polymorphic" "0.0.10"
 
+"@radix-ui/react-progress@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-progress/-/react-progress-0.0.11.tgz#1ea6b20b3e027993f13475984cb5e478709eef51"
+  integrity sha512-73d+pTNyHV2MBxvlIGwSj6XR32j3C38yfy+s1aRQVhcQRLZywM9tsG6WOY4rD3bmsLJx+F0r8vHJKdcT+rr2lw==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-context" "0.0.5"
+    "@radix-ui/react-polymorphic" "0.0.10"
+    "@radix-ui/react-primitive" "0.0.11"
+
 "@radix-ui/react-switch@^0.0.11":
   version "0.0.11"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-switch/-/react-switch-0.0.11.tgz#41866308887e53434c70c49440c78d73c3596641"
