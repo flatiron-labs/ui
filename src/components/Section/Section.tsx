@@ -1,51 +1,104 @@
 import React from 'react'
+import CSSType from 'csstype'
+
 import { styled } from '~/styles/stitches.config'
+
+import { Heading } from '~/components/Typography/Heading'
+import { Level } from '~/components/Level'
 import { LoadingIndicator } from '~/components/LoadingIndicator'
 
-interface Props extends Partial<typeof Container> {
-  title?: string
-  children: React.ReactNode
-  style?: React.CSSProperties
-  dynamic?: boolean
-  data?: unknown
-  error?: unknown
-  minHeight?: string
-}
+/* -------------------------------------------------------------------------------------------------
+ * SectionStatus
+ * -----------------------------------------------------------------------------------------------*/
 
-const Container = styled('section', {
-  width: '100%'
-})
-const Title = styled('h4', { paddingBottom: '0.5em' })
-const Content = styled('div', {})
-const StatusContainer = styled('div', {
+export const SectionStatus = styled('div', {
   display: 'flex',
   justifyContent: 'center'
 })
 
-export const Section: FC<Props> = ({ title, children, dynamic, data, error, minHeight = '100px', ...props }) => {
-  const loading = dynamic && !error && !data
+SectionStatus.displayName = 'SectionStatus'
 
-  return (
-    <Container aria-busy={loading} {...props}>
-      {title && <Title>{title}</Title>}
+/* -------------------------------------------------------------------------------------------------
+ * SectionTitle
+ * -----------------------------------------------------------------------------------------------*/
 
-      <Content css={{ minHeight: minHeight ?? '0' }}>
-        {dynamic && error && (
-          <StatusContainer>
-            <p>failed to load</p>
-          </StatusContainer>
-        )}
+export const SectionTitle = styled(Heading, {
+  fontFamily: '$firaCode',
+  fontSize: '1.6rem',
+  fontWeight: '400',
+  lineHeight: '1.235',
+  letterSpacing: '0.00735em'
+})
 
-        {loading && (
-          <StatusContainer>
-            <LoadingIndicator />
-          </StatusContainer>
-        )}
+SectionTitle.displayName = 'SectionTitle'
+
+/* -------------------------------------------------------------------------------------------------
+ * SectionContent
+ * -----------------------------------------------------------------------------------------------*/
+
+export const StyledSectionContent = styled('section', {
+  width: '100%'
+})
+
+type SectionContentProps = React.ComponentPropsWithRef<typeof StyledSectionContent> & {
+  data?: unknown
+  dynamic?: boolean
+  error?: unknown
+  minHeight?: CSSType.Property.MinHeight
+  loadingComponent?: React.ReactNode
+  errorComponent?: React.ReactNode
+}
+
+export const SectionContent = React.forwardRef<HTMLDivElement, SectionContentProps>(
+  ({ children, data, dynamic, error, loadingComponent, errorComponent, minHeight = 0, ...rest }, ref) => {
+    const loading = dynamic && !error && !data
+
+    return (
+      <StyledSectionContent css={{ minHeight }} {...rest} aria-busy={loading} ref={ref}>
+        {dynamic && error && <SectionStatus>{errorComponent ?? <p>An error has occurred.</p>}</SectionStatus>}
+
+        {loading && <SectionStatus>{loadingComponent ?? <LoadingIndicator />}</SectionStatus>}
 
         {dynamic && data && children}
 
         {!dynamic && children}
-      </Content>
-    </Container>
+      </StyledSectionContent>
+    )
+  }
+)
+
+SectionContent.toString = () => '.section-content'
+SectionContent.displayName = 'SectionContent'
+
+/* -------------------------------------------------------------------------------------------------
+ * Section
+ * -----------------------------------------------------------------------------------------------*/
+
+const SectionTitleType = (<SectionTitle />).type
+
+export const StyledSection = styled('section', {
+  width: '100%'
+})
+
+type Props = Omit<React.ComponentPropsWithRef<typeof StyledSection>, 'children'>
+
+export const Section = React.forwardRef<HTMLElement, Props>(({ children, ...rest }, ref) => {
+  const hasTitle = React.Children.toArray(children).find(
+    child => (child as React.ReactElement).type === SectionTitleType
   )
-}
+
+  return hasTitle ? (
+    <Level>
+      <StyledSection {...rest} ref={ref}>
+        {children}
+      </StyledSection>
+    </Level>
+  ) : (
+    <StyledSection {...rest} ref={ref}>
+      {children}
+    </StyledSection>
+  )
+})
+
+Section.toString = () => '.section'
+Section.displayName = 'Section'

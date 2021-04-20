@@ -225,6 +225,7 @@
     "chromatic": "^5.7.0",
     "commitizen": "^4.2.3",
     "css-mediaquery": "^0.1.2",
+    "csstype": "^3.0.8",
     "cypress": "7.1.0",
     "cypress-axe": "^0.12.2",
     "cz-conventional-changelog": "3.3.0",

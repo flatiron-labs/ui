@@ -1,37 +1,91 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { ResponsiveGrid, Section, TextCard } from '~/components'
+
+import { Section, SectionTitle, SectionContent } from '~/components/Section'
 
 export default {
-  title: 'Layout/Section'
+  title: 'Components/Section'
 } as Meta
 
-const Template: Story = (args: GetComponentProps<typeof Section>) => (
-  <Section {...args}>
-    <ResponsiveGrid min="500px">
-      <TextCard label="Full Name" value="John Smith" />
-      <TextCard label="Full Name" value="John Smith" />
-      <TextCard label="Full Name" value="John Smith" />
-    </ResponsiveGrid>
+export const Default: Story = () => (
+  <Section>
+    <SectionContent>
+      <p>Test Content</p>
+    </SectionContent>
   </Section>
 )
 
-const TemplateDynamic: Story = args => (
-  <Section {...args}>
-    <p>Data: {JSON.stringify(args.data)}</p>
+export const WithTitle: Story = () => (
+  <Section>
+    <SectionTitle>Test Title</SectionTitle>
+
+    <SectionContent>
+      <p>Test Content</p>
+    </SectionContent>
   </Section>
 )
 
-export const Default = Template.bind({})
+export const DynamicSectionLoading: Story = () => (
+  <Section>
+    <SectionTitle>Test Title</SectionTitle>
 
-export const WithTitle = Template.bind({})
-WithTitle.args = { title: 'Personal Information' }
+    <SectionContent dynamic>
+      <p>Test Content</p>
+    </SectionContent>
+  </Section>
+)
 
-export const DynamicSectionLoading = Template.bind({})
-DynamicSectionLoading.args = { title: 'Personal Information', dynamic: true }
+export const DynamicSectionError: Story = () => (
+  <Section>
+    <SectionTitle>Test Title</SectionTitle>
 
-export const DynamicSectionError = Template.bind({})
-DynamicSectionError.args = { title: 'Personal Information', dynamic: true, error: 'foo' }
+    <SectionContent dynamic error>
+      <p>Test Content</p>
+    </SectionContent>
+  </Section>
+)
 
-export const DynamicSectionLoaded = TemplateDynamic.bind({})
-DynamicSectionLoaded.args = { title: 'Personal Information', dynamic: true, data: { test: 'data', foo: 'bar' } }
+export const DynamicSectionLoaded: Story = () => (
+  <Section>
+    <SectionTitle>Test Title</SectionTitle>
+
+    <SectionContent dynamic data>
+      <p>Test Content</p>
+    </SectionContent>
+  </Section>
+)
+
+export const Multiple: Story = () => (
+  <>
+    <Section>
+      <SectionTitle>Test Title</SectionTitle>
+
+      <SectionContent dynamic data>
+        <p>Test Content</p>
+      </SectionContent>
+    </Section>
+    <Section>
+      <SectionTitle>Test Title</SectionTitle>
+
+      <SectionContent dynamic data>
+        <p>Test Content</p>
+      </SectionContent>
+    </Section>
+  </>
+)
+
+export const CustomLoadingComponent: Story = () => (
+  <Section>
+    <SectionContent dynamic loadingComponent={<p>[LOADING]</p>}>
+      <p>Test Content</p>
+    </SectionContent>
+  </Section>
+)
+
+export const CustomErrorComponent: Story = () => (
+  <Section>
+    <SectionContent dynamic error errorComponent={<p>[ERROR]</p>}>
+      <p>Test Content</p>
+    </SectionContent>
+  </Section>
+)
