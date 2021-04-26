@@ -17,13 +17,15 @@
     "noEmitHelpers": false,
     "outDir": "dist",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./*"],
+      "@emotion/core": ["node_modules/@emotion/react"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": false,
-    "target": "es2015"
+    "target": "es2015",
+    "types": ["jest"]
   },
   "exclude": ["docs", "dist", "node_modules", "**/node_modules", "**/*.svg"],
   "include": ["src/**/*"]

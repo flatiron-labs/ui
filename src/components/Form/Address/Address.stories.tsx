@@ -5,7 +5,7 @@ import { Form, Submit } from '~/components'
 import { Address } from '.'
 
 export default {
-  title: 'Form/Address',
+  title: 'Components/Form/Address',
   component: Address,
   argTypes: {
     legend: {
@@ -40,7 +40,7 @@ const Template: Story = (args: Args) => (
     schema={args.schema ?? Yup.object({})}
     style={{ margin: '1em' }}
   >
-    <Address {...args} />
+    <Address {...args} data-cy="addressForm" />
     {args.schema ? <Submit /> : null}
   </Form>
 )

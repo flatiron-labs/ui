@@ -1,0 +1,22 @@
+diff --git a/node_modules/@emotion/core/types/index.d.ts b/node_modules/@emotion/core/types/index.d.ts
+index 9395e01..ce1396a 100644
+--- a/node_modules/@emotion/core/types/index.d.ts
++++ b/node_modules/@emotion/core/types/index.d.ts
+@@ -81,7 +81,7 @@ export function ClassNames<Theme = any>(
+ 
+ declare module 'react' {
+   interface DOMAttributes<T> {
+-    css?: InterpolationWithTheme<any>
++    css?: ANGLE_instanced_arrays
+   }
+ }
+ 
+@@ -93,7 +93,7 @@ declare global {
+      */
+ 
+     interface IntrinsicAttributes {
+-      css?: InterpolationWithTheme<any>
++      css?: any
+     }
+   }
+ }

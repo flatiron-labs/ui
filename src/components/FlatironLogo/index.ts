@@ -1,1 +1,0 @@
-export { FlatironLogo } from './FlatironLogo'

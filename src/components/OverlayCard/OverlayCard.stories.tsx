@@ -1,21 +1,22 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { OverlayCard, OverlayCardProps } from '.'
+
+import { ResponsiveGrid } from '~/components/ResponsiveGrid'
+import { OverlayCard, OverlayCardImage, OverlayCardCTA } from '~/components/OverlayCard'
 
 import PinkOverlay from '~/assets/images/overlay-pink.svg'
 import PurpleOverlay from '~/assets/images/overlay-purple.svg'
 import TurqOverlay from '~/assets/images/overlay-turq.svg'
 import YellowOverlay from '~/assets/images/overlay-yellow.svg'
-import { Grid } from '~/index'
 
 export default {
-  title: 'Content/OverlayCard',
+  title: 'Components/Cards/OverlayCard',
   component: OverlayCard,
   argTypes: {
-    accent: {
+    accentColor: {
       control: {
         type: 'select',
-        options: ['turq', 'pink', 'yellow', 'purple']
+        options: ['$cyan500', '$pink500', '$yellow500', '$purple500']
       }
     },
     image: {
@@ -27,29 +28,33 @@ export default {
   }
 } as Meta
 
-const Template: Story = (args: OverlayCardProps) => <OverlayCard {...args} />
-
-const TemplateMulti: Story = () => (
-  <Grid container spacing={3} justify="space-between" direction="row" alignItems="stretch">
-    <OverlayCard title="Try free courses" cta="View Canvas" accent="turq" image={TurqOverlay} onClick={() => null} />
-    <OverlayCard title="Try free courses" cta="View Canvas" accent="pink" image={PinkOverlay} onClick={() => null} />
-    <OverlayCard
-      title="Try free courses"
-      cta="View Canvas"
-      accent="purple"
-      image={PurpleOverlay}
-      onClick={() => null}
-    />
-  </Grid>
+const Template: Story = () => (
+  <OverlayCard accentColor="pink">
+    <OverlayCardImage src={PinkOverlay}>Coursework & Curriculum</OverlayCardImage>
+    <OverlayCardCTA>View Canvas</OverlayCardCTA>
+  </OverlayCard>
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  title: 'Try free courses',
-  cta: 'View Canvas',
-  accent: 'pink',
-  image: PinkOverlay,
-  onClick: () => null
-}
 
-export const Multiple = TemplateMulti.bind({})
+export const Multiple: Story = () => (
+  <ResponsiveGrid min="200px">
+    <OverlayCard accentColor="cyan">
+      <OverlayCardImage src={TurqOverlay}>Coursework &amp; Curriculum</OverlayCardImage>
+
+      <OverlayCardCTA>View Canvas</OverlayCardCTA>
+    </OverlayCard>
+
+    <OverlayCard accentColor="purple">
+      <OverlayCardImage src={PurpleOverlay}>Access career services</OverlayCardImage>
+
+      <OverlayCardCTA>View GradLeaders</OverlayCardCTA>
+    </OverlayCard>
+
+    <OverlayCard accentColor="pink">
+      <OverlayCardImage src={PinkOverlay}>Try free courses</OverlayCardImage>
+
+      <OverlayCardCTA>View Pathwright</OverlayCardCTA>
+    </OverlayCard>
+  </ResponsiveGrid>
+)

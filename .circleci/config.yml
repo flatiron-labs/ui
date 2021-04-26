@@ -11,7 +11,7 @@ defaults: &defaults
   docker:
     - image: cimg/node:15.11.0
   resource_class: large
-cache_key: &cache_key v2-dependencies-{{ checksum "yarn.lock" }}
+cache_key: &cache_key v3-dependencies-{{ checksum "yarn.lock" }}
 
 # -------------------------
 #        WORKFLOWS

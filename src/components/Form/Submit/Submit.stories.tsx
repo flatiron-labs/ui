@@ -5,7 +5,7 @@ import { Form } from '~/components'
 import { Submit } from '.'
 
 export default {
-  title: 'Form/Submit',
+  title: 'Components/Form/Submit',
   component: Submit,
   argTypes: {
     active: {
@@ -37,13 +37,14 @@ export default {
 
 const Template: Story = (args: GetComponentProps<typeof Submit>) => (
   <Form
-    onSubmit={() => null}
+    // eslint-disable-next-line no-alert
+    onSubmit={() => alert('onSubmit')}
     defaultValues={{}}
     label="Storybook Form"
     schema={Yup.object({})}
     style={{ margin: '1em' }}
   >
-    <Submit {...args} />
+    <Submit {...args} data-cy="submit" />
   </Form>
 )
 
@@ -62,5 +63,6 @@ Active.args = {
 export const Disabled = Template.bind({})
 Disabled.args = {
   ...Default.args,
+  appearance: 'disabled',
   disabled: true
 }

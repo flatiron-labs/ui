@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { Form, Input, Submit } from '.'
 
 export default {
-  title: 'Form/Form',
+  title: 'Components/Form/Form',
   component: Form,
   argTypes: {
     defaultValues: {
