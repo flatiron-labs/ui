@@ -7,6 +7,17 @@
 * **section:** update styling ([9b379a8](https://github.com/flatiron-labs/ui/commit/9b379a87ec05ec9963b1908cdac75fe82e1caf4b))
 * **sidebar:** update styling ([5bdcb89](https://github.com/flatiron-labs/ui/commit/5bdcb89afc29e57580ff5ebcfec219091c5263b1))
 
+# [2.0.0-beta.1](https://github.com/flatiron-labs/ui/compare/v1.4.0...v2.0.0-beta.1) (2021-04-26)
+
+
+### Features
+
+* complete overhaul of components and styles ([63ce827](https://github.com/flatiron-labs/ui/commit/63ce827576b9596f26b816d4f151a9ba1a72abcf))
+
+
+### BREAKING CHANGES
+
+* Complete overhaul
 
 ### BREAKING CHANGES
 
