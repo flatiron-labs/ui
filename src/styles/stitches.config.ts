@@ -143,7 +143,6 @@ const stitches = createCss({
 
 export type CSS = StitchesCss<typeof stitches>
 export const { styled, css, theme, getCssString, global, keyframes, config } = stitches
-export const { utils } = config
 
 export type Theme = typeof config.theme
 export type resolveTokens<T extends keyof Theme> = `$${Extract<keyof Theme[T], string | number>}`
