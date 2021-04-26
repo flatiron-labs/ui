@@ -1,51 +1,99 @@
 import React from 'react'
-import styled from 'styled-components'
-import { flatironTheme } from '~/styles'
+import { Heading } from '~/components/Typography/Heading'
+import { Level } from '~/components/Level'
+import { styled } from '~/styles/stitches.config'
+import { textOnlyChild } from '~/utils/textOnlyChild'
 
-export interface PageHeadingProps {
-  title: string
-  subtitle?: string
-  secondarySubtitle?: string
-}
+/* -------------------------------------------------------------------------------------------------
+ * StyledPageHeading
+ * -----------------------------------------------------------------------------------------------*/
 
-const marginBottom = '2.5em'
+export const StyledPageHeading = styled('div', {
+  display: 'grid',
+  gap: '$7'
+})
+StyledPageHeading.displayName = 'PageHeading'
 
-const Header = styled.h1<{ noSubheader?: boolean }>`
-  font-size: 2.5rem;
-  ${props =>
-    props.noSubheader &&
-    `
-    margin-bottom: ${marginBottom};
-  `}
-`
+/* -------------------------------------------------------------------------------------------------
+ * PageHeadingTitle
+ * -----------------------------------------------------------------------------------------------*/
 
-const Highlight = styled.span`
-  color: ${flatironTheme.colors.common.yellow};
-  display: inline-block;
-  padding-right: 25px;
-`
+export const PageHeadingTitle = styled(Heading, {
+  all: 'unset',
+  color: '$white500',
+  display: 'block',
+  fontFamily: '$firaCode',
+  fontSize: '2.5rem',
+  fontWeight: '$light',
+  letterSpacing: '-$6',
+  lineHeight: '1.167em'
+})
+PageHeadingTitle.displayName = 'PageHeadingTitle'
 
-const Container = styled.div<{ noSubheader?: boolean }>`
-  ${props =>
-    !props.noSubheader &&
-    `
-  margin-bottom: ${marginBottom};
-`}
-`
+/* -------------------------------------------------------------------------------------------------
+ * StyledPageHeadingSubtitle
+ * -----------------------------------------------------------------------------------------------*/
 
-export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingProps): JSX.Element => {
-  const hasSubheader = subtitle || secondarySubtitle
+const StyledPageHeadingSubtitle = styled(Heading, {
+  all: 'unset',
+  color: '$white500',
+  display: 'inline-flex',
+  flexWrap: 'wrap',
+  fontFamily: '$firaCode',
+  fontSize: '$70',
+  fontWeight: '$regular',
+  letterSpacing: '-$6',
+  lineHeight: '1.334em'
+})
+StyledPageHeadingSubtitle.displayName = 'StyledPageHeadingSubtitle'
 
-  return (
-    <Container>
-      <Header noSubheader={!hasSubheader}>{title}</Header>
+/* -------------------------------------------------------------------------------------------------
+ * PageHeadingContent
+ * -----------------------------------------------------------------------------------------------*/
 
-      {hasSubheader && (
-        <h5>
-          {subtitle && <Highlight>{subtitle}</Highlight>}
-          {secondarySubtitle}
-        </h5>
-      )}
-    </Container>
+export const PageHeadingContent = styled('span', {
+  marginRight: '$7',
+
+  '&:last-child': {
+    marginRight: '0'
+  },
+
+  variants: {
+    highlight: {
+      true: {
+        color: '$yellow500'
+      }
+    }
+  }
+})
+PageHeadingContent.displayName = 'PageHeadingContent'
+
+/* -------------------------------------------------------------------------------------------------
+ * PageHeadingSubtitle
+ * -----------------------------------------------------------------------------------------------*/
+
+type PageHeadingSubtitleProps = React.ComponentPropsWithRef<typeof Heading>
+
+export const PageHeadingSubtitle = React.forwardRef<HTMLHeadingElement, PageHeadingSubtitleProps>(
+  ({ children, ...rest }, ref) => (
+    <Level>
+      <StyledPageHeadingSubtitle ref={ref} {...rest}>
+        {textOnlyChild(children) ? <PageHeadingContent highlight>{children}</PageHeadingContent> : children}
+      </StyledPageHeadingSubtitle>
+    </Level>
   )
-}
+)
+PageHeadingSubtitle.displayName = 'PageHeadingSubtitle'
+
+/* -------------------------------------------------------------------------------------------------
+ * PageHeading
+ * -----------------------------------------------------------------------------------------------*/
+
+type PageHeadingProps = React.ComponentPropsWithRef<typeof StyledPageHeading>
+
+export const PageHeading = React.forwardRef<HTMLDivElement, PageHeadingProps>(({ children, ...rest }, ref) => (
+  <StyledPageHeading ref={ref} {...rest}>
+    {textOnlyChild(children) ? <PageHeadingTitle>{children}</PageHeadingTitle> : children}
+  </StyledPageHeading>
+))
+PageHeading.displayName = 'PageHeading'

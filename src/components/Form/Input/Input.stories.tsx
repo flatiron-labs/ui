@@ -1,11 +1,14 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import * as Yup from 'yup'
-import { Form, Submit, Icon } from '~/components'
+
+import { Code, User } from 'phosphor-react'
+
+import { Form, Submit } from '~/components'
 import { Input } from '.'
 
 export default {
-  title: 'Form/Input',
+  title: 'Components/Form/Input',
   component: Input,
   argTypes: {
     name: {
@@ -29,14 +32,6 @@ export default {
         type: 'text'
       }
     },
-    icon: {
-      name: 'Input Icon',
-      type: { name: 'string', required: false },
-      control: {
-        type: 'select',
-        options: Object.keys(Icon)
-      }
-    },
     type: {
       name: 'field type',
       type: { required: true }
@@ -53,7 +48,8 @@ type Args = GetComponentProps<typeof Input> & {
 
 const Template: Story = ({ defaultValues, schema, ...args }: Args) => (
   <Form
-    onSubmit={() => null}
+    // eslint-disable-next-line no-alert
+    onSubmit={() => alert('onSubmit')}
     defaultValues={defaultValues}
     label="Storybook Form"
     schema={schema ?? Yup.object({})}
@@ -68,16 +64,13 @@ export const Default = Template.bind({})
 Default.args = {
   label: 'Name',
   help: 'Enter your full name',
-  icon: 'User',
+  icon: User,
   name: 'fullName'
 }
 
 export const PresetValues = Template.bind({})
 PresetValues.args = {
-  label: 'Name',
-  help: 'Enter your full name',
-  icon: 'User',
-  name: 'fullName',
+  ...Default.args,
   defaultValues: {
     fullName: 'John Doe'
   }
@@ -94,7 +87,7 @@ export const Error = Template.bind({})
 Error.args = {
   label: 'Email',
   help: 'Hit submit to view the error state',
-  icon: 'Code',
+  icon: Code,
   name: 'email',
   schema: Yup.object({
     email: Yup.string().email().required('Email is required')
@@ -106,6 +99,17 @@ Password.args = {
   label: 'Password',
   help: 'Minimum of eight characters',
   type: 'password',
-  icon: 'Code',
+  icon: Code,
   name: 'password'
+}
+
+export const Functional = Template.bind({})
+Functional.args = {
+  label: 'Email',
+  help: 'Required',
+  icon: Code,
+  name: 'email',
+  schema: Yup.object({
+    email: Yup.string().email().required('Email is required')
+  })
 }

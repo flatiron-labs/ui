@@ -6,7 +6,7 @@ function resolve(input) {
 
 module.exports = {
   stories: [
-    '../docs/Introduction.stories.mdx',
+    '../docs/getting-started.stories.mdx',
     '../docs/*.stories.mdx',
     '../src/**/*.stories.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)'

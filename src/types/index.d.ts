@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+
 declare module '*.png'
 declare module '*.gif'
 declare module '*.svg' {
@@ -10,3 +12,23 @@ type DefaultBreakpoints = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 type GetComponentProps<T> = T extends import('react').ComponentType<infer P> | import('react').Component<infer P>
   ? P
   : never
+
+interface FCDefaultProps<P = {}> {
+  propTypes?: WeakValidationMap<P>
+  contextTypes?: ValidationMap<unknown>
+  defaultProps?: Partial<P>
+  displayName?: string
+  'data-testid'?: string
+}
+
+type AddChildren<P> = { children: React.ReactNode } & P
+
+interface FCWithoutChildren<P = {}> extends FCDefaultProps<P> {
+  (props: P, context?: unknown): JSX.Element | null
+}
+
+interface FC<P = {}> extends FCDefaultProps<AddChildren<P>> {
+  (props: AddChildren<P>, context?: unknown): JSX.Element | null
+}
+
+type StitchesComponent<C> = TStyledComponentProps<C> & TExtractVariantProps<C>

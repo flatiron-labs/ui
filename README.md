@@ -4,7 +4,7 @@
 
 ### Install
 
-`yarn add @flatiron-school/ui @material-ui/core`
+`yarn add @flatiron-school/ui`
 
 ### Usage
 
@@ -12,17 +12,7 @@
 import { Button } from '@flatiron-school/ui'
 
 export default () => {
-  return <Button primary>Foo</Button>
-}
-```
-
-To apply your theme wrap your components in our ThemeProvider:
-
-```jsx
-import ThemeProvider from '@flatiron-school/ui'
-
-export default () => {
-  return <ThemeProvider theme={yourTheme}> </ThemeProvider>
+  return <Button>Foo</Button>
 }
 ```
 
@@ -36,7 +26,4 @@ If you want to contribute through code or documentation, the [Contributing guide
 
 ### Other
 
-- [Why I don't use React.FC](https://fettblog.eu/typescript-react-why-i-dont-use-react-fc/#2.-fc%3C%3E-always-imply-children)
 - [TS Styleguide](https://basarat.gitbook.io/typescript/styleguide)
-- [Jest styled-components](https://github.com/styled-components/jest-styled-components#react-testing-library)
-- [Jest styled-components toHaveStyleRule](https://github.com/styled-components/jest-styled-components#tohavestylerule)
