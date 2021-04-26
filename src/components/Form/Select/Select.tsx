@@ -1,146 +1,129 @@
-/* eslint-disable react/require-default-props */
 import React from 'react'
-import styled from 'styled-components'
+
 import { useFormContext } from 'react-hook-form'
 import { useId } from '@reach/auto-id'
 
-import { useTheme } from '~/context'
+import { Label } from '~/components/Form/Label'
+import { styled } from '~/styles/stitches.config'
 
-interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
-  readonly options: string[] | Record<string, string>
+/* -------------------------------------------------------------------------------------------------
+ * Container
+ * -----------------------------------------------------------------------------------------------*/
+
+const Container = styled('div', {
+  alignItems: 'center',
+  display: 'grid',
+  // gridTemplateAreas: 'select',
+  position: 'relative',
+
+  '&:after': {
+    // gridArea: 'select',
+    backgroundColor: '$grey1000',
+    clipPath: 'polygon(100% 0%, 0 0%, 50% 100%)',
+    content: '',
+    height: '0.5em',
+    justifySelf: 'end',
+    marginRight: '1em',
+    width: '0.8em'
+  }
+})
+
+/* -------------------------------------------------------------------------------------------------
+ * StyledSelect
+ * -----------------------------------------------------------------------------------------------*/
+
+const StyledSelect = styled('select', {
+  appearance: 'none',
+  background: 'transparent',
+  borderRadius: '0',
+  borderStyle: 'solid',
+  borderWidth: '2px',
+  color: '$white500',
+  cursor: 'pointer',
+  fontSize: '$30',
+  // gridArea: 'select',
+  height: '64px',
+  outline: 0,
+  padding: '0 1em',
+  transition: 'border-color 0.3s ease',
+  width: '100%',
+
+  '&:focus': {
+    borderColor: '$cyan500',
+    outline: 0
+  },
+
+  '&:disabled': {
+    cursor: 'not-allowed'
+  },
+
+  '&:invalid': {
+    color: '$grey750'
+  },
+
+  variants: {
+    error: {
+      true: {
+        borderColor: '$pink500'
+      },
+      false: {
+        borderColor: '$grey1000'
+      }
+    }
+  }
+})
+
+/* -------------------------------------------------------------------------------------------------
+ * Select
+ * -----------------------------------------------------------------------------------------------*/
+
+type Props = React.ComponentPropsWithRef<typeof StyledSelect> & {
+  readonly help?: string
   readonly label: string
   readonly name: string
-  readonly register?: any // eslint-disable-line @typescript-eslint/no-explicit-any
-  readonly disabled?: boolean
-  readonly help?: string
-  readonly value?: string | number
+  readonly options: string[]
 }
 
-interface ContainerProps {
-  error: boolean
-}
+export const Select = React.forwardRef<HTMLDivElement, Props>(
+  ({ name, label, help, options, children, ...rest }, ref) => {
+    const fieldId = useId()
+    const { register, errors } = useFormContext()
 
-const Container = styled.div<ContainerProps>`
-  position: relative;
+    const conditionalProps = {}
+    const helpId = `form-${name}-help`
+    const scopedErrors: Record<'message' | 'type', string> = errors[name] ?? false
 
-  display: grid;
-  grid-template-areas: 'select';
-  align-items: center;
-
-  &:after {
-    grid-area: select;
-    content: '';
-    width: 0.8em;
-    height: 0.5em;
-    background-color: ${props => props.theme.colors.common.greyDarkest};
-    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-    justify-self: end;
-    margin-right: 1em;
-  }
-
-  select {
-    grid-area: select;
-    width: 100%;
-    height: 64px;
-    cursor: pointer;
-    border-radius: 0;
-    padding: 0 1em;
-    background: transparent;
-    border: 2px solid ${props => (props.error ? props.theme.colors.common.pink : props.theme.colors.common.greyDarkest)};
-    color: ${props => props.theme.colors.common.white};
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    transition: border-color 0.3s ease;
-    outline: 0;
-
-    option[data-placeholder] {
-      color: ${props => props.theme.colors.common.greyDark};
+    if (help) {
+      conditionalProps['aria-describedby'] = helpId
     }
 
-    option[value=''][disabled] {
-      display: none;
+    if (scopedErrors) {
+      conditionalProps['aria-invalid'] = true
     }
 
-    &:focus {
-      border-color: ${props => props.theme.colors.common.turq};
-      outline: 0;
-    }
+    return (
+      <Container ref={ref}>
+        <Label id={fieldId} name={name} label={label} helpId={helpId} helpText={help} errors={scopedErrors} />
 
-    &:disabled {
-      cursor: not-allowed;
-    }
+        <StyledSelect
+          {...conditionalProps}
+          {...rest}
+          error={!!scopedErrors}
+          aria-labelledby={fieldId}
+          name={name}
+          ref={register}
+        >
+          <option value="">{label}</option>
+
+          {(options as string[]).map((optionValue: string) => (
+            <option key={`${name}-${optionValue}`} value={optionValue}>
+              {optionValue}
+            </option>
+          ))}
+        </StyledSelect>
+      </Container>
+    )
   }
-`
+)
 
-const DetailsContainer = styled.div`
-  position: absolute;
-  z-index: 10;
-  background-color: ${props => props.theme.colors.common.black};
-  padding: 0 10px;
-  top: -4px;
-  left: 15px;
-  font-size: 12px;
-
-  label {
-    color: ${props => props.theme.colors.common.yellow};
-  }
-
-  span {
-    margin-left: 1em;
-
-    &.error {
-      color: ${props => props.theme.colors.common.pink};
-    }
-  }
-`
-
-export const Select = ({ name, label, help, options, ...rest }: Props): JSX.Element => {
-  const id = useId(rest.id)
-  const theme = useTheme()
-  const { register, errors } = useFormContext()
-  const conditionalProps = {}
-  const helpId = `form-${name}-help`
-
-  const scopedErrors: Record<'message' | 'type', string> = errors[name] ?? false
-
-  if (!label || label === '') {
-    throw new Error('label is required')
-  }
-
-  if (help) {
-    conditionalProps['aria-describedby'] = helpId
-  }
-
-  if (scopedErrors) {
-    conditionalProps['aria-invalid'] = true
-  }
-
-  return (
-    <Container error={!!scopedErrors} theme={theme}>
-      <DetailsContainer theme={theme}>
-        <label id={id} htmlFor={name}>
-          {label}
-        </label>
-        {help && !scopedErrors && <span id={helpId}>{help}</span>}
-        {scopedErrors && (
-          <span id={helpId} className="error">
-            {scopedErrors.message}
-          </span>
-        )}
-      </DetailsContainer>
-
-      <select aria-labelledby={id} name={name} ref={register} {...conditionalProps} {...rest}>
-        <option value="" disabled hidden data-placeholder>
-          {label}
-        </option>
-
-        {(options as string[]).map((value: string) => (
-          <option key={value} value={value}>
-            {value}
-          </option>
-        ))}
-      </select>
-    </Container>
-  )
-}
+Select.displayName = 'Select'

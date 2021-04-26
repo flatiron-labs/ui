@@ -9,17 +9,6 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-/* Section =========================================================================== */
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Edge, Firefox, and Safari.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 /* Grouping content ================================================================== */
 
 /* Remove the margin on nested lists in Chrome, Edge, and Safari. */

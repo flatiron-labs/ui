@@ -1,14 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { GridSize } from '~/components'
-import { useTheme } from '~/context'
-import { Media, ThemeProps } from '~/styles'
+import { styled } from '~/styles/stitches.config'
 
-interface StyledLinkProps extends ThemeProps {
-  active?: boolean
-  expanded?: boolean
-}
+/* -------------------------------------------------------------------------------------------------
+ * Sidebar
+ * -----------------------------------------------------------------------------------------------*/
 
+<<<<<<< HEAD
 const StyledSidebar = styled.div<StyledLinkProps>`
   background-color: ${props => props.theme.colors.common.black};
   min-height: 99%;
@@ -16,44 +12,34 @@ const StyledSidebar = styled.div<StyledLinkProps>`
   border-right: 1px ${props => props.theme.colors.common.greyDarkest} solid;
   position: absolute;
   z-index: 555;
+=======
+export const Sidebar = styled('aside', {
+  backgroundColor: '$black500',
+  borderRight: '1px solid $grey1000',
+  flexDirection: 'column',
+  minHeight: '99%',
+  overflowX: 'auto',
+  padding: '30px 0 0 0',
+  position: 'absolute',
+  transition: 'width 150ms, height 150ms, transform 150ms ease-in-out',
+  zIndex: 555,
+>>>>>>> 63ce827 (feat: complete overhaul of components and styles)
 
-  ${props =>
-    props.expanded &&
-    `
-      width: 250px;
-      overflow-x: auto;
-      transition: width 150ms, height 150ms, transform 150ms ease-in-out;
-    `}
-
-  ${props =>
-    !props.expanded &&
-    `
-      width: 0px;
-      overflow-x: auto;
-      transition: width 150ms, height 150ms, transform 150ms ease-in-out;
-    `}
-
-  ${Media.md} {
-    width: 250px !important;
-    display: flex !important;
+  variants: {
+    expanded: {
+      true: {
+        width: '250px'
+      },
+      false: {
+        width: '0px'
+      }
+    }
   }
-`
 
-export interface SidebarProps extends StyledLinkProps {
-  children: JSX.Element
-  expanded: boolean
-  style?: Record<string, string | number>
-  lg?: boolean | GridSize
-  md?: boolean | GridSize
-  sm?: boolean | GridSize
-  xs?: boolean | GridSize
-}
+  // ${Media.md} {
+  //   width: 250px !important;
+  //   display: flex !important;
+  // }
+})
 
-export const Sidebar = ({ children, expanded, style, ...props }: SidebarProps): JSX.Element => {
-  const theme = useTheme()
-  return (
-    <StyledSidebar expanded={expanded} theme={theme} style={{ ...style }} {...props}>
-      {children}
-    </StyledSidebar>
-  )
-}
+Sidebar.displayName = 'Sidebar'

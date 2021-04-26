@@ -1,34 +1,33 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { PageHeading, PageHeadingProps } from '.'
+import { PageHeading, PageHeadingTitle, PageHeadingSubtitle, PageHeadingContent } from '~/components/PageHeading'
 
 export default {
-  title: 'Content/PageHeading',
+  title: 'Components/PageHeading',
   component: PageHeading
 } as Meta
 
-const Template: Story = (args: PageHeadingProps) => <PageHeading {...args} />
+export const Default: Story = () => (
+  <PageHeading>
+    <PageHeadingTitle data-cy="title">Welcome John Doe</PageHeadingTitle>
+    <PageHeadingSubtitle data-cy="subtitle">
+      <PageHeadingContent highlight>Software Engineering</PageHeadingContent>
+      <PageHeadingContent>Fall 2021</PageHeadingContent>
+    </PageHeadingSubtitle>
+  </PageHeading>
+)
 
-export const Default = Template.bind({})
-Default.args = {
-  title: 'Welcome Back John Smith',
-  subtitle: 'Software Engineering',
-  secondarySubtitle: ' Fall 2021'
-}
+export const TitleOnly: Story = () => (
+  <PageHeading>
+    <PageHeadingTitle data-cy="title">Welcome John Doe</PageHeadingTitle>
+  </PageHeading>
+)
 
-export const WithoutSubtitle = Template.bind({})
-WithoutSubtitle.args = {
-  title: 'Welcome Back John Smith'
-}
+export const TitleOnlyWithoutComposition: Story = () => <PageHeading data-cy="container">Welcome John Doe</PageHeading>
 
-export const WithHighlightedSubtitle = Template.bind({})
-WithHighlightedSubtitle.args = {
-  title: 'Welcome Back John Smith',
-  subtitle: 'Software Engineering'
-}
-
-export const WithGenericSubtitle = Template.bind({})
-WithGenericSubtitle.args = {
-  title: 'Welcome Back John Smith',
-  secondarySubtitle: ' Fall 2021'
-}
+export const SubtitleWithoutComposition: Story = () => (
+  <PageHeading>
+    <PageHeadingTitle data-cy="title">Welcome John Doe</PageHeadingTitle>
+    <PageHeadingSubtitle data-cy="subtitle">Software Engineering</PageHeadingSubtitle>
+  </PageHeading>
+)
