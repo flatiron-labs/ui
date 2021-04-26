@@ -1,30 +1,38 @@
-import React from 'react'
-import styled from 'styled-components'
-import { flatironTheme } from '~/styles'
+import * as RadixAvatar from '@radix-ui/react-avatar'
+import { styled } from '~/styles'
 
-interface StyledAvatarProps {
-  backgroundColor?: string
-  color?: string
-}
+export const Avatar = styled(RadixAvatar.Root, {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  verticalAlign: 'middle',
+  overflow: 'hidden',
+  userSelect: 'none',
+  width: '62px',
+  height: '62px',
+  borderRadius: '$round'
+})
 
-export interface AvatarProps extends StyledAvatarProps {
-  children: React.ReactNode
-}
+Avatar.displayName = 'Avatar'
 
-const StyledDiv = styled.div<StyledAvatarProps>`
-  align-items: center;
-  color: ${props => (props.color ? props.color : flatironTheme.colors.common.black)};
-  background-color: ${props => (props.backgroundColor ? props.backgroundColor : flatironTheme.colors.common.blue)};
-  display: flex;
-  border-radius: 50%;
-  font-size: 20px;
-  height: 62px;
-  justify-content: center;
-  width: 62px;
-`
+export const AvatarImage = styled(RadixAvatar.Image, {
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover'
+})
 
-export const Avatar = ({ children, ...props }: AvatarProps): JSX.Element => (
-  <StyledDiv {...props}>
-    <>{children}</>
-  </StyledDiv>
-)
+AvatarImage.displayName = 'AvatarImage'
+
+export const AvatarFallback = styled(RadixAvatar.Fallback, {
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '20px',
+  fontFamily: '$firaCode',
+  backgroundColor: '$blue500',
+  color: '$black500'
+})
+
+AvatarFallback.displayName = 'AvatarFallback'

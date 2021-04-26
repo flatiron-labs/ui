@@ -1,47 +1,27 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import styled from 'styled-components'
-import { IcoProps } from './Icon'
-import { Icon } from '.'
-import { flatironTheme } from '~/styles'
 
-const Container = styled.div`
-  svg {
-    display: block;
-    margin-bottom: 10px;
-  }
-`
+import { FacebookLogo } from 'phosphor-react'
+
 export default {
-  title: 'Global/Icon',
+  title: 'Components/Icon',
   argTypes: {
-    color: { control: 'color' }
+    color: {
+      control: {
+        type: 'color'
+      }
+    }
   }
 } as Meta
 
-const Template: Story = (args: IcoProps) => (
-  <Container>
-    <Icon.LoadingIndicator {...args} />
-    <Icon.Code {...args} />
-    <Icon.Dial {...args} />
-    <Icon.Exit {...args} />
-    <Icon.Hamburger {...args} />
-    <Icon.Home {...args} />
-    <Icon.Location {...args} />
-    <Icon.Lock {...args} />
-    <Icon.Map {...args} />
-    <Icon.Mail {...args} />
-    <Icon.Settings {...args} />
-    <Icon.Time {...args} />
-    <Icon.User {...args} />
-    <Icon.Facebook {...args} />
-    <Icon.Twitter {...args} />
-    <Icon.Github {...args} />
-    <Icon.Instagram {...args} />
-    <Icon.Youtube {...args} />
-  </Container>
+type Args = {
+  color?: string
+}
+
+const Template: Story = ({ color }: Args) => (
+  <div data-cy="icon-container" style={{ color }}>
+    <FacebookLogo width="100" height="100" />
+  </div>
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  color: flatironTheme.colors.common.white
-}
