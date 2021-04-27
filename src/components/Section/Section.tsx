@@ -22,6 +22,8 @@ const StyledSection = styled.section`
 
 const StyledH4 = styled.h4`
   padding-bottom: 0.5em;
+  font-size: 1.3rem;
+  font-weight: 500;
 `
 
 const Content = styled.div<Content>`
