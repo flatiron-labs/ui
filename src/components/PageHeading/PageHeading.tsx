@@ -8,10 +8,12 @@ export interface PageHeadingProps {
   secondarySubtitle?: string
 }
 
-const marginBottom = '2.5em'
+const marginBottom = '2em'
 
 const Header = styled.h1<{ noSubheader?: boolean }>`
-  font-size: 2.5rem;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 500;
   ${props =>
     props.noSubheader &&
     `
@@ -33,6 +35,10 @@ const Container = styled.div<{ noSubheader?: boolean }>`
 `}
 `
 
+const SubTitleContainer = styled.div`
+  font-size: 1.3rem;
+`
+
 export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingProps): JSX.Element => {
   const hasSubheader = subtitle || secondarySubtitle
 
@@ -41,10 +47,10 @@ export const PageHeading = ({ title, subtitle, secondarySubtitle }: PageHeadingP
       <Header noSubheader={!hasSubheader}>{title}</Header>
 
       {hasSubheader && (
-        <h5>
+        <SubTitleContainer>
           {subtitle && <Highlight>{subtitle}</Highlight>}
           {secondarySubtitle}
-        </h5>
+        </SubTitleContainer>
       )}
     </Container>
   )
