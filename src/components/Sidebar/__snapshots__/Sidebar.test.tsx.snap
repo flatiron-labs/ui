@@ -4,13 +4,13 @@ exports[`Sidebar should render 1`] = `
 <body>
   <div>
     <div
-      class="sc-bdfBwQ iuXHeX"
+      class="sc-bdfBwQ blObnC"
     >
       <nav
         class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
       >
         <a
-          class="sc-cBNfnY dlSCOz"
+          class="sc-citwmv gGgtdP"
           href="/"
         >
           <svg
