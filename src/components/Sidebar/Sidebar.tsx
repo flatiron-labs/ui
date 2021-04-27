@@ -14,7 +14,6 @@ const StyledSidebar = styled.div<StyledLinkProps>`
   min-height: 99%;
   flex-direction: column;
   border-right: 1px ${props => props.theme.colors.common.greyDarkest} solid;
-  padding: 30px 0 0 0;
   position: absolute;
   z-index: 555;
 
