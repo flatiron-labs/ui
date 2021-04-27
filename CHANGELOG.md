@@ -1,3 +1,19 @@
+# [2.0.0](https://github.com/flatiron-labs/ui/compare/v1.5.0...v2.0.0) (2021-04-27)
+
+
+### Styles
+
+* **pageheading:** update styling ([26b5d62](https://github.com/flatiron-labs/ui/commit/26b5d623cdae56906d601a30be3989363ca90795))
+* **section:** update styling ([9b379a8](https://github.com/flatiron-labs/ui/commit/9b379a87ec05ec9963b1908cdac75fe82e1caf4b))
+* **sidebar:** update styling ([5bdcb89](https://github.com/flatiron-labs/ui/commit/5bdcb89afc29e57580ff5ebcfec219091c5263b1))
+
+
+### BREAKING CHANGES
+
+* **section:** Font size and weight have been added.
+* **pageheading:** The margin and font size have been reduced.
+* **sidebar:** The top padding has been removed from the component.
+
 # [1.5.0](https://github.com/flatiron-labs/ui/compare/v1.4.0...v1.5.0) (2021-04-16)
 
 
