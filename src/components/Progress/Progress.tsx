@@ -17,7 +17,7 @@ interface StyledProgressProps {
 
 const StyledProgress = styled(RadixProgress.Root)`
   position: relative;
-  height: 10px;
+  height: 7px;
   overflow: hidden;
   border-radius: 5px;
   background-color: ${flatironTheme.colors.common.greyDark};
