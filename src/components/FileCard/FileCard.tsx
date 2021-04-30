@@ -17,7 +17,6 @@ export interface FileCardProps {
 }
 
 const Container = styled(props => <Grid container alignItems="center" justify="center" {...props} />)`
-  padding-bottom: 25px;
   padding-top: 15px;
   position: relative;
 `
