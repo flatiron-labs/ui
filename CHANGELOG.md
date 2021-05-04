@@ -5,6 +5,13 @@
 
 * **select:** key/Value option pairs ([b0c2f8c](https://github.com/flatiron-labs/ui/commit/b0c2f8c40485abb2cbdb1cf8a765bd20033838ec))
 
+# [2.1.0](https://github.com/flatiron-labs/ui/compare/v2.0.0...v2.1.0) (2021-05-04)
+
+
+### Features
+
+* **select:** key/Value option pairs ([b0c2f8c](https://github.com/flatiron-labs/ui/commit/b0c2f8c40485abb2cbdb1cf8a765bd20033838ec))
+
 # [2.0.0-beta.2](https://github.com/flatiron-labs/ui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-05-04)
 
 
