@@ -25,6 +25,18 @@ describe('<Select />', () => {
       cy.a11y()
     })
 
+    it('renders a key/value <Select />', () => {
+      cy.sb('key-value-options')
+
+      cy.get('select[name=homeState]').as('select')
+
+      cy.get('@select').focus().select('a').should('have.value', '1')
+      cy.get('@select').focus().select('b').should('have.value', '2')
+      cy.get('@select').focus().select('c').should('have.value', '3')
+
+      cy.a11y()
+    })
+
     it('renders basic disabled <Select />', () => {
       cy.sb('disabled')
 

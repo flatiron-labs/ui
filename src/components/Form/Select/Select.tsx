@@ -81,7 +81,7 @@ type Props = React.ComponentPropsWithRef<typeof StyledSelect> & {
   readonly help?: string
   readonly label: string
   readonly name: string
-  readonly options: string[]
+  readonly options: string[] | string[][]
 }
 
 export const Select = React.forwardRef<HTMLDivElement, Props>(
@@ -101,6 +101,8 @@ export const Select = React.forwardRef<HTMLDivElement, Props>(
       conditionalProps['aria-invalid'] = true
     }
 
+    const simpleOptions = !Array.isArray(options[0])
+
     return (
       <Container ref={ref}>
         <Label id={fieldId} name={name} label={label} helpId={helpId} helpText={help} errors={scopedErrors} />
@@ -115,11 +117,19 @@ export const Select = React.forwardRef<HTMLDivElement, Props>(
         >
           <option value="">{label}</option>
 
-          {(options as string[]).map((optionValue: string) => (
-            <option key={`${name}-${optionValue}`} value={optionValue}>
-              {optionValue}
-            </option>
-          ))}
+          {simpleOptions &&
+            (options as string[]).map((optionValue: string) => (
+              <option key={`${name}-${optionValue}`} value={optionValue}>
+                {optionValue}
+              </option>
+            ))}
+
+          {!simpleOptions &&
+            (options as string[][]).map((option: string[]) => (
+              <option key={`${name}-${option[0]}`} value={option[0]}>
+                {option[1]}
+              </option>
+            ))}
         </StyledSelect>
       </Container>
     )
