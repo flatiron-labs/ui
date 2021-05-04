@@ -1,3 +1,10 @@
+# [3.0.0-beta.2](https://github.com/flatiron-labs/ui/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2021-05-04)
+
+
+### Bug Fixes
+
+* **select:** force release ([bf56510](https://github.com/flatiron-labs/ui/commit/bf56510c3b7a2188e64da7b9af0403ee8e5f8afc))
+
 # [3.0.0-beta.1](https://github.com/flatiron-labs/ui/compare/v2.0.0...v3.0.0-beta.1) (2021-05-04)
 
 
