@@ -1,3 +1,23 @@
+# [3.0.0-beta.1](https://github.com/flatiron-labs/ui/compare/v2.0.0...v3.0.0-beta.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* **sidebar:** rebase issue ([75614ae](https://github.com/flatiron-labs/ui/commit/75614ae0ad23815deafbd0b21781d15f9249237b))
+
+
+### Features
+
+* **select:** allow key/value pairs ([03e500b](https://github.com/flatiron-labs/ui/commit/03e500b66c04a050b0ce87821764a22be697b7d4))
+* **select:** enable Key/Value pairs for select options ([67e00b9](https://github.com/flatiron-labs/ui/commit/67e00b99a3353136622ce0edf0d9a3a1b0b21e13))
+* **select:** key/Value option pairs ([f9e6a64](https://github.com/flatiron-labs/ui/commit/f9e6a64b0e4111c0c51cd39df74a959212c0efe3))
+* complete overhaul of components and styles ([4082bdf](https://github.com/flatiron-labs/ui/commit/4082bdf92b34ad524e5b8fe8f37dc3696a3e09b0))
+
+
+### BREAKING CHANGES
+
+* Complete overhaul
+
 # [2.0.0-beta.3](https://github.com/flatiron-labs/ui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-05-04)
 
 
