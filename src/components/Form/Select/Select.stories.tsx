@@ -51,6 +51,17 @@ Default.args = {
   })
 }
 
+export const KeyValueOptions = Template.bind({})
+KeyValueOptions.args = {
+  ...Default.args,
+  options: [
+    ['1', 'a'],
+    ['2', 'b'],
+    ['3', 'c']
+  ],
+  schema: Yup.object({})
+}
+
 export const PresetValues = Template.bind({})
 PresetValues.args = {
   ...Default.args,
