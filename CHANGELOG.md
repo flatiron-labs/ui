@@ -1,3 +1,11 @@
+# [2.0.0-beta.3](https://github.com/flatiron-labs/ui/compare/v2.0.0-beta.2...v2.0.0-beta.3) (2021-05-04)
+
+
+### Features
+
+* **select:** enable Key/Value pairs for select options ([b1bd773](https://github.com/flatiron-labs/ui/commit/b1bd77329a7fbccb724710e48d8258d703eca3d2))
+* **select:** key/Value option pairs ([3061e45](https://github.com/flatiron-labs/ui/commit/3061e45086090180fce9560a6e80f59539b460e7))
+
 # [2.0.0-beta.2](https://github.com/flatiron-labs/ui/compare/v2.0.0-beta.1...v2.0.0-beta.2) (2021-05-04)
 
 
