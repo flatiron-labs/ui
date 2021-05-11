@@ -39,6 +39,7 @@ interface Props extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLInputEl
   readonly disabled?: boolean
   readonly help?: string
   readonly icon?: string
+  readonly accept?: string
 }
 
 interface ContainerProps {
