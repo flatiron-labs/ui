@@ -66,7 +66,7 @@ export const Footer = (): JSX.Element => (
         <FooterLink href="https://flatironschool.com/accessibility">Accessibility</FooterLink>
         <FooterLink href="https://portal.flatironschool.com/tos">Terms &amp; Conditions</FooterLink>
         <FooterLink href="https://portal.flatironschool.com/code-of-conduct">Code of Conduct</FooterLink>
-        <FooterLink href="https://portal.flatironschool.com/privacy">Privacy Policy</FooterLink>
+        <FooterLink href="https://flatironschool.com/privacy/">Privacy Policy</FooterLink>
       </Grid>
     </Grid>
 
