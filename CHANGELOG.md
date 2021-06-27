@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/flatiron-labs/ui/compare/v2.0.0...v2.0.1) (2021-06-27)
+
+
+### Bug Fixes
+
+* **footerlink:** update link url ([6657e4c](https://github.com/flatiron-labs/ui/commit/6657e4c2be9471297a9b5866133862dfd52e17ce))
+
 # [2.0.0](https://github.com/flatiron-labs/ui/compare/v1.5.0...v2.0.0) (2021-04-27)
 
 
