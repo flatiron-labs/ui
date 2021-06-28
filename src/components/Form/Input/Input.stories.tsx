@@ -109,3 +109,11 @@ Password.args = {
   icon: 'Code',
   name: 'password'
 }
+
+export const FileInput = Template.bind({})
+FileInput.args = {
+  label: 'File',
+  type: 'file',
+  name: 'file',
+  accept: '.csv'
+}
